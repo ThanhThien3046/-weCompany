@@ -963,15 +963,15 @@
     }
     function hoverBoder(x){
 		if(element.getElementsByClassName(x).length)
-        	element.getElementsByClassName(x)[1].style.background = "rgb(27,170,209)";
+        	element.getElementsByClassName(x)[1].style.background = "rgb(27,170,209)"
     }
     function normalImg(x){
 		if(document.getElementById(x))
-        	document.getElementById(x).style.background = "rgba(255,255,255,0.2)";
+        	document.getElementById(x).style.background = "rgba(255,255,255,0.2)"
     }
     function normalImg_(x){
 		if(document.getElementById(x))
-        	document.getElementById(x).style.background = "rgb(141, 213, 232)";
+        	document.getElementById(x).style.background = "rgb(141, 213, 232)"
     }
     function normalBorder(x){
 		var dom = element.getElementsByClassName(x)
