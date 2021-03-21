@@ -958,19 +958,26 @@
     showSlides();
     /*end slideshow processing */
     function zoomImg(x){
-        document.getElementById(x).style.background = "rgb(27,170,209)";
+		if(document.getElementById(x))
+        	document.getElementById(x).style.background = "rgb(27,170,209)"
     }
     function hoverBoder(x){
-        element.getElementsByClassName(x)[1].style.background = "rgb(27,170,209)";
+		if(element.getElementsByClassName(x).length)
+        	element.getElementsByClassName(x)[1].style.background = "rgb(27,170,209)";
     }
     function normalImg(x){
-        document.getElementById(x).style.background = "rgba(255,255,255,0.2)";
+		if(document.getElementById(x))
+        	document.getElementById(x).style.background = "rgba(255,255,255,0.2)";
     }
     function normalImg_(x){
-        document.getElementById(x).style.background = "rgb(141, 213, 232)";
+		if(document.getElementById(x))
+        	document.getElementById(x).style.background = "rgb(141, 213, 232)";
     }
     function normalBorder(x){
-        element.getElementsByClassName(x)[1].style.border = "1px solid rgb(204, 204, 204)";
+		var dom = element.getElementsByClassName(x)
+		if(dom.length){
+			dom[1].style.border = "1px solid rgb(204, 204, 204)"
+		}	
     }
 
 </script>
