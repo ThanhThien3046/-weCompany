@@ -1,0 +1,18 @@
+.backtop {
+  position: fixed;
+  z-index: 999;
+  bottom: 50px;
+  right: 50px;
+  cursor: pointer;
+  animation: 2s ease 0s normal none infinite running float;
+
+  .icon {
+    font-size: 50px;
+    color: $red;
+
+    &:hover {
+      color: $pink;
+      opacity: 0.3;
+    }
+  }
+}

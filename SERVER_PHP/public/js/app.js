@@ -1,1 +1,0 @@
-console.log("hùng đã đến đây. ai đọc được dòng này mà là người yêu anh thì bị phạt 100 cái hôn")

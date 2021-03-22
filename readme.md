@@ -71,3 +71,7 @@ ví dụ hình ảnh: ban đầu em đang để là thư mục images
 bây giừo anh quăng hết vào folder public/images
 css em quăng lung tung anh sẽ quăng hết vào thư mục public/css
 js em đang viết trong file php luôn nên anh chưa tách nó ra. nhưng anh tạo sẵn 1 folder public/js để sau này anh sẽ giúp em clean lại nó
+
+
+### sửa các thành phần cho đúng với 1 cấu trúc laravel ổn
+vào file homepage.blade.php sửa lại các đường dẫn động
