@@ -39,3 +39,20 @@ https://ebudezain.com/co-che-xu-ly-request-trong-laravel
 ## cách chạy laravel project
 khúc này nếu được hãy temaview cho anh, anh sẽ setting hosts giả lập cho mà chạy. Nhưng nếu em muốn thì cứ gõ full url của nó
 ví dụ: locahost/-weCompany/SERVER_PHP/public sẽ ra màn hình welcome của project
+
+## tạo trang chủ 
+1. tạo route
+vào routes/web.php
+thấy dòng 
+`
+Route::get('/', function () {
+    return view('welcome');
+});
+`
+view có nghĩa là view-engine (sai chính tả)
+sửa lại welcome thành homepage (kiểu như file index.php á)
+
+thêm 1 file homepage.blade.php vào trong folder /SERVER_PHP/resources/views
+ném hết đống code html của file index.php vào trong đó rồi truy cập đường dẫn: 
+locahost/-weCompany/SERVER_PHP/public/
+là sẽ thấy code của mình đã có
