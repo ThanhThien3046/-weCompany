@@ -40,7 +40,7 @@
     <meta name="msapplication-TileImage" content="{{ asset('/favicon/ms-icon-144x144.png' . Config::get('app.version')) }}">
     <meta name="theme-color" content="#62854F">
     {{-- dành cho bing search --}}
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico' . Config::get('app.version')) }}">/>
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico' . Config::get('app.version')) }}"/>
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.ico' . Config::get('app.version')) }}"/>
 
     <link rel="stylesheet" href="{{ asset('css/app.min.css' . Config::get('app.version'))}}">
