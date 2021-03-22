@@ -13,7 +13,6 @@
 
     <script async='async' defer='defer' src='{{ asset('js/library/lazysizes.min.js' . Config::get('app.version')) }}'></script>
     
-    <link rel="preload" as="style" href="{{ asset('css/app.min.css' . Config::get('app.version'))}}">
     <link rel="preload" as="style" href="{{ asset('css/awesome.min.css' . Config::get('app.version'))}}">
     @yield('preload')
     
@@ -43,7 +42,6 @@
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico' . Config::get('app.version')) }}"/>
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.ico' . Config::get('app.version')) }}"/>
 
-    <link rel="stylesheet" href="{{ asset('css/app.min.css' . Config::get('app.version'))}}">
     <link rel="stylesheet" href="{{ asset('css/awesome.min.css' . Config::get('app.version'))}}">
 
     @yield('stylesheets')
@@ -53,7 +51,5 @@
     
     @yield('content')
     @yield('javascripts')
-    <script type="text/javascript" src="{{ asset('/js/library/jquery.validate.min.js' . Config::get('app.version')) }}"></script>
-    <script type="text/javascript" src="{{ asset('/js/client/validate.footer.contact.min.js' . Config::get('app.version')) }}"></script>
 </body>
 </html>
