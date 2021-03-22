@@ -21,6 +21,10 @@ tại đây anh sử dụng git commit để em thấy những thay đổi mà a
 theo dõi git kraken để nhìn thấy 1 nùi thay đổi do mới tạo project
 
 
+để chạy được code laravel cần ghi nhớ là đứng tại thư mục SERVER_PHP mở cmd lên. rồi gõ: 
+`
+composer install
+`
 ## tư tưởng của laravel frameửok: 
 
 ### 1. route trong laravel
@@ -56,3 +60,8 @@ thêm 1 file homepage.blade.php vào trong folder /SERVER_PHP/resources/views
 ném hết đống code html của file index.php vào trong đó rồi truy cập đường dẫn: 
 locahost/-weCompany/SERVER_PHP/public/
 là sẽ thấy code của mình đã có
+
+
+## tài nguyên tĩnh không thay đổi
+mọi tài nguyên tĩnh không thay đổi sẽ được nhúng vào thư mục public của laravel
+sau này khi deploy lên server thật thì chỉ cần đẩy code lên không cần setting thêm
