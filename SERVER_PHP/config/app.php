@@ -2,6 +2,22 @@
 
 return [
 
+    ##################################################################
+    #################### APP - SEO ###################################
+    ##################################################################
+    'version'         => "?v=" . env('APP_VERSION', "0.0.1"),
+    'name'            => env('APP_NAME', 'config app.php chưa sửa'),
+    'name_sign'       => env('APP_VERSION', "config_app"),
+    'description'     => env('APP_DESCRIPTION', 'config app.php chưa sửa'),
+    'og_name'         => env('APP_OG_NAME', 'config app.php chưa sửa'),
+    'og_description'  => env('APP_OG_DESCRIPTION', 'config app.php chưa sửa'),
+    'logo'            => env('APP_LOGO', '/logo.png'),
+    'image'           => env('APP_IMAGE', '/image.png'),
+    'lazyload_base64' => env('APP_LAZYLOAD_BASE64', 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=='),
+    ##################################################################
+    ##################################################################
+    ##################################################################
+
     /*
     |--------------------------------------------------------------------------
     | Application Name
@@ -13,7 +29,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'weCompany'),
 
     /*
     |--------------------------------------------------------------------------
