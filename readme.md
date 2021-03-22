@@ -65,3 +65,9 @@ là sẽ thấy code của mình đã có
 ## tài nguyên tĩnh không thay đổi
 mọi tài nguyên tĩnh không thay đổi sẽ được nhúng vào thư mục public của laravel
 sau này khi deploy lên server thật thì chỉ cần đẩy code lên không cần setting thêm
+
+
+ví dụ hình ảnh: ban đầu em đang để là thư mục images
+bây giừo anh quăng hết vào folder public/images
+css em quăng lung tung anh sẽ quăng hết vào thư mục public/css
+js em đang viết trong file php luôn nên anh chưa tách nó ra. nhưng anh tạo sẵn 1 folder public/js để sau này anh sẽ giúp em clean lại nó
