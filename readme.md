@@ -44,11 +44,11 @@ ví dụ: locahost/-weCompany/SERVER_PHP/public sẽ ra màn hình welcome của
 1. tạo route
 vào routes/web.php
 thấy dòng 
-`
+``
 Route::get('/', function () {
     return view('welcome');
 });
-`
+``
 view có nghĩa là view-engine (sai chính tả)
 sửa lại welcome thành homepage (kiểu như file index.php á)
 
