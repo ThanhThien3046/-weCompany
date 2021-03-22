@@ -670,7 +670,7 @@
                                 </div>
                             </a>
 						</article>
-						<article id="ARTICLE_357">ư
+						<article id="ARTICLE_357">
 							<a href="https://list.findmy.tokyo/" rel="noopener"  class="boderColor" id="A_358" onmouseover="hoverBoder('boderColor')" onmouseout="normalBorder('boderColor')">
                                 <div id="DIV_359">
                                     <div id="DIV_360">
