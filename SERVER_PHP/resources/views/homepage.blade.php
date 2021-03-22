@@ -21,16 +21,17 @@
 @section('preload')
     {{-- preload  --}}
     <link rel="preload" as="style" href="{{ asset('css/styles.css' . Config::get('app.version'))}}">
-    <link rel="preload" as="font" type="font/woff2" crossorigin href="/font/font-awe/webfonts/fa-solid-900.woff2"/>
+    {{-- <link rel="preload" as="font" type="font/woff2" crossorigin href="/font/font-awe/webfonts/fa-solid-900.woff2"/>
     <link rel="preload" as="font" type="font/woff2" crossorigin href="/font/font-awe/webfonts/fa-light-300.woff2"/>
     <link rel="preload" as="font" type="font/woff2" crossorigin href="/font/font-awe/webfonts/fa-duotone-900.woff2"/>
-    {{-- <link rel="preload" as="font" type="font/woff2" crossorigin href="/font/IconFont/webfont.woff2?v=1.4.57"/> --}}
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="/font/IconFont/webfont.woff2?v=1.4.57"/> --}}
 @endsection
 @section('stylesheets')
     <link rel="stylesheet" href="{{ asset('css/styles.css' . Config::get('app.version'))}}">
 @endsection
 @section('javascripts')
     <script type="text/javascript" src="{{ asset('js/library/jquery.min.js' . Config::get('app.version')) }}"></script>
+	<script type="text/javascript" src="{{ asset('js/homepage.js' . Config::get('app.version')) }}"></script>
 @endsection
 @section('content')
 <div id="DIV_40">
@@ -175,7 +176,7 @@
 				<div id="DIV_116">
 					<ul id="UL_117">
 						<li id="LI_118">
-							<a href="http://localhost/weCompany/" class="A_119">
+							<a href="{{ Route('HOME_PAGE') }}" class="A_119">
                                 <span id="SPAN_120">
                                     <span id="SPAN_121">
                                         <svg id="svg_122" viewBox="0 0 50 56">
@@ -190,7 +191,7 @@
                             </a>
 						</li>
 						<li id="LI_125">
-							<a href="http://localhost/weCompany/" class="A_119">
+							<a href="{{ Route('HOME_PAGE') }}" class="A_119">
                                 <span id="SPAN_127">
                                     <span id="SPAN_128">
                                         <svg id="svg_129" viewBox="0 0 50 56">
@@ -242,7 +243,7 @@
                             </a>
 						</li>
 						<li id="LI_143">
-							<a href="http://localhost/weCompany/search.php" class="A_119">
+							<a href="{{ Route('SEARCH_PAGE') }}" class="A_119">
                                 <span id="SPAN_145">
                                     <span id="SPAN_146">
                                         <svg id="svg_147" viewBox="0 0 50 56">
@@ -549,22 +550,23 @@
 		</div>
 		<div id="DIV_298">
 			<div id="DIV_299">
-				<div id="DIV_300" style="display: block;">
-					<div id="DIV_301">
+				<div id="DIV_300" class="slider" style="display: block;">
+					<div id="js__slider-homepage" class="slider__wrapper">
                         <!--slide contents-->
-						<div class="DIV_302"> 
-                            <img src="./images/pcside01_2004_02.jpg" style="width:353.729px">                           
+						<div class="slider__item"> 
+                            <img src="{{ asset('images/pcside01_2004_02.jpg') }}">                           
 						</div>
-						<div class="DIV_302">
-                            <img src="./images/pcside02_2001.jpg" style="width:353.729px">  
+						<div class="slider__item">
+                            <img src="{{ asset('images/pcside02_2001.jpg') }}">  
 						</div>
-						<div class="DIV_302">
-                            <img src="./images/pcside04_2001.jpg" style="width:353.729px"> 
+						<div class="slider__item">
+                            <img src="{{ asset('images/pcside04_2001.jpg') }}"> 
 						</div>
-						<div class="DIV_305">
-						<video id="VIDEO_306" src="https://findmy.tokyo//wp/wp-content/uploads/2020/03/pcsidemovie_2003.mp4">
-
-						</video>
+						<div class="slider__item slider__item-video">
+							<video autoplay muted loop="true">
+								{{-- <source src="video.webm" type="video/webm" /> --}}
+								<source src="{{ asset('/video/video-homepage.mp4') }}" type="video/mp4" />
+							</video>
 						</div>
 					</div>
                         <!--end slide contents-->
@@ -642,7 +644,7 @@
 				<main id="MAIN_341">
 					<div id="DIV_342">
 						<article id="ARTICLE_343" style="height: 256px; clear: none;">
-							<a href="http://localhost/weCompany/detail.php" id="A_344" onmouseover="zoomImg('H3_354')" onmouseout="normalImg('H3_354')" >
+							<a href="{{ Route('DETAIL_PAGE') }}" id="A_344" onmouseover="zoomImg('H3_354')" onmouseout="normalImg('H3_354')" >
                                 <div id="DIV_345">
                                 </div>
                                 <div id="DIV_346">
@@ -668,7 +670,7 @@
                                 </div>
                             </a>
 						</article>
-						<article id="ARTICLE_357">
+						<article id="ARTICLE_357">ư
 							<a href="https://list.findmy.tokyo/" rel="noopener"  class="boderColor" id="A_358" onmouseover="hoverBoder('boderColor')" onmouseout="normalBorder('boderColor')">
                                 <div id="DIV_359">
                                     <div id="DIV_360">

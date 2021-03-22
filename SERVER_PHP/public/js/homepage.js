@@ -16,19 +16,33 @@ $(document).ready(function () {
 /*slideshow processing */
 var slideIndex = 0;
 function showSlides(){
-    var i;
-    var slides = document.getElementsByClassName("DIV_302");
-    var x = document.getElementsByClassName("DIV_305");
-    for(i = 0; i < slides.length; i++){
-        slides[i].style.display = "none";
+    var wrapper__slider = document.getElementById('js__slider-homepage')
+    if(!wrapper__slider){
+
+        return false
     }
-    x[0].style.display = "none"; 
-    slideIndex++;
-    if(slideIndex > slides.length) slideIndex = 1;
-    
-    slides[slideIndex - 1].style.display = "block";
-    x[0].style.display = "block"; 
-    setTimeout(showSlides,2000);
+
+    var i;
+    var slides = wrapper__slider.getElementsByClassName("slider__item")
+    /// slide exist then run 
+    if( slides.length ){
+
+        for(i = 0; i < slides.length; i++){
+
+            slides[i].style.display = "none"
+        }
+        
+        slideIndex++
+        /// reset slide index
+        if(slideIndex > slides.length){
+
+            slideIndex = 1
+        }
+        /// show slide
+        slides[slideIndex - 1].style.display = "block"
+        /// auto run loop slider
+        setTimeout(showSlides,2000);
+    }
 }
 showSlides();
 /*end slideshow processing */

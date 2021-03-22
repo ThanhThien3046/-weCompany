@@ -72,7 +72,7 @@ a{
 }
 
   
-#DIV_46.open {
+/* #DIV_46.open {
 
     .LI_48 {
     width:0%;
@@ -88,7 +88,7 @@ a{
     }
     }
     
-}
+} */
 /*END 20210311*/
 
 #HEAD_2, #SCRIPT_3, #SCRIPT_5, #META_7, #TITLE_9, #META_11, #META_13, #LINK_15, #LINK_17, #LINK_19, #LINK_21, #META_23, #META_25, #META_27, #META_29, #META_31, #META_33, #STYLE_35, #STYLE_37 {
@@ -11152,7 +11152,7 @@ a{
     overflow: hidden;
 }
 
-#DIV_301 {
+.slider__wrapper {
     block-size: 310px;
     bottom: 0px;
     box-sizing: border-box;
@@ -11181,7 +11181,7 @@ a{
 }
 
 
-.DIV_302 {
+.slider__item {
     background-position: 50% 50%;
     block-size: 310px;
     bottom: 0px;
@@ -11198,21 +11198,21 @@ a{
     /*background-image: url('./images/pcside01_2004_02.jpg');*/
 }
 
-.DIV_305 {
+.slider__item-video {
     block-size: 310px;
     bottom: 0px;
     box-sizing: border-box;
     caret-color: rgb(51, 51, 51);
     color: rgb(51, 51, 51);
     column-rule-color: rgb(51, 51, 51);
-    height: 310px;
+    height: 100%;
     inline-size: 353.729px;
     inset-block-end: 0px;
     inset-block-start: 0px;
     inset-inline-end: 0px;
     inset-inline-start: 0px;
     left: 0px;
-    opacity: 0;
+    opacity: 1;
     perspective-origin: 176.865px 155px;
     position: absolute;
     right: 0px;
