@@ -671,7 +671,7 @@
                             </a>
 						</article>
 						<article id="ARTICLE_357">
-							<a href="https://list.findmy.tokyo/" rel="noopener"  class="boderColor" id="A_358" onmouseover="hoverBoder('boderColor')" onmouseout="normalBorder('boderColor')">
+							<a href="https://list.findmy.tokyo/" rel="noopener"  class="boderColor myfind">
                                 <div id="DIV_359">
                                     <div id="DIV_360">
                                         <img src="./images/img_panel_list.png" alt="Find my Tokyo. List" id="IMG_361" />

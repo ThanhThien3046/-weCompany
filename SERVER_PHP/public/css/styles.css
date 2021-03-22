@@ -14514,7 +14514,7 @@ a{
     outline: rgb(51, 51, 51) none 0px;
 }
 
-#A_358 {
+.myfind {
     align-items: center;
     block-size: 240px;
     border-block-end-color: rgb(204, 204, 204);
@@ -14563,9 +14563,9 @@ a{
     padding: 0px 10px;
     transition: all 0.4s cubic-bezier(0.47, 0, 0.745, 0.715) 0s;
     border: 1px solid rgb(204, 204, 204);
-}/*#A_358*/
+}/*.myfind*/
 
-#A_358:after {
+.myfind:after {
     border-block-end-color: rgb(51, 51, 51);
     border-block-start-color: rgb(51, 51, 51);
     border-inline-end-color: rgb(51, 51, 51);
@@ -14581,9 +14581,9 @@ a{
     border: 0px none rgb(51, 51, 51);
     font: 13px / 23.4px Lato, "Open Sans", "Helvetica Neue", Helvetica, Arial, Verdana, Roboto, 游ゴシック, "Yu Gothic", 游ゴシック体, YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Meiryo UI", メイリオ, Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
     outline: rgb(51, 51, 51) none 0px;
-}/*#A_358:after*/
+}/*.myfind:after*/
 
-#A_358:before {
+.myfind:before {
     border-block-end-color: rgb(51, 51, 51);
     border-block-start-color: rgb(51, 51, 51);
     border-inline-end-color: rgb(51, 51, 51);
@@ -14599,7 +14599,7 @@ a{
     border: 0px none rgb(51, 51, 51);
     font: 13px / 23.4px Lato, "Open Sans", "Helvetica Neue", Helvetica, Arial, Verdana, Roboto, 游ゴシック, "Yu Gothic", 游ゴシック体, YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Meiryo UI", メイリオ, Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
     outline: rgb(51, 51, 51) none 0px;
-}/*#A_358:before*/
+}/*.myfind:before*/
 
 #DIV_359 {
     block-size: 162.375px;
@@ -14811,6 +14811,9 @@ a{
 }/*#IMG_361:before*/
 .boderColor{
     border: 1px solid rgb(204, 204, 204);
+}
+.myfind.boderColor:hover{
+    background: rgb(27,170,209)
 }
 #DIV_362 {
     block-size: 30px;
