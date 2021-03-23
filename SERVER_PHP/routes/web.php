@@ -28,3 +28,7 @@ Route::get('/detail', function () {
 Route::get('/news', function () {
     return view('news');
 })->name("NEWS_PAGE");
+
+Route::get('/styles',function(){
+    return view('styles');
+})->name("STYLES");

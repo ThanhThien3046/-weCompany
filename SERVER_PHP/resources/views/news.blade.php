@@ -102,7 +102,7 @@
 								<span id="SPAN_81"><span id="SPAN_82"></span></span>
 								<svg id="svg_83">
 									<title id="title_84">
-										シェア THIEN
+										シェア
 									</title>
 									<path id="path_85">
 									</path>
