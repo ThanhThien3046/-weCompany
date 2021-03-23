@@ -210,7 +210,7 @@
                             </a>
 						</li>
 						<li id="LI_134">
-							<a href="https://findmy.tokyo/ranking" class="A_119">
+							<a href="{{ Route('NEWS_PAGE') }}" class="A_119">
                                 <span id="SPAN_136">
                                     <span id="SPAN_137">
                                         <!--<svg  viewBox="0 0 50 56">
@@ -318,7 +318,7 @@
 							<a href="https://twitter.com/share?text=%E3%81%82%E3%81%AA%E3%81%9F%E3%82%82%E3%83%81%E3%83%A3%E3%83%AC%E3%83%B3%E3%82%B8%EF%BC%81Find%20my%20Tokyo.%20%7C%20%E6%9D%B1%E4%BA%AC%E3%83%A1%E3%83%88%E3%83%AD&amp;url=https://findmy.tokyo/&amp;hashtags=findmytokyo" rel="noopener" id="A_171">
                                 <span id="SPAN_172">
                                     <span id="LI_170__01">
-									<svg width="70%" height="70%" viewBox="0 0 200 200">
+									<svg width="50%" height="50%" viewBox="0 0 200 200">
 										<defs>
 											<!-- 矩形的線性漸層 -->
 											<linearGradient id="gradient1" x1=".8" y1=".8" x2="0">
