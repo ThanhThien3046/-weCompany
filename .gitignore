@@ -17,7 +17,6 @@ yarn-error.log
 node_modules
 .vscode/launch.json
 .DS_Store
-.htaccess
 BUILDER\readme.md
 dist
 /SERVER_PHP/composer.lock
