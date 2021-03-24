@@ -11,5 +11,13 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/page/app.scss', 'public/css');
+mix
+    .js('resources/js/app.js', 'public/js')
+    .js('resources/js/home.js', 'public/js')
+
+    .sass('resources/sass/page/home.scss', 'public/css')
+    .browserSync('http://thanhthien.jp/');
+
+
+
+mix.disableNotifications();
