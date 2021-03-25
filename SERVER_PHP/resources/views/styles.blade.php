@@ -31,6 +31,6 @@
 @endsection
 @section('content')
 
-<div><i class="fal fa-heartbeat"></i></div>
+<div>Thien</div>
 
 @endsection

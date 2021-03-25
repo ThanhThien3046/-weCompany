@@ -45,20 +45,6 @@
 			</h2>
 		</header>
 		<div id="DIV_45">
-			<!--<div id="DIV_46">
-				<ul id="UL_47">
-					<li id="LI_48">
-					</li>
-					<li id="LI_49">
-					</li>
-					<li id="LI_50">
-					</li>
-					<li id="LI_51">
-					</li>
-					<li id="LI_52">
-					</li>
-				</ul>
-			</div>-->
 			<div id="DIV_46">
 				<ul id="UL_47">
 					<li class="LI_48"></li>
