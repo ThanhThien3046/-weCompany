@@ -1,0 +1,1 @@
+<svg viewBox="0 0 56 48" fill="#333"><path d="M56 0H8v16H0v32h48V32h8V0zM44 44H4V20h4v12h36v12zM12 28V4h40v24"></path></svg>
