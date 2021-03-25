@@ -26,6 +26,7 @@
     <link rel="preload" as="font" type="font/woff2" crossorigin href="/font/IconFont/webfont.woff2?v=1.4.57"/> --}}
 @endsection
 @section('stylesheets')
+    <link rel="stylesheet" href="{{ asset('css/animate.min.css' . Config::get('app.version'))}}">
     <link rel="stylesheet" href="{{ asset('css/home.css' . Config::get('app.version'))}}">
 @endsection
 @section('javascripts')
@@ -33,32 +34,110 @@
 	<script type="text/javascript" src="{{ asset('js/home.js' . Config::get('app.version')) }}"></script>
 @endsection
 @section('content')
-    <div class="wrapper__sidebar">
+    <div class="wrapper__sidebar animated fadeIn">
         @include('partial.sidebar')
         @include('partial.nav')
     </div>
     <div class="wrapper__content">
-        content homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsf
-        content homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsf
-        content homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsf
-        content homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsf
-        content homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsf
-        content homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsf
-        content homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsf
-        content homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsf
-        content homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsf
-        content homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsf
-        content homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsf
-        content homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsf
-        content homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsf
-        content homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsf
-        content homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsf
-        content homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsf
-        content homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsf
-        content homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsf
-        content homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsf
-        content homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsf
-        content homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsf
-
+        <div class="homeslider">
+            <div id="js__homeslider" class="homeslider__wrapper">
+                <!--slide contents-->
+                <div class="homeslider__item"> 
+                    <img src="{{ asset('images/pcside01_2004_02.jpg') }}">                           
+                </div>
+                <div class="homeslider__item">
+                    <img src="{{ asset('images/pcside02_2001.jpg') }}">  
+                </div>
+                <div class="homeslider__item">
+                    <img src="{{ asset('images/pcside04_2001.jpg') }}"> 
+                </div>
+                <div class="homeslider__item homeslider__item-video">
+                    <video autoplay muted loop="true">
+                        {{-- <source src="video.webm" type="video/webm" /> --}}
+                        <source src="{{ asset('/video/video-homepage.mp4') }}" type="video/mp4" />
+                    </video>
+                </div>
+            </div>
+        </div>
+        <div class="content__main">
+            <div class="main__list" id="js__format-height-article">
+                <article class="article article__default">
+                    <div class="article__wrapper">
+                        <a class="article__link-img" href="http://thanhthien.jp/detail">
+                            <img class="lazyload"
+                                    src="{{ Config::get('app.lazyload_base64') }}"
+                                    onerror="this.onerror=null;this.src='{{ asset('/images/failed.jpg') }}';"
+                                    data-src="{{ asset('/images/home/challenge59_top01.jpeg') }}" 
+                                    alt="" width="300" height="300"/>
+                        </a>
+                        <a class="article__link-title">
+                            <h3 class="title">
+                                江戸時代の教科書を見てみよう！
+                            </h3>
+                        </a>
+                    </div>
+                </article>
+                <article class="article article__default">
+                    <div class="article__wrapper">
+                        <a class="article__link-img" href="http://thanhthien.jp/detail">
+                            <img class="lazyload"
+                                    src="{{ Config::get('app.lazyload_base64') }}"
+                                    onerror="this.onerror=null;this.src='{{ asset('/images/failed.jpg') }}';"
+                                    data-src="{{ asset('/images/home/challenge59_top01.jpeg') }}" 
+                                    alt="" width="300" height="300"/>
+                        </a>
+                        <a class="article__link-title">
+                            <h3 class="title">
+                                江戸時代の教科書を見てみよう！
+                            </h3>
+                        </a>
+                    </div>
+                </article>
+                <article class="article article__default article__default-clearbold">
+                    <div class="article__wrapper">
+                        <a class="article__link-img" href="http://thanhthien.jp/detail">
+                            <img class="lazyload"
+                                    src="{{ Config::get('app.lazyload_base64') }}"
+                                    onerror="this.onerror=null;this.src='{{ asset('/images/failed.jpg') }}';"
+                                    data-src="{{ asset('/images/home/challenge59_top01.jpeg') }}" 
+                                    alt="" width="300" height="300"/>
+                        </a>
+                        <a class="article__link-title">
+                            <h3 class="title">
+                                江戸時代の教科書を見てみよう！
+                            </h3>
+                        </a>
+                    </div>
+                </article>
+                <article class="article article__default">
+                    <div class="article__wrapper">
+                        <a class="article__link-img" href="http://thanhthien.jp/detail">
+                            <img class="lazyload"
+                                    src="{{ Config::get('app.lazyload_base64') }}"
+                                    onerror="this.onerror=null;this.src='{{ asset('/images/failed.jpg') }}';"
+                                    data-src="{{ asset('/images/home/challenge59_top01.jpeg') }}" 
+                                    alt="" width="300" height="300"/>
+                        </a>
+                        <a class="article__link-title">
+                            <h3 class="title">
+                                江戸時代の教科書を見てみよう！
+                            </h3>
+                        </a>
+                    </div>
+                </article>
+                <article class="article article__right">
+                    <div class="article__wrapper">
+                        <a class="article__link-img" href="http://thanhthien.jp/detail">
+                            <img src="{{ asset('/images/home/challenge541_top02.jpeg') }}" alt="challenge59_top01">
+                        </a>
+                        <a class="article__link-title">
+                            <h3 class="title">
+                                江戸時代の教科書を見てみよう！
+                            </h3>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
     </div>
 @endsection

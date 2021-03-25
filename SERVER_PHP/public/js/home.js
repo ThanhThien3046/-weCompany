@@ -145,7 +145,69 @@ var listenBtnCloseNav = function listenBtnCloseNav() {
     };
   }
 };
+/*slideshow processing */
 
+
+var slideIndex = 0;
+
+function showSlides() {
+  var wrapper__slider = document.getElementById('js__homeslider');
+
+  if (!wrapper__slider) {
+    return false;
+  }
+
+  var slides = wrapper__slider.getElementsByClassName("homeslider__item"); /// slide exist then run 
+
+  if (slides.length) {
+    for (var i = 0; i < slides.length; i++) {
+      slides[i].classList.remove('show');
+    }
+
+    slideIndex++; /// reset slide index
+
+    if (slideIndex > slides.length) {
+      slideIndex = 1;
+    } /// show slide
+
+
+    slides[slideIndex - 1].classList.add('show'); /// auto run loop slider
+
+    setTimeout(showSlides, 5000);
+  }
+}
+
+showSlides();
+
+var formatHeightBlockHome = function formatHeightBlockHome() {
+  console.log("formatHeightBlockHome");
+
+  var __format = document.getElementById("js__format-height-article");
+
+  if (!__format) {
+    return false;
+  }
+
+  var article__rights = __format.getElementsByClassName('article__right');
+
+  if (article__rights.length) {
+    /// format
+    var articles = __format.getElementsByClassName('article__default');
+
+    if (!articles.length) {
+      return;
+    }
+
+    var first__article = articles[0];
+
+    for (var index = 0; index < article__rights.length; index++) {
+      var article__right = article__rights[index];
+      article__right.style.height = 2 * first__article.offsetHeight + "px";
+    }
+  }
+};
+
+formatHeightBlockHome();
 console.log("client home");
 listenToggleNav();
 listenBtnCloseNav();

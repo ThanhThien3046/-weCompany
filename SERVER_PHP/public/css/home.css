@@ -2311,14 +2311,147 @@ option:focus {
   position: relative;
 }
 
-.wrapper__content {
-  padding-right: 90px;
-  background-color: aqua;
-}
-
 @media (max-width: 991px) {
   .wrapper__content {
     padding-right: 0px;
   }
+}
+
+.homeslider {
+  overflow: hidden;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 28%;
+  height: 100%;
+  margin: 0px;
+}
+
+.homeslider__wrapper {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+}
+
+.homeslider__item {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: center center/cover no-repeat white;
+  opacity: 0;
+  transform-origin: center center;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+.homeslider__item.show {
+  opacity: 1;
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+.homeslider__item.show:nth-child(1) {
+  -webkit-animation: 8s linear 0s infinite normal none running giXJVD;
+          animation: 8s linear 0s infinite normal none running giXJVD;
+}
+
+.content__main {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 30%;
+  padding-right: 100px;
+  background-color: #ddd;
+}
+
+.main__list:after {
+  clear: both;
+  content: ".";
+  display: block;
+  height: 0;
+  line-height: 0;
+  visibility: hidden;
+  overflow: hidden;
+}
+
+.article {
+  clear: none;
+  float: left;
+  width: 33.333%;
+  padding: 8px;
+}
+
+.article:hover .article__link-title {
+  background-color: transparent;
+  padding: 16px;
+  transition: all 0.5s ease-in-out;
+  z-index: 1111;
+}
+
+.article:hover .article__link-title:after {
+  content: ".";
+  color: transparent;
+  position: absolute;
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #1baad1;
+  z-index: 1;
+}
+
+.article:hover .article__link-img img {
+  transition: all 0.5s ease-in-out;
+  transform: scale(1.16);
+}
+
+.article__right {
+  margin-top: -33.333%;
+}
+
+.article__default-clearbold {
+  clear: both;
+}
+
+.article__wrapper {
+  width: 100%;
+  background: white;
+  border: 1px solid #cccccc;
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.article__link-img img {
+  transition: all 0.5s ease-in-out;
+  transform: scale(1.08);
+}
+
+.article__link-title {
+  position: absolute;
+  box-sizing: border-box;
+  bottom: 0px;
+  left: 0px;
+  padding: 8px 16px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  transition: all 0.2s ease-in-out;
+  z-index: 2;
+}
+
+.article__link-title .title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  position: relative;
+  z-index: 111111;
 }
 
