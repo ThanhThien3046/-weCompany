@@ -63,6 +63,10 @@
             <div class="main__list" id="js__format-height-article">
                 <article class="article article__default">
                     <div class="article__wrapper">
+                        <span class="article__challenge">
+                            <i class="article__challenge-text">challenge</i>
+                            <i class="article__challenge-number">12</i>
+                        </span>
                         <a class="article__link-img" href="http://thanhthien.jp/detail">
                             <img class="lazyload"
                                     src="{{ Config::get('app.lazyload_base64') }}"

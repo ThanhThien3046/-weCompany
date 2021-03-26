@@ -2455,3 +2455,9 @@ option:focus {
   z-index: 111111;
 }
 
+.article__challenge {
+  position: absolute;
+  left: 0;
+  z-index: -1;
+}
+
