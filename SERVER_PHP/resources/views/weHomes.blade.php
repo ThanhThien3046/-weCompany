@@ -23,7 +23,7 @@
     <link rel="preload" as="style" href="{{ asset('css/news.css' . Config::get('app.version'))}}">
 @endsection
 @section('stylesheets')
-    <link rel="stylesheet" href="{{ asset('css/news.css' . Config::get('app.version'))}}">
+    <link rel="stylesheet" href="{{ asset('css/weHomes.css' . Config::get('app.version'))}}">
 @endsection
 @section('javascripts')
     <script type="text/javascript" src="{{ asset('js/library/jquery.min.js' . Config::get('app.version')) }}"></script>
@@ -31,6 +31,35 @@
 @endsection
 @section('content')
 
-<div>Thien</div>
+<div class="wrapper">
+    <div class="main">
+        <header>
+
+        </header>
+        <div class="non-display"></div>
+        <div>
+            <div class="main-content">
+                <section class="content">
+                    <header class="header_content">
+                        <h3>広告ギャラリー</h3>
+                        <p>広告ポスター・CM情報</p>
+                    </header>
+                    <div class="main-content01">
+                        <article class="news">
+                            <header>
+                                <h4><img src="{{ asset('images/station_oshiage_img.jpg') }}"></h4>
+                            </header>
+                            <div></div>
+                            <footer></footer>
+                        </article>
+                    </div>
+                    <footer></footer>
+
+                </section>
+            </div>
+        </div>
+        <footer></footer>
+    </div>
+</div>
 
 @endsection

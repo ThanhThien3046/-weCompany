@@ -32,6 +32,6 @@ Route::get('/news', function () {
     return view('news');
 })->name("NEWS_PAGE");
 
-Route::get('/styles',function(){
-    return view('styles');
+Route::get('/weHomes',function(){
+    return view('weHomes');
 })->name("STYLES");

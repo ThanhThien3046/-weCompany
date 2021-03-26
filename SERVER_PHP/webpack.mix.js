@@ -1,3 +1,4 @@
+const browserSync = require('browser-sync');
 const mix = require('laravel-mix');
 
 /*
@@ -16,10 +17,7 @@ mix
     .js('resources/js/home.js', 'public/js')
     .sass('resources/sass/page/main.scss', 'public/css')
     .sass('resources/sass/app.scss', 'public/css')
-
     .sass('resources/sass/page/home.scss', 'public/css')
+    .sass('resources/sass/page/weHomes.scss', 'public/css')
     .browserSync('http://thanhthien.jp/')
-
-
-
 mix.disableNotifications();
