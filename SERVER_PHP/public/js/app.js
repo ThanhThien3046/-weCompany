@@ -148,11 +148,11 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\weCompany\SERVER_PHP\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! C:\xampp\htdocs\weCompany\SERVER_PHP\resources\sass\page\main.scss */"./resources/sass/page/main.scss");
-__webpack_require__(/*! C:\xampp\htdocs\weCompany\SERVER_PHP\resources\sass\app.scss */"./resources/sass/app.scss");
-__webpack_require__(/*! C:\xampp\htdocs\weCompany\SERVER_PHP\resources\sass\page\home.scss */"./resources/sass/page/home.scss");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\weCompany\SERVER_PHP\resources\sass\page\weHomes.scss */"./resources/sass/page/weHomes.scss");
+__webpack_require__(/*! /Users/hero/Code/KISS/SERVER_PHP/resources/js/app.js */"./resources/js/app.js");
+__webpack_require__(/*! /Users/hero/Code/KISS/SERVER_PHP/resources/sass/page/main.scss */"./resources/sass/page/main.scss");
+__webpack_require__(/*! /Users/hero/Code/KISS/SERVER_PHP/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/hero/Code/KISS/SERVER_PHP/resources/sass/page/home.scss */"./resources/sass/page/home.scss");
+module.exports = __webpack_require__(/*! /Users/hero/Code/KISS/SERVER_PHP/resources/sass/page/weHomes.scss */"./resources/sass/page/weHomes.scss");
 
 
 /***/ })

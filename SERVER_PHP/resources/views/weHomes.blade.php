@@ -1,4 +1,4 @@
-@extends('layout.index')
+@extends('_Layout.client')
 
 @section('title', Config::get("app.name"))
 @section('description', Config::get("app.description"))
@@ -23,6 +23,8 @@
     <link rel="preload" as="style" href="{{ asset('css/news.css' . Config::get('app.version'))}}">
 @endsection
 @section('stylesheets')
+    <link rel="stylesheet" href="{{ asset('css/animate.min.css' . Config::get('app.version'))}}">
+    <link rel="stylesheet" href="{{ asset('css/home.css' . Config::get('app.version'))}}">
     <link rel="stylesheet" href="{{ asset('css/weHomes.css' . Config::get('app.version'))}}">
 @endsection
 @section('javascripts')
@@ -31,35 +33,43 @@
 @endsection
 @section('content')
 
-<div class="wrapper">
-    <div class="main">
-        <header>
-
-        </header>
-        <div class="non-display"></div>
-        <div>
-            <div class="main-content">
-                <section class="content">
-                    <header class="header_content">
-                        <h3>広告ギャラリー</h3>
-                        <p>広告ポスター・CM情報</p>
-                    </header>
-                    <div class="main-content01">
-                        <article class="news">
-                            <header>
-                                <h4><img src="{{ asset('images/station_oshiage_img.jpg') }}"></h4>
-                            </header>
-                            <div></div>
-                            <footer></footer>
-                        </article>
-                    </div>
-                    <footer></footer>
-
-                </section>
+<div class="wrapper__sidebar animated fadeIn">
+    @include('partial.sidebar')
+    @include('partial.nav')
+</div>
+<div class="wrapper__content">
+    <div class="wrapper" >
+        <div class="main">
+            <header>
+    
+            </header>
+            <div class="non-display"></div>
+            <div>
+                <div class="main-content">
+                    <section class="content">
+                        <header class="header_content">
+                            <h3>広告ギャラリー</h3>
+                            <p>広告ポスター・CM情報</p>
+                        </header>
+                        <div class="main-content01">
+                            <article class="news">
+                                <header>
+                                    <h4><img src="{{ asset('images/station_oshiage_img.jpg') }}"></h4>
+                                </header>
+                                <div></div>
+                                <footer></footer>
+                            </article>
+                        </div>
+                        <footer></footer>
+    
+                    </section>
+                </div>
             </div>
+            <footer></footer>
         </div>
-        <footer></footer>
     </div>
 </div>
+
+
 
 @endsection
