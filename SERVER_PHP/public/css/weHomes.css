@@ -1,0 +1,33 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.main-content {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  will-change: opacity;
+}
+
+.main-content .content {
+  background-color: burlywood;
+  position: relative;
+  box-sizing: border-box;
+  opacity: 1;
+  transform: translateY(0px);
+  transition: opacity 0.15s;
+}
+
+.main-content .content .main-content01 {
+  position: relative;
+  box-sizing: border-box;
+  margin-bottom: 48px;
+}
+
+.main-content .content .main-content01 .news {
+  position: relative;
+  box-sizing: border-box;
+  margin-bottom: 48px;
+}
+
