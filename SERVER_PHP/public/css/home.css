@@ -2457,23 +2457,41 @@ option:focus {
   position: absolute;
   left: 10px;
   top: 10px;
-  z-index: 1;
+  z-index: 100;
   background-color: transparent;
   display: flex;
+  width: 54px;
   flex-direction: column;
+  transition: all 0.25s cubic-bezier(0.47, 0, 0.745, 0.715) 0s;
 }
 
 .article__challenge-text {
   color: turquoise;
+  position: relative;
+  box-sizing: border-box;
+  margin-bottom: 4px;
 }
 
 .article__challenge-number {
   background-color: turquoise;
-  padding: 10px;
-  width: 50px;
-  height: 50px;
   text-align: center;
   color: #fff;
   font-weight: bold;
+  font-size: 1.125rem;
+  margin: 0px auto;
+  position: relative;
+  box-sizing: border-box;
+  width: 40px;
+  height: 40px;
+  background: #1baad1;
+  border-radius: 8px;
+  font-family: Lato, sans-serif;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+  color: white;
+  font-size: 4.8vw;
 }
 
