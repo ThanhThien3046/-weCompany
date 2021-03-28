@@ -1,1 +1,14 @@
-ahihi 
+Tai trang homme page
+1. tai trang hommepage cac hinh dang co tuong dong hay khong
+2. Tai cac trang home page Các dòng mo ta phia duoi hinh co phai la cai ten cua chi nhanh hay khong? hay la cai gi?
+3. so block trong hinh hien thi theo cach nao?
+4. Chu challenge co the thay doi bang chu khac khong? no la cai gi
+5. Khi bam vao no se ra trang gi? 
+6. Trang do se hien thi ra nhu the nao
+Tai trang We group
+
+2. hinh trong trang chi tiet cua we co hinh do la hinh gi, co phai la hinh ngoai home page hay khong?
+3. Giai thich lai phan tin nhan de thiet ke DB
+4. cac hinh trong trang cu the la hinh gj? hien thi nhu the nao?
+5. phan tin nhan phia tren voi phia duoi co giong nhau khong?
+6.
