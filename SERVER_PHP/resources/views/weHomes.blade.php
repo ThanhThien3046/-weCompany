@@ -77,7 +77,7 @@
                                         <div class="relation-img-list">
                                             <article class="reImg">
                                                 <a href="" class="reImg_detail">
-                                                    <div class="__reImg"></div>
+                                                    <div class="__reImg" style="background-image: url({{ asset('images/challenge602_top01.jpg')}})" ></div>
                                                 </a>
                                             </article>
                                         </div>
