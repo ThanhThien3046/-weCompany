@@ -49,7 +49,7 @@
                 <div class="main-content">
                     <section class="content">
                         <header class="header_content">
-                            <h3>広告ギャラリー</h3>
+                            <h3>広告ギャラリー   Thien</h3>
                             <p>広告ポスター・CM情報</p>
                         </header>
                         <div class="main-content01">
