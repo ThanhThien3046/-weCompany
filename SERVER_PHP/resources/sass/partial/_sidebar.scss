@@ -1,4 +1,11 @@
-
+.wrapper__sidebar{
+    position: relative;
+    z-index: 123;
+}
+.wrapper__content{
+    position: relative;
+    z-index: 111;
+}
 .sidebar{
     
     height: 100vh;

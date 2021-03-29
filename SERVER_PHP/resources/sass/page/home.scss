@@ -6,13 +6,12 @@
 @import "../partial/nav";
  
 .wrapper__page{
-    max-width: 1400px;
+    max-width: 1800px;
     margin: 0 auto;
-    position: relative;
 }
 
 .wrapper__content{
-
+    
     @include ScreenMax(MD){
         padding-right: 0px;
     }
@@ -22,11 +21,11 @@
 
 .homeslider{
     overflow: hidden;
-    position: fixed;
+    position: absolute;
     top: 0px;
     left: 0px;
     width: 28%;
-    height: 100%;
+    height: 100vh;
     margin: 0px;
 
     &__wrapper{
@@ -190,7 +189,6 @@
             align-items: center;
             line-height: 1;
             color: rgb(255, 255, 255);
-            font-size: 4.8vw;
         }
     }
 }

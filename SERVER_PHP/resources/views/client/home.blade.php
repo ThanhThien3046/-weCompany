@@ -61,26 +61,28 @@
         </div>
         <div class="content__main">
             <div class="main__list" id="js__format-height-article">
+                @php $challenges = Config::get("challenges") @endphp
+                @foreach ($challenges as $key => $challenge)
                 <article class="article article__default">
                     <div class="article__wrapper">
                         <span class="article__challenge">
                             <i class="article__challenge-text">challenge</i>
-                            <i class="article__challenge-number">12</i>
+                            <i class="article__challenge-number">{{ $challenge['number'] }}</i>
                         </span>
-                        <a class="article__link-img" href="http://thanhthien.jp/detail">
+                        <a class="article__link-img" href="{{ $challenge['link'] }}">
                             <img class="lazyload"
                                     src="{{ Config::get('app.lazyload_base64') }}"
                                     onerror="this.onerror=null;this.src='{{ asset('/images/failed.jpg') }}';"
-                                    data-src="{{ asset('/images/home/challenge59_top01.jpeg') }}" 
+                                    data-src="{{ asset($challenge['img']) }}" 
                                     alt="" width="300" height="300"/>
                         </a>
                         <a class="article__link-title">
-                            <h3 class="title">
-                                江戸時代の教科書を見てみよう！
-                            </h3>
+                            <h3 class="title">{{ $challenge['title'] }}</h3>
                         </a>
                     </div>
                 </article>
+                @endforeach
+                
                 <article class="article article__default">
                     <div class="article__wrapper">
                         <a class="article__link-img" href="http://thanhthien.jp/detail">

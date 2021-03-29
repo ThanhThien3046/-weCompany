@@ -1682,6 +1682,16 @@ option:focus {
   overflow-wrap: break-word !important;
 }
 
+.wrapper__sidebar {
+  position: relative;
+  z-index: 123;
+}
+
+.wrapper__content {
+  position: relative;
+  z-index: 111;
+}
+
 .sidebar {
   height: 100vh;
   overflow-x: hidden;
@@ -1914,7 +1924,7 @@ option:focus {
   bottom: 0;
   overflow-y: auto;
   overflow-x: hidden;
-  z-index: 11;
+  z-index: 1111111;
   padding: 50px 3%;
   text-align: center;
   transition: 0.2s 0s;
@@ -2304,9 +2314,8 @@ option:focus {
 }
 
 .wrapper__page {
-  max-width: 1400px;
+  max-width: 1800px;
   margin: 0 auto;
-  position: relative;
 }
 
 @media (max-width: 991px) {
@@ -2317,11 +2326,11 @@ option:focus {
 
 .homeslider {
   overflow: hidden;
-  position: fixed;
+  position: absolute;
   top: 0px;
   left: 0px;
   width: 28%;
-  height: 100%;
+  height: 100vh;
   margin: 0px;
 }
 
@@ -2492,6 +2501,5 @@ option:focus {
   align-items: center;
   line-height: 1;
   color: white;
-  font-size: 4.8vw;
 }
 
