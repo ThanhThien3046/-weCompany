@@ -49,7 +49,7 @@
                 <div class="main-content">
                     <section class="content">
                         <header class="header_content">
-                            <h3>広告ギャラリー   Thien</h3>
+                            <h3>広告ギャラリー</h3>
                             <p>広告ポスター・CM情報</p>
                         </header>
                         <div class="main-content01">
@@ -61,14 +61,26 @@
                                     <div>
                                         <p>ポスター「江戸がいまでも華やぐ」篇</p>
                                         <div><img src="{{ asset('images/gallery_2003_01.jpg') }}" alt="ポスター「江戸がいまでも華やぐ」篇" width="800" height="283"></div>
+                                        <div>
+                                            <p>壁紙ダウンロード</p>
+                                            <ul class="listbtn">
+                                                <li class="btn"></li>
+                                                <li class="btn"></li>
+                                                <li class="whilebtn"></li>
+                                            </ul>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <p>壁紙ダウンロード</p>
-                                        <ul class="listbtn">
-                                            <li class="btn"></li>
-                                            <li class="btn"></li>
-                                            <li class="whilebtn"></li>
-                                        </ul>
+                                    <div class="relation-img">
+                                        <div class="relation-img-text">
+                                            <p>関連記事リンク</p>
+                                        </div>
+                                        <div class="relation-img-list">
+                                            <article class="reImg">
+                                                <a href="" class="reImg_detail">
+                                                    <div class="__reImg"></div>
+                                                </a>
+                                            </article>
+                                        </div>
                                     </div>
                                 </div>
                                 <footer class="fpic">
