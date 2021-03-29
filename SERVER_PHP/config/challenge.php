@@ -58,10 +58,53 @@ return [
         'type' => 1,
         'link' => 'http://thanhthien.jp/detail'
     ],
+    
     [
-        'number' => 27,
-        'img' => '/images/home/challenge128_top01.jpeg',
-        'title' => '/images/home/challenge67_top02.jpeg',
+        'number' => 25,
+        'img' => '/images/home/challenge75_top01.jpeg',
+        'title' => '日本茶の基礎を学んでみよう！',
+        'type' => 1,
+        'link' => 'http://thanhthien.jp/detail'
+    ],
+    [
+        'number' => 25,
+        'img' => '/images/home/challenge75_top01.jpeg',
+        'title' => '日本茶の基礎を学んでみよう！',
+        'type' => 1,
+        'link' => 'http://thanhthien.jp/detail'
+    ],
+    [
+        'number' => 25,
+        'img' => '/images/home/challenge75_top01.jpeg',
+        'title' => '日本茶の基礎を学んでみよう！',
+        'type' => 1,
+        'link' => 'http://thanhthien.jp/detail'
+    ],
+    [
+        'number' => 272,
+        'img' => '/images/home/challenge67_top02.jpeg',
+        'title' => 'f日本茶の基礎を学んでみよう！',
+        'type' => 3,
+        'link' => 'http://thanhthien.jp/detail'
+    ],
+    [
+        'number' => 25,
+        'img' => '/images/home/challenge75_top01.jpeg',
+        'title' => '日本茶の基礎を学んでみよう！',
+        'type' => 1,
+        'link' => 'http://thanhthien.jp/detail'
+    ],
+    [
+        'number' => 25,
+        'img' => '/images/home/challenge75_top01.jpeg',
+        'title' => '日本茶の基礎を学んでみよう！',
+        'type' => 1,
+        'link' => 'http://thanhthien.jp/detail'
+    ],
+    [
+        'number' => 25,
+        'img' => '/images/home/challenge75_top01.jpeg',
+        'title' => '日本茶の基礎を学んでみよう！',
         'type' => 1,
         'link' => 'http://thanhthien.jp/detail'
     ],

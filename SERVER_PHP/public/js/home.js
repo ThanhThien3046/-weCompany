@@ -186,28 +186,40 @@ var formatHeightBlockHome = function formatHeightBlockHome() {
 
   if (!__format) {
     return false;
+  } /// format
+
+
+  var articles = __format.getElementsByClassName('article__default');
+
+  if (!articles.length) {
+    return;
   }
+
+  var first__article = articles[0];
 
   var article__rights = __format.getElementsByClassName('article__right');
 
   if (article__rights.length) {
-    /// format
-    var articles = __format.getElementsByClassName('article__default');
-
-    if (!articles.length) {
-      return;
-    }
-
-    var first__article = articles[0];
-
     for (var index = 0; index < article__rights.length; index++) {
       var article__right = article__rights[index];
       article__right.style.height = 2 * first__article.offsetHeight + "px";
     }
   }
+
+  var article__lefts = __format.getElementsByClassName('article__left');
+
+  if (article__lefts.length) {
+    for (var _index = 0; _index < article__lefts.length; _index++) {
+      var article__left = article__lefts[_index];
+      article__left.style.height = 2 * first__article.offsetHeight + "px";
+    }
+  }
 };
 
 formatHeightBlockHome();
+window.addEventListener('resize', function () {
+  formatHeightBlockHome();
+});
 console.log("client home");
 listenToggleNav();
 listenBtnCloseNav();

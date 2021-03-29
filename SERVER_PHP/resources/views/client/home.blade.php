@@ -61,9 +61,29 @@
         </div>
         <div class="content__main">
             <div class="main__list" id="js__format-height-article">
-                @php $challenges = Config::get("challenges") @endphp
+                @php $challenges = Config::get("challenge") @endphp
                 @foreach ($challenges as $key => $challenge)
-                <article class="article article__default">
+                @php 
+                $index = $key + 1;
+                $clear = 'article__default ';
+                if($index % 3 == 0){
+                    if(isset($challenges[$key + 2]) && $challenges[$key + 2]['type'] == 2){
+                        $clear .= 'article__default-clearbold';
+                    }
+                }
+                if(isset($challenges[$key - 5]) && $challenges[$key - 5]['type'] == 3){
+                        
+                    $clear .= 'article__default-clearbold';
+                }
+                if($challenge['type'] == 2){
+                    $clear = 'article__right';
+                }
+                if($challenge['type'] == 3){
+                    $clear .= 'article__left';
+                }
+                
+                @endphp
+                <article class="article {{ $clear }}">
                     <div class="article__wrapper">
                         <span class="article__challenge">
                             <i class="article__challenge-text">challenge</i>
@@ -82,67 +102,6 @@
                     </div>
                 </article>
                 @endforeach
-                
-                <article class="article article__default">
-                    <div class="article__wrapper">
-                        <a class="article__link-img" href="http://thanhthien.jp/detail">
-                            <img class="lazyload"
-                                    src="{{ Config::get('app.lazyload_base64') }}"
-                                    onerror="this.onerror=null;this.src='{{ asset('/images/failed.jpg') }}';"
-                                    data-src="{{ asset('/images/home/challenge59_top01.jpeg') }}" 
-                                    alt="" width="300" height="300"/>
-                        </a>
-                        <a class="article__link-title">
-                            <h3 class="title">
-                                江戸時代の教科書を見てみよう！
-                            </h3>
-                        </a>
-                    </div>
-                </article>
-                <article class="article article__default article__default-clearbold">
-                    <div class="article__wrapper">
-                        <a class="article__link-img" href="http://thanhthien.jp/detail">
-                            <img class="lazyload"
-                                    src="{{ Config::get('app.lazyload_base64') }}"
-                                    onerror="this.onerror=null;this.src='{{ asset('/images/failed.jpg') }}';"
-                                    data-src="{{ asset('/images/home/challenge59_top01.jpeg') }}" 
-                                    alt="" width="300" height="300"/>
-                        </a>
-                        <a class="article__link-title">
-                            <h3 class="title">
-                                江戸時代の教科書を見てみよう！
-                            </h3>
-                        </a>
-                    </div>
-                </article>
-                <article class="article article__default">
-                    <div class="article__wrapper">
-                        <a class="article__link-img" href="http://thanhthien.jp/detail">
-                            <img class="lazyload"
-                                    src="{{ Config::get('app.lazyload_base64') }}"
-                                    onerror="this.onerror=null;this.src='{{ asset('/images/failed.jpg') }}';"
-                                    data-src="{{ asset('/images/home/challenge59_top01.jpeg') }}" 
-                                    alt="" width="300" height="300"/>
-                        </a>
-                        <a class="article__link-title">
-                            <h3 class="title">
-                                江戸時代の教科書を見てみよう！
-                            </h3>
-                        </a>
-                    </div>
-                </article>
-                <article class="article article__right">
-                    <div class="article__wrapper">
-                        <a class="article__link-img" href="http://thanhthien.jp/detail">
-                            <img src="{{ asset('/images/home/challenge541_top02.jpeg') }}" alt="challenge59_top01">
-                        </a>
-                        <a class="article__link-title">
-                            <h3 class="title">
-                                江戸時代の教科書を見てみよう！
-                            </h3>
-                        </a>
-                    </div>
-                </article>
             </div>
         </div>
     </div>

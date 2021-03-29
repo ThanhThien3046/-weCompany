@@ -21,12 +21,13 @@
 
 .homeslider{
     overflow: hidden;
-    position: absolute;
+    position: fixed;
     top: 0px;
     left: 0px;
     width: 28%;
     height: 100vh;
     margin: 0px;
+    @include ScreenMax(MD){  display: none; }
 
     &__wrapper{
         position: relative;
@@ -65,6 +66,8 @@
     padding-left: 30%;
     padding-right: 100px;
     background-color: #ddd;
+
+    @include ScreenMax(MD){  padding-right: 0; padding-left: 0; }
 }
 
 
@@ -126,6 +129,7 @@
     }
     &__link-img{
         img{
+            width: 100%;
             transition: all 0.5s ease-in-out;
             transform: scale(1.08);
         }
