@@ -57,8 +57,35 @@
                                 <header>
                                     <h4><img src="{{ asset('images/station_oshiage_img.jpg') }}"></h4>
                                 </header>
-                                <div></div>
-                                <footer></footer>
+                                <div>
+                                    <div>
+                                        <p>ポスター「江戸がいまでも華やぐ」篇</p>
+                                        <div><img src="{{ asset('images/gallery_2003_01.jpg') }}" alt="ポスター「江戸がいまでも華やぐ」篇" width="800" height="283"></div>
+                                        <div>
+                                            <p>壁紙ダウンロード</p>
+                                            <ul class="listbtn">
+                                                <li class="btn"></li>
+                                                <li class="btn"></li>
+                                                <li class="whilebtn"></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="relation-img">
+                                        <div class="relation-img-text">
+                                            <p>関連記事リンク</p>
+                                        </div>
+                                        <div class="relation-img-list">
+                                            <article class="reImg">
+                                                <a href="" class="reImg_detail">
+                                                    <div class="__reImg" style="background-image: url({{ asset('images/challenge602_top01.jpg')}})" ></div>
+                                                </a>
+                                            </article>
+                                        </div>
+                                    </div>
+                                </div>
+                                <footer class="fpic">
+                                    <a href="/" class="ftimage">「押上〈スカイツリー前〉」のチャレンジをみる </a>
+                                </footer>
                             </article>
                         </div>
                         <footer></footer>

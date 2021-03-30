@@ -34,6 +34,8 @@
 	<script type="text/javascript" src="{{ asset('js/homepage.js' . Config::get('app.version')) }}"></script>
 @endsection
 @section('content')
+
+
 <div id="DIV_40">
 	<div id="DIV_41">
 		<header id="HEADER_42">

@@ -1,6 +1,59 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.reImg_detail {
+  position: relative;
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
 .wrapper {
   padding-left: 0;
   padding-right: 80px;
+}
+
+.relation-img-text {
+  text-align: center;
+}
+
+.relation-img-list {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.reImg {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  height: 266px;
+}
+
+.reImg .reImg_detail {
+  position: relative;
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.__reImg {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  transform: scale(1);
 }
 
 .main-content {
@@ -11,12 +64,19 @@
 }
 
 .main-content .content {
-  background-color: burlywood;
   position: relative;
   box-sizing: border-box;
   opacity: 1;
   transform: translateY(0px);
   transition: opacity 0.15s;
+  width: 800px;
+  margin: 0 auto;
+}
+
+.main-content .content .header_content {
+  position: relative;
+  box-sizing: border-box;
+  text-align: center;
 }
 
 .main-content .content .main-content01 {
@@ -29,5 +89,17 @@
   position: relative;
   box-sizing: border-box;
   margin-bottom: 48px;
+}
+
+.main-content .content .main-content01 .news .ftimage {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  padding: 16px 0;
+  border-radius: 5px;
+  background: #1cacd2;
+  color: white;
+  line-height: 1;
+  text-align: center;
 }
 
