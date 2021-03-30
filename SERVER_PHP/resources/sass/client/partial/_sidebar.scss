@@ -1,0 +1,193 @@
+.wrapper__sidebar{
+    position: relative;
+    z-index: 123;
+}
+.wrapper__content{
+    position: relative;
+    z-index: 111;
+}
+.sidebar{
+    
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: fixed;
+    right: 0;
+    width: 80px;
+    top: 0;
+    bottom: 0;
+    box-sizing: border-box;
+    height: 100%;
+    border-left: 1px solid rgb(204, 204, 204);
+    background: rgb(255, 255, 255);
+
+    &__toggle-menu{
+        position: relative;
+        box-sizing: border-box;
+        height: 100%;
+        padding: 10px;
+        margin: 0;
+        width: 50px;
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+    }
+    &__wrapper-toggle{
+        
+        display: block;
+        box-sizing: border-box;
+        cursor: pointer;
+        z-index: 2000;
+        padding: 11px 8px;
+
+        &:hover .item{
+            animation: 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 0s 1 normal none running beerDV;
+
+            &:nth-child(2) {
+                animation-delay: 0.15s;
+            }
+            &:nth-child(3) {
+                animation-delay: 0.3s;
+            }
+        }
+    }
+    &__toggle-item{
+        list-style: none;
+        margin-bottom: 6px;
+        text-align: center;
+        width: 100%;
+        height: 3px;
+        background: rgb(0, 0, 0);
+        transition: all 0.4s cubic-bezier(0.47, 0, 0.745, 0.715) 0s;
+
+        &:nth-child(3) {
+            margin-bottom: 0px;
+        }
+        &:nth-child(4), &:nth-child(5) {
+            position: absolute;
+            top: 8px;
+            margin-bottom: 0px;
+            opacity: 0;
+        }
+    }
+    &__bottom-metro{
+        position: fixed;
+        bottom: 15px;
+        right: 15px;
+        width: 54px;
+    }
+
+    &__nav{
+        margin: 0;
+        padding: 0;
+
+        &-item{
+            list-style: none;
+            margin-top: 10px;
+        }
+        &-link{
+            
+            display: block;
+            width: 60px;
+            margin: 0 auto;
+            &:hover{
+                opacity: 0.6;
+            }
+            &.home{
+                width: 30px;
+            }
+            &.ranking{
+                width: 60px;
+            }
+            &.about{
+                width: 45px;
+            }
+            &.icon__facebook{
+                width: 100%;
+                text-align: center;
+                font-size: 22px;
+            }
+            &.icon__twitter{
+                color: $blue;
+                width: 100%;
+                text-align: center;
+                font-size: 22px;
+            }
+            &.icon__instagram{
+                color: $red;
+                width: 100%;
+                text-align: center;
+                font-size: 22px;
+            }
+        }
+    }
+
+    
+}
+
+@keyframes beerDV {
+    0% {
+        transform: scale(1);
+        transform-origin: left center;
+    }
+    50% {
+        transform: scale(0);
+        transform-origin: left center;
+    }
+    51% {
+        transform: scale(0);
+        transform-origin: right center;
+    }
+    100% {
+        transform: scale(1);
+        transform-origin: right center;
+    }
+}
+
+/// for mobile :D
+@include ScreenMax(MD){
+    .sidebar{
+        height: unset;
+        overflow-x: hidden;
+        overflow-y: auto;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: unset;
+        width: 100%;
+        z-index: 1500;
+        display: block;
+        box-sizing: border-box;
+        width: 100%;
+        background-color: transparent;
+        height: 50px;
+        border-bottom: 1px solid transparent;
+        transition: all 0.15s cubic-bezier(0.39, 0.575, 0.565, 1) 0s;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-left-color: transparent;
+        
+
+        &.open{
+            border-bottom: 1px solid #ccc;
+            background-color: $white;
+        }
+        &__bottom-metro{
+            position: fixed;
+            bottom: unset;
+            top: 10px;
+            right: 15px;
+            width: 54px;
+        }
+
+        &__wrapper-toggle{
+            padding: 5px;
+            width: 70px;
+            height: 100%;
+        }
+        &__nav{
+            display: none;
+        }
+    }
+}

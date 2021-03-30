@@ -86,10 +86,10 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/js/app.js":
-/*!*****************************!*\
-  !*** ./resources/js/app.js ***!
-  \*****************************/
+/***/ "./resources/js/client/app.js":
+/*!************************************!*\
+  !*** ./resources/js/client/app.js ***!
+  \************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -97,21 +97,10 @@
 
 /***/ }),
 
-/***/ "./resources/sass/app.scss":
-/*!*********************************!*\
-  !*** ./resources/sass/app.scss ***!
-  \*********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./resources/sass/page/home.scss":
-/*!***************************************!*\
-  !*** ./resources/sass/page/home.scss ***!
-  \***************************************/
+/***/ "./resources/sass/admin/index.scss":
+/*!*****************************************!*\
+  !*** ./resources/sass/admin/index.scss ***!
+  \*****************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -119,10 +108,10 @@
 
 /***/ }),
 
-/***/ "./resources/sass/page/main.scss":
-/*!***************************************!*\
-  !*** ./resources/sass/page/main.scss ***!
-  \***************************************/
+/***/ "./resources/sass/client/app.scss":
+/*!****************************************!*\
+  !*** ./resources/sass/client/app.scss ***!
+  \****************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -130,10 +119,32 @@
 
 /***/ }),
 
-/***/ "./resources/sass/page/weHomes.scss":
-/*!******************************************!*\
-  !*** ./resources/sass/page/weHomes.scss ***!
-  \******************************************/
+/***/ "./resources/sass/client/page/home.scss":
+/*!**********************************************!*\
+  !*** ./resources/sass/client/page/home.scss ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./resources/sass/client/page/main.scss":
+/*!**********************************************!*\
+  !*** ./resources/sass/client/page/main.scss ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./resources/sass/client/page/weHomes.scss":
+/*!*************************************************!*\
+  !*** ./resources/sass/client/page/weHomes.scss ***!
+  \*************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -142,17 +153,18 @@
 /***/ }),
 
 /***/ 0:
-/*!****************************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/page/main.scss ./resources/sass/app.scss ./resources/sass/page/home.scss ./resources/sass/page/weHomes.scss ***!
-  \****************************************************************************************************************************************************************/
+/*!*************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/client/app.js ./resources/sass/client/page/main.scss ./resources/sass/client/app.scss ./resources/sass/client/page/home.scss ./resources/sass/client/page/weHomes.scss ./resources/sass/admin/index.scss ***!
+  \*************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\weCompany\SERVER_PHP\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! C:\xampp\htdocs\weCompany\SERVER_PHP\resources\sass\page\main.scss */"./resources/sass/page/main.scss");
-__webpack_require__(/*! C:\xampp\htdocs\weCompany\SERVER_PHP\resources\sass\app.scss */"./resources/sass/app.scss");
-__webpack_require__(/*! C:\xampp\htdocs\weCompany\SERVER_PHP\resources\sass\page\home.scss */"./resources/sass/page/home.scss");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\weCompany\SERVER_PHP\resources\sass\page\weHomes.scss */"./resources/sass/page/weHomes.scss");
+__webpack_require__(/*! /Users/hero/Code/KISS/SERVER_PHP/resources/js/client/app.js */"./resources/js/client/app.js");
+__webpack_require__(/*! /Users/hero/Code/KISS/SERVER_PHP/resources/sass/client/page/main.scss */"./resources/sass/client/page/main.scss");
+__webpack_require__(/*! /Users/hero/Code/KISS/SERVER_PHP/resources/sass/client/app.scss */"./resources/sass/client/app.scss");
+__webpack_require__(/*! /Users/hero/Code/KISS/SERVER_PHP/resources/sass/client/page/home.scss */"./resources/sass/client/page/home.scss");
+__webpack_require__(/*! /Users/hero/Code/KISS/SERVER_PHP/resources/sass/client/page/weHomes.scss */"./resources/sass/client/page/weHomes.scss");
+module.exports = __webpack_require__(/*! /Users/hero/Code/KISS/SERVER_PHP/resources/sass/admin/index.scss */"./resources/sass/admin/index.scss");
 
 
 /***/ })
