@@ -1,0 +1,172 @@
+@import "./alo_now";
+@import "./backtop";
+
+.footer {
+    padding: 2rem 0;
+    color: #212529;
+    background: #f9f9f9;
+    font-size: 16px;
+    
+    &__title{
+        position: relative;
+        text-transform: uppercase;
+        font-size: 20px;
+        font-weight: 300;
+        padding: 10px 0;
+
+        &-link{
+            color: #212529;
+            margin-bottom: 2rem;
+
+            &:hover{
+                color: $red;
+            }
+        }
+        &:before {
+            background: #6d6d6d;
+            content: ".";
+            color: transparent;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 2px;
+            border-radius: 10px;
+            width: 30px;
+        }
+    }
+    &__des{
+        color: $blue-dark;
+    }
+    &__menu{
+        margin-bottom: 1rem;
+
+        ul{
+            padding: 0;
+            margin: 0;
+        }
+
+        &-item{
+            padding-bottom: .8rem;
+            color: #212529;
+            font-size: 16px;
+            transition: all .3s;
+            a{
+                transition: all .3s;
+                // color: $blue;
+            }
+            &:hover a{
+                color: $orange;
+                margin-left: 5px;
+                transition: all .3s;
+            }
+        }
+    }
+    &__contact{
+        
+        input{
+            width: 100%;
+        }
+        textarea{
+            width: 100%;
+            resize: none;
+        }
+    }
+    &__copyright{
+        border-top: 1px solid $gray-200;
+        margin-top: 15px;
+        padding-top: 15px;
+    }
+}
+
+
+.form-input{
+    padding-top: 10px;
+
+    label {
+        font-size: 15px;
+        color: $gray-900;
+        display: block;
+        padding-bottom: 10px;
+    }
+    .error{
+        color: red;
+    }
+    input{
+        display: block;
+        width: 100%;
+        padding: 8px 15px;
+        font-size: 16px;
+        border-radius: 0;
+        border: 1px solid $gray-600;
+        outline: none;
+
+        &:focus{
+            color: $primary-color-dark;
+            border: 1px solid $primary-color-dark;
+        }
+    }
+    textarea{
+        width: 100%!important;
+        min-height: 40px;
+        max-height: 150px;
+        resize: none;
+        padding: 10px 15px;
+        border: 1px solid $gray-600;
+        border-radius: 0;
+        font-size: 14px;
+        scrollbar-width: none;
+        margin: 0;
+        text-decoration: none;
+        -ms-overflow-style : none;
+        &:focus{
+            color: $primary-color-dark;
+            border: 1px solid $primary-color-dark;
+        }
+    }
+}
+
+
+
+
+
+.modal.modal__noti{
+    padding: 0;
+    border-radius: 0;
+  
+    .modal__noti-title{
+        background-color: $pink;
+        text-align: center;
+        color: $white;
+        font-weight: 600;
+        padding: 0.6rem;
+        font-size: 18px;
+        text-transform: capitalize;
+    }
+    .modal__moti-content{
+        padding: 0.6rem;
+        border-bottom: 1px solid $gray-200;
+        text-align: center;
+        .error{
+          color: $red;
+          font-size: 20px;
+        }
+        .success{
+          color: $green;
+          font-size: 20px;
+        }
+    }
+    .modal__noti-footer{
+        text-align: center;
+  
+        .btn{
+          padding: 5px 2rem;
+          text-transform: capitalize;
+          background-color: $pink;
+          color: $white;
+          border: 2px solid $pink;
+  
+          @include btn-interaction($white, color-level($pink, -8), $pink)
+        }
+    }
+  }
+  

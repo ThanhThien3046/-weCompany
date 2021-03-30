@@ -26,45 +26,6 @@
                 </a>
             </li>
 
-            <li class="block_navigate {{ Route::is("ADMIN_STORE_THEME", "ADMIN_LOAD_THEME") ? 'active' : null}}" >
-                <a class="block_navigate__link">
-                    <i class="hero-icon hero-vector-difference"></i>
-                    <span class="nav__text">Theme</span>
-                    <i class="hero-icon hero-chevron-sidebar"></i>
-                </a>
-                <ul class="dropdown__item">
-                    <li class="{{ Route::is("ADMIN_STORE_THEME") ? 'active' : null}}">
-                        <a href="{{ Route('ADMIN_STORE_THEME') }}">
-                            lưu trữ theme
-                        </a>
-                    </li>
-                    <li class="{{ Route::is("ADMIN_LOAD_THEME") ? 'active' : null}}">
-                        <a href="{{ Route('ADMIN_LOAD_THEME') }}">
-                            Xem danh sách Theme
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li class="block_navigate {{ Route::is("ADMIN_STORE_TAG_THEME", "ADMIN_LOAD_TAG_THEME") ? 'active' : null}}" >
-                <a class="block_navigate__link">
-                    <i class="hero-icon hero-tag-text-outline"></i>
-                    <span class="nav__text">Tag Theme</span>
-                    <i class="hero-icon hero-chevron-sidebar"></i>
-                </a>
-                <ul class="dropdown__item">
-                    <li class="{{ Route::is("ADMIN_STORE_TAG_THEME") ? 'active' : null}}">
-                        <a href="{{ Route('ADMIN_STORE_TAG_THEME') }}">
-                            Lưu trữ Tag Theme
-                        </a>
-                    </li>
-                    <li class="{{ Route::is("ADMIN_LOAD_TAG_THEME") ? 'active' : null}}">
-                        <a href="{{ Route('ADMIN_LOAD_TAG_THEME') }}">
-                            Xem danh sách Tag Theme
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
             <li class="block_navigate {{ Route::is("ADMIN_STORE_POST", "ADMIN_LOAD_POST") ? 'active' : null}}" >
                 <a class="block_navigate__link">
                     <i class="hero-icon hero-file-document-edit-outline"></i>
@@ -125,25 +86,6 @@
                 </ul>
             </li>
             
-            <li class="block_navigate {{ Route::is("ADMIN_STORE_RATING", "ADMIN_LOAD_RATING") ? 'active' : null}}">
-                <a class="block_navigate__link">
-                    <i class="hero-icon hero-table-star"></i>
-                    <span class="nav__text">Rating</span>
-                    <i class="hero-icon hero-chevron-sidebar"></i>
-                </a>
-                <ul class="dropdown__item">
-                    <li class="{{ Route::is("ADMIN_STORE_RATING") ? 'active' : null}}">
-                        <a href="{{ Route('ADMIN_STORE_RATING') }}">
-                            lưu trữ rating
-                        </a>
-                    </li>
-                    <li class="{{ Route::is("ADMIN_LOAD_RATING") ? 'active' : null}}">
-                        <a href="{{ Route('ADMIN_LOAD_RATING') }}">
-                            Xem danh sách rating
-                        </a>
-                    </li>
-                </ul>
-            </li>
             
             <li class="block_navigate {{ Route::is("ADMIN_GET_REQUEST", "ADMIN_SHOW_REQUEST") ? 'active' : null}}" >
                 <a class="block_navigate__link">
