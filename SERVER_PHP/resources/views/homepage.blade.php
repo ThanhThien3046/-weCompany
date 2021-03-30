@@ -35,10 +35,7 @@
 @endsection
 @section('content')
 
-<div class="wrapper__sidebar animated fadeIn">
-    @include('partial.sidebar')
-    @include('partial.nav')
-</div>
+
 <div id="DIV_40">
 	<div id="DIV_41">
 		<header id="HEADER_42">
