@@ -1,0 +1,39 @@
+.table-detail-request{
+    
+    .row{
+        display: flex;
+        font-size: 14px;
+        color: #808080;
+        &.head{
+            background-color: #6c7ae0;
+            color: #fff;
+            text-transform: uppercase;
+            line-height: 1.4;
+            
+            &:hover{
+                background-color: #7b88e3 !important;
+            }
+            &>div{
+                padding-top: 24px;
+                padding-bottom: 20px;
+            }
+        }
+        
+        &:hover{
+            background-color: #fcebf5;
+        }
+        &>div{
+            float: none;
+            padding-top: 18px;
+            padding-bottom: 14px;
+            &:hover{
+                background-color: #df5fa9;
+                color: #fff;
+            }
+        }
+    }
+}
+.map-request{
+    height: 400px;
+    width: 100%;
+}

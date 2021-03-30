@@ -9,7 +9,7 @@ use App\Helpers\SupportString;
 * Class that scans text content, extract headings (H1-H6) and build menu
 * with links connected to headings inside of original content
 * 
-* @author Truong Thanh Hung <thanhhung.code@gmail.com>
+* @author Truong Thanh Hung <thanhthien3046@gmail.com>
 */
 class Catalogue {
 
