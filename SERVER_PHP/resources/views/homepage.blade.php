@@ -35,7 +35,6 @@
 @endsection
 @section('content')
 
-
 <div id="DIV_40">
 	<div id="DIV_41">
 		<header id="HEADER_42">
@@ -201,17 +200,6 @@
 							<a href="{{ Route('NEWS_PAGE') }}" class="A_119">
                                 <span id="SPAN_136">
                                     <span id="SPAN_137">
-                                        <!--<svg  viewBox="0 0 50 56">
-                                            <title id="title_139">
-                                                最近のニュース
-                                            </title>
-                                            <path id="path_140">
-                                            </path>
-                                            <path id="path_141">
-                                            </path>
-                                            <path id="path_142">
-                                            </path>
-                                        </svg>-->
 										<svg id="svg_138" viewBox="0 0 50 56">
 											<defs>
 												<style>.cls-1,.cls-3{fill:#1baad1;}.cls-2{fill:#fff;}.cls-3{font-size:8px;font-family:FZLTZHK--GBK1-0, Lantinghei SC;}</style>
