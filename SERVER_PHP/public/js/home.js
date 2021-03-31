@@ -93,62 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-// window.$ = window.jQuery = require('jquery')
-var toggleNav = function toggleNav() {
-  var btnToggle = document.getElementById("js__open-nav");
-
-  if (!btnToggle) {
-    return;
-  } /// add class neo scroll
-
-
-  var bodies = document.getElementsByTagName('body');
-
-  if (bodies.length) {
-    var body = bodies[0];
-    body.classList.toggle('neo-scroll');
-  } /// add class open to btn
-
-
-  btnToggle.classList.toggle('open'); /// add class open to nav
-
-  var nav = document.getElementById('js__nav');
-
-  if (nav) {
-    nav.classList.toggle('open');
-  } /// show sidebar
-
-
-  var sidebar = document.getElementById('js__sidebar');
-
-  if (sidebar) {
-    sidebar.classList.toggle('open');
-  }
-};
-
-var listenToggleNav = function listenToggleNav() {
-  var btnToggle = document.getElementById("js__open-nav");
-
-  if (btnToggle) {
-    btnToggle.onclick = function (e) {
-      toggleNav();
-    };
-  }
-};
-
-var listenBtnCloseNav = function listenBtnCloseNav() {
-  var btnCloseNav = document.getElementById("js__close-nav");
-
-  if (btnCloseNav) {
-    btnCloseNav.onclick = function (e) {
-      toggleNav();
-    };
-  }
-};
-
-console.log("client home");
-listenToggleNav();
-listenBtnCloseNav();
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open 'C:\\xampp\\htdocs\\weCompany\\SERVER_PHP\\resources\\js\\home.js'");
 
 /***/ }),
 

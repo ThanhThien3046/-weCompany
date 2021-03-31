@@ -1,0 +1,94 @@
+// ul.navigate
+.navigate{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+
+    &__link{
+        position: relative;
+        &:before{
+            content: '';
+            width: 25px;
+            height: 1px;
+            display: block;
+            position: absolute;
+            left: -5px;
+            top: 50%;
+            margin-top: -1px;
+            border-bottom: 3px solid rgba(0,0,0,0);
+        }
+        a{
+            color: $gray-600;
+            text-decoration: none;
+            font-weight: 300;
+            text-transform: uppercase;
+            font-size: 20px;
+            line-height: 38px;
+            display: block;
+            transition: all ease-in-out 0.3s;
+            padding-left: 30px;
+            
+        }
+
+        &.active{
+            &:before{
+                border-bottom-color: $black;
+            }
+            
+            a{
+                color: $black;
+                font-weight: 400;
+            }
+        }
+    }
+
+    @include Screen(MD){
+        flex-grow: 999;
+        text-align: center;
+        justify-content: center;
+        flex-direction: row;
+
+        &__link{
+            display: none;
+            position: relative;
+
+            &:before{
+                display: none;
+                position: relative;
+                left: unset;
+                top: unset;
+            }
+            a{
+                color: $blue-dark;
+                text-transform: unset;
+                line-height: 1.2em;
+                transition: all ease-in-out 0.3s;
+                font-size: 15px;
+                padding: 8px 10px 7px 10px;
+                letter-spacing: 0;
+                font-weight: 500;
+            }
+
+            &.neo{
+                display: inline-block;
+            }
+
+            &:hover a{
+                color: $secondary-color-dark;
+            }
+    
+            &.active a{
+                color: $red-dark;
+                font-weight: 900;
+            }
+        }
+    }
+    @include Screen(XL){
+
+        &__link{
+            display: inline-block;
+        }
+    }
+    
+}

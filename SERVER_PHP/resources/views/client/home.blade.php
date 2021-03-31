@@ -26,6 +26,7 @@
     <link rel="preload" as="font" type="font/woff2" crossorigin href="/font/IconFont/webfont.woff2?v=1.4.57"/> --}}
 @endsection
 @section('stylesheets')
+    <link rel="stylesheet" href="{{ asset('css/animate.min.css' . Config::get('app.version'))}}">
     <link rel="stylesheet" href="{{ asset('css/home.css' . Config::get('app.version'))}}">
 @endsection
 @section('javascripts')
@@ -33,32 +34,75 @@
 	<script type="text/javascript" src="{{ asset('js/home.js' . Config::get('app.version')) }}"></script>
 @endsection
 @section('content')
-    <div class="wrapper__sidebar">
+    <div class="wrapper__sidebar animated fadeIn">
         @include('partial.sidebar')
         @include('partial.nav')
     </div>
     <div class="wrapper__content">
-        content homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsf
-        content homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsf
-        content homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsf
-        content homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsf
-        content homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsf
-        content homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsf
-        content homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsf
-        content homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsf
-        content homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsf
-        content homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsf
-        content homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsf
-        content homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsf
-        content homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsf
-        content homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsf
-        content homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsf
-        content homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsf
-        content homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsf
-        content homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsf
-        content homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsf
-        content homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsf
-        content homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsfcontent homepage sdfdsf
-
+        <div class="homeslider">
+            <div id="js__homeslider" class="homeslider__wrapper">
+                <!--slide contents-->
+                <div class="homeslider__item"> 
+                    <img src="{{ asset('images/pcside01_2004_02.jpg') }}">                           
+                </div>
+                <div class="homeslider__item">
+                    <img src="{{ asset('images/pcside02_2001.jpg') }}">  
+                </div>
+                <div class="homeslider__item">
+                    <img src="{{ asset('images/pcside04_2001.jpg') }}"> 
+                </div>
+                <div class="homeslider__item homeslider__item-video">
+                    <video autoplay muted loop="true">
+                        {{-- <source src="video.webm" type="video/webm" /> --}}
+                        <source src="{{ asset('/video/video-homepage.mp4') }}" type="video/mp4" />
+                    </video>
+                </div>
+            </div>
+        </div>
+        <div class="content__main">
+            <div class="main__list" id="js__format-height-article">
+                @php $challenges = Config::get("challenge") @endphp
+                @foreach ($challenges as $key => $challenge)
+                @php 
+                $index = $key + 1;
+                $clear = 'article__default ';
+                if($index % 3 == 0){
+                    if(isset($challenges[$key + 2]) && $challenges[$key + 2]['type'] == 2){
+                        $clear .= 'article__default-clearbold';
+                    }
+                }
+                if(isset($challenges[$key - 5]) && $challenges[$key - 5]['type'] == 3){
+                        
+                    $clear .= 'article__default-clearbold';
+                }
+                if($challenge['type'] == 2){
+                    $clear = 'article__right';
+                }
+                if($challenge['type'] == 3){
+                    $clear .= 'article__left';
+                }
+                
+                @endphp
+                <article class="article {{ $clear }}">
+                    <div class="article__wrapper">
+                        <span class="article__challenge">
+                            <i class="article__challenge-text">challenge</i>
+                            <i class="article__challenge-number">{{ $challenge['number'] }}</i>
+                        </span>
+                        <a class="article__link-img" href="{{ $challenge['link'] }}">
+                            <img class="lazyload"
+                                    src="{{ Config::get('app.lazyload_base64') }}"
+                                    onerror="this.onerror=null;this.src='{{ asset('/images/failed.jpg') }}';"
+                                    data-src="{{ asset($challenge['img']) }}" 
+                                    alt="" width="300" height="300"/>
+                        </a>
+                        <a class="article__link-title">
+                            <h3 class="title">{{ $challenge['title'] }}</h3>
+                        </a>
+                    </div>
+                </article>
+                @endforeach
+            </div>
+        </div>
     </div>
 @endsection

@@ -71,26 +71,6 @@ a{
     transition-delay:.75s;
 }
 
-  
-/* #DIV_46.open {
-
-    .LI_48 {
-    width:0%;
-    }
-    .LI_48:nth-child(1){
-        transition-delay:0s;
-    }
-    .LI_48:nth-child(2){
-        transition-delay:.125s;
-    }
-    .LI_48:nth-child(3){
-        transition-delay:.25s;
-    }
-    }
-    
-} */
-/*END 20210311*/
-
 #HEAD_2, #SCRIPT_3, #SCRIPT_5, #META_7, #TITLE_9, #META_11, #META_13, #LINK_15, #LINK_17, #LINK_19, #LINK_21, #META_23, #META_25, #META_27, #META_29, #META_31, #META_33, #STYLE_35, #STYLE_37 {
     box-sizing: border-box;
     text-size-adjust: 100%;

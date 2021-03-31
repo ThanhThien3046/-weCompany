@@ -20,7 +20,11 @@
 
 @section('preload')
     {{-- preload  --}}
+<<<<<<< HEAD
     <link rel="preload" as="style" href="{{ asset('css/weHomes.css' . Config::get('app.version'))}}">
+=======
+    <link rel="preload" as="style" href="{{ asset('css/news.css' . Config::get('app.version'))}}">
+>>>>>>> 607514bb955b6851788d0b74126abd2bbc5d657b
 @endsection
 @section('stylesheets')
     <link rel="stylesheet" href="{{ asset('css/animate.min.css' . Config::get('app.version'))}}">

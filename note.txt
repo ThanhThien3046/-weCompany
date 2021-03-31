@@ -1,0 +1,9 @@
+homepage: 
+các block main content là các chi nhánh
+nó là các block tương đồng
+có thể thêm chi nhánh
+chi nhánh ở đâu ra ? 
+ai là người có quyền sửa chi nhánh? 
+tạm thời không cần trag quản luý
+khi bấm vào chi nhánh sẽ ra trang chi tiết chi nhánh
+phần 

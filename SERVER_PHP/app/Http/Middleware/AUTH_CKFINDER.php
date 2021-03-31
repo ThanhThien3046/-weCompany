@@ -1,0 +1,34 @@
+<?php
+
+namespace App\Http\Middleware;
+
+use Closure;
+use Illuminate\Support\Facades\Auth;
+
+class AUTH_CKFINDER
+{
+    /**
+     * Handle an incoming request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Closure  $next
+     * @return mixed
+     */
+    public function handle($request, Closure $next)
+    {
+        if (Auth::check()) {
+            
+            config(['ckfinder.authentication' => function() {
+                return true;
+            }] );
+        } else {
+            
+            die("vào check ckf sai auth ");
+            config(['ckfinder.authentication' => function() {
+                return false;
+            }] );
+        }
+
+        return $next($request);
+    }
+}
