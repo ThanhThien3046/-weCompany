@@ -29,5 +29,5 @@ mix
     /// js admin 
     // .js('resources/js/admin/app-webpack.js', 'public/js/admin/app-webpack.min.js')
 
-    // .browserSync('http://thanhthien.jp/')
+    .browserSync('http://thanhthien.jp/')
 mix.disableNotifications();
