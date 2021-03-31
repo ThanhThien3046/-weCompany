@@ -42,7 +42,7 @@
     <div class="wrapper" >
         <div class="main">
             <header>
-    
+                
             </header>
             <div class="non-display"></div>
             <div>
@@ -54,7 +54,7 @@
                         </header>
                         <div class="main-content01">
                             <article class="news">
-                                <header>
+                                <header class="banner-img">
                                     <h4><img src="{{ asset('images/station_oshiage_img.jpg') }}"></h4>
                                 </header>
                                 <div>

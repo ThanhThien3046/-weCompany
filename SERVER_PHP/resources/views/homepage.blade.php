@@ -28,6 +28,8 @@
 @endsection
 @section('stylesheets')
     <link rel="stylesheet" href="{{ asset('css/styles.css' . Config::get('app.version'))}}">
+	<link rel="stylesheet" href="{{ asset('css/animate.min.css' . Config::get('app.version'))}}">
+    <link rel="stylesheet" href="{{ asset('css/home.css' . Config::get('app.version'))}}">
 @endsection
 @section('javascripts')
     <script type="text/javascript" src="{{ asset('js/library/jquery.min.js' . Config::get('app.version')) }}"></script>
@@ -35,6 +37,10 @@
 @endsection
 @section('content')
 
+<div class="wrapper__sidebar animated fadeIn">
+	@include('partial.sidebar')
+	@include('partial.nav')
+</div>
 <div id="DIV_40">
 	<div id="DIV_41">
 		<header id="HEADER_42">
@@ -46,13 +52,6 @@
 			</h2>
 		</header>
 		<div id="DIV_45">
-			<div id="DIV_46">
-				<ul id="UL_47">
-					<li class="LI_48"></li>
-					<li class="LI_48"></li>
-					<li class="LI_48"></li>
-				</ul>
-			</div>
 			<nav id="NAV_53">
 				<div id="DIV_54">
 					<p id="P_55">
@@ -159,205 +158,7 @@
 					</dl>
 				</div>
 			</div>
-			<div id="DIV_115">
-				<div id="DIV_116">
-					<ul id="UL_117">
-						<li id="LI_118">
-							<a href="{{ Route('HOME_PAGE') }}" class="A_119">
-                                <span id="SPAN_120">
-                                    <span id="SPAN_121">
-                                        <svg id="svg_122" viewBox="0 0 50 56">
-                                        <title id="title_123">
-                                            ホーム
-                                        </title>
-                                        <path id="path_124">
-                                        </path>
-                                        </svg>
-                                    </span>
-                                </span>
-                            </a>
-						</li>
-						<li id="LI_125">
-							<a href="{{ Route('HOME_PAGE') }}" class="A_119">
-                                <span id="SPAN_127">
-                                    <span id="SPAN_128">
-                                        <svg id="svg_129" viewBox="0 0 50 56">
-                                            <title id="title_130">
-                                                広告ギャラリー
-                                            </title>
-                                            <path id="path_131">
-                                            </path>
-                                            <path id="path_132">
-                                            </path>
-                                            <path id="path_133">
-                                            </path>
-                                        </svg>
-                                    </span>
-                                </span>
-                            </a>
-						</li>
-						<li id="LI_134">
-							<a href="{{ Route('NEWS_PAGE') }}" class="A_119">
-                                <span id="SPAN_136">
-                                    <span id="SPAN_137">
-										<svg id="svg_138" viewBox="0 0 50 56">
-											<defs>
-												<style>.cls-1,.cls-3{fill:#1baad1;}.cls-2{fill:#fff;}.cls-3{font-size:8px;font-family:FZLTZHK--GBK1-0, Lantinghei SC;}</style>
-											</defs>
-											<title>Asset 2</title>
-											<g id="Layer_2" data-name="Layer 2">
-											<g id="Layer_1-2" data-name="Layer 1">
-												<path class="cls-1" d="M24.72,0a19.51,19.51,0,0,1,19.6,19.3,19.51,19.51,0,0,1-19.6,19.3A19.44,19.44,0,0,1,5.12,19.3,19.44,19.44,0,0,1,24.72,0Z"/>
-												<path class="cls-2" d="M7.42,19.3a17.15,17.15,0,0,0,17.3,17A17.15,17.15,0,0,0,42,19.3a17.15,17.15,0,0,0-17.3-17,17.15,17.15,0,0,0-17.3,17h0"/>
-												<path class="cls-1" d="M34.22,13.9a2.43,2.43,0,0,0-2.4,2.4,3.55,3.55,0,0,0,.2,1l-3.1,1.3-3.1-4.8a2.39,2.39,0,0,0,1.5-2.2,2.4,2.4,0,1,0-4.8,0,2.43,2.43,0,0,0,1.4,2.1l-3,4.7-3.4-1.3a2.92,2.92,0,0,0,.2-.9,2.4,2.4,0,1,0-2.4,2.4,4.33,4.33,0,0,0,.5-.1l1.8,7.3v2.8a.86.86,0,0,0,.8.8h13a.79.79,0,0,0,.8-.8V25.8l1.6-7.3c.2,0,.3.1.5.1a2.43,2.43,0,0,0,2.4-2.4A2.59,2.59,0,0,0,34.22,13.9Zm-9.4-3.1a.79.79,0,0,1,.8.8.86.86,0,0,1-.8.8.79.79,0,0,1-.8-.8A.86.86,0,0,1,24.82,10.8Zm-10.4,5.5a.86.86,0,0,1,.8-.8.79.79,0,0,1,.8.8.8.8,0,0,1-1.6,0Zm6.4,3.8a.91.91,0,0,0,1-.3l3-4.7,3.1,4.8a.91.91,0,0,0,1,.3L32,18.9l-1.2,5.6h-12l-1.4-5.6Zm-1.7,7.8V26.5h11.4v1.4Zm15.1-10.8a.79.79,0,0,1-.8-.8.86.86,0,0,1,.8-.8.8.8,0,0,1,0,1.6Z"/>
-												<text class="cls-3" transform="translate(0.84 49.36)">最近ニュース</text>
-												</g>
-											</g>
-										</svg>
-                                    </span>
-                                </span>
-                            </a>
-						</li>
-						<li id="LI_143">
-							<a href="{{ Route('SEARCH_PAGE') }}" class="A_119">
-                                <span id="SPAN_145">
-                                    <span id="SPAN_146">
-                                        <svg id="svg_147" viewBox="0 0 50 56">
-                                            <title id="title_148">
-                                                チャレンジ検索
-                                            </title>
-                                            <path id="path_149">
-                                            </path>
-                                            <path id="path_150">
-                                            </path>
-                                            <path id="path_151">
-                                            </path>
-                                            <path id="path_152">
-                                            </path>
-                                        </svg>
-                                    </span>
-                                </span>
-                            </a>
-						</li>
-						<li id="LI_153">
-							<a href="https://findmy.tokyo/about" class="A_119">
-                                <span id="SPAN_155">
-                                    <span id="SPAN_156">
-                                        <svg id="svg_157" viewBox="0 0 50 56">
-                                            <title id="title_158">
-                                                FMTとは?
-                                            </title>
-                                            <path id="path_159">
-                                            </path>
-                                            <path id="path_160">
-                                            </path>
-                                            <path id="path_161">
-                                            </path>
-                                        </svg>
-                                    </span>
-                                </span>
-                            </a>
-						</li>
-					</ul>
-					<ul id="UL_162">
-						<li id="LI_163">
-							<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Ffindmy.tokyo%2F" rel="noopener" id="A_164">
-                                <span id="SPAN_165">
-                                    <span id="SPAN_166">
-                                        <svg id="svg_167" viewBox="0 0 12 23">
-                                            <title id="title_168">
-                                                Facebook
-                                            </title>
-                                            <path id="path_169">
-                                            </path>
-                                        </svg>
-                                    </span>
-                                </span>
-                            </a>
-						</li>
-						<li id="LI_170">
-							<a href="https://twitter.com/share?text=%E3%81%82%E3%81%AA%E3%81%9F%E3%82%82%E3%83%81%E3%83%A3%E3%83%AC%E3%83%B3%E3%82%B8%EF%BC%81Find%20my%20Tokyo.%20%7C%20%E6%9D%B1%E4%BA%AC%E3%83%A1%E3%83%88%E3%83%AD&amp;url=https://findmy.tokyo/&amp;hashtags=findmytokyo" rel="noopener" id="A_171">
-                                <span id="SPAN_172">
-                                    <span id="SPAN_173">
-                                        <svg id="svg_174" viewBox="0 0 12 23">
-                                            <title id="title_175">
-                                                Twitter
-                                            </title>
-                                            <path id="path_176">
-                                            </path>
-                                        </svg>
-                                    </span>
-                                </span>
-                            </a>
-						</li>
-						<li id="LI_instagram">
-							<a href="https://twitter.com/share?text=%E3%81%82%E3%81%AA%E3%81%9F%E3%82%82%E3%83%81%E3%83%A3%E3%83%AC%E3%83%B3%E3%82%B8%EF%BC%81Find%20my%20Tokyo.%20%7C%20%E6%9D%B1%E4%BA%AC%E3%83%A1%E3%83%88%E3%83%AD&amp;url=https://findmy.tokyo/&amp;hashtags=findmytokyo" rel="noopener" id="A_171">
-                                <span id="SPAN_172">
-                                    <span id="LI_170__01">
-									<svg width="50%" height="50%" viewBox="0 0 200 200">
-										<defs>
-											<!-- 矩形的線性漸層 -->
-											<linearGradient id="gradient1" x1=".8" y1=".8" x2="0">
-												<stop offset="0" stop-color="#1da1f2"/>
-												<stop offset="1" stop-color="#1da1f2"/>
-											</linearGradient>
-											<!-- 矩形的放射漸層 -->
-											<radialGradient id="gradient2" cx=".2" cy="1" r="1.2">
-												<stop offset="0" stop-color="#1da1f2"/>
-												<stop offset=".1" stop-color="#1da1f2"/>
-												<stop offset=".25" stop-color="#1da1f2"/>
-												<stop offset=".35" stop-color="#1da1f2"/>
-												<stop offset=".65" stop-color="#1da1f2" stop-opacity="0" />
-											</radialGradient>
-											<!-- 矩形外框 -->
-											<rect id="logoContainer" x="0" y="0" width="200" height="200" rx="50" ry="50" />
-										</defs>
 
-										<!-- colorful 的背景 -->
-										<use xlink:href="#logoContainer" fill="url(#gradient1)" />
-										<use xlink:href="#logoContainer" fill="url(#gradient2)" />
-
-										<!-- 相機外框 -->
-										<rect x="35" y="35" width="130" height="130" rx="30" ry="30"
-											fill="none" stroke="#fff" stroke-width="13" />
-
-										<!-- 鏡頭外框 -->
-										<circle cx="100" cy="100" r="32"
-												fill="none" stroke="#fff" stroke-width="13" />
-
-										<!-- 閃光燈 -->
-										<circle cx="140" cy="62" r="9" fill="#fff"/>
-									</svg>
-                                    </span>
-                                </span>
-                            </a>
-						</li>
-					</ul>
-                    <a href="https://www.tokyometro.jp/" rel="noopener" id="A_177">
-                        <span id="SPAN_178">
-                            <span id="SPAN_179">
-                                <!--<span class="jHmszv">-->
-                                <svg id="svg_180" viewBox="0 0 60 29">
-                                        <title id="title_181">
-                                            東京メトロ
-                                        </title>
-                                        <path id="path_182">
-                                        </path>
-                                        <path id="path_183">
-                                        </path>
-                                        <path id="path_184">
-                                        </path>
-                                        <path id="path_185">
-                                        </path>
-                                        <path id="path_186">
-                                        </path>
-                                </svg>
-                                <!--</span>-->
-                            </span>
-                        </span>
-                    </a>
-				</div>
-			</div>
 			<div id="DIV_187">
 				<div id="DIV_188">
 				</div>

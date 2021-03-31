@@ -77,6 +77,8 @@
   position: relative;
   box-sizing: border-box;
   text-align: center;
+  padding-top: 80px;
+  padding-bottom: 40px;
 }
 
 .main-content .content .main-content01 {
@@ -89,6 +91,10 @@
   position: relative;
   box-sizing: border-box;
   margin-bottom: 48px;
+}
+
+.main-content .content .main-content01 .news .banner-img {
+  margin-bottom: 32px;
 }
 
 .main-content .content .main-content01 .news .ftimage {
