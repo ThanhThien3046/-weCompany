@@ -86,25 +86,154 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/js/home.js":
-/*!******************************!*\
-  !*** ./resources/js/home.js ***!
-  \******************************/
+/***/ "./resources/js/client/home.js":
+/*!*************************************!*\
+  !*** ./resources/js/client/home.js ***!
+  \*************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open 'C:\\xampp\\htdocs\\weCompany\\SERVER_PHP\\resources\\js\\home.js'");
+// window.$ = window.jQuery = require('jquery')
+var toggleNav = function toggleNav() {
+  var btnToggle = document.getElementById("js__open-nav");
+
+  if (!btnToggle) {
+    return;
+  } /// add class neo scroll
+
+
+  var bodies = document.getElementsByTagName('body');
+
+  if (bodies.length) {
+    var body = bodies[0];
+    body.classList.toggle('neo-scroll');
+  } /// add class open to btn
+
+
+  btnToggle.classList.toggle('open'); /// add class open to nav
+
+  var nav = document.getElementById('js__nav');
+
+  if (nav) {
+    nav.classList.toggle('open');
+  } /// show sidebar
+
+
+  var sidebar = document.getElementById('js__sidebar');
+
+  if (sidebar) {
+    sidebar.classList.toggle('open');
+  }
+};
+
+var listenToggleNav = function listenToggleNav() {
+  var btnToggle = document.getElementById("js__open-nav");
+
+  if (btnToggle) {
+    btnToggle.onclick = function (e) {
+      toggleNav();
+    };
+  }
+};
+
+var listenBtnCloseNav = function listenBtnCloseNav() {
+  var btnCloseNav = document.getElementById("js__close-nav");
+
+  if (btnCloseNav) {
+    btnCloseNav.onclick = function (e) {
+      toggleNav();
+    };
+  }
+};
+/*slideshow processing */
+
+
+var slideIndex = 0;
+
+function showSlides() {
+  var wrapper__slider = document.getElementById('js__homeslider');
+
+  if (!wrapper__slider) {
+    return false;
+  }
+
+  var slides = wrapper__slider.getElementsByClassName("homeslider__item"); /// slide exist then run 
+
+  if (slides.length) {
+    for (var i = 0; i < slides.length; i++) {
+      slides[i].classList.remove('show');
+    }
+
+    slideIndex++; /// reset slide index
+
+    if (slideIndex > slides.length) {
+      slideIndex = 1;
+    } /// show slide
+
+
+    slides[slideIndex - 1].classList.add('show'); /// auto run loop slider
+
+    setTimeout(showSlides, 5000);
+  }
+}
+
+showSlides();
+
+var formatHeightBlockHome = function formatHeightBlockHome() {
+  console.log("formatHeightBlockHome");
+
+  var __format = document.getElementById("js__format-height-article");
+
+  if (!__format) {
+    return false;
+  } /// format
+
+
+  var articles = __format.getElementsByClassName('article__default');
+
+  if (!articles.length) {
+    return;
+  }
+
+  var first__article = articles[0];
+
+  var article__rights = __format.getElementsByClassName('article__right');
+
+  if (article__rights.length) {
+    for (var index = 0; index < article__rights.length; index++) {
+      var article__right = article__rights[index];
+      article__right.style.height = 2 * first__article.offsetHeight + "px";
+    }
+  }
+
+  var article__lefts = __format.getElementsByClassName('article__left');
+
+  if (article__lefts.length) {
+    for (var _index = 0; _index < article__lefts.length; _index++) {
+      var article__left = article__lefts[_index];
+      article__left.style.height = 2 * first__article.offsetHeight + "px";
+    }
+  }
+};
+
+formatHeightBlockHome();
+window.addEventListener('resize', function () {
+  formatHeightBlockHome();
+});
+console.log("client home");
+listenToggleNav();
+listenBtnCloseNav();
 
 /***/ }),
 
 /***/ 1:
-/*!************************************!*\
-  !*** multi ./resources/js/home.js ***!
-  \************************************/
+/*!*******************************************!*\
+  !*** multi ./resources/js/client/home.js ***!
+  \*******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\weCompany\SERVER_PHP\resources\js\home.js */"./resources/js/home.js");
+module.exports = __webpack_require__(/*! /Users/hero/Code/KISS/SERVER_PHP/resources/js/client/home.js */"./resources/js/client/home.js");
 
 
 /***/ })
