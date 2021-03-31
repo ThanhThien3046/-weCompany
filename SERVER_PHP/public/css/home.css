@@ -2313,7 +2313,6 @@ option:focus {
 
 .wrapper__content {
   padding-right: 90px;
-  background-color: aqua;
 }
 
 @media (max-width: 991px) {

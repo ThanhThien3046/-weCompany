@@ -35,3 +35,7 @@ Route::get('/news', function () {
 Route::get('/styles',function(){
     return view('styles');
 })->name("STYLES");
+
+Route::get('/weHomes',function(){
+    return view('weHomes');
+})->name("WEHOMES_PAGE");
