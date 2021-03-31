@@ -57,7 +57,6 @@ Route::get('/news', function () {
     return view('news');
 })->name("NEWS_PAGE");
 
-<<<<<<< HEAD
 Route::get('/styles',function(){
     return view('styles');
 })->name("STYLES");
@@ -65,13 +64,7 @@ Route::get('/styles',function(){
 Route::get('/weHomes',function(){
     return view('weHomes');
 })->name("WEHOMES_PAGE");
-=======
-Route::get('/weHomes',function(){
-    return view('weHomes');
-})->name("STYLES");
-
 
 
 include_once("routing/admin.php");
 include_once("routing/client.php");
->>>>>>> 607514bb955b6851788d0b74126abd2bbc5d657b
