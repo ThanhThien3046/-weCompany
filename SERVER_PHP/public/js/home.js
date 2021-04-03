@@ -196,22 +196,57 @@ var formatHeightBlockHome = function formatHeightBlockHome() {
   }
 
   var first__article = articles[0];
+  var first__article_height = Math.ceil(first__article.offsetWidth);
+
+  for (var index = 0; index < articles.length; index++) {
+    articles[index].style.height = first__article_height + "px";
+
+    if (window.innerWidth > 768) {
+      /// fix clear bold
+      if (index % 3 == 2) {
+        /// check dom + 2 isset
+        if (index + 2 > 0 && index + 2 < articles.length) {
+          /// check type == 2 
+          if (articles[index + 2].classList.contains('article__right')) {
+            /// add class 
+            articles[index].classList.add('article__default-clearbold');
+          }
+        }
+      }
+
+      if (index - 5 > 0 && index - 5 < articles.length) {
+        /// check type == 2 
+        if (articles[index - 5].classList.contains('article__left')) {
+          /// add class 
+          articles[index].classList.add('article__default-clearbold');
+        }
+      }
+
+      if (index - 1 > 0 && index - 1 < articles.length) {
+        /// check type == 2 
+        if (articles[index - 1].classList.contains('article__right')) {
+          /// add class 
+          articles[index].classList.add('article__default-clearbold');
+        }
+      }
+    }
+  }
 
   var article__rights = __format.getElementsByClassName('article__right');
 
   if (article__rights.length) {
-    for (var index = 0; index < article__rights.length; index++) {
-      var article__right = article__rights[index];
-      article__right.style.height = 2 * first__article.offsetHeight + "px";
+    for (var _index = 0; _index < article__rights.length; _index++) {
+      var article__right = article__rights[_index];
+      article__right.style.height = 2 * first__article_height + "px";
     }
   }
 
   var article__lefts = __format.getElementsByClassName('article__left');
 
   if (article__lefts.length) {
-    for (var _index = 0; _index < article__lefts.length; _index++) {
-      var article__left = article__lefts[_index];
-      article__left.style.height = 2 * first__article.offsetHeight + "px";
+    for (var _index2 = 0; _index2 < article__lefts.length; _index2++) {
+      var article__left = article__lefts[_index2];
+      article__left.style.height = 2 * first__article_height + "px";
     }
   }
 };

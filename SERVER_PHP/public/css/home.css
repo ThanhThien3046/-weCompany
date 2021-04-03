@@ -2314,7 +2314,7 @@ option:focus {
 }
 
 .wrapper__page {
-  max-width: 1800px;
+  max-width: 2100px;
   margin: 0 auto;
 }
 
@@ -2376,8 +2376,9 @@ option:focus {
 .content__main {
   padding-top: 20px;
   padding-bottom: 20px;
-  padding-left: 30%;
-  padding-right: 100px;
+  padding-left: 28%;
+  padding-left: calc( 28% + 8px);
+  padding-right: 85px;
 }
 
 @media (max-width: 991px) {
@@ -2402,6 +2403,22 @@ option:focus {
   float: left;
   width: 33.333%;
   padding: 8px;
+}
+
+@media (max-width: 768px) {
+  .article {
+    width: 50%;
+  }
+}
+
+@media (max-width: 425px) {
+  .article {
+    width: 100%;
+  }
+
+  .article .article__link-title .title {
+    font-size: 12px;
+  }
 }
 
 .article:hover .article__link-title {
@@ -2431,6 +2448,12 @@ option:focus {
 
 .article__right {
   margin-top: -33.333%;
+}
+
+@media (max-width: 991px) {
+  .article__right {
+    margin-top: 0%;
+  }
 }
 
 .article__default-clearbold {

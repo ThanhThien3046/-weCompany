@@ -66,15 +66,7 @@
                 @php 
                 $index = $key + 1;
                 $clear = 'article__default ';
-                if($index % 3 == 0){
-                    if(isset($challenges[$key + 2]) && $challenges[$key + 2]['type'] == 2){
-                        $clear .= 'article__default-clearbold';
-                    }
-                }
-                if(isset($challenges[$key - 5]) && $challenges[$key - 5]['type'] == 3){
-                        
-                    $clear .= 'article__default-clearbold';
-                }
+                
                 if($challenge['type'] == 2){
                     $clear = 'article__right';
                 }

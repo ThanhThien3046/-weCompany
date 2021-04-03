@@ -37,11 +37,11 @@ Route::get('resize-compress/{size}/{type}/{quality}/{ext}/{imagePath}', 'ImageCo
 // });
 
 
-Route::get('/home', function () {
+Route::get('/', function () {
     return view('client.home');
 });
 
-Route::get('/', function () {
+Route::get('/homepage', function () {
     return view('homepage');
 })->name("HOME_PAGE");
 

@@ -92,14 +92,47 @@ let formatHeightBlockHome = () => {
     if( !articles.length ){
         return;
     }
-    let first__article = articles[0]
-    
+    let first__article        = articles[0]
+    let first__article_height = Math.ceil(first__article.offsetWidth)
+
+    for (let index = 0; index < articles.length; index++) {
+        (articles[index]).style.height = first__article_height + "px"
+
+        if(window.innerWidth > 768){
+            /// fix clear bold
+            if( index % 3 == 2 ){
+                /// check dom + 2 isset
+                if( index + 2 > 0 && index + 2 < articles.length ){
+                    /// check type == 2 
+                    if( articles[index + 2].classList.contains('article__right') ){
+                        /// add class 
+                        articles[index].classList.add('article__default-clearbold')
+                    }
+                }
+            }
+            if( index - 5 > 0 && index - 5 < articles.length ){
+                /// check type == 2 
+                if( articles[index - 5].classList.contains('article__left') ){
+                    /// add class 
+                    articles[index].classList.add('article__default-clearbold')
+                }
+            }
+            if( index - 1 > 0 && index - 1 < articles.length ){
+                /// check type == 2 
+                if( articles[index - 1].classList.contains('article__right') ){
+                    /// add class 
+                    articles[index].classList.add('article__default-clearbold')
+                }
+            }
+        }
+    }
+
     let article__rights = __format.getElementsByClassName('article__right')
     if(article__rights.length){
         
         for (let index = 0; index < article__rights.length; index++) {
             const article__right = article__rights[index];
-            article__right.style.height = 2 * first__article.offsetHeight + "px"
+            article__right.style.height = 2 * first__article_height + "px"
         }
     }
     let article__lefts = __format.getElementsByClassName('article__left')
@@ -107,12 +140,14 @@ let formatHeightBlockHome = () => {
         
         for (let index = 0; index < article__lefts.length; index++) {
             const article__left = article__lefts[index];
-            article__left.style.height = 2 * first__article.offsetHeight + "px"
+            article__left.style.height = 2 * first__article_height + "px"
         }
     }
+
 }
 formatHeightBlockHome()
 window.addEventListener('resize', function(){
+    
     formatHeightBlockHome()
 });
 
