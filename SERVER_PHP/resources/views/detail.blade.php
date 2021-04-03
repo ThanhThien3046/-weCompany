@@ -565,10 +565,6 @@
                                     <dl id="DL_303">
                                         <dt id="DT_304">
                                             <span id="SPAN_305"><span id="SPAN_306"></span></span>
-                                            <svg id="svg_307" viewBox="0 0 120 23">
-                                                <path id="path_308">
-                                                </path>
-                                            </svg>
                                         </dt>
                                         <dd id="DD_309">
                                             526
