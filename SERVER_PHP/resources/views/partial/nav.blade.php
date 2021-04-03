@@ -25,7 +25,7 @@
                 <a href="https://findmy.tokyo/">TOP</a>
             </li>
             <li class="nav__links-item">
-                <a href="https://findmy.tokyo/about">Find my Tokyo.とは？</a>
+                <a href="https://findmy.tokyo/about">Find Tokyo.とは？</a>
             </li>
             <li class="nav__links-item">
                 <a href="https://findmy.tokyo/gallery">広告ギャラリー</a>

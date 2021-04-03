@@ -23,6 +23,8 @@
     <link rel="preload" as="style" href="{{ asset('css/news.css' . Config::get('app.version'))}}">
 @endsection
 @section('stylesheets')
+	<link rel="stylesheet" href="{{ asset('css/home.css' . Config::get('app.version'))}}">
+	<link rel="stylesheet" href="{{ asset('css/animate.min.css' . Config::get('app.version'))}}">
     <link rel="stylesheet" href="{{ asset('css/news.css' . Config::get('app.version'))}}">
 @endsection
 @section('javascripts')
@@ -30,6 +32,11 @@
     <script type="text/javascript" src="{{ asset('js/search.js' . Config::get('app.version')) }}"></script>
 @endsection
 @section('content')
+
+<div class="wrapper__sidebar animated fadeIn">
+	@include('partial.sidebar')
+	@include('partial.nav')
+</div>
 
 <div id="DIV_40">
 	<div id="DIV_41">
@@ -42,20 +49,6 @@
 			</h2>
 		</header>
 		<div id="DIV_45">
-			<div id="DIV_46">
-				<ul id="UL_47">
-					<li id="LI_48">
-					</li>
-					<li id="LI_49">
-					</li>
-					<li id="LI_50">
-					</li>
-					<li id="LI_51">
-					</li>
-					<li id="LI_52">
-					</li>
-				</ul>
-			</div>
 			<nav id="NAV_53">
 				<div id="DIV_54">
 					<p id="P_55">
@@ -159,120 +152,7 @@
 					</dl>
 				</div>
 			</div>
-			<div id="DIV_115">
-				<div id="DIV_116">
-					<ul id="UL_117">
-						<li id="LI_118">
-							<a href="https://findmy.tokyo/" id="A_119">
-                            <span id="SPAN_120"><span id="SPAN_121">
-                                <svg id="svg_122" viewBox="0 0 50 56">
-                                    <title id="title_123">
-                                        ホーム
-                                    </title>
-                                    <path id="path_124">
-                                    </path>
-                                </svg>
-                            </span></span></a>
 
-						</li>
-						<li id="LI_125">
-							<a href="https://findmy.tokyo/gallery" id="A_126"><span id="SPAN_127"><span id="SPAN_128"></span></span></a>
-							<svg id="svg_129">
-								<title id="title_130">
-									広告ギャラリー
-								</title>
-								<path id="path_131">
-								</path>
-								<path id="path_132">
-								</path>
-								<path id="path_133">
-								</path>
-							</svg>
-						</li>
-						<li id="LI_134">
-							<a href="https://findmy.tokyo/ranking" id="A_135"><span id="SPAN_136"><span id="SPAN_137"></span></span></a>
-							<svg id="svg_138" viewBox="0 0 50 55">
-								<title id="title_139">
-									ランキング
-								</title>
-								<path id="path_140">
-								</path>
-								<path id="path_141">
-								</path>
-								<path id="path_142">
-								</path>
-							</svg>
-						</li>
-						<li id="LI_143">
-							<a href="https://findmy.tokyo/search" id="A_144"><span id="SPAN_145"><span id="SPAN_146"></span></span></a>
-							<svg id="svg_147">
-								<title id="title_148">
-									チャレンジ検索
-								</title>
-								<path id="path_149">
-								</path>
-								<path id="path_150">
-								</path>
-								<path id="path_151">
-								</path>
-								<path id="path_152">
-								</path>
-							</svg>
-						</li>
-						<li id="LI_153">
-							<a href="https://findmy.tokyo/about" id="A_154"><span id="SPAN_155"><span id="SPAN_156"></span></span></a>
-							<svg id="svg_157" viewBox="0 0 50 55">
-								<title id="title_158">
-									FMTとは?
-								</title>
-								<path id="path_159">
-								</path>
-								<path id="path_160">
-								</path>
-								<path id="path_161">
-								</path>
-							</svg>
-						</li>
-					</ul>
-					<ul id="UL_162">
-						<li id="LI_163">
-							<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Ffindmy.tokyo%2F" rel="noopener" id="A_164"><span id="SPAN_165"><span id="SPAN_166"></span></span></a>
-							<svg id="svg_167">
-								<title id="title_168">
-									Facebook
-								</title>
-								<path id="path_169">
-								</path>
-							</svg>
-						</li>
-						<li id="LI_170">
-							<a href="https://twitter.com/share?text=%E3%81%82%E3%81%AA%E3%81%9F%E3%82%82%E3%83%81%E3%83%A3%E3%83%AC%E3%83%B3%E3%82%B8%EF%BC%81Find%20my%20Tokyo.%20%7C%20%E6%9D%B1%E4%BA%AC%E3%83%A1%E3%83%88%E3%83%AD&amp;url=https://findmy.tokyo/&amp;hashtags=findmytokyo" rel="noopener" id="A_171"><span id="SPAN_172"><span id="SPAN_173"></span></span></a>
-							<svg id="svg_174">
-								<title id="title_175">
-									Twitter
-								</title>
-								<path id="path_176">
-								</path>
-							</svg>
-						</li>
-					</ul><a href="https://www.tokyometro.jp/" rel="noopener" id="A_177"><span id="SPAN_178"><span id="SPAN_179"></span></span></a>
-					<svg id="svg_180">
-						<title id="title_181">
-							東京メトロ
-						</title>
-						<path id="path_182">
-						</path>
-						<path id="path_183">
-						</path>
-						<path id="path_184">
-						</path>
-						<path id="path_185">
-						</path>
-						<path id="path_186">
-						</path>
-					</svg>
-				</div>
-			</div>
 			<div id="DIV_187">
 				<div id="DIV_188">
 				</div>
@@ -929,7 +809,7 @@
 				</div>
 			</div>
 		</div>
-		<footer id="FOOTER_586">
+		<!--<footer id="FOOTER_586">
 			<div id="DIV_587">
 				<span id="SPAN_588"><span id="SPAN_589"></span></span>
 				<svg id="svg_590">
@@ -939,6 +819,12 @@
 			</div>
 			<p id="P_592">
 				<small id="SMALL_593">Copyright© Tokyo Metro Co., Ltd All rights reserved.</small>
+			</p>
+		</footer>-->
+		<footer class="fpic">
+			<a href="/" class="ftimage">「押上〈スカイツリー前〉」のチャレンジをみる </a>
+			<p class="footer">
+				<small>Copyright© WeCompany Co., Ltd All rights reserved.</small>
 			</p>
 		</footer>
 	</div>

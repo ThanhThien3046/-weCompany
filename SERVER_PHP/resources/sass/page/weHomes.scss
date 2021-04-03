@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
 }
+
 .reImg_detail{
     position: relative;
     box-sizing: border-box;
@@ -10,6 +11,54 @@
     height: 100%;
     border-radius: 10px;
     overflow: hidden;
+    transform: translate3d(0px,0px,0px);
+
+    .h3_text{
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        z-index: 1000;
+        width: 100%;
+        height: 100%;
+        background: rgb(249, 249, 249);
+        will-change: opacity;
+        //opacity: 0;
+    }
+
+    .numblock{
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        text-align: center;
+        z-index: 100;
+        .dl_numblock{
+            position: relative;
+            box-sizing: border-box;
+            .sp1dl_numblock{
+                width: 100%;
+                position: relative;
+                box-sizing: border-box;
+                display: block;
+            }
+            .num{
+                position: relative;
+                box-sizing: border-box;
+                width: 40px;
+                height: 40px;
+                background: rgb(27, 170, 209);
+                border-radius: 8px;
+                font-family: Lato, sans-serif;
+                font-weight: 700;
+                display: flex;
+                -webkit-box-pack: center;
+                justify-content: center;
+                -webkit-box-align: center;
+                align-items: center;
+                line-height: 1;
+                color: rgb(255, 255, 255);
+            }
+        }
+    }
 }
 .wrapper{
     padding-left: 0;
@@ -30,6 +79,12 @@
     display: flex;
     flex-wrap: wrap;
     height: 266px;
+    margin-bottom: 50px;
+    margin-top: 20px;
+    transition: transform 0.7s;
+    overflow:hidden;
+    width: 32%;
+    padding-left: 10px;
     .reImg_detail{
         position: relative;
         box-sizing: border-box;
@@ -41,13 +96,40 @@
 
     }
 }
+h3{
+    font-feature-settings: "palt";
+}
 .__reImg{
-    position: absolute;
+    position:relative;
     top: 0px;
     left: 0px;
     width: 100%;
     height: 100%;
-    transform: scale(1);
+    background: center center / cover no-repeat rgb(249, 249, 249);
+    transition: transform 0.7s;
+
+}
+
+.reImg:hover .__reImg{
+    transform: scale(1.05);
+}
+.blockdiv{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    background: rgb(249, 249, 249);
+    will-change: opacity;
+    opacity: 0;
+}
+.__blockdiv{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+
 }
 .main-content{
     position: relative;
@@ -90,8 +172,18 @@
                     color: rgb(255, 255, 255);
                     line-height: 1;
                     text-align: center;
+                    width: 400px;
+                    margin: 0 auto;
                 }
             }
         }
+    }
+}
+.fpic{
+    .footer{
+        position: relative;
+        box-sizing: border-box;
+        text-align: center;
+        line-height: 1;
     }
 }

@@ -331,15 +331,15 @@
 					<div id="js__slider-homepage" class="slider__wrapper">
                         <!--slide contents-->
 						<div class="slider__item"> 
-                            <img src="{{ asset('images/pcside01_2004_02.jpg') }}">                           
+                            <img src="{{ asset('images/pcside01_2004_02.jpg') }}" style="height: 200%">                           
 						</div>
 						<div class="slider__item">
-                            <img src="{{ asset('images/pcside02_2001.jpg') }}">  
+                            <img src="{{ asset('images/pcside02_2001.jpg') }}" style="height: 200%">  
 						</div>
 						<div class="slider__item">
-                            <img src="{{ asset('images/pcside04_2001.jpg') }}"> 
+                            <img src="{{ asset('images/pcside04_2001.jpg') }}" style="height: 200%"> 
 						</div>
-						<div class="slider__item slider__item-video">
+						<div class="slider__item slider__item-video" style="height: 100%">
 							<video autoplay muted loop="true">
 								{{-- <source src="video.webm" type="video/webm" /> --}}
 								<source src="{{ asset('/video/video-homepage.mp4') }}" type="video/mp4" />
@@ -351,7 +351,7 @@
 
 					<p id="P_307">
 						<span id="SPAN_308"><span id="SPAN_309">
-							<svg id="svg_310" viewBox="0 0 420 236">
+							<!--<svg id="svg_310" viewBox="0 0 420 236">
 								<title id="title_311">
 									We Company!
 								</title>
@@ -378,7 +378,8 @@
 								</path>
 								<path id="path_322">
 								</path>
-							</svg>
+							</svg>-->
+							<span>We Company</span>
 						</span></span>
 
 					</p>
@@ -428,10 +429,7 @@
                                     <dl id="DL_347">
                                         <dt id="DT_348">
                                             <span id="SPAN_349"><span id="SPAN_350"></span></span>
-                                            <svg id="svg_351" viewBox="0 0 120 23">
-                                                <path id="path_352">
-                                                </path>
-                                            </svg>
+
                                         </dt>
                                         <dd id="DD_353">
                                             59
@@ -467,10 +465,7 @@
                                     <dl id="DL_367">
                                         <dt id="DT_368">
                                             <span id="SPAN_369"><span id="SPAN_370"></span></span>
-                                            <svg id="svg_371" viewBox="0 0 120 23">
-                                                <path id="path_372">
-                                                </path>
-                                            </svg>
+
                                         </dt>
                                         <dd id="DD_373">
                                             05
@@ -494,10 +489,6 @@
                                     <dl id="DL_381">
                                         <dt id="DT_382">
                                             <span id="SPAN_383"><span id="SPAN_384"></span></span>
-                                            <svg id="svg_385" viewBox="0 0 120 23">
-                                                <path id="path_386">
-                                                </path>
-                                            </svg>
                                         </dt>
                                         <dd id="DD_387">
                                             32
@@ -521,10 +512,6 @@
                                     <dl id="DL_395">
                                         <dt id="DT_396">
                                             <span id="SPAN_397"><span id="SPAN_398"></span></span>
-                                            <svg id="svg_399" viewBox="0 0 120 23">
-                                                <path id="path_400">
-                                                </path>
-                                            </svg>
                                         </dt>
                                         <dd id="DD_401">
                                             160
@@ -548,10 +535,6 @@
                                     <dl id="DL_409">
                                         <dt id="DT_410">
                                             <span id="SPAN_411"><span id="SPAN_412">
-                                            <svg id="svg_413" viewBox="0 0 120 23">
-                                                <path id="path_414">
-                                                </path>
-                                            </svg>
 											</span></span>
                                         </dt>
                                         <dd id="DD_415">
@@ -591,10 +574,6 @@
                                     <dl id="DL_430">
                                         <dt id="DT_431">
                                             <span id="SPAN_432"><span id="SPAN_433"></span></span>
-                                            <svg id="svg_434" viewBox="0 0 120 23">
-                                                <path id="path_435">
-                                                </path>
-                                            </svg>
                                         </dt>
                                         <dd id="DD_436">
                                             581
@@ -618,10 +597,6 @@
                                     <dl id="DL_444">
                                         <dt id="DT_445">
                                             <span id="SPAN_446"><span id="SPAN_447"></span></span>
-                                            <svg id="svg_448" viewBox="0 0 120 23">
-                                                <path id="path_449">
-                                                </path>
-                                            </svg>
                                         </dt>
                                         <dd id="DD_450">
                                             584
