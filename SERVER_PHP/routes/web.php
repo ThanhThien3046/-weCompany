@@ -39,11 +39,11 @@ Route::get('resize-compress/{size}/{type}/{quality}/{ext}/{imagePath}', 'ImageCo
 
 Route::get('/', function () {
     return view('client.home');
-});
+})->name("HOME_PAGE");
 
 Route::get('/homepage', function () {
     return view('homepage');
-})->name("HOME_PAGE");
+});
 
 Route::get('/search', function () {
     return view('search');
@@ -62,7 +62,7 @@ Route::get('/styles',function(){
 })->name("STYLES");
 
 Route::get('/weHomes',function(){
-    return view('weHomes');
+    return view('client.weHomes');
 })->name("WEHOMES_PAGE");
 
 

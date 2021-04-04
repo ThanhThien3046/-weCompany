@@ -1,7 +1,8 @@
-*{
-    padding: 0;
-    margin: 0;
-}
+@import "../_variable";
+@import "../_mixin";
+@import "../_reboot";
+
+
 .reImg_detail{
     position: relative;
     box-sizing: border-box;
@@ -13,11 +14,9 @@
 }
 .wrapper{
     padding-left: 0;
-    padding-right: 80px;
+    // padding-right: 80px;
 }
-.relation-img-text{
-    text-align: center;
-}
+
 .relation-img-list{
     position: relative;
     box-sizing: border-box;
@@ -54,27 +53,57 @@
     box-sizing: border-box;
     width: 100%;
     will-change: opacity;
+    padding: 0 15px;
+
+
     .content{
         position: relative;
         box-sizing: border-box;
         opacity: 1;
         transform: translateY(0px);
         transition: opacity 0.15s;
-        width: 800px;
+        max-width: 800px;
         margin: 0 auto;
+
         .header_content{
             position: relative;
             box-sizing: border-box;
             text-align: center;
+            padding-top: 20px;
+            padding-bottom: 15px;
+
+            @include ScreenMax(SM){
+                
+                &--title{
+                    font-size: 16px;
+                }
+                &--title-des{
+                    font-size: 12px;
+                }
+            }
         }
-        .main-content01{
-            position: relative;
-            box-sizing: border-box;
-            margin-bottom: 48px;
-            .news{
+        .wechild{
+            &__wrapper{
                 position: relative;
                 box-sizing: border-box;
                 margin-bottom: 48px;
+            }
+
+            &__news{
+                position: relative;
+                box-sizing: border-box;
+                margin-bottom: 48px;
+
+                &-banner{
+                    padding: 15px 0 35px;
+                }
+                &-des{
+                    padding-bottom: 10px;
+                }
+                &-detail{
+                    padding-bottom: 40px;
+                }
+    
                 .ftimage{
                     position: relative;
                     display: block;
@@ -86,6 +115,12 @@
                     line-height: 1;
                     text-align: center;
                 }
+            }
+        }
+        .relation-img{
+            &-text{
+                text-align: center;
+                padding-bottom: 10px;
             }
         }
     }

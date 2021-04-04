@@ -56,6 +56,20 @@ function showSlides(){
 
         return false
     }
+    /// check if dom mobile remove video
+    if(window.innerWidth < 991){
+
+        let lstslide = wrapper__slider.getElementsByClassName("homeslider__item")
+        /// is mobile
+        for(let pos = 0; pos < lstslide.length; pos++){
+
+            if(lstslide[pos].classList.contains("homeslider__item-video")){
+                /// remove
+                
+                lstslide[pos].remove()
+            }
+        }
+    }
     
     let slides = wrapper__slider.getElementsByClassName("homeslider__item")
     /// slide exist then run 
@@ -125,6 +139,7 @@ let formatHeightBlockHome = () => {
                 }
             }
         }
+        
     }
 
     let article__rights = __format.getElementsByClassName('article__right')
@@ -155,3 +170,19 @@ window.addEventListener('resize', function(){
 console.log("client home")
 listenToggleNav()
 listenBtnCloseNav()
+
+$(document).ready(function () {
+
+    //// load slider
+    let sliderwrapper = document.getElementById("js__homeslider")
+    
+    if(sliderwrapper && window.innerWidth < 991){
+        let slideitems = sliderwrapper.getElementsByClassName("homeslider__item")
+        for (let pos = 0; pos < slideitems.length; pos++) {
+            
+            let src = slideitems[pos].getAttribute('data-src-mobile')
+            slideitems[pos].style.backgroundImage = "url('" + src + "')"
+        }
+    }
+})
+

@@ -7,6 +7,9 @@
             <li class="sidebar__toggle-item item"></li>
             <li class="sidebar__toggle-item item"></li>
         </ul>
+        <a href="{{ Route("HOME_PAGE") }}" class="link__homepage">
+            {{ Config::get('app.name') }}
+        </a>
     </div>
     <ul class="sidebar__nav">
         <li class="sidebar__nav-item">

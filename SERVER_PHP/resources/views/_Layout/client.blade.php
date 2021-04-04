@@ -12,7 +12,8 @@
     @yield('meta-seo')
 
     <script async='async' defer='defer' src='{{ asset('js/library/lazysizes.min.js' . Config::get('app.version')) }}'></script>
-    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Train+One&display=swap" rel="stylesheet">
     <link rel="preload" as="style" href="{{ asset('css/awesome.min.css' . Config::get('app.version'))}}">
     @yield('preload')
     

@@ -1711,10 +1711,10 @@ option:focus {
   position: relative;
   box-sizing: border-box;
   height: 100%;
-  padding: 10px;
+  padding: 10px 15px;
   margin: 0;
-  width: 50px;
-  display: block;
+  width: 60px;
+  display: inline-block;
   margin: 0 auto;
   text-align: center;
 }
@@ -1725,6 +1725,31 @@ option:focus {
   cursor: pointer;
   z-index: 2000;
   padding: 11px 8px;
+  text-align: left;
+  min-height: 50px;
+  box-shadow: 0 3px 0 rgba(102, 102, 102, 0.1);
+}
+
+@media (max-width: 991px) {
+  .sidebar__wrapper-toggle {
+    background: white;
+    border-bottom: 1px solid #dadada;
+    transition: all 0.15s cubic-bezier(0.39, 0.575, 0.565, 1) 0s;
+  }
+
+  .sidebar__wrapper-toggle:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+    overflow: hidden;
+  }
+
+  .sidebar__wrapper-toggle .sidebar__toggle-menu {
+    float: left;
+  }
 }
 
 .sidebar__wrapper-toggle:hover .item {
@@ -1740,6 +1765,23 @@ option:focus {
 .sidebar__wrapper-toggle:hover .item:nth-child(3) {
   -webkit-animation-delay: 0.3s;
           animation-delay: 0.3s;
+}
+
+.sidebar__wrapper-toggle .link__homepage {
+  display: none;
+  height: 100%;
+  padding: 5px 10px 20px;
+  text-transform: capitalize;
+  font-family: "Train One", cursive;
+  font-size: 18px;
+}
+
+@media (max-width: 991px) {
+  .sidebar__wrapper-toggle .link__homepage {
+    display: inline-block;
+    color: #000;
+    float: left;
+  }
 }
 
 .sidebar__toggle-item {
@@ -1906,7 +1948,7 @@ option:focus {
 
   .sidebar__wrapper-toggle {
     padding: 5px;
-    width: 70px;
+    width: 100%;
     height: 100%;
   }
 
@@ -2313,6 +2355,10 @@ option:focus {
   }
 }
 
+.footer {
+  text-align: center;
+}
+
 .wrapper__page {
   max-width: 2100px;
   margin: 0 auto;
@@ -2321,6 +2367,7 @@ option:focus {
 @media (max-width: 991px) {
   .wrapper__content {
     padding-right: 0px;
+    padding-top: 50px;
   }
 }
 
@@ -2336,7 +2383,13 @@ option:focus {
 
 @media (max-width: 991px) {
   .homeslider {
-    display: none;
+    overflow: hidden;
+    position: unset;
+    top: unset;
+    left: unset;
+    width: 100%;
+    max-height: 300px;
+    margin: 0px;
   }
 }
 
@@ -2374,7 +2427,7 @@ option:focus {
 }
 
 .content__main {
-  padding-top: 20px;
+  padding-top: 0px;
   padding-bottom: 20px;
   padding-left: 28%;
   padding-left: calc( 28% + 8px);
@@ -2450,7 +2503,7 @@ option:focus {
   margin-top: -33.333%;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 768px) {
   .article__right {
     margin-top: 0%;
   }

@@ -155,6 +155,18 @@ function showSlides() {
 
   if (!wrapper__slider) {
     return false;
+  } /// check if dom mobile remove video
+
+
+  if (window.innerWidth < 991) {
+    var lstslide = wrapper__slider.getElementsByClassName("homeslider__item"); /// is mobile
+
+    for (var pos = 0; pos < lstslide.length; pos++) {
+      if (lstslide[pos].classList.contains("homeslider__item-video")) {
+        /// remove
+        lstslide[pos].remove();
+      }
+    }
   }
 
   var slides = wrapper__slider.getElementsByClassName("homeslider__item"); /// slide exist then run 
@@ -258,6 +270,19 @@ window.addEventListener('resize', function () {
 console.log("client home");
 listenToggleNav();
 listenBtnCloseNav();
+$(document).ready(function () {
+  //// load slider
+  var sliderwrapper = document.getElementById("js__homeslider");
+
+  if (sliderwrapper && window.innerWidth < 991) {
+    var slideitems = sliderwrapper.getElementsByClassName("homeslider__item");
+
+    for (var pos = 0; pos < slideitems.length; pos++) {
+      var src = slideitems[pos].getAttribute('data-src-mobile');
+      slideitems[pos].style.backgroundImage = "url('" + src + "')";
+    }
+  }
+});
 
 /***/ }),
 
