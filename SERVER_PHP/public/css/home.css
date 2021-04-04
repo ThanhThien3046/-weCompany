@@ -1726,8 +1726,6 @@ option:focus {
   z-index: 2000;
   padding: 11px 8px;
   text-align: left;
-  min-height: 50px;
-  box-shadow: 0 3px 0 rgba(102, 102, 102, 0.1);
 }
 
 @media (max-width: 991px) {
@@ -1735,6 +1733,8 @@ option:focus {
     background: white;
     border-bottom: 1px solid #dadada;
     transition: all 0.15s cubic-bezier(0.39, 0.575, 0.565, 1) 0s;
+    min-height: 50px;
+    box-shadow: 0 3px 0 rgba(102, 102, 102, 0.1);
   }
 
   .sidebar__wrapper-toggle:after {
