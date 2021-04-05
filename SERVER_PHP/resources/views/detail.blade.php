@@ -37,28 +37,41 @@
     @include('partial.sidebar')
     @include('partial.nav')
 </div>
+<div class="wrapper__content">
+    <div class="wrapper" >
+        <div class="main">
+            <div class="main-content">
+                <div class="social">
+                    <a href="{{ Route('HOME_PAGE') }}" target="_blank" class="social__fb">
+                        <i class="fab fa-facebook-square"></i>
+                        <span class="share-text">Share</span>
+                    </a>
 
-<div class="wrapper">
-    <section class="main">
-        <div class="main-content">
-            <div class="main-content-socialbtn">
-                <ul class="list-menu">
-                    <li class="facebook">
-                        <a href="" target="_blank" class="linkfb">
-                            <span class="fb">
-                                <span class="fb-btncontent">
-                                    Share
-                                </span>
-                            </span>
-                        </a>
-                    </li>
-                </ul>
+                    <a href="{{ Route('HOME_PAGE') }}" target="_blank" class="social__wt">
+                        <i class="fab fa-twitter-square"></i>
+                        <span class="share-text">ツイート</span>
+                    </a>
+                    
+                    <span class="divider"></span>
+
+                    <a href="{{ Route('HOME_PAGE') }}" target="_blank" class="social__prt">
+                        <i class="fal fa-print"></i>
+                        <span class="share-text">印刷する</span>
+                    </a>
+
+                </div>
+                <div class="main-content-imgcont">
+                    <div class="head">
+                        <div class="number">232</div>
+                        <div class="head-title">sdgsdgsdgs</div>
+                    </div>
+                    <img src="sfsd" alt="sdfsdfds">
+
+                </div>
             </div>
-            <header class="headertitle"></header>
-            <div class="main-content-imgcont"></div>
-            <footer class="main-content-footer"></footer>
         </div>
-    </section>
+    </div>
 </div>
 
+@include('partial.footer')
 @endsection
