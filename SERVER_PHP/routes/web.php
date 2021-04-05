@@ -41,9 +41,9 @@ Route::get('/', function () {
     return view('client.home');
 })->name("HOME_PAGE");
 
-Route::get('/homepage', function () {
-    return view('homepage');
-});
+// Route::get('/homepage', function () {
+//     return view('homepage');
+// });
 
 Route::get('/search', function () {
     return view('search');
