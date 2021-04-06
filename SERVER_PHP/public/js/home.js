@@ -144,6 +144,14 @@ var listenBtnCloseNav = function listenBtnCloseNav() {
       toggleNav();
     };
   }
+
+  var btnCloseNavi = document.getElementById("js__close-navi");
+
+  if (btnCloseNavi) {
+    btnCloseNavi.onclick = function (e) {
+      toggleNav();
+    };
+  }
 };
 /*slideshow processing */
 
@@ -293,7 +301,7 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\weCompany\SERVER_PHP\resources\js\client\home.js */"./resources/js/client/home.js");
+module.exports = __webpack_require__(/*! /Users/hero/Code/KISS/SERVER_PHP/resources/js/client/home.js */"./resources/js/client/home.js");
 
 
 /***/ })

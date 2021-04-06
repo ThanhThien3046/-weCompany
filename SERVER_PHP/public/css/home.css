@@ -2205,6 +2205,13 @@ option:focus {
   margin-right: 15px;
 }
 
+.nav__icon-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 25px;
+}
+
 .nav__metro-bottom {
   display: none;
 }
@@ -2436,6 +2443,13 @@ option:focus {
 .content__main.homepage {
   padding-left: 28%;
   padding-left: calc( 28% + 8px);
+}
+
+@media (max-width: 991px) {
+  .content__main.homepage {
+    padding-right: 0;
+    padding-left: 0;
+  }
 }
 
 @media (max-width: 991px) {

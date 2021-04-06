@@ -18,7 +18,7 @@
             </a>
         </li>
         <li class="sidebar__nav-item">
-            <a class="sidebar__nav-link" href="{{ Route('HOME_PAGE') }}">
+            <a class="sidebar__nav-link" href="{{ Route('WEHOMES_PAGE') }}">
                 @include('svg.gallery')
             </a>
         </li>

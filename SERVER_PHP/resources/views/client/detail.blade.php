@@ -40,8 +40,33 @@
 </div>
 <div class="wrapper__content">
 
-    <div class="content__main bg-blue">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Error est, cum laboriosam repudiandae deleniti tempora quo nihil repellendus maxime non. Dolore, sint illum autem quidem veniam nostrum voluptates libero voluptatem?
+    <div class="content__main">
+        <div class="container__wrapper">
+
+            <div class="wrapper__head">
+                <a href="{{ Route("HOME_PAGE") }}" class="link__homepage-head">
+                    {{ Config::get('app.name') }}
+                </a>
+                <div class="social">
+                    <a href="{{ Route('HOME_PAGE') }}" target="_blank" class="social__fb">
+                        <i class="fab fa-facebook-square"></i>
+                        <span class="share-text">Share</span>
+                    </a>
+                    <a href="{{ Route('HOME_PAGE') }}" target="_blank" class="social__wt">
+                        <i class="fab fa-twitter-square"></i>
+                        <span class="share-text">ツイート</span>
+                    </a>
+                    <span class="divider"></span>
+                    <a href="{{ Route('HOME_PAGE') }}" target="_blank" class="social__prt">
+                        <i class="fal fa-print"></i>
+                        <span class="share-text">印刷する</span>
+                    </a>
+                </div>
+            </div>
+            <div class="content__detail">
+
+            </div>
+        </div>
     </div>
 </div>
 @include('partial.footer')

@@ -80,8 +80,8 @@
     &.homepage{
         padding-left: 28%;
         padding-left: calc( 28% + 8px);
+        @include ScreenMax(MD){  padding-right: 0; padding-left: 0; }
     }
-
     @include ScreenMax(MD){  padding-right: 0; padding-left: 0; }
 }
 

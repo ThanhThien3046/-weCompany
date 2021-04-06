@@ -1,4 +1,5 @@
 <div id="js__nav" class="nav">
+    <i class="fas fa-window-close nav__icon-close" id="js__close-navi"></i>
     <div class="nav__wrapper">
         <ul class="nav__top">
             <li class="nav__top-item">

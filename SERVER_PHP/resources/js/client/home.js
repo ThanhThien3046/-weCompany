@@ -43,6 +43,13 @@ let listenBtnCloseNav = () => {
             toggleNav()
         }
     }
+    let btnCloseNavi = document.getElementById("js__close-navi")
+    if( btnCloseNavi ){
+
+        btnCloseNavi.onclick = function(e){
+            toggleNav()
+        }
+    }
 }
 
 

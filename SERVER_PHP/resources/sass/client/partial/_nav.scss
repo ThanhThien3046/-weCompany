@@ -229,6 +229,12 @@
             margin-right: 15px;
         }
     }
+    &__icon-close{
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        font-size: 25px;
+    }
     &__metro-bottom{
         display: none;
     }
