@@ -9,10 +9,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\ADMIN_VALIDATE_SAVE_POST;
 use App\Helpers\Catalogue;
-use App\Repositories\Post\PostEloquentRepository;
-use App\Repositories\PostTagActive\PostTagActiveEloquentRepository;
-use App\Repositories\Rating\RatingEloquentRepository;
-use App\Repositories\Topic\TopicEloquentRepository;
+use App\Models\Post;
+use App\Models\PostTagActive;
+use App\Models\Topic;
 use Exception;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
@@ -28,28 +27,22 @@ class PostController extends Controller
      */
     public function index( $id = 0 ){
 
-        $rates   = (new RatingEloquentRepository())->getAll();
         /// check edit or insert
         if( !$id ){
             /// thêm mới
-            $post    = (new PostEloquentRepository())->getInstanceEmpty();
+            $post    = new Post();
             $tags_id = 0;
         }else{
             //// edit 
-            $post    = (new PostEloquentRepository())
-            ->getPostById($id, [
-                DB::raw("ldjson->>'showto' as showto"),
-                DB::raw("ldjson->>'howto' as howto"),
-                '*'
-            ]);
-            $tags_id = (new PostTagActiveEloquentRepository())->getByPost($id);
+            $post    = (new Post())->find($id);
+            $tags_id = (new PostTagActive())->where('post_id', $id)->pluck('tag_id');
             if( !$post ){
                 //// redirect 404
                 return abort(404);
             }
         }
         
-        return view('admin.post.save', compact([ 'rates', 'tags_id', 'post' ]));
+        return view('admin.post.save', compact([ 'tags_id', 'post' ]));
     }
 
 
@@ -157,17 +150,17 @@ class PostController extends Controller
     public function load(Request $request){
         $limit      = Config::get('constant.LIMIT');
         $user_id    = Auth::user()->id;
-        $postModel  = new PostEloquentRepository();
-        $topicModel = new TopicEloquentRepository();
+        $postModel  = new Post();
+        $topicModel = new Topic();
 
 
         $user_id    = Auth::user()->id;
-        $conditionTopic = array();
+
         $condition = [
             'orderby' => [ 'field' => 'id', 'type' => 'DESC' ]
         ];
 
-        $topics     = $topicModel->getTopicByCondition($conditionTopic)->get();
+        $topics     = $topicModel->getTopicByCondition([])->get();
 
         $query      = $request->all('topic', 'post');
 

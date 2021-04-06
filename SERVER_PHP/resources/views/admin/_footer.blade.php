@@ -12,7 +12,7 @@
     <div class="powered">
         <span>Powered by</span>
         <a class="powered__link" href="{{ env('SITE_FB') }}" target="_blank">
-            {{ env('FOUNDER') }}
+            {{ env('APP_NAME') }}
         </a>
     </div>
 </footer>

@@ -8,10 +8,10 @@
 
 @section('content_admin')
 <div class="page__dashboard">
-    dashboard
+    dashboard! hello admin
 </div>
 @endsection
 
 
-@section('page_title', 'Trang dashboard nè')
+@section('page_title', 'Page dashboard')
 

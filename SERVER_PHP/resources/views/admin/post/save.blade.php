@@ -18,16 +18,12 @@ $howto  = $post->howto ? $post->howto : null;
     <script type="text/javascript" src="{{ asset('ckeditor/ckeditor.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/ckfinder/ckfinder.js') }}"></script>
     <script>CKFinder.config( { connectorPath: @json(route('ckfinder_connector')) } );</script>
+    <script type="text/javascript" src="{{ asset('js/library/wanakana.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/admin/validate.post.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/admin/app.min.js') }}"></script>
-    @if ($howto)
-    <script src="{{ asset('js/library/jsoneditor.min.js') }}"></script>
-    <script>
-        const HOW_TO_DATA = {!! $howto !!};
-    </script>
-    @endif
+    
 @endsection
-@section('page_title', $post->id ? 'chỉnh sửa Post' : 'thêm mới Post')
+@section('page_title', $post->id ? 'Edit Post' : 'Insert Post')
 
 @section('content_admin')
 <div class="page__post admin-main-content">
@@ -114,28 +110,6 @@ $howto  = $post->howto ? $post->howto : null;
                     <textarea class="height-80px" name="description" cols="30" rows="10">{{ old('description', $post->description) }}</textarea>
                 </div>
             </div>
-            <div class="row block-content">
-                <div class="col-12 bg-color-white shadows-1 px-3 py-3">
-                    <h2 class="title">meta css</h2>
-                    <textarea class="min-height-80px" name="stylesheet" cols="30" rows="10">{{ old('stylesheet', $post->stylesheet) }}</textarea>
-                </div>
-            </div>
-            <div class="row block-content">
-                <div class="col-12 bg-color-white shadows-1 px-3 py-3">
-                    <h2 class="title">meta javascript</h2>
-                    <textarea class="min-height-80px" name="javascript" cols="30" rows="10">{{ old('javascript', $post->javascript) }}</textarea>
-                </div>
-            </div>
-            <div class="row block-content">
-                <div class="col-12 bg-color-white shadows-1 px-3 py-3">
-                    <h2 class="title">render howto json</h2>
-                    <select name="showto" class="js__single-select">
-                        <option @if($showto == Config::get('constant.LDJSON.HIDE')) selected @endif value="{{Config::get('constant.LDJSON.HIDE')}}">không tạo howto json trong bài viết</option>
-                        <option @if($showto == Config::get('constant.LDJSON.SHOW')) selected @endif value="{{Config::get('constant.LDJSON.SHOW')}}">tạo howto json trong bài viết</option>
-                    </select>
-                    <textarea id="js__json-how-to" class="min-height-80px mt-2" name="howto" cols="30" >{{ old('howto', $howto ) }}</textarea>
-                </div>
-            </div>
         </div>
         <div class="col-md-4">
             <div class="row block-content">
@@ -181,7 +155,7 @@ $howto  = $post->howto ? $post->howto : null;
                 <div class="col-12 bg-color-white shadows-1 px-3 py-3">
                     <section class="pb-4">
                         <h2 class="title text-center">chọn topic</h2>
-                        @if($TOPICS)
+                        {{-- @if($TOPICS)
                         <select name="topic_id" class="js__single-select">
                             <option value="">chọn topic</option>
                             @foreach($TOPICS as $topic)
@@ -189,7 +163,7 @@ $howto  = $post->howto ? $post->howto : null;
                             value="{{ $topic->id }}">{{ $topic->title }}</option>
                             @endforeach
                         </select>
-                        @endif
+                        @endif --}}
                     </section>
                 </div>
             </div>
@@ -197,45 +171,18 @@ $howto  = $post->howto ? $post->howto : null;
                 <div class="col-12 bg-color-white shadows-1 px-3 py-3">
                     <section class="pb-4">
                         <h2 class="title text-center">chọn tag</h2>
-                        @if($TAGS)
+                        {{-- @if($TAGS)
                         <select name="tag_id[]" class="js__multi-select" multiple="multiple">
                             @foreach($TAGS as $tag)
                             <option @if(collect(old('tag_id', $tags_id ?? null ))->contains($tag->id)) {{ 'selected' }} @endif
                             value="{{ $tag->id }}">{{ $tag->title }}</option>
                             @endforeach
                         </select>
-                        @endif
+                        @endif --}}
                     </section>
                 </div>
             </div>
-            <div class="row block-content">
-                <div class="col-12 bg-color-white shadows-1 px-3 py-3">
-                    <section class="pb-4">
-                        <h2 class="title text-center">chọn rating</h2>
-                        
-                        <div class="mb-2">
-                            <select name="rating_show" class="js__single-select mb-2">
-                                <option value="0">ẩn</option>
-                                <option @if(old('rating_show', $post->rating_show) == 1) {{ 'selected' }} @endif
-                                value="1">hiện thị</option>
-                            </select>
-                        </div>
-                        
-                        <div class="mb-2">
-                            @if($rates)
-                            <select name="rating_id" class="js__single-select">
-                                <option value="">chọn rating</option>
-                                @foreach($rates as $rate)
-                                <option @if(old('rating_id', $post->rating_id) == $rate->id) {{ 'selected' }} @endif
-                                value="{{ $rate->id }}">{{ $rate->username }}</option>
-                                @endforeach
-                            </select>
-                            @endif
-                        </div>
-                        <input name="rate_value" value="{{ old('rate_value', $post->rate_value) }}"/>
-                    </section>
-                </div>
-            </div>
+            
             <div class="row block-content">
                 <div class="col-12 bg-color-white shadows-1 px-3 py-3">
                     <section class="pb-4 wrapper__selectImageWithCKFinder">

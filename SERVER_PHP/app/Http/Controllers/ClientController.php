@@ -6,13 +6,11 @@ use App\Http\Requests\CLIENT_VALIDATE_ADVISORY;
 use App\Http\Requests\CLIENT_VALIDATE_CONTACT;
 use App\Mail\MailAdvisory;
 use App\Mail\MailContact;
-use App\Repositories\TagTheme\TagThemeEloquentRepository;
-use App\Repositories\Theme\ThemeEloquentRepository;
+use App\Models\Post;
 use Exception;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
-use Illuminate\Support\Facades\Cookie;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 
 class ClientController extends Controller
@@ -22,21 +20,6 @@ class ClientController extends Controller
      */
     public function index(){
 
-        $limit         = 12;
-        $ThemeModel    = new ThemeEloquentRepository();
-        $tagThemeModel = new TagThemeEloquentRepository();
-
-        $condition = [
-            'orderby' => [ 'field' => 'view', 'type' => 'DESC' ]
-        ];
-        $conditionTag = [
-            'orderby' => [ 'field' => 'id', 'type' => 'ASC' ]
-        ];
-
-        $themes = $ThemeModel->getThemeByCondition($condition)->take( $limit )->get();
-        // $themes = $ThemeModel->getAll();
-        $tag_themes = $tagThemeModel->getTagThemeByCondition($conditionTag)->get();
-        return view('client.home', compact(['themes', 'tag_themes']));
     }
 
     public function contact( ){
@@ -112,76 +95,19 @@ class ClientController extends Controller
         return '( Request $request, $slug ){';
     }
 
+    public function querySearchPost( $query ){
+        // $query = SupportString::convertLang($query);
+        $words = preg_replace('/\s+/', ' ', $query);
+        $words = preg_replace('/\s+/', '|', $words);
 
-
-
-
-    public function tagDetail( Request $request, $slug ){
-
-        $DF_COOKIE_NAME  = Config::get('constant.VIEW_COOKIE_TAG').$slug;
-        $cookieViewTag = $request->cookie($DF_COOKIE_NAME);
-
-        
-        $tag = $this->model->createTagModel()->getBySlug($slug);
-        if( !$tag ){
-            return abort(404);
-        }
-        $user_id = $tag->user_id;
-
-        $posts_in_tag_obj = $tag->posts()->where('public', 1)->where('user_id', $user_id);
-        $posts_in_tag     = $posts_in_tag_obj->paginate(10);
-        $post_ids         = $posts_in_tag_obj->pluck('id')->toArray();
-        $posts_relation   = $this->model->createPostModel()
-                            ->getPostRelationPostId( $post_ids )->take(6)->get();
-        $conditionTags = [
-            'ignore' => [ $tag->id ],
-            'orderby' => [ 'field' => 'view', 'type' => 'DESC' ],
-            'user_id' => $user_id
-        ];
-        $tags = $this->model->createTagModel()
-        ->getTagByCondition($conditionTags)->take( 15 )->get();
-
-        if(!$cookieViewTag){
-            Cookie::queue($DF_COOKIE_NAME, true, 10);
-            $tag->view += 1;
-            $tag->save();
-        }
-        return view('client.tag', compact('tag', 'tags', 'posts_in_tag', 'posts_relation'));
+        return DB::table('posts')
+        ->whereRaw("search_tsv @@ plainto_tsquery(vn_unaccent('$query'))")
+        ->select('*')
+        ->where("posts.public", 1)
+        ->addSelect(DB::raw("ts_headline(title, to_tsquery('$words')) as title"))
+        ->addSelect(DB::raw("ts_headline('simple', search_doc, to_tsquery('simple', '$words')) as search_document"))
+        ->orderByRaw("ts_rank(search_tsv, plainto_tsquery(vn_unaccent('$query'))) DESC");
     }
-
-    public function topicDetail( Request $request, $slug ){
-
-        $DF_COOKIE_NAME  = Config::get('constant.VIEW_COOKIE_TOPIC').$slug;
-        $cookieViewTopic = $request->cookie($DF_COOKIE_NAME);
-
-        $topic = $this->model->createTopicModel()->getBySlug($slug);
-        if( !$topic ){
-            return abort(404);
-        }
-        $user_id = $topic->user_id;
-
-        $conditionTopic = [
-            'ignore' => [ $topic->id ],
-            'orderby' => [ 'field' => 'view', 'type' => 'DESC' ],
-            'user_id' => $user_id
-        ];
-        $topics = $this->model->createTopicModel()
-        ->getTopicByCondition($conditionTopic)->take( 15 )->get(); 
-
-        $posts_in_topic_obj = $topic->posts()->where('public', 1)
-                                ->orderBy("topic_id", "DESC")->orderBy("sort", "DESC");
-        $posts_in_topic     = $posts_in_topic_obj->take(10)->get();
-        $post_ids           = $posts_in_topic_obj->pluck('id')->toArray();
-        $posts_relation     = $this->model->createPostModel()
-                            ->getPostRelationPostId( $post_ids )->take(6)->get();
-        if(!$cookieViewTopic){
-            Cookie::queue($DF_COOKIE_NAME, true, 10);
-            $topic->view += 1;
-            $topic->save();
-        }
-        return view('client.topic', compact('topic', 'topics', 'posts_in_topic', 'posts_relation'));
-    }
-
     
     public function searchPost( Request $request){
 
@@ -193,94 +119,17 @@ class ClientController extends Controller
             $query = trim($query, " ");
         }
         
-        $search = $this->model->createDBModel()->searchPost($query)->paginate($limit)->appends(request()->query());;
+        $search = $this->querySearchPost($query)->paginate($limit)->appends(request()->query());
 
         $conditionPost = [
-            'ignore' => $search->pluck('id')->toArray(),
+            'ignore'  => $search->pluck('id')->toArray(),
             'orderby' => [ 'field' => 'view', 'type' => 'DESC' ],
-            'public' => 1
+            'public'  => 1
         ];
-        $postMaxView = $this->model->createPostModel()
+        $postMaxView = (new Post())
         ->getPostByCondition($conditionPost)->take( 4 )->get(); 
         
-        $tags = $this->model->createTagModel()
-        ->getTagByPostId($search->pluck('id')->toArray())->take(10)->get();
-
-        $topics = null;
-        if($search->isEmpty()){
-
-            $topics = $this->model->createTopicModel()
-                        ->getTopicByCondition(["orderby" => ['field' => "id", 'type' => 'DESC']])
-                        ->take(10)->get();
-        }
-        return view('client.search', compact('search', 'query', 'tags', 'topics', 'postMaxView'));
+        return view('client.search', compact('search', 'query'));
     }
 
-
-    public function postDetail( Request $request, $slug ){
-
-        $DF_COOKIE_NAME = Config::get('constant.VIEW_COOKIE_POST').$slug;
-        $cookieViewPost = $request->cookie($DF_COOKIE_NAME);
-        
-        $postModel = $this->model->createPostModel();
-        $post      = $postModel->getPostBySlug($slug);
-        if( !$post ){
-            return abort(404);
-        }
-        
-        if($post->public == Config::get('constant.TYPE_SAVE.ADMIN_READ')){
-            if (!Auth::check()){
-
-                return abort(403);
-            }
-        }
-
-        $rateAuthor = $post->rateAuthor()->first();
-        $tags       = $post->tags()->take(10)->get();
-        $topic      = $post->topic()->first();
-        if( $post->type == Config::get('constant.TYPE-POST.PAGE')){
-
-            return view('client.page-view', compact('post', 'rateAuthor', 'tags', 'topic'));
-        }
-        if(!$cookieViewPost){
-            Cookie::queue($DF_COOKIE_NAME, true, 10);
-            $post->view += 1;
-            $post->save();
-        }
-
-        
-
-        
-
-
-        $posts_in_topic = null;
-        if($topic){
-            $conditionPostInTopic = [
-                'ignore'   =>  [ $post->id ],
-                'orderby'  => [ 'field' => 'view', 'type' => 'DESC' ],
-                'topic_id' => $topic->id,
-                'public' => 1
-            ];
-            $posts_in_topic = $postModel->getPostByCondition($conditionPostInTopic)->take(15)->get();
-        }
-
-        /// post new 
-        $post_new = null;
-        $conditionPostNew = [
-            'ignore'   => array_merge($posts_in_topic->pluck('id')->toArray(),[ $post->id ]),
-            'orderby'  => [ 'field' => 'updated_at', 'type' => 'DESC' ],
-            'public' => 1
-        ];
-        $post_new = $postModel->getPostByCondition($conditionPostNew)->take(6)->get();
-        
-
-        $conditionPostMaxView = [
-            'ignore' => array_merge($posts_in_topic->pluck('id')->toArray(), array_merge($post_new->pluck('id')->toArray(), [ $post->id ])),
-            'orderby' => [ 'field' => 'view', 'type' => 'DESC' ],
-            'public' => 1
-        ];
-        $postMaxView = $postModel->getPostByCondition($conditionPostMaxView)->take( 6 )->get();
-        
-        return view('client.post-view', compact('post', 'tags', 'topic', 'rateAuthor', 'postMaxView', 'post_new','posts_in_topic'));
-    }
 }

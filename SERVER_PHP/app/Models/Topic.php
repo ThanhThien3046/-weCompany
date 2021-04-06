@@ -37,4 +37,23 @@ class Topic extends Model
 
         return $this->hasMany( Post::class, 'topic_id');
     }
+
+
+    public function getTopicByCondition( $condition ){
+
+        $filter = $this;
+        if( isset($condition['ignore']) ){
+            $filter = $filter->whereNotIn('id', $condition['ignore'] );
+        }
+        if( isset($condition['orderby']) ){
+
+            $filter = $filter->orderBy($condition['orderby']['field'], $condition['orderby']['type']);
+        }
+        if(isset($condition['user_id'])){
+
+            $filter = $filter->where('user_id', $condition['user_id']);
+        }
+
+        return $filter;
+    }
 }

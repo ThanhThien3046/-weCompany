@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Repositories\Option\OptionEloquentRepository;
+use App\Models\Option;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
 
@@ -16,7 +16,7 @@ class OptionController extends Controller
      */
     public function index(){
 
-        $options  = (new OptionEloquentRepository())->getAll();
+        $options  = (new Option())->all();
         return view('admin.option.save', compact([ 'options' ]));
     }
 
@@ -28,15 +28,15 @@ class OptionController extends Controller
         
         try{
             /// create instance Post Model 
-            $option = new OptionEloquentRepository();
+            $option = new Option();
             $option->truncate();
 
             $optionInputs = [];
             for ($i=0; $i < count($optionInput['key']); $i++) { 
                 
                 $optionInputs[] = [
-                    'key' => trim($optionInput['key'][$i]),
-                    'type' => $optionInput['type'][$i],
+                    'key'        => trim($optionInput['key'][$i]),
+                    'type'       => $optionInput['type'][$i],
                     'value_text' => $optionInput['value_text'][$i],
                     'value_html' => $optionInput['value_html'][$i]
                 ];

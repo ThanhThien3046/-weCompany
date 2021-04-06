@@ -23,7 +23,6 @@ class AUTH_CKFINDER
             }] );
         } else {
             
-            die("vào check ckf sai auth ");
             config(['ckfinder.authentication' => function() {
                 return false;
             }] );
