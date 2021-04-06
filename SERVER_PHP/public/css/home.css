@@ -2400,6 +2400,17 @@ option:focus {
   }
 }
 
+.homeslider__intro {
+  position: absolute;
+  bottom: 20%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: "RocknRoll One", sans-serif;
+  z-index: 11111111;
+  color: #f8f9fa;
+}
+
 .homeslider__wrapper {
   position: relative;
   box-sizing: border-box;
