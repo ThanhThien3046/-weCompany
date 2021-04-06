@@ -137,7 +137,7 @@ console.log("không có gì");
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nError: ENOENT: no such file or directory, open '/Users/hero/Code/KISS/SERVER_PHP/resources/sass/client/page/post-detail.scss'\n    at /Users/hero/Code/KISS/SERVER_PHP/node_modules/webpack/lib/NormalModule.js:316:20\n    at /Users/hero/Code/KISS/SERVER_PHP/node_modules/loader-runner/lib/LoaderRunner.js:367:11\n    at /Users/hero/Code/KISS/SERVER_PHP/node_modules/loader-runner/lib/LoaderRunner.js:203:19\n    at /Users/hero/Code/KISS/SERVER_PHP/node_modules/enhanced-resolve/lib/CachedInputFileSystem.js:85:15\n    at processTicksAndRejections (node:internal/process/task_queues:75:11)");
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 

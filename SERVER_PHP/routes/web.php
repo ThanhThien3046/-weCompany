@@ -53,6 +53,10 @@ Route::get('/detail', function () {
     return view('detail');
 })->name("DETAIL_PAGE");
 
+Route::get('/detail2', function () {
+    return view('client.detail');
+})->name("DETAIL_PAGE2");
+
 Route::get('/news', function () {
     return view('news');
 })->name("NEWS_PAGE");
