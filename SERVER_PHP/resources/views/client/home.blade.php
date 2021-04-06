@@ -59,7 +59,7 @@
                 </div>
             </div>
         </div>
-        <div class="content__main">
+        <div class="content__main homepage">
             <div class="main__list" id="js__format-height-article">
                 @php $challenges = Config::get("challenge") @endphp
                 @foreach ($challenges as $key => $challenge)
