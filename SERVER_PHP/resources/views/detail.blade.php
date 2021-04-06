@@ -23,6 +23,8 @@
     <link rel="preload" as="style" href="{{ asset('css/detail.css' . Config::get('app.version'))}}">
 @endsection
 @section('stylesheets')
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/animate.min.css' . Config::get('app.version'))}}">
     <link rel="stylesheet" href="{{ asset('css/home.css' . Config::get('app.version'))}}">
     <link rel="stylesheet" href="{{ asset('css/detail.css' . Config::get('app.version'))}}">
@@ -80,7 +82,7 @@
                     </div>
                     <img src="{{asset('images/station_takebashi.jpg')}}" alt="">
                     <div class="info">
-                        <p>Find Information</p>
+                        <p style="font-family: 'Sawarabi Mincho', sans-serif;">Find Information</p>
                         <div class="info-txtimg">
                             <div class="info-text">
                                 <h4>東京国立近代美術館（MOMAT)</h4>
@@ -167,35 +169,50 @@
                             </a>
                         </div>
                         <p>関連記事リンク</p>
-                        <div class="footer__pic">
-                            <div class="footer-pic__wrapper">
-                                <span class="footer__num">
-                                    <i>123</i>
-                                </span>
-                                <a href="#" class="footer__img">
-                                    <img src="{{asset('images/challenge173_top01.jpg')}}" alt="">
-                                </a>
-                                <a href="#" class="title">
-                                    <h3>江戸時代の教科書を見てみよう！</h3>
-                                </a>
+                        <div class="list__img">
+                            <div class="footer__pic">
+                                <div class="footer-pic__wrapper">
+                                    <span class="footer__num">
+                                        <i>123</i>
+                                    </span>
+                                    <a href="#" class="footer__img">
+                                        <img src="{{asset('images/challenge173_top01.jpg')}}" alt="">
+                                    </a>
+                                    <a href="#" class="title">
+                                        <h3>江戸時代の教科書を見てみよう！</h3>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="footer__pic">
+                                <div class="footer-pic__wrapper">
+                                    <span class="footer__num">
+                                        <i>123</i>
+                                    </span>
+                                    <a href="#" class="footer__img">
+                                        <img src="{{asset('images/challenge173_top01.jpg')}}" alt="">
+                                    </a>
+                                    <a href="#" class="title">
+                                        <h3>江戸時代の教科書を見てみよう！</h3>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="footer__pic">
+                                <div class="footer-pic__wrapper">
+                                    <span class="footer__num">
+                                        <i>123</i>
+                                    </span>
+                                    <a href="#" class="footer__img">
+                                        <img src="{{asset('images/challenge173_top01.jpg')}}" alt="">
+                                    </a>
+                                    <a href="#" class="title">
+                                        <h3>江戸時代の教科書を見てみよう！</h3>
+                                    </a>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="footer__pic">
-                            <div class="footer-pic__wrapper">
-                                <span class="footer__num">
-                                    <i>123</i>
-                                </span>
-                                <a href="#" class="footer__img">
-                                    <img src="{{asset('images/challenge173_top01.jpg')}}" alt="">
-                                </a>
-                                <a href="#" class="title">
-                                    <h3>江戸時代の教科書を見てみよう！</h3>
-                                </a>
-                            </div>
-                        </div>
-
-                        
                     </footer>
                 </div>
             </div>
