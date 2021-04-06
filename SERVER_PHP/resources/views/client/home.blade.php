@@ -38,7 +38,7 @@
         @include('partial.sidebar')
         @include('partial.nav')
     </div>
-    <div class="wrapper__content">
+    <div class="wrapper__content homepage">
         <div class="homeslider">
             <div id="js__homeslider" class="homeslider__wrapper lazyload">
                 <!--slide contents-->
