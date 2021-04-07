@@ -112,7 +112,7 @@
                             <a href="#" class="roundbtn-fb">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
-
+                            
                             <a href="#" class="roundbtn-tw">
                                 <i class="fab fa-twitter"></i>
                             </a>
@@ -126,11 +126,11 @@
                             </a>
                             <a href="" class="social-footer-btn">このページもシャアする</a>
                         </div>
-                        <a href="#" class="btntotop">TOPへ戻る</a>
+                        <a href="http://wecompany.co.jp/" class="btntotop">TOPへ戻る</a>
                         <div class="fttext">
                             あなたもチャレンジ <br>
                             Find my 【WE・COM PANY LTD】<br>
-                            十人十色の人生と出会い 
+                            十人十色の人生と出会い
                         </div>    
                     </footer>
                 </div>

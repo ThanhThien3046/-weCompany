@@ -1798,10 +1798,18 @@ option:focus {
   color: white;
   line-height: 1;
   text-align: center;
+  width: 300px;
+  margin: 0 auto;
 }
 
 .main-content .content .relation-img-text {
   text-align: center;
   padding-bottom: 10px;
+}
+
+.div_text {
+  margin: 0 auto;
+  padding-left: 350px;
+  color: #8ed0f9;
 }
 

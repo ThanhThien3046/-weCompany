@@ -49,8 +49,8 @@
                 <div class="main-content">
                     <div class="content">
                         <div class="header_content">
-                            <h3 class="header_content--title">広告ギャラリー</h3>
-                            <p class="header_content--title-des">広告ポスター・CM情報</p>
+                            <h3 class="header_content--title">WE グループ紹介</h3>
+                            <p class="header_content--title-des">広告・ニュース&トピック情報</p>
                         </div>
                         <div class="wechild__wrapper">
                             <article class="wechild__news">
@@ -63,6 +63,9 @@
                                         <div class="wechild__news-detail">
                                             <img src="{{ asset('images/gallery_2003_01.jpg') }}" alt="ポスター「江戸がいまでも華やぐ」篇" width="800" height="283">
                                         </div>
+                                    </div>
+                                    <div class="div_text">
+                                        <p>WE グループ紹介</p>
                                     </div>
                                     <div class="main__list" id="js__format-height-article">
                                         @php $challenges = Config::get("challenge") @endphp
@@ -103,7 +106,7 @@
                                     </div>
                                 </div>
                                 <footer class="fpic">
-                                    <a href="/" class="ftimage">「押上〈スカイツリー前〉」のチャレンジをみる </a>
+                                    <a href="/" class="ftimage">サイトTOP</a>
 
                                 </footer>
                             </article>

@@ -1,1 +1,1 @@
-<img src="{{ asset('images/fn01.png') }}" style="width:50px; margin-left:5px;">
+<img src="{{ asset('images/fn01.png') }}" style="width:25px; margin:45px 20px -10px 18px">
