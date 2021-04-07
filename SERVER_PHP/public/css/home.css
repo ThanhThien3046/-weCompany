@@ -1859,10 +1859,17 @@ option:focus {
 }
 
 .sidebar__nav-link.icon__instagram {
+  width: 100%;
+  text-align: center;
+  font-size: 22px;
+}
+
+.sidebar__nav-link.icon__youtube {
   color: #f44336;
   width: 100%;
   text-align: center;
   font-size: 22px;
+  padding-top: 5px;
 }
 
 @-webkit-keyframes beerDV {

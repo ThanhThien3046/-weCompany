@@ -142,10 +142,16 @@
                 font-size: 22px;
             }
             &.icon__instagram{
+                width: 100%;
+                text-align: center;
+                font-size: 22px;
+            }
+            &.icon__youtube{
                 color: $red;
                 width: 100%;
                 text-align: center;
                 font-size: 22px;
+                padding-top: 5px;
             }
         }
     }

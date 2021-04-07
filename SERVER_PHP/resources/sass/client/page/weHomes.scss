@@ -113,6 +113,8 @@
                     color: rgb(255, 255, 255);
                     line-height: 1;
                     text-align: center;
+                    width: 300px;
+                    margin: 0 auto;
                 }
             }
         }
@@ -123,4 +125,10 @@
             }
         }
     }
+}
+
+.div_text{
+    margin: 0 auto;
+    padding-left: 350px;
+    color: #8ed0f9;
 }
