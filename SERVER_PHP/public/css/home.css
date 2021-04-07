@@ -2184,6 +2184,14 @@ option:focus {
   color: #1ecd02;
 }
 
+.nav__metros-item.instagram a {
+  color: #000;
+}
+
+.nav__metros-item.youtube a {
+  color: #f70000;
+}
+
 .nav__metros-item:hover a {
   color: #ff9800;
   margin-left: 5px;
@@ -2377,7 +2385,7 @@ option:focus {
 
 .homeslider__intro {
   position: absolute;
-  bottom: 20%;
+  bottom: 60%;
   left: 0;
   right: 0;
   text-align: center;

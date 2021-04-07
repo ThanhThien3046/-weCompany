@@ -44,6 +44,7 @@
         <div class="homeslider">
             <div class="homeslider__intro">
                 <h1>We Company</h1>
+                <p>あなたもチャレンジ</p>
             </div>
             <div id="js__homeslider" class="homeslider__wrapper lazyload">
                 <!--slide contents-->
@@ -85,7 +86,7 @@
                         <span class="article__challenge">
                             <i class="article__challenge-number">{{ $challenge['number'] }}</i>
                         </span>
-                        <a class="article__link-img" href="{{ $challenge['link'] }}">
+                        <a class="article__link-img" href="http://wecompany.co.jp/detail">
                             <img class="lazyload"
                                     src="{{ Config::get('app.lazyload_base64') }}"
                                     onerror="this.onerror=null;this.src='{{ asset('/images/failed.jpg') }}';"
