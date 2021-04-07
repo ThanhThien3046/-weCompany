@@ -69,6 +69,10 @@ Route::get('/weHomes',function(){
     return view('client.weHomes');
 })->name("WEHOMES_PAGE");
 
+Route::get('/about',function(){
+    return view('client.about');
+})->name("ABOUT");
+
 
 include_once("routing/admin.php");
 include_once("routing/client.php");
