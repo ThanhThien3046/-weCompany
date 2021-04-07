@@ -108,17 +108,6 @@ console.log("không có gì");
 
 /***/ }),
 
-/***/ "./resources/sass/client/page/abcxyz.scss":
-/*!************************************************!*\
-  !*** ./resources/sass/client/page/abcxyz.scss ***!
-  \************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nError: ENOENT: no such file or directory, open 'C:\\xampp\\htdocs\\weCompany\\SERVER_PHP\\resources\\sass\\client\\page\\abcxyz.scss'\n    at C:\\xampp\\htdocs\\weCompany\\SERVER_PHP\\node_modules\\webpack\\lib\\NormalModule.js:316:20\n    at C:\\xampp\\htdocs\\weCompany\\SERVER_PHP\\node_modules\\loader-runner\\lib\\LoaderRunner.js:367:11\n    at C:\\xampp\\htdocs\\weCompany\\SERVER_PHP\\node_modules\\loader-runner\\lib\\LoaderRunner.js:203:19\n    at C:\\xampp\\htdocs\\weCompany\\SERVER_PHP\\node_modules\\enhanced-resolve\\lib\\CachedInputFileSystem.js:85:15\n    at processTicksAndRejections (internal/process/task_queues.js:75:11)");
-
-/***/ }),
-
 /***/ "./resources/sass/client/page/home.scss":
 /*!**********************************************!*\
   !*** ./resources/sass/client/page/home.scss ***!
@@ -176,7 +165,7 @@ __webpack_require__(/*! C:\xampp\htdocs\weCompany\SERVER_PHP\resources\sass\clie
 __webpack_require__(/*! C:\xampp\htdocs\weCompany\SERVER_PHP\resources\sass\client\page\home.scss */"./resources/sass/client/page/home.scss");
 __webpack_require__(/*! C:\xampp\htdocs\weCompany\SERVER_PHP\resources\sass\client\page\weHomes.scss */"./resources/sass/client/page/weHomes.scss");
 __webpack_require__(/*! C:\xampp\htdocs\weCompany\SERVER_PHP\resources\sass\client\page\post-detail.scss */"./resources/sass/client/page/post-detail.scss");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\weCompany\SERVER_PHP\resources\sass\client\page\abcxyz.scss */"./resources/sass/client/page/abcxyz.scss");
+!(function webpackMissingModule() { var e = new Error("Cannot find module 'C:\\xampp\\htdocs\\weCompany\\SERVER_PHP\\resources\\sass\\client\\page\\abcxyz.scss'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
 
 
 /***/ })
