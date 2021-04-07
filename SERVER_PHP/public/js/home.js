@@ -301,7 +301,7 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/hero/Code/KISS/SERVER_PHP/resources/js/client/home.js */"./resources/js/client/home.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\weCompany\SERVER_PHP\resources\js\client\home.js */"./resources/js/client/home.js");
 
 
 /***/ })

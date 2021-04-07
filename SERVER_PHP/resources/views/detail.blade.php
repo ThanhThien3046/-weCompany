@@ -98,7 +98,7 @@
                                 </p>
                                 <a href="#">http://www.momat.go.jp/am</a><br>
                                 <a href="{{ Route('HOME_PAGE') }}" target="_blank" class="btn_map">
-                                    <span>MAPをみる</span>
+                                    <span>サイトへ</span>
                                 </a>
                                 <p>※スポット情報は最新の情報と異なることがあります。</p>
 
@@ -116,104 +116,22 @@
                             <a href="#" class="roundbtn-tw">
                                 <i class="fab fa-twitter"></i>
                             </a>
+
+                            <a href="#" class="roundbtn-insta">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+
+                            <a href="#" class="roundbtn-youtube">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="" class="social-footer-btn">このページもシャアする</a>
                         </div>
-                        <p>関連タグ</p>
-                        <div class="btn-footer">
-                            <a href="{{ Route('HOME_PAGE') }}" target="_blank">
-                                <span class="share-text">国立近代美術館</span>
-                            </a>
-
-                            <a href="{{ Route('HOME_PAGE') }}" target="_blank">
-                                <span class="share-text">近代アート</span>
-                            </a>
-
-                            <a href="{{ Route('HOME_PAGE') }}" target="_blank">
-                                <span class="share-text">対話によるガイド</span>
-                            </a>
-
-                            <a href="{{ Route('HOME_PAGE') }}" target="_blank">
-                                <span class="share-text">健康で文化的な1日</span>
-                            </a>
-
-                            <a href="{{ Route('HOME_PAGE') }}" target="_blank">
-                                <span class="share-text">東京賢くなるアクティビティ</span>
-                            </a>
-
-                            <a href="{{ Route('HOME_PAGE') }}" target="_blank">
-                                <span class="share-text">最高のインドア宣言</span>
-                            </a>
-                        </div>
-
-                        <div class="btn-footer">
-                            <a href="{{ Route('HOME_PAGE') }}" target="_blank">
-                                <span class="share-text">MOMA</span>
-                            </a>
-
-                            <a href="{{ Route('HOME_PAGE') }}" target="_blank">
-                                <span class="share-text">真似できるかな</span>
-                            </a>
-
-                            <a href="{{ Route('HOME_PAGE') }}" target="_blank">
-                                <span class="share-text">説明文が面白いのです</span>
-                            </a>
-
-                            <a href="{{ Route('HOME_PAGE') }}" target="_blank">
-                                <span class="share-text">石原さとみさんチャレンジ</span>
-                            </a>
-
-                            <a href="{{ Route('HOME_PAGE') }}" target="_blank">
-                                <span class="share-text">竹橋</span>
-                            </a>
-
-                            <a href="{{ Route('HOME_PAGE') }}" target="_blank">
-                                <span class="share-text">2017年のチャレンジ</span>
-                            </a>
-                        </div>
-                        <p>関連記事リンク</p>
-                        <div class="list__img">
-                            <div class="footer__pic">
-                                <div class="footer-pic__wrapper">
-                                    <span class="footer__num">
-                                        <i>123</i>
-                                    </span>
-                                    <a href="#" class="footer__img">
-                                        <img src="{{asset('images/challenge173_top01.jpg')}}" alt="">
-                                    </a>
-                                    <a href="#" class="title">
-                                        <h3>江戸時代の教科書を見てみよう！</h3>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="footer__pic">
-                                <div class="footer-pic__wrapper">
-                                    <span class="footer__num">
-                                        <i>123</i>
-                                    </span>
-                                    <a href="#" class="footer__img">
-                                        <img src="{{asset('images/challenge173_top01.jpg')}}" alt="">
-                                    </a>
-                                    <a href="#" class="title">
-                                        <h3>江戸時代の教科書を見てみよう！</h3>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="footer__pic">
-                                <div class="footer-pic__wrapper">
-                                    <span class="footer__num">
-                                        <i>123</i>
-                                    </span>
-                                    <a href="#" class="footer__img">
-                                        <img src="{{asset('images/challenge173_top01.jpg')}}" alt="">
-                                    </a>
-                                    <a href="#" class="title">
-                                        <h3>江戸時代の教科書を見てみよう！</h3>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
+                        <a href="#" class="btntotop">TOPへ戻る</a>
+                        <div class="fttext">
+                            あなたもチャレンジ <br>
+                            Find my 【WE・COM PANY LTD】<br>
+                            十人十色の人生と出会い 
+                        </div>    
                     </footer>
                 </div>
             </div>
