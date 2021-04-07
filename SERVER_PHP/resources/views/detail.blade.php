@@ -126,7 +126,7 @@
                             </a>
                             <a href="" class="social-footer-btn">このページもシャアする</a>
                         </div>
-                        <a href="http://wecompany.co.jp/" class="btntotop">TOPへ戻る</a>
+                        <a class="btntotop" id="js__back-to-top">TOPへ戻る</a>
                         <div class="fttext">
                             あなたもチャレンジ <br>
                             Find my 【WE・COM PANY LTD】<br>

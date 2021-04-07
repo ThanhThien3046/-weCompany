@@ -25,6 +25,8 @@ let toggleNav = () => {
     }
 }
 
+
+
 let listenToggleNav = () => {
     
     let btnToggle = document.getElementById("js__open-nav")
@@ -193,5 +195,14 @@ $(document).ready(function () {
             slideitems[pos].style.backgroundImage = "url('" + src + "')"
         }
     }
+    $("#js__back-to-top").on('click', function(e) {
+        e.preventDefault();
+        $('html, body').animate({scrollTop:0}, '300');
+    });
+    
 })
+
+// window.backToTop = e => {
+    
+// }
 

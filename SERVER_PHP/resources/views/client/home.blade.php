@@ -86,7 +86,7 @@
                         <span class="article__challenge">
                             <i class="article__challenge-number">{{ $challenge['number'] }}</i>
                         </span>
-                        <a class="article__link-img" href="http://wecompany.co.jp/detail">
+                        <a class="article__link-img" href="{{ Route('DETAIL_PAGE') }}">
                             <img class="lazyload"
                                     src="{{ Config::get('app.lazyload_base64') }}"
                                     onerror="this.onerror=null;this.src='{{ asset('/images/failed.jpg') }}';"

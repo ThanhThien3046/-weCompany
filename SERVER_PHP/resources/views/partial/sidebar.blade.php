@@ -15,26 +15,31 @@
         <li class="sidebar__nav-item">
             <a class="sidebar__nav-link home" href="{{ Route('HOME_PAGE') }}">
                 @include('svg.home')
+                <span>トップページ</span>
             </a>
         </li>
         <li class="sidebar__nav-item">
             <a class="sidebar__nav-link" href="{{ Route('WEHOMES_PAGE') }}">
                 @include('svg.gallery')
+                <span>We Group</span>
             </a>
         </li>
         <li class="sidebar__nav-item">
             <a class="sidebar__nav-link ranking" href="{{ Route('HOME_PAGE') }}">
                 @include('svg.ranking')
+                <span>沿革</span>
             </a>
         </li>
         <li class="sidebar__nav-item">
             <a class="sidebar__nav-link find" href="{{ Route('HOME_PAGE') }}">
                 @include('svg.find')
+                <span>求人</span>
             </a>
         </li>
         <li class="sidebar__nav-item">
             <a class="sidebar__nav-link about" href="{{ Route('HOME_PAGE') }}">
                 @include('svg.about')
+                <span>WEとは</span>
             </a>
         </li>
         <li class="sidebar__nav-item">

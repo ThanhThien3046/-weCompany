@@ -38,7 +38,7 @@
         box-sizing: border-box;
         cursor: pointer;
         z-index: 2000;
-        padding: 11px 8px;
+        padding: 11px 8px 0;
         text-align: left;
 
         @include ScreenMax(MD){ 
@@ -116,42 +116,57 @@
         &-link{
             
             display: block;
-            width: 60px;
+            padding: 0 2px;
             margin: 0 auto;
+            text-align: center;
             &:hover{
                 opacity: 0.6;
             }
-            &.home{
-                width: 30px;
+            svg{
+                width: 35px;
+                display: block;
+                text-align: center;
+                margin: 0 auto;
             }
-            &.ranking{
-                width: 60px;
+            span{
+                font-size: 10px;
+                color:#1baad1;
+                font-weight: bold;
             }
-            &.about{
-                width: 45px;
-            }
+            // &.home{
+            //     width: 30px;
+            // }
+            // &.ranking{
+            //     width: 60px;
+            // }
+            // &.about{
+            //     width: 45px;
+            // }
             &.icon__facebook{
                 width: 100%;
                 text-align: center;
                 font-size: 22px;
+                padding-top: 0;
             }
             &.icon__twitter{
                 color: $blue;
                 width: 100%;
                 text-align: center;
                 font-size: 22px;
+                padding-top: 0;
             }
             &.icon__instagram{
                 width: 100%;
                 text-align: center;
                 font-size: 22px;
+                padding-top: 0;
             }
             &.icon__youtube{
                 color: $red;
                 width: 100%;
                 text-align: center;
                 font-size: 22px;
-                padding-top: 5px;
+                padding-top: 0;
             }
         }
     }
