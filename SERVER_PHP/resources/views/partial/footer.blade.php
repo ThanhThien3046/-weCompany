@@ -1,5 +1,5 @@
 <footer class="footer">
-    <div class="backtop">
+    {{-- <div class="backtop">
         <button >backtop</button>
     </div>
     <div class="intro">
@@ -8,6 +8,6 @@
         <div class="intro__img">
             <img src="{{ asset("/images/footer-slogan.png") }}" alt="slogan">
         </div>
-    </div>
+    </div> --}}
     <small>Copyright© WeCompany Co., Ltd All rights reserved.</small>
 </footer>
