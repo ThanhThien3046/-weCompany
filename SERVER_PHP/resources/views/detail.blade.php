@@ -23,14 +23,15 @@
     <link rel="preload" as="style" href="{{ asset('css/detail.css' . Config::get('app.version'))}}">
 @endsection
 @section('stylesheets')
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/animate.min.css' . Config::get('app.version'))}}">
     <link rel="stylesheet" href="{{ asset('css/home.css' . Config::get('app.version'))}}">
     <link rel="stylesheet" href="{{ asset('css/detail.css' . Config::get('app.version'))}}">
 @endsection
 @section('javascripts')
     <script type="text/javascript" src="{{ asset('js/library/jquery.min.js' . Config::get('app.version')) }}"></script>
+    <script type="text/javascript" src="{{ asset('js/home.js' . Config::get('app.version')) }}"></script>
     <script type="text/javascript" src="{{ asset('js/search.js' . Config::get('app.version')) }}"></script>
 @endsection
 @section('content')

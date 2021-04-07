@@ -26,9 +26,11 @@ let toggleNav = () => {
 }
 
 let listenToggleNav = () => {
+    
     let btnToggle = document.getElementById("js__open-nav")
     if( btnToggle ){
         btnToggle.onclick = function(e){
+            
             toggleNav()
         }
     }

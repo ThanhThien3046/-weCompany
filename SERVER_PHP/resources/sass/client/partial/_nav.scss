@@ -353,39 +353,39 @@
                 
             }
         }
-        &.open{
-            .nav__close{
-                position: fixed;
-                top: 20px;
-                right: 20px;
-                box-sizing: border-box;
-                display: block;
-                width: unset;
-                margin: 0 auto;
-                padding: 10px;
-                border: 1px solid transparent;
-                border-radius: 5px;
-                color: rgb(51, 51, 51);
-                background: rgb(255, 255, 255);
-                line-height: 1;
-                -webkit-box-pack: center;
-                justify-content: center;
-                -webkit-box-align: center;
-                align-items: center;
-                cursor: pointer;
+        // &.open{
+        //     .nav__close{
+        //         position: fixed;
+        //         top: 20px;
+        //         right: 20px;
+        //         box-sizing: border-box;
+        //         display: block;
+        //         width: unset;
+        //         margin: 0 auto;
+        //         padding: 10px;
+        //         border: 1px solid transparent;
+        //         border-radius: 5px;
+        //         color: rgb(51, 51, 51);
+        //         background: rgb(255, 255, 255);
+        //         line-height: 1;
+        //         -webkit-box-pack: center;
+        //         justify-content: center;
+        //         -webkit-box-align: center;
+        //         align-items: center;
+        //         cursor: pointer;
     
-                .text__close{
-                    display: none;
-                }
+        //         .text__close{
+        //             display: none;
+        //         }
         
-                i{
-                    font-size: 30px;
-                    margin-right: 15px;
-                }
-            }
-        }
-        &__close{
-            display: none;
-        }
+        //         i{
+        //             font-size: 30px;
+        //             margin-right: 15px;
+        //         }
+        //     }
+        // }
+        // &__close{
+        //     display: none;
+        // }
     }
 }
