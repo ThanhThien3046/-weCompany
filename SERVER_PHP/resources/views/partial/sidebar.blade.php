@@ -15,7 +15,7 @@
         <li class="sidebar__nav-item">
             <a class="sidebar__nav-link home" href="{{ Route('HOME_PAGE') }}">
                 @include('svg.home')
-                <span>トップページ</span>
+                <span>トップページ</span>
             </a>
         </li>
         <li class="sidebar__nav-item">
@@ -25,9 +25,9 @@
             </a>
         </li>
         <li class="sidebar__nav-item">
-            <a class="sidebar__nav-link ranking" href="{{ Route('HOME_PAGE') }}">
+            <a class="sidebar__nav-link ranking" href="{{ Route('SEARCH_PAGE') }}">
                 @include('svg.ranking')
-                <span>沿革</span>
+                <span>沿革</span>
             </a>
         </li>
         <li class="sidebar__nav-item">
@@ -37,7 +37,7 @@
             </a>
         </li>
         <li class="sidebar__nav-item">
-            <a class="sidebar__nav-link about" href="{{ Route('HOME_PAGE') }}">
+            <a class="sidebar__nav-link about" href="{{ Route('ABOUT') }}">
                 @include('svg.about')
                 <span>WEとは</span>
             </a>

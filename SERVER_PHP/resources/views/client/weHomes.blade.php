@@ -55,13 +55,13 @@
                         <div class="wechild__wrapper">
                             <article class="wechild__news">
                                 <header class="wechild__news-banner">
-                                    <h4><img src="{{ asset('images/station_oshiage_img.jpg') }}"></h4>
+                                    <h4><img src="{{ asset('images/homes_banner.jpg') }}"></h4>
                                 </header>
                                 <div>
                                     <div>
                                         <p class="wechild__news-des">ポスター「江戸がいまでも華やぐ」篇</p>
                                         <div class="wechild__news-detail">
-                                            <img src="{{ asset('images/gallery_2003_01.jpg') }}" alt="ポスター「江戸がいまでも華やぐ」篇" width="800" height="283">
+                                            <img src="{{ asset('images/banner_02.jpg') }}" alt="ポスター「江戸がいまでも華やぐ」篇" width="800" height="283">
                                         </div>
                                     </div>
                                     <div class="div_text">

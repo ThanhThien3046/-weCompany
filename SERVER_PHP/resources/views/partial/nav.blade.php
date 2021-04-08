@@ -11,22 +11,22 @@
         </ul>
         <ul class="nav__links">
             <li class="nav__links-item">
-                <a href="https://findmy.tokyo/">TOP</a>
+                <a href="http://wecompany.co.jp/">TOP</a>
             </li>
             <li class="nav__links-item">
-                <a href="https://findmy.tokyo/about">WE GROUP</a>
+                <a href="http://wecompany.co.jp/weHomes">WE GROUP</a>
             </li>
             <li class="nav__links-item">
-                <a href="https://findmy.tokyo/gallery">WE沿革</a>
+                <a href="http://wecompany.co.jp/search">WE沿革</a>
             </li>
             <li class="nav__links-item">
-                <a href="https://findmy.tokyo/ranking">WE求人</a>
+                <a href="http://wecompany.co.jp/">WE求人</a>
             </li>
             <li class="nav__links-item">
-                <a href="https://findmy.tokyo/search">WE・COMPANYとは</a>
+                <a href="http://wecompany.co.jp/about">WE・COMPANYとは</a>
             </li>
             <li class="nav__links-item">
-                <a href="https://findmy.tokyo/link">問い合わせ</a>
+                <a href="http://wecompany.co.jp/">問い合わせ</a>
             </li>
         </ul>
 

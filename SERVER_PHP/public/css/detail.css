@@ -335,8 +335,17 @@
 
 .fttext{
   margin: 0 auto;
-  color: red;
-  margin: 30px 0px;
+  margin: 50px 0px;
+  font-size: 20px;
+}
+
+.fttext p{
+  font-family: 'Kiwi Maru', serif;
+}
+
+.fttext .find{
+  font-size: 35px;
+  font-family: 'Lobster', cursive;
 }
 
 .social-footer-btn{

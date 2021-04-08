@@ -28,6 +28,10 @@
     <link rel="stylesheet" href="{{ asset('css/animate.min.css' . Config::get('app.version'))}}">
     <link rel="stylesheet" href="{{ asset('css/home.css' . Config::get('app.version'))}}">
     <link rel="stylesheet" href="{{ asset('css/detail.css' . Config::get('app.version'))}}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 @endsection
 @section('javascripts')
     <script type="text/javascript" src="{{ asset('js/library/jquery.min.js' . Config::get('app.version')) }}"></script>
@@ -128,9 +132,9 @@
                         </div>
                         <a class="btntotop" id="js__back-to-top">TOPへ戻る</a>
                         <div class="fttext">
-                            あなたもチャレンジ <br>
-                            Find my 【WE・COM PANY LTD】<br>
-                            十人十色の人生と出会い
+                            <p>あなたもチャレンジ </p>
+                            <p class="find">Find my WE・COMPANY</p>
+                            <p>十人十色の人生と出会い</p>
                         </div>    
                     </footer>
                 </div>

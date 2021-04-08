@@ -73,6 +73,9 @@ Route::get('/about',function(){
     return view('client.about');
 })->name("ABOUT");
 
+Route::get('/historydetail', function () {
+    return view('historydetail');
+})->name("HISTORYDETAIL");
 
 include_once("routing/admin.php");
 include_once("routing/client.php");
