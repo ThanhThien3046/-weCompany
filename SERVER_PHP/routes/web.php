@@ -41,6 +41,9 @@ Route::get('/', function () {
     return view('client.home');
 })->name("HOME_PAGE");
 
+Route::get('/history', function () {
+    return view('client.history');
+})->name("HISTORY_PAGE");
 // Route::get('/homepage', function () {
 //     return view('homepage');
 // });

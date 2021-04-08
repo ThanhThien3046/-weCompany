@@ -2451,6 +2451,18 @@ option:focus {
   }
 }
 
+.history__title {
+  padding: 8px;
+}
+
+.history__title-bg {
+  background-color: #e9ecef;
+  border: 1px solid #dee2e6;
+  font-size: 18px;
+  text-align: center;
+  padding: 20px;
+}
+
 .main__list:after {
   clear: both;
   content: ".";
@@ -2536,7 +2548,6 @@ option:focus {
 
 .article__link-img img {
   width: 100%;
-  height: 100%;
   transition: all 0.5s ease-in-out;
   transform: scale(1.08);
 }

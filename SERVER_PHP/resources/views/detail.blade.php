@@ -76,14 +76,20 @@
                     </div>
                     <img src="{{asset('images/challenge172_01.jpg')}}" alt="sdfsdfds">
                     <div class="imgmes">
-                        <img src="{{asset('images/challenge172_02.jpg')}}" alt="" class="imgmes_img">
+                        <div class="imgmess__left">
+                            <img src="{{asset('images/challenge172_02.jpg')}}" alt="" class="imgmes_img">
+                        </div>
                         <p class="mes">
                             東京国立近代美術館に行って是非体験していただきたいのが「MOMATガイドスタッフによる所蔵品ガイド」。これは作品に対して何を感じたかを美術館のガイドスタッフや参加者と語り合うことで、作品に対する理解をより深めることができる鑑賞体験です。1980年代、ニューヨーク近代美術館 (MoMA)が認知心理学者とともに産み出したVTS(ヴィジュアル・シンキング・ストラテジー )という鑑賞教育の新しいメソッドを基礎として作られたもので、東京国立近代美術館の特徴になっています。彫刻や絵画のポーズを真似してみることでわかる作者が伝えたかったこと、誰かと会話することで発見できる新しい作品の見方、普段とは一味違う鑑賞、オススメです。　
                         </p>
                     </div>
                     <div class="imgdtl-list">
-                        <img src="{{asset('images/challenge172_03.jpg')}}" alt="">
-                        <img src="{{asset('images/challenge172_04.jpg')}}" alt="">
+                        <div class="img__dtl-item">
+                            <img src="{{asset('images/challenge172_03.jpg')}}" alt="">
+                        </div>
+                        <div class="img__dtl-item">
+                            <img src="{{asset('images/challenge172_04.jpg')}}" alt="">
+                        </div>
                     </div>
                     <img src="{{asset('images/station_takebashi.jpg')}}" alt="">
                     <div class="info">
@@ -107,28 +113,31 @@
                                 <p>※スポット情報は最新の情報と異なることがあります。</p>
 
                             </div>
-                            <img src="{{asset('images/challenge172_info01.jpg')}}" alt="">
+                            <div class="img__infor-right">
+                                <img class="" src="{{asset('images/challenge172_info01.jpg')}}" alt="">
+                            </div>
+                            
                         </div>
                     </div>
                     <!--footer-->
                     <footer class="footer">
                         <div class="social-footer">
-                            <a href="#" class="roundbtn-fb">
+                            <a href="#" class="social-footer-item roundbtn-fb">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
                             
-                            <a href="#" class="roundbtn-tw">
+                            <a href="#" class="social-footer-item roundbtn-tw">
                                 <i class="fab fa-twitter"></i>
                             </a>
 
-                            <a href="#" class="roundbtn-insta">
+                            <a href="#" class="social-footer-item roundbtn-insta">
                                 <i class="fab fa-instagram"></i>
                             </a>
 
-                            <a href="#" class="roundbtn-youtube">
+                            <a href="#" class="social-footer-item roundbtn-youtube">
                                 <i class="fab fa-youtube"></i>
                             </a>
-                            <a href="" class="social-footer-btn">このページもシャアする</a>
+                            <a href="" class="social-footer-item social-footer-btn">このページもシャアする</a>
                         </div>
                         <a class="btntotop" id="js__back-to-top">TOPへ戻る</a>
                         <div class="fttext">

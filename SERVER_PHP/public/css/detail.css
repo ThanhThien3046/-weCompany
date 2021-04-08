@@ -98,23 +98,46 @@
 .imgmes {
   margin-top: 35px;
 }
+.imgmes:after {
+  clear: both;
+  content: ".";
+  display: block;
+  height: 0;
+  line-height: 0;
+  visibility: hidden;
+  overflow: hidden;
+}
 
-.imgmes_img {
-  width: 380px;
-  height: 240px;
+.imgmess__left {
+  width: 45%;
   float: left;
   padding-right: 37px;
+}
+.imgmes .mes{
+  width: 55%;
+  float: left;
 }
 
 .head-title {
   font-size: 24px;  
 }
 
-.imgdtl-list > img {
-  width: 240px;
-  height: 152px;
-  flex-wrap: wrap;
-  margin: 35px 30px 35px 0px;
+.imgdtl-list{
+  margin: 35px 0;
+}
+.imgdtl-list:after {
+  clear: both;
+  content: ".";
+  display: block;
+  height: 0;
+  line-height: 0;
+  visibility: hidden;
+  overflow: hidden;
+}
+.imgdtl-list > .img__dtl-item {  
+  width: 33.33%;
+  padding: 8px;
+  float: left;
 }
 
 .info > p {
@@ -143,10 +166,20 @@
   margin-bottom: 230px;
 }
 
-.info-txtimg > img {
-  width: 320px;
-  height: 202.1px;
-  margin-left: 80px;
+.info-txtimg:after {
+  clear: both;
+  content: ".";
+  display: block;
+  height: 0;
+  line-height: 0;
+  visibility: hidden;
+  overflow: hidden;
+}
+
+.img__infor-right{
+  width: 50%;
+  float: right;
+  padding-left: 40px;
 }
 
 .btn_map {
@@ -197,8 +230,17 @@
   color: white;
 } */
 
+.main-content-imgcont{
+  padding: 0 15px;
+}
+
 .social-footer {
   margin-bottom: 50px;
+}
+
+.social-footer .social-footer-item{
+  display: inline-block;
+  padding: 10px 0;
 }
 
 .footer > p {
@@ -348,13 +390,13 @@
   font-family: 'Lobster', cursive;
 }
 
-.social-footer-btn{
+.social-footer .social-footer-btn{
   padding: 10px 30px;
   border-radius: 8px;
   border: 1px solid #1d6b9b;
   color: #1d6b9b;
 }
-.social-footer-btn:hover{
+.social-footer .social-footer-btn:hover{
   border: 1px solid #8ed0f9;
   color: #8ed0f9;
   transition: all 1s
@@ -366,4 +408,31 @@
 
 .roundbtn-youtube{
   color: red;
+}
+
+
+
+@media Screen and (max-width:767px){
+	.info-text{
+    width: 100%;
+  }
+  .img__infor-right{
+    width: 100%;
+    padding-left: 0;
+  }
+  .imgdtl-list > .img__dtl-item {
+    width: 50%;
+  }
+
+
+  .imgmess__left {
+    width: 100%;
+    float: none;
+    padding-right: 0;
+  }
+  .imgmes .mes{
+    width: 100%;
+    float: none;
+    padding-top: 15px;
+  }
 }

@@ -6,12 +6,59 @@
 @import "../partial/nav";
 @import "../partial/footer";
 
-.content{
-    position:relative;
-    padding-left: 500px;
-    margin-left: 200px;   
-    width: 800px; 
-    .abc{
-        width: 100px;
-    } 
+.wrapper__about-page {
+    margin-top: 80px;
+}
+.wrapper__about-page h1{
+    text-align: center;
+}
+.wrapper__about-page > h1 > span{
+    font-family: 'Noto Serif JP', serif;
+}
+
+.wrapper__about-page p span{
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.wrapper__about-page > p{
+    text-align: center;
+    margin-top: 30px;
+    margin-top: 40px;
+    line-height: 37px;
+}
+
+.btntotop{
+    position: relative;
+    padding: 10px 50px;
+    border-radius: 8px;
+    border: 1px solid rgb(82, 82, 216);
+    cursor: pointer;
+    color:  rgb(82, 82, 216);
+}
+
+.btntotop:hover{
+    border: 1px solid rgb(103, 103, 221);
+    color:  rgb(103, 103, 221);
+}
+
+.wrapper__about-page{
+    padding: 0 15px;
+}
+.divbtntotop{
+    padding-top: 30px;
+    padding-bottom: 40px;
+    text-align: center;
+    padding-right: 95px;
+    padding-left: 28%;
+    padding-left: calc( 28% + 8px);
+    @include ScreenMax(MD){  padding-right: 0; padding-left: 0; }
+}
+
+
+.footer{
+    padding-right: 95px;
+    padding-left: 28%;
+    padding-left: calc( 28% + 8px);
+    @include ScreenMax(MD){  padding-right: 0; padding-left: 0; }
 }

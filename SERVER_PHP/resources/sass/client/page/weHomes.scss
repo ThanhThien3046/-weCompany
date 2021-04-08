@@ -102,21 +102,21 @@
                 &-detail{
                     padding-bottom: 40px;
                 }
-    
-                .ftimage{
-                    position: relative;
-                    display: block;
-                    box-sizing: border-box;
-                    padding: 16px 0;
-                    border-radius: 5px;
-                    background: rgb(28, 172, 210);
-                    color: rgb(255, 255, 255);
-                    line-height: 1;
-                    text-align: center;
-                    width: 300px;
-                    margin: 0 auto;
-                }
             }
+            
+        }
+        .ftimage{
+            position: relative;
+            display: block;
+            box-sizing: border-box;
+            padding: 16px 0;
+            border-radius: 5px;
+            background: rgb(28, 172, 210);
+            color: rgb(255, 255, 255);
+            line-height: 1;
+            text-align: center;
+            width: 300px;
+            margin: 0 auto;
         }
         .relation-img{
             &-text{

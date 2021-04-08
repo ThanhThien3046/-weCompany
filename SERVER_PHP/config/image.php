@@ -23,6 +23,7 @@ return [
         'category'        => [ 80, 80 ],
         'thumbnail'       => [150, 150],
         'medium'          => [300, 300],
+        'double'          => [ 247, 510 ],
         'largest'         => [600, 600],
         'background-page' => [ 700, 145 ],
         'content'         => [ 400, 240],
