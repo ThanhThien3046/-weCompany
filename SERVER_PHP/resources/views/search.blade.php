@@ -57,14 +57,14 @@
 		</nav>
 		<div class="history homes">
 			<h2>株式会社WE・HOMES</h2>
-			<a href="">
+			<a href="http://thanhthien.jp/history">
 				<ul class="last_child">
 					<li><span>21</span></li>
 					<li>2021</li>
 					<li><i class="fas fa-arrow-right"></i></li>
 				</ul>
 			</a>
-			<a href=""><ul>
+			<a href="http://thanhthien.jp/history"><ul>
 				<li><span>10</span></li>
 				<li>2020</li>
 				<li><i class="fas fa-arrow-right"></i></li>
@@ -74,12 +74,12 @@
 				<li>2019</li>
 				<li><i class="fas fa-arrow-right"></i></li>
 			</ul></a>
-			<a href=""><ul>
+			<a href="http://thanhthien.jp/history"><ul>
 				<li><span>9</span></li>
 				<li>2018</li>
 				<li><i class="fas fa-arrow-right"></i></li>
 			</ul></a>
-			<a href=""><ul class="last_child">
+			<a href="http://thanhthien.jp/history"><ul class="last_child">
 				<li><span>19</span></li>
 				<li>2017</li>
 				<li><i class="fas fa-arrow-right"></i></li>
@@ -87,27 +87,27 @@
 		</div>
 		<div class="history rentcar">
 			<h2>株式会社WE・RENTCAR</h2>
-			<a href=""><ul class="last_child">
+			<a href="http://thanhthien.jp/history"><ul class="last_child">
 				<li><span>21</span></li>
 				<li>2021</li>
 				<li><i class="fas fa-arrow-right"></i></li>
 			</ul></a>
-			<a href=""><ul>
+			<a href="http://thanhthien.jp/history"><ul>
 				<li><span>10</span></li>
 				<li>2020</li>
 				<li><i class="fas fa-arrow-right"></i></li>
 			</ul></a>
-			<a href=""><ul class="last_child">
+			<a href="http://thanhthien.jp/history"><ul class="last_child">
 				<li><span>15</span></li>
 				<li>2019</li>
 				<li><i class="fas fa-arrow-right"></i></li>
 			</ul></a>
-			<a href=""><ul>
+			<a href="http://thanhthien.jp/history"><ul>
 				<li><span>9</span></li>
 				<li>2018</li>
 				<li><i class="fas fa-arrow-right"></i></li>
 			</ul></a>
-			<a href=""><ul class="last_child">
+			<a href="http://thanhthien.jp/history"><ul class="last_child">
 				<li><span>19</span></li>
 				<li>2017</li>
 				<li><i class="fas fa-arrow-right"></i></li>
