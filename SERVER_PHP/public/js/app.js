@@ -119,6 +119,28 @@ console.log("không có gì");
 
 /***/ }),
 
+/***/ "./resources/sass/client/page/commingsoon.scss":
+/*!*****************************************************!*\
+  !*** ./resources/sass/client/page/commingsoon.scss ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./resources/sass/client/page/contact.scss":
+/*!*************************************************!*\
+  !*** ./resources/sass/client/page/contact.scss ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/sass/client/page/home.scss":
 /*!**********************************************!*\
   !*** ./resources/sass/client/page/home.scss ***!
@@ -152,6 +174,17 @@ console.log("không có gì");
 
 /***/ }),
 
+/***/ "./resources/sass/client/page/recruit.scss":
+/*!*************************************************!*\
+  !*** ./resources/sass/client/page/recruit.scss ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/sass/client/page/weHomes.scss":
 /*!*************************************************!*\
   !*** ./resources/sass/client/page/weHomes.scss ***!
@@ -164,9 +197,9 @@ console.log("không có gì");
 /***/ }),
 
 /***/ 0:
-/*!*****************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/client/app.js ./resources/sass/client/page/main.scss ./resources/sass/client/app.scss ./resources/sass/client/page/home.scss ./resources/sass/client/page/weHomes.scss ./resources/sass/client/page/post-detail.scss ./resources/sass/client/page/about.scss ***!
-  \*****************************************************************************************************************************************************************************************************************************************************************************************/
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/client/app.js ./resources/sass/client/page/main.scss ./resources/sass/client/app.scss ./resources/sass/client/page/home.scss ./resources/sass/client/page/weHomes.scss ./resources/sass/client/page/post-detail.scss ./resources/sass/client/page/about.scss ./resources/sass/client/page/commingsoon.scss ./resources/sass/client/page/recruit.scss ./resources/sass/client/page/contact.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -176,7 +209,10 @@ __webpack_require__(/*! /Users/hero/Code/KISS/SERVER_PHP/resources/sass/client/a
 __webpack_require__(/*! /Users/hero/Code/KISS/SERVER_PHP/resources/sass/client/page/home.scss */"./resources/sass/client/page/home.scss");
 __webpack_require__(/*! /Users/hero/Code/KISS/SERVER_PHP/resources/sass/client/page/weHomes.scss */"./resources/sass/client/page/weHomes.scss");
 __webpack_require__(/*! /Users/hero/Code/KISS/SERVER_PHP/resources/sass/client/page/post-detail.scss */"./resources/sass/client/page/post-detail.scss");
-module.exports = __webpack_require__(/*! /Users/hero/Code/KISS/SERVER_PHP/resources/sass/client/page/about.scss */"./resources/sass/client/page/about.scss");
+__webpack_require__(/*! /Users/hero/Code/KISS/SERVER_PHP/resources/sass/client/page/about.scss */"./resources/sass/client/page/about.scss");
+__webpack_require__(/*! /Users/hero/Code/KISS/SERVER_PHP/resources/sass/client/page/commingsoon.scss */"./resources/sass/client/page/commingsoon.scss");
+__webpack_require__(/*! /Users/hero/Code/KISS/SERVER_PHP/resources/sass/client/page/recruit.scss */"./resources/sass/client/page/recruit.scss");
+module.exports = __webpack_require__(/*! /Users/hero/Code/KISS/SERVER_PHP/resources/sass/client/page/contact.scss */"./resources/sass/client/page/contact.scss");
 
 
 /***/ })

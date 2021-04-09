@@ -24,21 +24,25 @@ class CLIENT_VALIDATE_CONTACT extends FormRequest
     public function rules()
     {
         return [
-            'name'                 => 'required|max:150',
-            'email'                => 'required|email',
-            'mobile'               => 'required|numeric',
-            'g-recaptcha-response' => ['required', new \App\Rules\ValidRecaptcha]
+            'first_name' => 'required|max:150',
+            'last_name'  => 'required|max:150',
+            'email'      => 'required|email',
+            'mobile'     => 'numeric',
+            'fax'        => 'max:150',
+            'job_name'   => 'max:150',
+            'company'    => 'max:150',
+            "message"    => 'max:1500',
         ];
     }
 
     public function messages(){
         return [
-            'name.required'   => ':attribute phải được nhập',
-            'name.max'        => ':attribute vượt quá :max kí tự',
-            'email.required'  => ':attribute phải được nhập',
-            'email.email'     => ':attribute định dạng không đúng',
-            'mobile.required' => ':attribute phải được nhập',
-            'mobile.numeric'   => ':attribute  phải là số',
+            'name.required'                 => ':attribute phải được nhập',
+            'name.max'                      => ':attribute vượt quá :max kí tự',
+            'email.required'                => ':attribute phải được nhập',
+            'email.email'                   => ':attribute định dạng không đúng',
+            'mobile.required'               => ':attribute phải được nhập',
+            'mobile.numeric'                => ':attribute  phải là số',
             'g-recaptcha-response.required' => 'chưa nhập recapcha'
         ];
     }

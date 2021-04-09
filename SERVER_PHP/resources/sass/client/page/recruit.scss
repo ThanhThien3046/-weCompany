@@ -1,0 +1,86 @@
+@import "../_variable";
+@import "../_mixin";
+@import "../_reboot";
+
+
+
+/* update recruit */
+.wrapper__collapse {
+    padding: 10px 15px;
+	max-width: 1000px;
+	margin: 0 auto;
+
+    .history__main{
+        width: 100%;
+        display: block;
+    }
+
+    .collapsible {
+        display: flex;
+        cursor: pointer;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 15px;
+        background-color: $gray-400;
+        color: $blue-dark;
+
+        &__title{
+            background-color: $red-light ;
+            padding: 18px;
+            text-align: center;
+        }
+        &__des{
+            flex-grow: 999;
+            padding: 18px;
+            text-align: center;
+        }
+
+        &:hover {
+            opacity: 0.85;
+            background-color: $gray-600;
+            color: $white;
+        }
+        &:after {
+            content: '\002B';
+            color: white;
+            font-weight: bold;
+            float: right;
+            padding: 18px;
+        }
+    }
+
+    .active {
+        background-color: $gray-600;
+        color: $white;
+        
+        &:after {
+            content: "\2212";
+        }
+    }
+    .content__collapsible {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+        background-color: $gray-100;
+        display: flex;
+        justify-items: center;
+
+        &-main{
+            flex-grow: 999;
+            padding: 15px;
+        }
+        &-envelope{
+            background-color: $red-light;
+            padding: 15px;
+            min-width: 50px;
+            text-align: center;
+            color: $white;
+            font-size: 18px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+}
+

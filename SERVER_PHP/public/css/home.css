@@ -1834,6 +1834,14 @@ option:focus {
   opacity: 0.6;
 }
 
+.sidebar__nav-link:hover .cls-1 {
+  fill: red;
+}
+
+.sidebar__nav-link:hover span {
+  color: red;
+}
+
 .sidebar__nav-link svg {
   width: 35px;
   display: block;
@@ -2614,17 +2622,11 @@ option:focus {
   color: white;
 }
 
-.btn-totop{
-  margin: 50px auto 0px auto;
+.btn-totop {
+  margin: 0 auto;
 }
 
-.ftimage:hover{
-  background: #8cd4e7;
-  color: #fff;
-  
-}
-
-.ftimage{    
+.ftimage {
   position: relative;
   display: block;
   box-sizing: border-box;
@@ -2636,10 +2638,5 @@ option:focus {
   text-align: center;
   width: 300px;
   margin: 0 auto;
-}
-
-.fttext{
-
-  margin-left: 271px;
 }
 

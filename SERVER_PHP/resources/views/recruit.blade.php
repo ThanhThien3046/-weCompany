@@ -27,10 +27,12 @@
 	<link rel="stylesheet" href="{{ asset('css/styles.css' . Config::get('app.version'))}}">
 	<link rel="stylesheet" href="{{ asset('css/home.css' . Config::get('app.version'))}}">
 	<link rel="stylesheet" href="{{ asset('css/search.css' . Config::get('app.version'))}}">
+    <link rel="stylesheet" href="{{ asset('css/recruit.css' . Config::get('app.version'))}}">
 @endsection
 @section('javascripts')
     <script type="text/javascript" src="{{ asset('js/library/jquery.min.js' . Config::get('app.version')) }}"></script>
     <script type="text/javascript" src="{{ asset('js/search.js' . Config::get('app.version')) }}"></script>
+    <script type="text/javascript" src="{{ asset('js/home.js' . Config::get('app.version')) }}"></script>
 @endsection
 @section('content')
 
@@ -65,14 +67,17 @@
 			<h2>{{ $recruit['title'] }}</h2>
             @foreach ($recruit['collap'] as $k => $collap)
             <div class="wrapper__collapse">
-                <a class="collapsible {{ $collap['show'] ? 'active' : '' }}">{{ $collap['des'] }}</a>
-                <div class="content">
-                    <div class="content__collapsible">{!!  $collap['des'] . $collap['content'] !!}</div>
-                    <a class="envelop"><i class="far fa-envelope"></i></a>
+                <a class="collapsible {{ $collap['show'] ? 'active' : '' }}">
+                    <span class="collapsible__title">{{ $collap['title'] }}</span>
+                    <span class="collapsible__des">{{ $collap['des'] }}</span>
+                </a>
+                <div class="content__collapsible">
+                    <div class="content__collapsible-main">
+                        {!!  $collap['des'] . $collap['content'] !!}
+                    </div>
+                    <a href="{{ Route('CONTACT_PAGE') }}" class="content__collapsible-envelope"><i class="far fa-envelope"></i></a>
                 </div>
-                
             </div>
-            
             @endforeach
 		</div>
         @endforeach

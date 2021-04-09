@@ -15,6 +15,21 @@ $(function(){
         var n = $('main ul li').index(this);
         $('main .js__toggle-item').hide();
         $('main .js__toggle-item:eq('+ n +')').fadeToggle(900);
+
+
+        /// collapse
+        var collapses = document.getElementsByClassName("collapsible");
+        var icollapses;
+        
+        for (icollapses = 0; icollapses < collapses.length; icollapses++) {
+            
+            if( (collapses[icollapses]).classList.contains("active") ){
+                console.log("activeactiveactiveactiveactive")
+                var content = (collapses[icollapses]).nextElementSibling;
+                content.style.maxHeight = (content.scrollHeight + 30) + "px";
+            }
+        }
+
 	});
 
 
@@ -26,7 +41,7 @@ $(function(){
         
         if( (coll[i]).classList.contains("active") ){
             var content = (coll[i]).nextElementSibling;
-            content.style.maxHeight = content.scrollHeight + "px";
+            content.style.maxHeight = (content.scrollHeight + 30) + "px";
         }
         coll[i].addEventListener("click", function() {
             this.classList.toggle("active");
@@ -35,7 +50,7 @@ $(function(){
             if (content.style.maxHeight){
                 content.style.maxHeight = null;
             } else {
-                content.style.maxHeight = content.scrollHeight + "px";
+                content.style.maxHeight = (content.scrollHeight + 30) + "px";
             } 
         });
     }
