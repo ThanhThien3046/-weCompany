@@ -46,7 +46,9 @@
     <link rel="stylesheet" href="{{ asset('css/awesome.min.css' . Config::get('app.version'))}}">
 
     @yield('stylesheets')
-    
+    <script>
+        const PAGE_404 = "{{ Route('COMMINGSOON') }}"
+    </script>
 </head>
 <body>
     
