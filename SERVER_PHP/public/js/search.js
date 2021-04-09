@@ -8,12 +8,30 @@ function liMouseout(x,y){
 }
 // Historyの処理
 $(function(){
-	$('main div:eq(0)').show();
-	$('main ul li').click(function(){
-	
-    $(this).addClass('active');
-    var n = $('main ul li').index(this);
-    $('main div').hide();
-    $('main div:eq('+ n +')').fadeToggle(900);
+    $('main div:eq(0)').show();
+    $('main .check li').click(function(){
+        $('main .check li').removeClass('active')
+        $(this).addClass('active');
+        var n = $('main ul li').index(this);
+        $('main .js__toggle-item').hide();
+        $('main .js__toggle-item:eq('+ n +')').fadeToggle(900);
 	});
+
+
+    /// collapse
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+    
+    for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            // $(this).closest('.wrapper__collapse').find('.content__collapsible').toggleClass('show')
+            var content = this.nextElementSibling;
+            if (content.style.maxHeight){
+            content.style.maxHeight = null;
+            } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+            } 
+        });
+    }
 })

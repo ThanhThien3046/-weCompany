@@ -44,6 +44,11 @@ Route::get('/', function () {
 Route::get('/history', function () {
     return view('client.history');
 })->name("HISTORY_PAGE");
+
+Route::get('/recruit', function () {
+    return view('client.recruit');
+})->name("RECRUIT_PAGE");
+
 // Route::get('/homepage', function () {
 //     return view('homepage');
 // });
