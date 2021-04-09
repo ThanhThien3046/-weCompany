@@ -14,7 +14,7 @@ return [
                 <br />
                 現在は募集をしておりません。
                 <br />
-                muốn sửa thì vào /SERVER_PHP/config/recruit.php"
+                現在は募集をしておりません。"
             ],
             [
                 'title' => 'H22',
@@ -26,7 +26,7 @@ return [
                 <br />
                 現在は募集をしておりません。
                 <br />
-                muốn sửa thì vào /SERVER_PHP/config/recruit.php
+                  
                 " 
             ],
             [
@@ -38,7 +38,7 @@ return [
                 <br />
                 現在は募集をしておりません。
                 <br />
-                muốn sửa thì vào /SERVER_PHP/config/recruit.php
+                   
                 " 
             ]
         ]
@@ -56,7 +56,7 @@ return [
                 <br />
                 現在は募集をしておりません。
                 <br />
-                muốn sửa thì vào /SERVER_PHP/config/recruit.php
+                   
                 " 
             ],
             [
@@ -68,7 +68,7 @@ return [
                 <br />
                 現在は募集をしておりません。
                 <br />
-                muốn sửa thì vào /SERVER_PHP/config/recruit.php
+                   
                 " 
             ]
         ]
@@ -86,7 +86,7 @@ return [
                 <br />
                 現在は募集をしておりません。
                 <br />
-                muốn sửa thì vào /SERVER_PHP/config/recruit.php
+                   
                 " 
             ],
             [
@@ -98,7 +98,7 @@ return [
                 <br />
                 現在は募集をしておりません。
                 <br />
-                muốn sửa thì vào /SERVER_PHP/config/recruit.php
+                   
                 " 
             ]
         ]
@@ -116,7 +116,7 @@ return [
                 <br />
                 現在は募集をしておりません。
                 <br />
-                muốn sửa thì vào /SERVER_PHP/config/recruit.php
+                   
                 " 
             ],
             [
@@ -128,7 +128,7 @@ return [
                 <br />
                 現在は募集をしておりません。
                 <br />
-                muốn sửa thì vào /SERVER_PHP/config/recruit.php
+                  
                 " 
             ]
         ]
@@ -146,7 +146,7 @@ return [
                 <br />
                 現在は募集をしておりません。
                 <br />
-                muốn sửa thì vào /SERVER_PHP/config/recruit.php
+                   
                 " 
             ],
             [
@@ -158,7 +158,6 @@ return [
                 <br />
                 現在は募集をしておりません。
                 <br />
-                muốn sửa thì vào /SERVER_PHP/config/recruit.php
                 " 
             ]
         ]

@@ -31,7 +31,7 @@
             </a>
         </li>
         <li class="sidebar__nav-item">
-            <a class="sidebar__nav-link find" href="{{ Route('HOME_PAGE') }}">
+            <a class="sidebar__nav-link find" href="{{ Route('RECRUIT') }}">
                 @include('svg.find')
                 <span>求人</span>
             </a>

@@ -3,7 +3,7 @@
     <div class="nav__wrapper">
         <ul class="nav__top">
             <li class="nav__top-item">
-                <a href="https://findmy.tokyo/tag/2396">
+                <a href="">
                     <span class="circle"><i class="far fa-bookmark"></i></span>
                     <span class="text-tag">Webメニュー</span>
                 </a>

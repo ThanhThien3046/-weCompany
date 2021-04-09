@@ -85,7 +85,13 @@ Route::get('/historydetail', function () {
     return view('historydetail');
 })->name("HISTORYDETAIL");
 
+Route::get('/commingsoon', function () {
+    return view('commingsoon');
+})->name("COMMINGSOON");
 
+Route::get('/recruit', function () {
+    return view('recruit');
+})->name("RECRUIT");
 
 include_once("routing/admin.php");
 include_once("routing/client.php");
