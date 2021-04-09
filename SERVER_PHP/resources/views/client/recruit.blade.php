@@ -75,7 +75,7 @@
 	</main>
 
     <!--footer-->
-    <footer class="footer">
+    <footer class="footer mt-40">
         <div class="social-footer">
             <a href="#" class="social-footer-item roundbtn-fb">
                 <i class="fab fa-facebook-f"></i>
