@@ -23,15 +23,28 @@ $(function(){
     var i;
     
     for (i = 0; i < coll.length; i++) {
+        
+        if( (coll[i]).classList.contains("active") ){
+            var content = (coll[i]).nextElementSibling;
+            content.style.maxHeight = content.scrollHeight + "px";
+        }
         coll[i].addEventListener("click", function() {
             this.classList.toggle("active");
             // $(this).closest('.wrapper__collapse').find('.content__collapsible').toggleClass('show')
             var content = this.nextElementSibling;
             if (content.style.maxHeight){
-            content.style.maxHeight = null;
+                content.style.maxHeight = null;
             } else {
-            content.style.maxHeight = content.scrollHeight + "px";
+                content.style.maxHeight = content.scrollHeight + "px";
             } 
         });
+    }
+    
+    var lstCol = document.getElementsByClassName('collapsible')
+    for (var ilstCol = 0; ilstCol < lstCol.length; ilstCol++) {
+        if( $(lstCol[ilstCol]).hasClass('show')){
+            $(lstCol[ilstCol]).click()
+            console.log("click rồi", $(lstCol[ilstCol]))
+        }
     }
 })

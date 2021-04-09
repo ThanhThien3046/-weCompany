@@ -65,7 +65,7 @@
 			<h2>{{ $recruit['title'] }}</h2>
             @foreach ($recruit['collap'] as $k => $collap)
             <div class="wrapper__collapse">
-                <a class="collapsible">{{ $collap['des'] }}</a>
+                <a class="collapsible {{ $collap['show'] ? 'active' : '' }}">{{ $collap['des'] }}</a>
                 <div class="content__collapsible">{!!  $collap['des'] . $collap['content'] !!}</div>
             </div>
             @endforeach
