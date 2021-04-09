@@ -55,7 +55,7 @@
 			<li><img src="images/wemusic.png" width="530" height="622" alt=""/></li>
 			</ul>
 		</nav>
-		<div class="history homes">
+		<div class="js__toggle-item history homes">
 			<h2>株式会社WE・HOMES</h2>
 			<a href="">
 				<ul class="last_child">
@@ -85,7 +85,7 @@
 				<li><i class="fas fa-arrow-right"></i></li>
 			</ul></a>
 		</div>
-		<div class="history rentcar">
+		<div class="js__toggle-item history rentcar">
 			<h2>株式会社WE・RENTCAR</h2>
 			<a href=""><ul class="last_child">
 				<li><span>21</span></li>
