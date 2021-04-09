@@ -2614,3 +2614,20 @@ option:focus {
   color: white;
 }
 
+.btn-totop{
+  margin: 0 auto;
+}
+
+.ftimage{    
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  padding: 16px 0;
+  border-radius: 5px;
+  background: #1cacd2;
+  color: white;
+  line-height: 1;
+  text-align: center;
+  width: 300px;
+  margin: 0 auto;
+}
