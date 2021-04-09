@@ -95,10 +95,9 @@
                 @endforeach
             </div>
             <div class="btn-totop"><a href="{{Route('SEARCH_PAGE')}}" class="ftimage">サイトTOP</a></div>
-            
         </div>
         
     </div>
-    <p>@include('partial.footer')</p>
-
+    <div class="fttext">@include('partial.footer')</div>
+    
 @endsection

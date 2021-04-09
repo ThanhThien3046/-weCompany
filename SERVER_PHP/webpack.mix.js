@@ -24,6 +24,7 @@ mix
     .sass('resources/sass/client/page/weHomes.scss', 'public/css')
     .sass('resources/sass/client/page/post-detail.scss', 'public/css')
     .sass('resources/sass/client/page/about.scss', 'public/css')
+    .sass('resources/sass/client/page/commingsoon.scss', 'public/css')
 
     /// css admin
     // .sass('resources/sass/admin/index.scss', 'public/css/admin.min.css')

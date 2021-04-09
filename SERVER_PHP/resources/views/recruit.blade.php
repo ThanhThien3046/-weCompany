@@ -66,8 +66,13 @@
             @foreach ($recruit['collap'] as $k => $collap)
             <div class="wrapper__collapse">
                 <a class="collapsible {{ $collap['show'] ? 'active' : '' }}">{{ $collap['des'] }}</a>
-                <div class="content__collapsible">{!!  $collap['des'] . $collap['content'] !!}</div>
+                <div class="content">
+                    <div class="content__collapsible">{!!  $collap['des'] . $collap['content'] !!}</div>
+                    <a class="envelop"><i class="far fa-envelope"></i></a>
+                </div>
+                
             </div>
+            
             @endforeach
 		</div>
         @endforeach
@@ -101,6 +106,16 @@
             <p>十人十色の人生と出会い</p>
         </div>    
     </footer>
+
 @include('partial.footer')
 
+{{-- <script>
+    $(function(){
+	$('.collapsible').click(function(){
+    $(this).addClass('active');
+    var n = $('.content').index(this);
+    $('.content:eq('+ n +')').fadeToggle();
+	});
+})
+</script> --}}
 @endsection
