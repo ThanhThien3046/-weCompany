@@ -1682,6 +1682,30 @@ option:focus {
   overflow-wrap: break-word !important;
 }
 
+.farm {
+  /* update recruit */
+}
+
+.farm .wrapper__collapse .collapsible__title {
+  background-color: #ffeb3b;
+}
+
+.farm .wrapper__collapse .content__collapsible-envelope {
+  background-color: #ffeb3b;
+}
+
+.rentcar {
+  /* update recruit */
+}
+
+.rentcar .wrapper__collapse .collapsible__title {
+  background-color: #ff9800;
+}
+
+.rentcar .wrapper__collapse .content__collapsible-envelope {
+  background-color: #ff9800;
+}
+
 /* update recruit */
 
 .wrapper__collapse {

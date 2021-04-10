@@ -75,7 +75,7 @@ return [
     ],
     [
         'title' => '株式会社WE・3【求人】',
-        'class' => 'rentcar',
+        'class' => 'farm',
         'collap' => [
             [
                 'title' => 'H21',

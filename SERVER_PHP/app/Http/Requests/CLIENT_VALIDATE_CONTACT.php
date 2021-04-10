@@ -37,8 +37,8 @@ class CLIENT_VALIDATE_CONTACT extends FormRequest
 
     public function messages(){
         return [
-            'name.required'                 => ':attribute phải được nhập',
-            'name.max'                      => ':attribute vượt quá :max kí tự',
+            'first_name.required'                 => ':attribute phải được nhập',
+            'first_name.max'                      => ':attribute vượt quá :max kí tự',
             'email.required'                => ':attribute phải được nhập',
             'email.email'                   => ':attribute định dạng không đúng',
             'mobile.required'               => ':attribute phải được nhập',
