@@ -74,7 +74,7 @@
                         </div>
                         <div class="head-title">近代アートで対話を楽しもう！</div>
                     </div>
-                    <img src="{{asset('images/challenge172_01.jpg')}}" alt="sdfsdfds">
+                    <img src="{{asset('images/robot.jpg')}}" alt="sdfsdfds">
                     <div class="imgmes">
                         <div class="imgmess__left">
                             <img src="{{asset('images/challenge172_02.jpg')}}" alt="" class="imgmes_img">
@@ -91,7 +91,7 @@
                             <img src="{{asset('images/challenge172_04.jpg')}}" alt="">
                         </div>
                     </div>
-                    <img src="{{asset('images/station_takebashi.jpg')}}" alt="">
+                    <img src="{{asset('images/homes_banner.jpg')}}" alt="">
                     <div class="info">
                         <p style="font-family: 'Sawarabi Mincho', sans-serif;">Find Information</p>
                         <div class="info-txtimg">
