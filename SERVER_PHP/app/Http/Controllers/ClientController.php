@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CLIENT_VALIDATE_CONTACT;
 use App\Mail\MailContact;
+use App\Mail\MailContactAdmin;
 use App\Models\Contact;
 use Exception;
 use Illuminate\Support\Facades\Config;
@@ -51,7 +52,7 @@ class ClientController extends Controller
             if (Mail::failures()) {
                 throw new Exception('send mail not working');
             }
-            Mail::to(trim(env('MAIL_TO_ADMIN', 'thanhthien3046@gmail.com')))->send(new MailContact($input));
+            Mail::to(trim(env('MAIL_TO_ADMIN', 'thanhthien3046@gmail.com')))->send(new MailContactAdmin($input));
             if (Mail::failures()) {
                 throw new Exception('send mail admin not working');
             }

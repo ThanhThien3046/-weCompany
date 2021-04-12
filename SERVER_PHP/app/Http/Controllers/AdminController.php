@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\Http\Requests\ADMIN_VALIDATE_LOGIN;
+use App\Models\Contact;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Http\Request;
@@ -14,9 +15,12 @@ class AdminController extends Controller
     /**
      * ADMIN_DASHBOARD
      */
-    public function index(){
+    public function index(Request $request){
+        $limit      = Config::get('constant.LIMIT');
+        $query      = $request->all('email');
         /// query 
-        return view('admin.dashboard');
+        $contacts = Contact::paginate( $limit )->appends(request()->query());
+        return view('admin.dashboard', compact(['contacts', 'query']));
     }
     
     public function login(Request $request){

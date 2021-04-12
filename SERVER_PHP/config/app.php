@@ -112,7 +112,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'en',
+    'fallback_locale' => 'jp',
 
     /*
     |--------------------------------------------------------------------------
@@ -245,6 +245,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Carbon' => 'Carbon\Carbon'
 
     ],
 
