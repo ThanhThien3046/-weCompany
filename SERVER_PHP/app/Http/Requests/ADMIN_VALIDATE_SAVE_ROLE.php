@@ -31,10 +31,10 @@ class ADMIN_VALIDATE_SAVE_ROLE extends FormRequest
 
     public function messages(){
         return [
-            'name.required' => ':attribute phải được nhập',
-            'name.max'      => ':attribute vượt quá :max kí tự',
-            'type.required' => ':attribute phải được nhập',
-            'type.in'       => ':attribute không đúng định dạng',
+            'name.required' => ':属性が入力してください',
+            'name.max'      => ':属性が最大文字数を超えています',
+            'type.required' => ':属性が入力してください',
+            'type.in'       => ':形式の属性が正しくない',
         ];
     }
 }

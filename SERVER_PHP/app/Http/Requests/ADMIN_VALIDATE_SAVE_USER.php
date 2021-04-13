@@ -34,17 +34,17 @@ class ADMIN_VALIDATE_SAVE_USER extends FormRequest
 
     public function messages(){
         return [
-            'name.required'     => ':attribute phải được nhập',
-            'name.max'          => ':attribute vượt quá :max kí tự',
-            'email.required'    => ':attribute phải được nhập',
-            'email.email'       => ':attribute không đúng định dạng email',
-            'email.unique'      => ':attribute đã tồn tại',
-            'avatar.required'   => ':attribute phải được nhập',
-            'avatar.max'        => ':attribute vượt quá :max kí tự',
-            'role_id.required'  => ':attribute phải được nhập',
-            'role_id.numeric'   => ':attribute phải là số',
-            'contact.required'  => ':attribute phải được nhập',
-            'contact.email'     => ':attribute không đúng định dạng email',
+            'name.required'     => ':属性が入力してください',
+            'name.max'          => ':属性が最大文字数を超えています',
+            'email.required'    => ':属性が入力してください',
+            'email.email'       => ':メール形式の属性が正しくありません',
+            'email.unique'      => ':属性はすでに存在します',
+            'avatar.required'   => ':属性が入力してください',
+            'avatar.max'        => ':属性が最大文字数を超えています',
+            'role_id.required'  => ':属性が入力してください',
+            'role_id.numeric'   => ':属性は数でなければなりません',
+            'contact.required'  => ':属性が入力してください',
+            'contact.email'     => ':属性はメールフォーマットと正しくありません',
         ];
     }
 }

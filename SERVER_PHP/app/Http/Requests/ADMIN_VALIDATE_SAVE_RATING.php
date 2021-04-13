@@ -31,10 +31,10 @@ class ADMIN_VALIDATE_SAVE_RATING extends FormRequest
 
     public function messages(){
         return [
-            'username.required'           => ':attribute phải được nhập',
-            'username.max'                => ':attribute vượt quá :max kí tự',
-            'avatar.required'            => ':attribute phải được nhập',
-            'avatar.max'                 => ':attribute vượt quá :max kí tự',
+            'username.required'           => ':属性が入力してください',
+            'username.max'                => ':属性が最大文字数を超えています',
+            'avatar.required'            => ':属性が入力してください',
+            'avatar.max'                 => ':属性が最大文字数を超えています',
         ];
     }
 }

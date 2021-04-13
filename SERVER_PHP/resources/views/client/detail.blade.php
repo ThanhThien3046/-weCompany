@@ -59,18 +59,15 @@
                     <span class="divider"></span>
                     <a href="{{ Route('HOME_PAGE') }}" target="_blank" class="social__prt">
                         <i class="fal fa-print"></i>
-                        <span class="share-text">印刷する</span>
+                        <span class="share-text" onclick="window.print()">印刷する</span>
                     </a>
                 </div>
             </div>
             <div class="content__detail">
-
             </div>
         </div>
     </div>
 </div>
 @include('partial.footer')
-
-
 
 @endsection

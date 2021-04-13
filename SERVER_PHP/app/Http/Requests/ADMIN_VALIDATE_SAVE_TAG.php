@@ -38,24 +38,24 @@ class ADMIN_VALIDATE_SAVE_TAG extends FormRequest
 
     public function messages(){
         return [
-            'title.required'      => ':attribute phải được nhập',
-            'title.max'           => ':attribute vượt quá :max kí tự',
-            'slug.required'       => ':attribute phải được nhập',
-            'slug.max'            => ':attribute vượt quá :max kí tự',
-            'excerpt.required'    => ':attribute phải được nhập',
-            'excerpt.max'         => ':attribute vượt quá :max kí tự',
-            'content.required'    => ':attribute phải được nhập',
-            'background.required' => ':attribute phải được nhập',
-            'background.max'      => ':attribute vượt quá :max kí tự',
-            'thumbnail.required'  => ':attribute phải được nhập',
-            'thumbnail.max'       => ':attribute vượt quá :max kí tự',
-            'public.required'     => ':attribute phải được nhập',
-            'topic_id.required'   => ':attribute phải được nhập',
-            'site_name.required'  => ':attribute phải được nhập',
-            'site_name.max'       => ':attribute vượt quá :max kí tự',
-            'image.required'      => ':attribute phải được nhập',
-            'image.max'           => ':attribute vượt quá :max kí tự',
-            'description.max'     => ':attribute vượt quá :max kí tự'
+            'title.required'      => ':属性が入力してください',
+            'title.max'           => ':属性が最大文字数を超えています',
+            'slug.required'       => ':属性が入力してください',
+            'slug.max'            => ':属性が最大文字数を超えています',
+            'excerpt.required'    => ':属性が入力してください',
+            'excerpt.max'         => ':属性が最大文字数を超えています',
+            'content.required'    => ':属性が入力してください',
+            'background.required' => ':属性が入力してください',
+            'background.max'      => ':属性が最大文字数を超えています',
+            'thumbnail.required'  => ':属性が入力してください',
+            'thumbnail.max'       => ':属性が最大文字数を超えています',
+            'public.required'     => ':属性が入力してください',
+            'topic_id.required'   => ':属性が入力してください',
+            'site_name.required'  => ':属性が入力してください',
+            'site_name.max'       => ':属性が最大文字数を超えています',
+            'image.required'      => ':属性が入力してください',
+            'image.max'           => ':属性が最大文字数を超えています',
+            'description.max'     => ':属性が最大文字数を超えています'
         ];
     }
 }

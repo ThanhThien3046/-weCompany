@@ -33,12 +33,12 @@ class CLIENT_VALIDATE_ADVISORY extends FormRequest
 
     public function messages(){
         return [
-            'email.required'  => ':attribute phải được nhập',
-            'email.email'     => ':attribute định dạng không đúng',
-            'mobile.required' => ':attribute phải được nhập',
-            'mobile.numeric'   => ':attribute  phải là số',
-            'message.required' => ':attribute phải được nhập',
-            'g-recaptcha-response.required' => 'chưa nhập recapcha'
+            'email.required'  => ':属性が入力してください',
+            'email.email'     => ':属性の形式が正しくありません',
+            'mobile.required' => ':属性が入力してください',
+            'mobile.numeric'   => ':属性は数値でなければなりません',
+            'message.required' => ':属性が入力してください',
+            'g-recaptcha-response.required' => 'recapchaを入力してください'
         ];
     }
 }
