@@ -38,29 +38,9 @@ $config['authentication'] = function () {
 /*============================ License Key ============================================*/
 // https://ckeditor.com/docs/ckfinder/ckfinder3-php/configuration.html#configuration_options_licenseKey
 
-$license = [
-    [   
-        'licenseName' => 'blog.ebudezain.com',
-        'licenseKey'  => '*K?M-*1**-C**6-*C**-*5**-H*L*-2**B'
-    ],
-    [   
-        'licenseName' => 'blog.ebudezain.dev.com',
-        'licenseKey'  => '*4?6-*1**-F**4-*F**-*H**-F*7*-3**L'
-    ],
-    [   
-        'licenseName' => 'ebudezain.com',
-        'licenseKey'  => 'E636G5GV316DY4W5XJQ1H9865QSMT'
-    ],
-];
-$activeLicense = [   'licenseName' => '', 'licenseKey'  => ''];
-foreach($license as $key=>$value){
-    if($value['licenseName'] == $_SERVER['SERVER_NAME']){
-        $activeLicense['licenseName'] = $value['licenseName'];
-        $activeLicense['licenseKey'] = $value['licenseKey'];
-    }
-}
-$config['licenseName'] = $activeLicense['licenseName'];
-$config['licenseKey']  = $activeLicense['licenseKey'];
+
+$config['licenseName'] = 'thanhthien.jp';
+$config['licenseKey']  = '*F?H-*1**-A**E-*B**-*W**-Y*M*-7**R';
 
 /*============================ CKFinder Internal Directory ============================*/
 // https://ckeditor.com/docs/ckfinder/ckfinder3-php/configuration.html#configuration_options_privateDir
