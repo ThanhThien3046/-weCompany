@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="{{ asset('css/animate.min.css' . Config::get('app.version'))}}">
     <link rel="stylesheet" href="{{ asset('css/home.css' . Config::get('app.version'))}}">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap" rel="stylesheet">
 @endsection
 @section('javascripts')
     <script type="text/javascript" src="{{ asset('js/library/jquery.min.js' . Config::get('app.version')) }}"></script>

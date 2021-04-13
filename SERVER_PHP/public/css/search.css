@@ -30,7 +30,7 @@ main nav ul li img{
 }
 .history h2{
 	font-family: YuGothic, "Yu Gothic medium", "Hiragino Sans", Meiryo, "sans-serif";
-	width: 280px;
+	/* width: 280px; */
 	margin: auto;
 	text-align: center;
 	font-size: 22px;
@@ -42,10 +42,10 @@ main nav ul li img{
 	margin-bottom: 20px;
 }
 .homes h2{
-	background-image: url("{{asset('images/homes.png')}}");
+	/* background-image: url("{{asset('images/homes.png')}}"); */
 }
 .rentcar h2{
-    background-image: url("{{asset('images/rentcar.png')}}");
+    /* background-image: url("{{asset('images/rentcar.png')}}"); */
 	padding-left: 20px;
 }
 .history ul{
@@ -266,7 +266,6 @@ main nav ul li img{
 		width:8%;
 	}
 	.history h2{
-		width: 350px;
 		font-size: 26px;
 		margin-top: 20px;
 		background-size: 35px;

@@ -64,7 +64,7 @@
         @endphp
         @foreach ($recruits as $k => $recruit)
         <div class="js__toggle-item history {{ $recruit['class'] }}">
-			<h2>{{ $recruit['title'] }}</h2>
+			<h2 class="history__title">{{ $recruit['title'] }}</h2>
             @foreach ($recruit['collap'] as $k => $collap)
             <div class="wrapper__collapse">
                 <a class="collapsible {{ $collap['show'] ? 'active' : '' }}">
