@@ -51,15 +51,15 @@
                     {{ Session::get('LOGIN_ERROR') }}
                 </div>
                 @endif
-                @if($errors->any())
-                <div class="alert alert-danger">
+                {{-- @if($errors->any()) --}}
+                {{-- <div class="alert alert-danger">
                     check error:
                     @if($errors->has('g-recaptcha-response'))
                         <p>{{ $errors->first('g-recaptcha-response') }}</p>
                     @endif
                     
-                </div>
-                @endif
+                </div> --}}
+                {{-- @endif --}}
                 <h1 class="title"> Welcome Admin </h1>
                 <p class="domain">{{ Config::get('app.name') }}</p>
                 <div class="input-group">
@@ -87,7 +87,9 @@
             </form>
         </div>
     </div>
-    <script src="https://www.google.com/recaptcha/api.js?hl=vi"></script>
+    <script src="https://www.google.com/recaptcha/api.js?hl=vi">
+    </script>
+
 </body>
 </html>
 

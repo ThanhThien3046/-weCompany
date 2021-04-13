@@ -18,14 +18,14 @@ class options extends Seeder
                 [
                     'key'        => "footer-title",
                     'type'       => 1,
-                    'value_text' => 'Ebu chia sẽ kinh nghiệm cho cộng đồng Developer',
+                    'value_text' => '',
                     'value_html' => null,
                     'language'   => Config::get('app.locale')
                 ],
                 [
                     'key'        => "description-footer",
                     'type'       => 1,
-                    'value_text' => 'chuyên chia sẽ kinh nghiệm lập trình của developer',
+                    'value_text' => '',
                     'value_html' => null,
                     'language'   => Config::get('app.locale')
                 ]

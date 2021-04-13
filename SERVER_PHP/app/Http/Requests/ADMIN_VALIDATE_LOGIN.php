@@ -32,11 +32,11 @@ class ADMIN_VALIDATE_LOGIN extends FormRequest
 
     public function messages(){
         return [
-            'email.required'                => 'email phải được nhập',
-            'email.email'                   => 'email không phải là định dạng email',
-            'password.required'             => 'password phải được nhập',
-            'password.min'                  => 'password phải chứa ít nhất 6 kí tự',
-            'g-recaptcha-response.required' => 'chưa xác minh được recapcha',
+            // 'email.required'                => 'メールを入力してください',
+            // 'email.email'                   => 'メールが正しい形式ではありません',
+            // 'password.required'             => 'パスワードを入力してください',
+            // 'password.min'                  => 'パスワードは6文字以上である必要があります',
+            // 'g-recaptcha-response.required' => 'recapchaがまだ検証しませんでした',
             
         ];
     }
