@@ -45,8 +45,6 @@
     <script>
         const ACTION_CHECK_SLUG  = "{{ Route('ADMIN_GET_SLUG', ['slug' => '/'] ) }}";
         const GOOGLE_PLACES_API  = "{{ env('GOOGLE_PLACES_API') }}";
-        const CKFINDER_BROWSER   = '{{ route('ckfinder_browser') }}';
-        const CKFINDER_CONNECTOR = '{{ route('ckfinder_connector') }}';
     </script>
 
 </head>

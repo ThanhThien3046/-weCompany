@@ -64,12 +64,8 @@ if( $("textarea[id^='editor']").length ){
     $("textarea[id^='editor']").each( function( index ) {
         
         CKEDITOR.replace( $(this).attr('id'),{
-            filebrowserBrowseUrl     : CKFINDER_BROWSER,
-            filebrowserImageBrowseUrl: CKFINDER_BROWSER + '?type=Images',
-            filebrowserFlashBrowseUrl: CKFINDER_BROWSER  + '?type=Flash',
-            filebrowserUploadUrl     : CKFINDER_CONNECTOR + '?command=QuickUpload&type=Files',
-            filebrowserImageUploadUrl: CKFINDER_CONNECTOR + '?command=QuickUpload&type=Images',
-            filebrowserFlashUploadUrl: CKFINDER_CONNECTOR + '?command=QuickUpload&type=Flash',
+            
+            format_tags: 'p;h1;h2;h3;h4;h5;h6;pre;address;div', // <---here set the format tag
         });
     })
 }

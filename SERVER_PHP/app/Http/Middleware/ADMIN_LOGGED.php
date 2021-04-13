@@ -17,6 +17,19 @@ class ADMIN_LOGGED
     public function handle($request, Closure $next)
     {
         if(Auth::check()){
+            if (session_id() == '') {
+                @session_start();
+            }
+            if(Auth::check()){
+                $objectUser = Auth::user();
+                $user = array(
+                    "id"      => $objectUser->id,
+                    "name"    => $objectUser->name,
+                    "email"   => $objectUser->email,
+                    "role_id" => $objectUser->role_id
+                );
+                $_SESSION['user'] = $user;
+            }
 
             return $next($request);
         }

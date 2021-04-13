@@ -23,7 +23,6 @@ class tags extends Seeder
             DB::table('tags')->insert(
                 [
                     'title'        => $tag,
-                    'slug'        => SupportString::createSlug($tag),
                     'excerpt'     => 'excerpt ' . $tag,
                     'content'     => 'content ' . $tag,
                     'image'       => '/logo.png',

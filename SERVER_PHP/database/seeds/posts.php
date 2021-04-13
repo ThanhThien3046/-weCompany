@@ -16,10 +16,9 @@ class posts extends Seeder
         DB::table('posts')->insert(
             [
                 [
-                    'topic_id'    => 1,
+                    'branch_id'   => 1,
                     'user_id'     => 1,
                     'title'       => "Bài viết số 1",
-                    'slug'        => SupportString::createSlug("Bài viết số 1"),
                     'excerpt'     => 'excerpt Bài viết số 1',
                     'content'     => 'content Bài viết số 1',
                     'description' => 'description Bài viết số 1',
@@ -28,10 +27,9 @@ class posts extends Seeder
                     'updated_at'  => date('Y-m-d H:i:s')
                 ],
                 [
-                    'topic_id'    => 2,
+                    'branch_id'   => 2,
                     'user_id'     => 1,
                     'title'       => "Bài viết số 2",
-                    'slug'        => SupportString::createSlug("Bài viết số 2"),
                     'excerpt'     => 'excerpt Bài viết số 2',
                     'content'     => 'content Bài viết số 2',
                     'description' => 'description Bài viết số 2',
