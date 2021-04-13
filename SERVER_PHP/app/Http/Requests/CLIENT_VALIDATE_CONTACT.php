@@ -37,12 +37,12 @@ class CLIENT_VALIDATE_CONTACT extends FormRequest
 
     public function messages(){
         return [
-            'first_name.required'                 => ':attribute phải được nhập',
+            'first_name.required'                 => ':属性を入力してください',
             'first_name.max'                      => ':attribute vượt quá :max kí tự',
-            'email.required'                => ':attribute phải được nhập',
-            'email.email'                   => ':attribute định dạng không đúng',
-            'mobile.required'               => ':attribute phải được nhập',
-            'mobile.numeric'                => ':attribute  phải là số',
+            'email.required'                => ':属性を入力してください',
+            'email.email'                   => ':属性 định dạng không đúng',
+            'mobile.required'               => ':属性 を入力してください',
+            'mobile.numeric'                => ':属性  phải là số',
             'g-recaptcha-response.required' => 'chưa nhập recapcha'
         ];
     }

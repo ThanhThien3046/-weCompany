@@ -33,8 +33,6 @@ class ClientController extends Controller
         return view('client.promotion');
     }
 
-
-
     public function mailContact(CLIENT_VALIDATE_CONTACT $request){
 
         $input = $request->only(
@@ -65,6 +63,5 @@ class ClientController extends Controller
             ->withInput($request->all());
         }
     }
-
     
 }

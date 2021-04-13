@@ -93,6 +93,10 @@ Route::get('/contact', function () {
     return view('client.contact');
 })->name("CONTACT_PAGE");
 
+Route::get('/login', function () {
+    return view('login');
+})->name("LOGIN");
+
 // Route::get('/contact','ClientController@contact')->name('CONTACT_PAGE');
 Route::post('/contact','ClientController@mailContact')->name('MAIL_CONTACT');
 
