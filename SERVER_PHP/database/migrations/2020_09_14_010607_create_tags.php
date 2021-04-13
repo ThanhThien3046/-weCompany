@@ -16,7 +16,6 @@ class CreateTags extends Migration
         Schema::create('tags', function (Blueprint $table) {
             $table->id();
             $table->string('title')->nullable();
-            $table->string('slug')->nullable();
             $table->string('excerpt')->nullable();
             $table->text('content')->nullable();
             $table->text('catalogue')->nullable();

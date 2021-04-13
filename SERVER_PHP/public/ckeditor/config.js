@@ -7,13 +7,12 @@ CKEDITOR.editorConfig = function( config ) {
 	// Define changes to default configuration here.
 	// For complete reference see:
 	// http://docs.ckeditor.com/#!/api/CKEDITOR.config
-	
-    // config.filebrowserBrowseUrl      = '/js/ckfinder/ckfinder.html?token=123';
-    // config.filebrowserImageBrowseUrl = '/js/ckfinder/ckfinder.html?type=Images&token=123';
-    // config.filebrowserFlashBrowseUrl = '/js/ckfinder/ckfinder.html?type=Flash&token=123';
-    // config.filebrowserUploadUrl      = '/ckfinder/connector?command=QuickUpload&type=Files&token=123';
-    // config.filebrowserImageUploadUrl = '/ckfinder/connector?command=QuickUpload&type=Images&token=123';
-    // config.filebrowserFlashUploadUrl = '/ckfinder/connector?command=QuickUpload&type=Flash&token=123';
+    config.filebrowserBrowseUrl      = '/ckfinder/ckfinder.php';
+    config.filebrowserImageBrowseUrl = '/ckfinder/ckfinder.php?type=Images';
+    config.filebrowserFlashBrowseUrl = '/ckfinder/ckfinder.php?type=Flash';
+    config.filebrowserUploadUrl      = '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files';
+    config.filebrowserImageUploadUrl = '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images';
+    config.filebrowserFlashUploadUrl = '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash';
 	// The toolbar groups arrangement, optimized for two toolbar rows.
 	config.toolbarGroups = [
 		{ name: 'clipboard',   groups: [ 'clipboard', 'undo' ] },

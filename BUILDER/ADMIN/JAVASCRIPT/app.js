@@ -64,12 +64,8 @@ if( $("textarea[id^='editor']").length ){
     $("textarea[id^='editor']").each( function( index ) {
         
         CKEDITOR.replace( $(this).attr('id'),{
-            filebrowserBrowseUrl     : CKFINDER_BROWSER,
-            filebrowserImageBrowseUrl: CKFINDER_BROWSER + '?type=Images',
-            filebrowserFlashBrowseUrl: CKFINDER_BROWSER  + '?type=Flash',
-            filebrowserUploadUrl     : CKFINDER_CONNECTOR + '?command=QuickUpload&type=Files',
-            filebrowserImageUploadUrl: CKFINDER_CONNECTOR + '?command=QuickUpload&type=Images',
-            filebrowserFlashUploadUrl: CKFINDER_CONNECTOR + '?command=QuickUpload&type=Flash',
+            
+            format_tags: 'p;h1;h2;h3;h4;h5;h6;pre;address;div', // <---here set the format tag
         });
     })
 }
@@ -106,14 +102,7 @@ $(document).ready(function() {
             var group = $( this ).closest(".js-group-option").find(".js-clone-value-option")
             group.find('input').addClass('d-none')
             group.find('textarea').removeClass('d-none')
-            CKEDITOR.replace( group.find('textarea').attr('id'), {
-                filebrowserBrowseUrl     : CKFINDER_BROWSER,
-                filebrowserImageBrowseUrl: CKFINDER_BROWSER + '?type=Images&token=123',
-                filebrowserFlashBrowseUrl: CKFINDER_BROWSER  + '?type=Flash&token=123',
-                filebrowserUploadUrl     : CKFINDER_CONNECTOR + '?command=QuickUpload&type=Files',
-                filebrowserImageUploadUrl: CKFINDER_CONNECTOR + '?command=QuickUpload&type=Images',
-                filebrowserFlashUploadUrl: CKFINDER_CONNECTOR + '?command=QuickUpload&type=Flash',
-            });
+            CKEDITOR.replace( group.find('textarea').attr('id'));
         }
     })
 
@@ -473,14 +462,7 @@ function listenChangeTypeOption(e){
             cke.removeClass('d-none')
         }else{
 
-            CKEDITOR.replace( textarea.attr('id'),{
-                filebrowserBrowseUrl     : CKFINDER_BROWSER,
-                filebrowserImageBrowseUrl: CKFINDER_BROWSER + '?type=Images&token=123',
-                filebrowserFlashBrowseUrl: CKFINDER_BROWSER  + '?type=Flash&token=123',
-                filebrowserUploadUrl     : CKFINDER_CONNECTOR + '?command=QuickUpload&type=Files',
-                filebrowserImageUploadUrl: CKFINDER_CONNECTOR + '?command=QuickUpload&type=Images',
-                filebrowserFlashUploadUrl: CKFINDER_CONNECTOR + '?command=QuickUpload&type=Flash',
-            });
+            CKEDITOR.replace( textarea.attr('id'));
         }
     }
 }

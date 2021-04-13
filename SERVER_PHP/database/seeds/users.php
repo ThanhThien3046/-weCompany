@@ -18,7 +18,7 @@ class users extends Seeder
                 'name'       => 'Admin',
                 'email'      => 'thanhthien3046@gmail.com',
                 'avatar'     => '/images/avatar.jpg',
-                'password'   => bcrypt('admin123'),
+                'password'   => bcrypt('wecompany'),
                 'role_id'    => 1,
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')

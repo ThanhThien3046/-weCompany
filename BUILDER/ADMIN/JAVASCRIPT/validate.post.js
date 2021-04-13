@@ -1,14 +1,10 @@
 function validateForm(formJquery){
     formJquery.validate({
         ignore: ".ignore", // validate all hidden select elements
-        // onfocusout: function (element) {
-        //     var $inputEle = $(element)
-        //     if ($inputEle.attr('name') == 'title') {
-        //         console.log("đây")
-        //         $('input[name=slug]').valid()
-        //     }
-        //     $(element).valid()
-        // },
+        onfocusout: function (element) {
+            console.log("đay")
+            $(element).valid()
+        },
         errorPlacement: function(error, element) {
             var $inputEle = element
             /// nếu tồn tại class jquery__append-out thì sẽ đưa dom error ra phía ngoài
@@ -55,10 +51,6 @@ function validateForm(formJquery){
                 number: true,
                 min: 2.5,
                 max: 5
-            },
-            site_name : {
-                required : true,
-                maxlength: 150
             },
             image_seo : {
                 required : true,

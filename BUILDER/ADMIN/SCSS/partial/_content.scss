@@ -256,6 +256,10 @@
                 border-bottom: 2px solid #dee2e6;
                 text-align: inherit;
                 float: none;
+                padding: 0 5px;
+            }
+            &>div.text-center {
+                text-align: center;
             }
         }
         .trow-list{
@@ -266,6 +270,7 @@
                 padding: .75rem;
                 vertical-align: top;
                 border-top: 1px solid #dee2e6;
+                padding: .75rem 5px;
             }
         }
         .trow-list:hover {
@@ -420,6 +425,7 @@
         background-color: dodgerblue;
         border: 1px solid #ddd;
         color: white;
+        cursor: pointer;
     }
     
     .form-inline button:hover {

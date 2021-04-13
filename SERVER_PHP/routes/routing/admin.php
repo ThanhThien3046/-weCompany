@@ -3,14 +3,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => 'admin'], function () {
 
-    Route::any('/ckfinder/connector', '\CKSource\CKFinderBridge\Controller\CKFinderController@requestAction')
-    ->name('ckfinder_connector');
-
-    Route::any('/ckfinder/browser', '\CKSource\CKFinderBridge\Controller\CKFinderController@browserAction')
-        ->name('ckfinder_browser');
-
-    //Route::any('/ckfinder/examples/{example?}', '\CKSource\CKFinderBridge\Controller\CKFinderController@examplesAction')
-    //    ->name('ckfinder_examples');
 
     Route::get('/login','AdminController@login')->name('ADMIN_LOGIN')->middleware('throttle:10,1');
     Route::post('/login','AdminController@postLogin')->name('ADMIN_POST_LOGIN')->middleware('throttle:10,1');
@@ -18,6 +10,8 @@ Route::group(['prefix' => 'admin'], function () {
 
     Route::group(['prefix' => '/', 'middleware' => 'ADMIN_LOGGED'], function () {
         Route::get('/','AdminController@index')->name('ADMIN_DASHBOARD');
+
+        Route::get('/contact-detail/{id?}','Admin\ContactController@index')->name('ADMIN_CONTACT_DETAIL');
         
         Route::get('/option','Admin\OptionController@index')->name('ADMIN_STORE_OPTION');
         Route::post('/option','Admin\OptionController@store')->name('ADMIN_SAVE_OPTION');

@@ -17,10 +17,9 @@ class CreatePosts extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('topic_id')->unsigned();
+            $table->unsignedInteger('branch_id')->unsigned();
             $table->unsignedInteger('user_id')->unsigned()->nullable();
             $table->string('title', 150)->nullable();
-            $table->string('slug', 150)->nullable();
             $table->string('excerpt')->nullable();
             $table->text('catalogue')->nullable();
             $table->text('text_catalogue')->nullable();

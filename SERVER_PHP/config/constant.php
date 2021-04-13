@@ -13,4 +13,5 @@ return [
         'SINGLE'    => 1,
         'TEXT-HTML' => 2
     ],
+    'CONTACT_ADMIN_READ' => 1,
 ];

@@ -761,3 +761,15 @@ input, select, textarea, option{
 .wrap-break-word{
   overflow-wrap: break-word!important;
 }
+.multiple-line-truncation{
+  overflow-wrap: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.single-line-truncation{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
