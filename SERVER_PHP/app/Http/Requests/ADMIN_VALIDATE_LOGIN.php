@@ -32,11 +32,11 @@ class ADMIN_VALIDATE_LOGIN extends FormRequest
 
     public function messages(){
         return [
-            // 'email.required'                => 'メールを入力してください',
-            // 'email.email'                   => 'メールが正しい形式ではありません',
-            // 'password.required'             => 'パスワードを入力してください',
-            // 'password.min'                  => 'パスワードは6文字以上である必要があります',
-            // 'g-recaptcha-response.required' => 'recapchaがまだ検証しませんでした',
+            'email.required'                => 'メールを入力してください',
+            'email.email'                   => 'メールが正しい形式ではありません',
+            'password.required'             => 'パスワードを入力してください',
+            'password.min'                  => 'パスワードは6文字以上である必要があります',
+            'g-recaptcha-response.required' => 'recapchaがまだ検証しませんでした',
             
         ];
     }

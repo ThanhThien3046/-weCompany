@@ -75,7 +75,7 @@
             <div class="row">
                 <div class="col-12 text-right">
                     <button type="button" onclick="addMoreBlock()" class="btn btn-success"> 
-                        thêm mới
+                        追加
                     </button>
                 </div>
             </div>
@@ -84,10 +84,10 @@
             <div class="row block-content">
                 <div class="col-12 bg-color-white shadows-1 px-3 py-3">
                     <section class="pb-4">
-                        <h2 class="title text-center">bấm lưu mới option</h2>
+                        <h2 class="title text-center">保存ボタンを押してください</h2>
                         <div class="text-center">
                             <button type="submit" class="btn btn-save-data">
-                                Lưu
+                                保存する
                             </button>
                         </div>
                     </section>

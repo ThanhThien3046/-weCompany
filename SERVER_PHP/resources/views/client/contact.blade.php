@@ -66,7 +66,7 @@
                 <div class="row">
                     <div class="col-12 service">
                         <h1 class="service__title">
-                            人材支援サービス
+                            お問い合わせ
                         </h1>
                         <form class="js-validate-form" action="{{ Route('MAIL_CONTACT') }}" method="post">
                             {!! csrf_field() !!}
@@ -76,7 +76,7 @@
                             </div>
                             @elseif (Session::has(Config::get('constant.SAVE_SUCCESS')))
                             <div class="alert alert-success">
-                                success!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                                success!
                             </div>
                             @endif
                             @if(!empty($errors->all()))

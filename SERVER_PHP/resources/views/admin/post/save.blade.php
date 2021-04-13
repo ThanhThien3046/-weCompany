@@ -73,7 +73,7 @@
             </div>
             <div class="row block-content">
                 <div class="col-12 bg-color-white shadows-1 px-3 py-3">
-                    <h2 class="title">meta description ( <span class="italic text-xs normal-case">* nếu không nhập sẽ tự động lấy của phần nội dung</span> )</h2>
+                    <h2 class="title">meta description ( <span class="italic text-xs normal-case">* 入力しないたら内容部分からもらいます</span> )</h2>
                     <textarea class="height-80px" name="description" cols="30" rows="10">{{ old('description', $post->description) }}</textarea>
                 </div>
             </div>
@@ -91,7 +91,8 @@
                             </option>
                             <option @if(old('public', $post->public) == Config::get('constant.TYPE_SAVE.ADMIN_READ')) {{ 'selected' }} @endif
                             value="{{ Config::get('constant.TYPE_SAVE.ADMIN_READ') }}">
-                                chỉ admin xem
+                                {{-- chỉ admin xem --}}
+                                アドミンだけ見えます。
                             </option>
                             
                         </select>

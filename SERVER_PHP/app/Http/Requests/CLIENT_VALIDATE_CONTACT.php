@@ -37,13 +37,13 @@ class CLIENT_VALIDATE_CONTACT extends FormRequest
 
     public function messages(){
         return [
-            'first_name.required'                 => ':属性を入力してください',
-            'first_name.max'                      => ':attribute vượt quá :max kí tự',
+            'first_name.required'           => ':属性を入力してください',
+            'first_name.max'                => ':属性が最大文字数を超えています',
             'email.required'                => ':属性を入力してください',
-            'email.email'                   => ':属性 định dạng không đúng',
+            'email.email'                   => ':メール形式の属性が正しくありません',
             'mobile.required'               => ':属性 を入力してください',
-            'mobile.numeric'                => ':属性  phải là số',
-            'g-recaptcha-response.required' => 'chưa nhập recapcha'
+            'mobile.numeric'                => ':属性は数でなければなりません',
+            'g-recaptcha-response.required' => 'recapchaを入力してください'
         ];
     }
 }
