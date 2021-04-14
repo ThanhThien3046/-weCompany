@@ -61,7 +61,7 @@
                     
                     <span class="divider"></span>
 
-                    <a href="{{ Route('HOME_PAGE') }}" target="_blank" class="social__prt">
+                    <a href="#" target="_blank" class="social__prt">
                         <i class="fal fa-print"></i>
                         <span class="share-text" onclick="window.print()">印刷する</span>
                     </a>

@@ -49,7 +49,7 @@
                     <h2 class="title">
                         title post 
                         <a target="_blank" id="show-url" class="link__post" href="/{{ $post->slug }}">
-                            hiện thị post
+                            ポストを表示する
                             <i class="hero-icon hero-shield-link-variant-outline"></i>
                         </a>
                     </h2>
@@ -82,12 +82,12 @@
             <div class="row block-content">
                 <div class="col-12 bg-color-white shadows-1 px-3 py-3">
                     <section class="pb-4">
-                        <h2 class="title text-center">bấm lưu mới post</h2>
+                        <h2 class="title text-center">保存してポストします</h2>
                         <select name="public" class="js__single-select">
-                            <option value="">chọn kiểu lưu</option>
+                            <option value="">保存タイプを選びます</option>
                             <option @if(old('public', $post->public) == Config::get('constant.TYPE_SAVE.PUBLIC')) {{ 'selected' }} @endif
                             value="{{ Config::get('constant.TYPE_SAVE.PUBLIC') }}">
-                                công khai
+                                公開
                             </option>
                             <option @if(old('public', $post->public) == Config::get('constant.TYPE_SAVE.ADMIN_READ')) {{ 'selected' }} @endif
                             value="{{ Config::get('constant.TYPE_SAVE.ADMIN_READ') }}">
@@ -99,7 +99,7 @@
                         
                         <div class="text-center">
                             <button type="submit" class="btn btn-save-data">
-                                Lưu
+                                保存
                             </button>
                         </div>
                     </section>
@@ -109,7 +109,7 @@
             <div class="row block-content">
                 <div class="col-12 bg-color-white shadows-1 px-3 py-3">
                     <section class="pb-4">
-                        <h2 class="title text-center">chọn type category</h2>
+                        <h2 class="title text-center">カテゴリータイプを選んでください</h2>
                         <select name="type" class="js__single-select">
                             <option @if(old('type', $post->type) == Config::get('constant.TYPE-POST.POST')) {{ 'selected' }} @endif
                             value="{{ Config::get('constant.TYPE-POST.POST') }}">post</option>
@@ -122,11 +122,11 @@
             <div class="row block-content">
                 <div class="col-12 bg-color-white shadows-1 px-3 py-3">
                     <section class="pb-4 wrapper__selectImageWithCKFinder">
-                        <h2 class="title text-center">thiết lập background</h2>
+                        <h2 class="title text-center">バックグラウンドを設定します。</h2>
                         <div class="text-center">
                             <button type="button" onclick="selectImageWithCKFinder(this)"
                                 class="btn btn-select-thumb">
-                                Select background
+                                バックグラウンドを選んでください
                             </button>
                         </div>
                         <div class="group-control-img-ckfinder">

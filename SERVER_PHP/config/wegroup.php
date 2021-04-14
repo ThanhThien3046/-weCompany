@@ -5,7 +5,7 @@ return [
     [
         'number' => 1,
         'banner' => '/images/homes_banner.jpg',
-        'text' => 'ポスター「江戸がいまでも華やぐ」篇',
+        'text' => '',
         'img' => '/images/banner_02.jpg',
         'weintro' => 'WE グループ紹介',
         'news' => [
@@ -36,7 +36,7 @@ return [
     [
         'number' => 2,
         'banner' => '/images/homes_banner.jpg',
-        'text' => 'ポスター「江戸がいまでも華やぐ」篇',
+        'text' => '',
         'img' => '/images/banner_02.jpg',
         'weintro' => 'WE グループ紹介',
         'news' => [
@@ -67,7 +67,7 @@ return [
     [
         'number' => 3,
         'banner' => '/images/homes_banner.jpg',
-        'text' => 'ポスター「江戸がいまでも華やぐ」篇',
+        'text' => '',
         'img' => '/images/banner_02.jpg',
         'weintro' => 'WE グループ紹介',
         'news' => [
@@ -98,7 +98,7 @@ return [
     [
         'number' => 4,
         'banner' => '/images/homes_banner.jpg',
-        'text' => 'ポスター「江戸がいまでも華やぐ」篇',
+        'text' => '',
         'img' => '/images/banner_02.jpg',
         'weintro' => 'WE グループ紹介',
         'news' => [
@@ -130,7 +130,7 @@ return [
     [
         'number' => 5,
         'banner' => '/images/homes_banner.jpg',
-        'text' => 'ポスター「江戸がいまでも華やぐ」篇',
+        'text' => '',
         'img' => '/images/banner_02.jpg',
         'weintro' => 'WE グループ紹介',
         'news' => [
@@ -162,7 +162,7 @@ return [
     [
         'number' => 6,
         'banner' => '/images/homes_banner.jpg',
-        'text' => 'ポスター「江戸がいまでも華やぐ」篇',
+        'text' => '',
         'img' => '/images/banner_02.jpg',
         'weintro' => 'WE グループ紹介',
         'news' => [
@@ -194,7 +194,7 @@ return [
     [
         'number' => 7,
         'banner' => '/images/homes_banner.jpg',
-        'text' => 'ポスター「江戸がいまでも華やぐ」篇',
+        'text' => '',
         'img' => '/images/banner_02.jpg',
         'weintro' => 'WE グループ紹介',
         'news' => [
@@ -226,7 +226,7 @@ return [
     [
         'number' => 8,
         'banner' => '/images/homes_banner.jpg',
-        'text' => 'ポスター「江戸がいまでも華やぐ」篇',
+        'text' => '',
         'img' => '/images/banner_02.jpg',
         'weintro' => 'WE グループ紹介',
         'news' => [
@@ -258,7 +258,7 @@ return [
     [
         'number' => 9,
         'banner' => '/images/homes_banner.jpg',
-        'text' => 'ポスター「江戸がいまでも華やぐ」篇',
+        'text' => '',
         'img' => '/images/banner_02.jpg',
         'weintro' => 'WE グループ紹介',
         'news' => [
@@ -290,7 +290,7 @@ return [
     [
         'number' => 10,
         'banner' => '/images/homes_banner.jpg',
-        'text' => 'ポスター「江戸がいまでも華やぐ」篇',
+        'text' => '',
         'img' => '/images/banner_02.jpg',
         'weintro' => 'WE グループ紹介',
         'news' => [

@@ -70,7 +70,7 @@
     </div>
     <div class="content__main homepage">
         <div class="wrapper__about-page">
-            <h1>Find my WE・COMPANY<span>とは？</span></h1>
+            <h1>WE・COMPANY<span>とは？</span></h1>
             <p>
                 ７つのバリュー<b>【Crew Ship】</b>を定めています。<br>
                 組織/プロタクトの変化に合わせて価値観を定めることで <br>
