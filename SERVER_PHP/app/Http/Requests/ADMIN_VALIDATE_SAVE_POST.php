@@ -30,6 +30,7 @@ class ADMIN_VALIDATE_SAVE_POST extends FormRequest
             'public'      => 'required',
             'branch_id'   => 'required',
             'image'       => 'required|max:255',
+            'image_long'  => 'required|max:255',
             'description' => 'max:255',
             'type'        => 'required'
         ];
@@ -37,17 +38,19 @@ class ADMIN_VALIDATE_SAVE_POST extends FormRequest
 
     public function messages(){
         return [
-            'title.required'     => ':attribute 属性が入力してください',
-            'title.max'          => ':attribute 属性が最大文字数を超えています',
-            'excerpt.required'   => ':attribute 属性が入力してください',
-            'excerpt.max'        => ':attribute 属性が最大文字数を超えています',
-            'content.required'   => ':attribute 属性が入力してください',
-            'public.required'    => ':attribute 属性が入力してください',
-            'branch_id.required' => ':attribute 属性が入力してください',
-            'image.required'     => ':attribute 属性が入力してください',
-            'image.max'          => ':attribute 属性が最大文字数を超えています',
-            'description.max'    => ':attribute 属性が最大文字数を超えています',
-            'type.required'      => ':attribute 属性が入力してください',
+            'title.required'      => ':attribute 属性が入力してください',
+            'title.max'           => ':attribute 属性が最大文字数を超えています',
+            'excerpt.required'    => ':attribute 属性が入力してください',
+            'excerpt.max'         => ':attribute 属性が最大文字数を超えています',
+            'content.required'    => ':attribute 属性が入力してください',
+            'public.required'     => ':attribute 属性が入力してください',
+            'branch_id.required'  => ':attribute 属性が入力してください',
+            'image.required'      => ':attribute 属性が入力してください',
+            'image.max'           => ':attribute 属性が最大文字数を超えています',
+            'image_long.required' => ':attribute 属性が入力してください',
+            'image_long.max'      => ':attribute 属性が最大文字数を超えています',
+            'description.max'     => ':attribute 属性が最大文字数を超えています',
+            'type.required'       => ':attribute 属性が入力してください',
         ];
     }
 }

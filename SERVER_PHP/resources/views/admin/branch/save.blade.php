@@ -9,7 +9,7 @@
     <script src="{{ asset('js/library/wanakana.min.js') }}"></script>
     <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
     <script src="{{ asset('ckfinder/ckfinder.js') }}"></script>
-    <script src="{{ asset('js/admin/validate.topic.min.js') }}"></script>
+    <script src="{{ asset('js/admin/validate.branch.min.js') }}"></script>
     <script src="{{ asset('js/admin/app.min.js') }}"></script>
     
 @endsection
@@ -83,11 +83,32 @@
                     </section>
                 </div>
             </div>
+
             
             <div class="row block-content">
                 <div class="col-12 bg-color-white shadows-1 px-3 py-3">
                     <section class="pb-4 wrapper__selectImageWithCKFinder">
-                        <h2 class="title text-center">setup image</h2>
+                        <h2 class="title text-center">thiết lập banner</h2>
+                        <div class="text-center">
+                            <button type="button" onclick="selectImageWithCKFinder(this)"
+                                class="btn btn-select-thumb">
+                                Select banner
+                            </button>
+                        </div>
+                        <div class="group-control-img-ckfinder">
+                            <input name="banner" class="img__outputCKFinder thumbnail-topic mb-2" 
+                                onblur="showImage__InputCKFinder( this.value, this )"
+                                type="text" value="{{ old('banner', $branch->banner) }}" />
+                        </div>
+                    </section>
+                </div>
+            </div>
+            
+            {{-- hình ảnh --}}
+            <div class="row block-content">
+                <div class="col-12 bg-color-white shadows-1 px-3 py-3">
+                    <section class="pb-4 wrapper__selectImageWithCKFinder">
+                        <h2 class="title text-center">thiết lập image</h2>
                         <div class="text-center">
                             <button type="button" onclick="selectImageWithCKFinder(this)"
                                 class="btn btn-select-thumb">
@@ -95,7 +116,8 @@
                             </button>
                         </div>
                         <div class="group-control-img-ckfinder">
-                            <input name="image" class="img__outputCKFinder thumbnail-topic pb-2" 
+                            <input name="image" class="img__outputCKFinder thumbnail-topic mb-2" 
+                                onblur="showImage__InputCKFinder( this.value, this )"
                                 type="text" value="{{ old('image', $branch->image) }}" />
                         </div>
                     </section>

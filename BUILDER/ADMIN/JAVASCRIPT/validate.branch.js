@@ -25,26 +25,14 @@ function validateForm(formJquery){
                 required : true,
                 maxlength: 255
             },
-            content : {
-                cke_required : true
-            },
-            public : {
-                required : true
-            },
-            branch_id: {
-                required : true
+            banner : {
+                required : true,
+                maxlength: 255
             },
             image : {
                 required : true,
                 maxlength: 255
             },
-            image_long : {
-                required : true,
-                maxlength: 255
-            },
-            type:{
-                required : true
-            }
         },
         messages: {
             title: {
@@ -55,25 +43,13 @@ function validateForm(formJquery){
                 required : "bắt buộc nhập đoạn trích(excerpt)",
                 maxlength: "độ dài đoạn trích(excerpt) không vượt quá {0} kí tự"
             },
-            content : {
-                cke_required : "cần nhập nội dung"
-            },
-            public : {
-                required : "bắt buộc nhập public"
-            },
-            branch_id: {
-                required : "bắt buộc nhập bài viết thuộc chi nhánh nào"
-            },
             image : {
-                required : "cần nhập hình ảnh để seo tốt hơn",
-                maxlength: "phần hình ảnh không vượt quá {0} kí tự"
+                required : "cần nhập hình ảnh  để seo tốt hơn",
+                maxlength: "phần hình ảnh  không vượt quá {0} kí tự"
             },
-            image_long : {
-                required : "cần nhập hình ảnh để seo tốt hơn",
-                maxlength: "phần hình ảnh không vượt quá {0} kí tự"
-            },
-            type:{
-                required : "cần cho biết kiểu hiện thị bài viết"
+            banner : {
+                required : "cần nhập hình ảnh  để seo tốt hơn",
+                maxlength: "phần hình ảnh  không vượt quá {0} kí tự"
             },
         }
     });

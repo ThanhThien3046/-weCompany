@@ -49,7 +49,7 @@ class PostController extends Controller
     public function save(ADMIN_VALIDATE_SAVE_POST $request, $id = 0){
 
         ///setting data insert table post
-        $postInput = $request->only( 'branch_id', 'title', 'excerpt', 'content', 'image', 'public', 'description', 'type');
+        $postInput = $request->only( 'branch_id', 'title', 'excerpt', 'content', 'image', 'image_long', 'public', 'description', 'type');
 
         $postInput['user_id'] = Auth::user()->id;
         $postInput['content'] = SupportString::createEmoji($postInput['content']);

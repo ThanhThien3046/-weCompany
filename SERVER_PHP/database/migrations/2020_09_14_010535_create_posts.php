@@ -26,6 +26,7 @@ class CreatePosts extends Migration
             $table->text('content')->nullable();
             $table->text('text_content')->nullable();
             $table->string('image', 255)->nullable();
+            $table->string('image_long', 255)->nullable();
             $table->integer('type')->default(1);
             $table->integer('public')->default(1);
             $table->string('description', 160)->nullable();

@@ -37,9 +37,7 @@ Route::get('resize-compress/{size}/{type}/{quality}/{ext}/{imagePath}', 'ImageCo
 // });
 
 
-Route::get('/', function () {
-    return view('client.home');
-})->name("HOME_PAGE");
+Route::get('/','ClientController@index')->name('HOME_PAGE');
 
 Route::get('/history', function () {
     return view('client.history');
@@ -73,9 +71,7 @@ Route::get('/styles',function(){
     return view('styles');
 })->name("STYLES");
 
-Route::get('/weHomes',function(){
-    return view('client.weHomes');
-})->name("WEHOMES_PAGE");
+Route::get('/weHomes','ClientController@branchs')->name('WEHOMES_PAGE');
 
 Route::get('/about',function(){
     return view('client.about');

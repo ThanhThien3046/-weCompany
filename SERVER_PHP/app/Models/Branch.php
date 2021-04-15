@@ -9,7 +9,7 @@ class Branch extends Model
 {
     protected $table = 'branchs';
 
-    protected $fillable = ['id', 'title', 'excerpt', 'content', 'image', 'description'];
+    protected $fillable = ['id', 'title', 'excerpt', 'content', 'banner', 'image', 'description'];
 
     /**
      * là mối quan hệ dạng 1 nhiều ví dụ : 

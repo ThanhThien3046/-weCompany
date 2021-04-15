@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
         $this->call(users::class);
         $this->call(options::class);
         $this->call(tags::class);
+        $this->call(branchs::class);
         $this->call(posts::class);
         $this->call(post_tag_actives::class);
     }

@@ -28,21 +28,24 @@ class ADMIN_VALIDATE_SAVE_BRANCH extends FormRequest
             'excerpt'     => 'required|max:255',
             'content'     => 'required',
             'image'       => 'required|max:255',
+            'banner'      => 'required|max:255',
             'description' => 'max:160',
         ];
     }
 
     public function messages(){
         return [
-            'title.required'      => ':attribute 属性が入力してください',
-            'title.max'           => ':attribute 属性が最大文字数を超えています',
-            'excerpt.required'    => ':attribute 属性が入力してください',
-            'excerpt.max'         => ':attribute 属性が最大文字数を超えています',
-            'content.required'    => ':attribute 属性が入力してください',
-            'public.required'     => ':attribute 属性が入力してください',
-            'image.required'      => ':attribute 属性が入力してください',
-            'image.max'           => ':attribute 属性が最大文字数を超えています',
-            'description.max'     => ':attribute 属性が最大文字数を超えています',
+            'title.required'   => ':attribute 属性が入力してください',
+            'title.max'        => ':attribute 属性が最大文字数を超えています',
+            'excerpt.required' => ':attribute 属性が入力してください',
+            'excerpt.max'      => ':attribute 属性が最大文字数を超えています',
+            'content.required' => ':attribute 属性が入力してください',
+            'public.required'  => ':attribute 属性が入力してください',
+            'image.required'   => ':attribute 属性が入力してください',
+            'image.max'        => ':attribute 属性が最大文字数を超えています',
+            'banner.required'  => ':attribute 属性が入力してください',
+            'banner.max'       => ':attribute 属性が最大文字数を超えています',
+            'description.max'  => ':attribute 属性が最大文字数を超えています',
         ];
     }
 }

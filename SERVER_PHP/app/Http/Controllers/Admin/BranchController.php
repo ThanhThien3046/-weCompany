@@ -33,7 +33,7 @@ class BranchController extends Controller
 
         ///setting data insert table topic
 
-        $branchInput = $request->only( 'title', 'excerpt', 'content', 'image', 'description');
+        $branchInput = $request->only( 'title', 'excerpt', 'content', 'banner', 'image', 'description');
 
         /// create catalogue
                     $catalogue = Catalogue::generate($branchInput['content']);
@@ -65,7 +65,7 @@ class BranchController extends Controller
                 
             }else{
                 $branch = new Branch();
-                $branch->create($branchInput);
+                $branch = $branch->create($branchInput);
             }
 
             $request->session()->flash(Config::get('constant.SAVE_SUCCESS'), true);

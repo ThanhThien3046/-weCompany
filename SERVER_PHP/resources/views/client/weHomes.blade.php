@@ -53,61 +53,52 @@
                             <p class="header_content--title-des">広告・ニュース&トピック情報</p>
                         </div>
                         <div class="wechild__wrapper">
-                            @php $wegroups = Config::get("wegroup") @endphp
-                            @foreach ($wegroups as $key => $group)
+                            
+                            @foreach ($branchs as $key => $branch)
 
                             <article class="wechild__news">
                                 <header class="wechild__news-banner">
-                                    <h4>
-                                        <img src="{{ asset($group['banner']) }}" />
-                                    </h4>
+                                    <h4> <img src="{{ asset($branch->banner) }}" /> </h4>
                                 </header>
                                 <div>
                                     <div>
-                                        <p class="wechild__news-des">{{ $group['text'] }}</p>
+                                        <div class="wechild__news-des">
+                                            {{ $branch->excerpt }}
+                                        </div>
                                         <div class="wechild__news-detail">
-                                            <img src="{{ asset($group['img']) }}" alt="{{ $group['text'] }}" width="800" height="283">
+                                            <img src="{{ asset($branch->image) }}" alt="{{ $branch->title }}" 
+                                                width="800" height="283">
                                         </div>
                                     </div>
                                     <div class="div_text">
-                                        <p>{{ $group['weintro'] }}</p>
+                                        <p>WE グループ紹介</p>
                                     </div>
                                     <div class="main__list" id="js__format-height-article">
+                                        @php $posts = $branch->posts()->orderBy('id', 'DESC')->take(3)->get() @endphp
 
-                                        @foreach ($group['news'] as $key => $news)
-                                        @php 
-                                        if( $key == 3 ){
-                                            break;
-                                        }
-                                        $index = $key + 1;
-                                        $clear = 'article__default ';
-                                        
-                                        if($news['type'] == 2){
-                                            $clear = 'article__right';
-                                        }
-                                        if($news['type'] == 3){
-                                            $clear .= 'article__left';
-                                        }
-                                        
-                                        @endphp
-                                        <article class="article {{ $clear }}">
+                                        {{-- /// khúc này tôi copy ngoài home page y chang không sửa gì --}}
+                                        @if(!$posts->isEmpty())
+                                        @foreach ($posts as $key => $post)
+                                        <article class="article article__default">
                                             <div class="article__wrapper">
                                                 <span class="article__challenge">
-                                                    <i class="article__challenge-number">{{ $news['number'] }}</i>
+                                                    <i class="article__challenge-number">{{ $post->id }}</i>
                                                 </span>
-                                                <a class="article__link-img" href="{{ $news['link'] }}">
+                                                <a class="article__link-img" href="{{ Route('DETAIL_PAGE') }}">
                                                     <img class="lazyload"
                                                             src="{{ Config::get('app.lazyload_base64') }}"
                                                             onerror="this.onerror=null;this.src='{{ asset('/images/failed.jpg') }}';"
-                                                            data-src="{{ Route('IMAGE_RESIZE', [ 'size' => ( $news['type'] == 1 ? 'medium' : 'double' ) , 'type' => 'fit', 'imagePath' => trim($news['img'], '/') ]) }}"
+                                                            data-src="{{ Route('IMAGE_RESIZE', [ 'size' => 'medium' , 'type' => 'fit', 'imagePath' => trim($post->image, '/') ]) }}"
                                                             alt="" width="300" height="300"/>
                                                 </a>
                                                 <a class="article__link-title">
-                                                    <h3 class="title">{{ $news['title'] }}</h3>
+                                                    <h3 class="title">{{ $post->title }}</h3>
                                                 </a>
                                             </div>
                                         </article>
                                         @endforeach
+                                        @endif
+                                        {{-- /// end khúc này tôi copy ngoài home page y chang không sửa gì --}}
                                     </div>
                                 </div>
                                 

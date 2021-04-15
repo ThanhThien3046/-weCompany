@@ -20,6 +20,7 @@ class Post extends Model
         'content', 
         'public',
         'image', 
+        'image_long', 
         'description', 
         'type',
     ];
@@ -88,9 +89,9 @@ class Post extends Model
     /**
      * là mối quan hệ dạng nhiều tới 1 ví dụ : 
      */
-    public function topic(){
+    public function branch(){
 
-        return $this->belongsTo( Topic::class, 'topic_id');
+        return $this->belongsTo( Branch::class, 'branch_id');
     }
 
 

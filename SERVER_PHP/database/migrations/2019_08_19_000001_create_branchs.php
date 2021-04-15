@@ -20,6 +20,7 @@ class CreateBranchs extends Migration
             $table->text('content')->nullable();
             $table->text('catalogue')->nullable();
             $table->string('image', 255)->nullable();
+            $table->string('banner', 255)->nullable();
             $table->string('description', 160)->nullable();
             $table->timestamps();
         });

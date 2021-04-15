@@ -65,7 +65,7 @@
                 <div class="col-1">image</div>
                 <div class="col-5">title</div>
                 <div class="col-1">type</div>
-                <div class="col-2">topic</div>
+                <div class="col-2">group - branch</div>
                 <div class="col-1">public</div>
                 <div class="col-1">#remove#</div>
             </div>
@@ -73,7 +73,7 @@
             <div class="row trow-list {{ $post->public == Config::get('constant.TYPE_SAVE.ADMIN_READ') ? 'highlight' : null }}">
                 <div class="col-1">{{ $post->id }}</div>
                 <div class="col-1 trow_list__wrapper_image">
-                    <img class="item_image" src="{{ $post->background }}" />
+                    <img class="item_image" src="{{ asset($post->image) }}" />
                 </div>
                 <div class="col-5">
                     <a href="{{ Route("ADMIN_STORE_POST", ['id' =>  $post->id]) }}">
@@ -81,8 +81,8 @@
                     </a>
                 </div>
                 <div class="col-1">{{ $post->getType()  }}</div>
-                <div class="col-2">{{ $post->topic_title }}</div>
-                <div class="col-1">{{ $post->public == Config::get('constant.TYPE_SAVE.PUBLIC') ? 'all' : 'admin' }}</div>
+                <div class="col-2">{{ $post->branch->title }}</div>
+                <div class="col-1">{{ $post->public == Config::get('constant.TYPE_SAVE.PUBLIC') ? 'show' : 'admin' }}</div>
                 <div class="col-1">
                     <button type="button"
                     onclick="deleteComponent('{{ $post->id }}', this)"

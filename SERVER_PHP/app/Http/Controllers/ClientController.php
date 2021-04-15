@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CLIENT_VALIDATE_CONTACT;
 use App\Mail\MailContact;
 use App\Mail\MailContactAdmin;
+use App\Models\Branch;
 use App\Models\Contact;
+use App\Models\Post;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
@@ -18,38 +20,16 @@ class ClientController extends Controller
      */
     public function index(){
 
+        $posts = (new Post())->where('public', Config::get('constant.TYPE_SAVE.PUBLIC'))
+                                ->orderBy('id', 'DESC')
+                                ->get();
+        return view('client.home', compact(['posts']));
     }
 
-    public function upload()
-    {
-        return view('demo_upload');
-    }
+    public function branchs(){
 
-    public function doUpload(Request $request)
-    {
-        //Kiểm tra file
-        if ($request->hasFile('fileTest')) {
-            $file = $request->filesTest;
-
-            //Lấy Tên files
-            echo 'Tên Files: ' . $file->getClientOriginalName();
-            echo '<br/>';
-
-            //Lấy Đuôi File
-            echo 'Đuôi file: ' . $file->getClientOriginalExtension();
-            echo '<br/>';
-
-            //Lấy đường dẫn tạm thời của file
-            echo 'Đường dẫn tạm: ' . $file->getRealPath();
-            echo '<br/>';
-
-            //Lấy kích cỡ của file đơn vị tính theo bytes
-            echo 'Kích cỡ file: ' . $file->getSize();
-            echo '<br/>';
-
-            //Lấy kiểu file
-            echo 'Kiểu files: ' . $file->getMimeType();
-        }
+        $branchs = (new Branch())->all();
+        return view('client.weHomes', compact(['branchs']));
     }
 
 

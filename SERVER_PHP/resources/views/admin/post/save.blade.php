@@ -155,6 +155,24 @@
                     </section>
                 </div>
             </div>
+            <div class="row block-content">
+                <div class="col-12 bg-color-white shadows-1 px-3 py-3">
+                    <section class="pb-4 wrapper__selectImageWithCKFinder">
+                        <h2 class="title text-center">thiết lập image dài hơn</h2>
+                        <div class="text-center">
+                            <button type="button" onclick="selectImageWithCKFinder(this)"
+                                class="btn btn-select-thumb">
+                                Select image
+                            </button>
+                        </div>
+                        <div class="group-control-img-ckfinder">
+                            <input name="image_long" class="img__outputCKFinder thumbnail-topic mb-2" 
+                                onblur="showImage__InputCKFinder( this.value, this )"
+                                type="text" value="{{ old('image_long', $post->image_long) }}" />
+                        </div>
+                    </section>
+                </div>
+            </div>
         </div>
     </form>
 </div>

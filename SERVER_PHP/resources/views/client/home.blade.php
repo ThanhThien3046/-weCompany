@@ -67,38 +67,29 @@
         </div>
         <div class="content__main homepage">
             <div class="main__list" id="js__format-height-article">
-                @php $challenges = Config::get("challenge") @endphp
-                @foreach ($challenges as $key => $challenge)
-                @php 
-                $index = $key + 1;
-                $clear = 'article__default ';
-                
-                if($challenge['type'] == 2){
-                    $clear .= 'article__right';
-                }
-                if($challenge['type'] == 3){
-                    $clear .= 'article__left';
-                }
-                
-                @endphp
-                <article class="article {{ $clear }}">
+                @if(!$posts->isEmpty())
+                @foreach ($posts as $key => $post)
+                <article class="article article__default 
+                    {{ $post->type == Config::get('constant.TYPE-POST.RIGHT') ? 'article__right' : null }}
+                    {{ $post->type == Config::get('constant.TYPE-POST.LEFT') ? 'article__left' : null }}">
                     <div class="article__wrapper">
                         <span class="article__challenge">
-                            <i class="article__challenge-number">{{ $challenge['number'] }}</i>
+                            <i class="article__challenge-number">{{ $post->id }}</i>
                         </span>
                         <a class="article__link-img" href="{{ Route('DETAIL_PAGE') }}">
                             <img class="lazyload"
                                     src="{{ Config::get('app.lazyload_base64') }}"
                                     onerror="this.onerror=null;this.src='{{ asset('/images/failed.jpg') }}';"
-                                    data-src="{{ Route('IMAGE_RESIZE', [ 'size' => ( $challenge['type'] == 1 ? 'medium' : 'double' ) , 'type' => 'fit', 'imagePath' => trim($challenge['img'], '/') ]) }}"
+                                    data-src="{{ Route('IMAGE_RESIZE', [ 'size' => ( $post->type == 1 ? 'medium' : 'double' ) , 'type' => 'fit', 'imagePath' => trim($post->image, '/') ]) }}"
                                     alt="" width="300" height="300"/>
                         </a>
                         <a class="article__link-title">
-                            <h3 class="title">{{ $challenge['title'] }}</h3>
+                            <h3 class="title">{{ $post->title }}</h3>
                         </a>
                     </div>
                 </article>
                 @endforeach
+                @endif
             </div>
         </div>
     </div>
