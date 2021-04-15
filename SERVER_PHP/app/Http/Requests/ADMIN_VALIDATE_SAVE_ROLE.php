@@ -31,10 +31,10 @@ class ADMIN_VALIDATE_SAVE_ROLE extends FormRequest
 
     public function messages(){
         return [
-            'name.required' => ':属性が入力してください',
-            'name.max'      => ':属性が最大文字数を超えています',
-            'type.required' => ':属性が入力してください',
-            'type.in'       => ':形式の属性が正しくない',
+            'name.required' => ':attribute 属性が入力してください',
+            'name.max'      => ':attribute 属性が最大文字数を超えています',
+            'type.required' => ':attribute 属性が入力してください',
+            'type.in'       => ':attribute 形式の属性が正しくない',
         ];
     }
 }

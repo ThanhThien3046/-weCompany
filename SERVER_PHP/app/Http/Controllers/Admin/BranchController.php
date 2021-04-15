@@ -1,0 +1,119 @@
+<?php
+
+namespace App\Http\Controllers\Admin;
+
+use App\Http\Controllers\Controller;
+use App\Helpers\Catalogue;
+use App\Http\Requests\ADMIN_VALIDATE_SAVE_BRANCH;
+use App\Models\Branch;
+use Illuminate\Support\Facades\Config;
+
+class BranchController extends Controller
+{
+    /**
+     * Show form save data of component ( insert or edit )
+     *
+     * @return View
+     */
+    public function index( $id = 0 ){
+        
+        if( !$id ){
+            /// thêm mới
+            $branch    = new Branch();
+        }else{
+            //// edit 
+            $branch    = (new Branch())->find($id);
+        }
+        
+        return view('admin.branch.save', compact([ 'branch' ]));
+    }
+
+
+    public function save(ADMIN_VALIDATE_SAVE_BRANCH $request, $id = 0){
+
+        ///setting data insert table topic
+
+        $branchInput = $request->only( 'title', 'excerpt', 'content', 'image', 'description');
+
+        /// create catalogue
+                    $catalogue = Catalogue::generate($branchInput['content']);
+        $branchInput['content'] = $catalogue->text;
+
+        $branchInput['catalogue']    = $catalogue->catalogue;
+                    $text_catalogue = $catalogue->text_catalogue;
+
+        /// if description_seo null get of catalogue || content
+        if(!trim($branchInput['description'])){
+
+            $description = $text_catalogue;
+            if( !trim($description) ){
+
+                $description = mb_substr( strip_tags($branchInput['content']), 0, 160);
+            }
+            $branchInput['description'] = html_entity_decode(trim($description));
+        }
+
+        /// set id save topic 
+        $branchInput['id'] = $id;
+        
+        try{
+            /// create instance Branch Model 
+            
+            if( $id ){
+                $branch = (new Branch())->find($id);
+                $branch->update($branchInput);
+                
+            }else{
+                $branch = new Branch();
+                $branch->create($branchInput);
+            }
+
+            $request->session()->flash(Config::get('constant.SAVE_SUCCESS'), true);
+            return redirect()->route('ADMIN_STORE_BRANCH',  ['id' => $branch->id ]);
+
+        }catch (\Exception $e){
+            return redirect()->back()
+            ->with(Config::get('constant.SAVE_ERROR'), 'đã có lỗi: '.$e->getMessage())
+            ->withInput($request->all());
+        }
+    }
+
+    /**
+     * Show all row of component
+     *
+     * @return View
+     */
+    public function load(){
+        $limit       = 10;
+        $branchModel = new Branch();
+        $branchs     = $branchModel->paginate( $limit );
+        return view('admin.branch.load', compact(['branchs']));
+    }
+
+    /**
+     * Show the profile for the given user.
+     *
+     * @param  int  $id
+     * @return View
+     */
+    public function show($id)
+    {
+        //// detail component
+    }
+    
+    /**
+     * Delete 1 topic
+     *
+     * @param  int  $id
+     * @return View
+     */
+    public function delete($id = 0){
+
+        $branchModel = new Branch();
+        $branchModel->find($id)->delete();
+
+        $status = 200;
+        $response = array( 'status' => $status, 'message' => 'success' );
+        return response()->json( $response );
+    }
+}

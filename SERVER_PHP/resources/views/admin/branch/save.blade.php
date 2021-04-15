@@ -1,0 +1,107 @@
+@extends('admin._layout')
+
+@section('title', 'Thêm topic')
+
+@section('javascripts')
+    <script src="{{ asset('js/library/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/library/jquery.validate.min.js') }}"></script>
+    <script src="{{ asset('js/library/select2.min.js') }}"></script>
+    <script src="{{ asset('js/library/wanakana.min.js') }}"></script>
+    <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+    <script src="{{ asset('ckfinder/ckfinder.js') }}"></script>
+    <script src="{{ asset('js/admin/validate.topic.min.js') }}"></script>
+    <script src="{{ asset('js/admin/app.min.js') }}"></script>
+    
+@endsection
+
+
+@section('page_title', $branch->id ? 'chỉnh sửa branch' : 'thêm mới branch' )
+
+@section('content_admin')
+<div class="page__topic admin-main-content">
+
+    <div class="row">
+        <div class="col-12">
+            @if (Session::has(Config::get('constant.SAVE_ERROR')))
+            <div class="alert alert-warning">
+                {{ Session::get(Config::get('constant.SAVE_ERROR')) }}
+            </div>
+            @elseif (Session::has(Config::get('constant.SAVE_SUCCESS')))
+            <div class="alert alert-success">
+                lưu branch thành công
+            </div>
+            @endif
+            @if(!empty($errors->all()))
+                @foreach ($errors->all() as $error)
+                <div class="alert alert-warning">
+                    {{ $error }}
+                </div>
+                @endforeach
+            @endif
+        </div>
+    </div>
+    <form class="row js-validate-form" action="{{ Route('ADMIN_SAVE_BRANCH', ['id' => $branch->id]) }}" method="POST">
+        {!! csrf_field() !!}
+        
+        <div class="col-md-8">
+            <div class="row block-content">
+                <div class="col-12 bg-color-white shadows-1 px-3 py-3">
+                    <h2 class="title">tên we group</h2>
+                    <input name="title" type="text" value="{{ old('title', $branch->title ) }}"/>
+                </div>
+            </div>
+            
+            <div class="row block-content">
+                <div class="col-12 bg-color-white shadows-1 px-3 py-3">
+                    <h2 class="title">excerpt -- đoạn trích</h2>
+                    <textarea  class="height-80px" name="excerpt" cols="30" rows="10">{{ old('excerpt', $branch->excerpt) }}</textarea>
+                </div>
+            </div>
+            <div class="row block-content">
+                <div class="col-12 bg-color-white shadows-1 px-3 py-3">
+                    <h2 class="title">content</h2>
+                    <textarea name="content" id="editor1" class="h-100">{{ old('content', $branch->content) }}</textarea>
+                </div>
+            </div>
+            <div class="row block-content">
+                <div class="col-12 bg-color-white shadows-1 px-3 py-3">
+                    <h2 class="title">meta description</h2>
+                    <textarea class="height-80px" name="description" cols="30" rows="10">{{ old('description', $branch->description) }}</textarea>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="row block-content">
+                <div class="col-12 bg-color-white shadows-1 px-3 py-3">
+                    <section class="pb-4">
+                        <h2 class="title text-center">bấm lưu mới branch</h2>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-save-data">
+                                Lưu
+                            </button>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            
+            <div class="row block-content">
+                <div class="col-12 bg-color-white shadows-1 px-3 py-3">
+                    <section class="pb-4 wrapper__selectImageWithCKFinder">
+                        <h2 class="title text-center">setup image</h2>
+                        <div class="text-center">
+                            <button type="button" onclick="selectImageWithCKFinder(this)"
+                                class="btn btn-select-thumb">
+                                Select image
+                            </button>
+                        </div>
+                        <div class="group-control-img-ckfinder">
+                            <input name="image" class="img__outputCKFinder thumbnail-topic pb-2" 
+                                type="text" value="{{ old('image', $branch->image) }}" />
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+@endsection

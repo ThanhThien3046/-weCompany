@@ -24,6 +24,25 @@
                 </a>
             </li>
 
+            <li class="block_navigate {{ Route::is("ADMIN_STORE_BRANCH", "ADMIN_LOAD_BRANCH") ? 'active' : null}}" >
+                <a class="block_navigate__link">
+                    <i class="hero-icon hero-tag"></i>
+                    <span class="nav__text">Branch - we group</span>
+                    <i class="hero-icon hero-chevron-sidebar"></i>
+                </a>
+                <ul class="dropdown__item">
+                    <li class="{{ Route::is("ADMIN_STORE_BRANCH") ? 'active' : null}}">
+                        <a href="{{ Route('ADMIN_STORE_BRANCH') }}">
+                            Save we
+                        </a>
+                    </li>
+                    <li class="{{ Route::is("ADMIN_LOAD_BRANCH") ? 'active' : null}}">
+                        <a href="{{ Route('ADMIN_LOAD_BRANCH') }}">
+                            List we
+                        </a>
+                    </li>
+                </ul>
+            </li>
             <li class="block_navigate {{ Route::is("ADMIN_STORE_POST", "ADMIN_LOAD_POST") ? 'active' : null}}" >
                 <a class="block_navigate__link">
                     <i class="hero-icon hero-file-document-edit-outline"></i>

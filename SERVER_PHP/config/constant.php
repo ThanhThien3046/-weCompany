@@ -14,4 +14,9 @@ return [
         'TEXT-HTML' => 2
     ],
     'CONTACT_ADMIN_READ' => 1,
+    'TYPE-POST' => [
+        'DEFAULT' => 1,
+        'RIGHT'   => 2,
+        'LEFT'    => 3
+    ]
 ];

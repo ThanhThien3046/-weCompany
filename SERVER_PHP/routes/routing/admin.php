@@ -16,19 +16,6 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/option','Admin\OptionController@index')->name('ADMIN_STORE_OPTION');
         Route::post('/option','Admin\OptionController@store')->name('ADMIN_SAVE_OPTION');
 
-        /// component theme
-        Route::get('/theme/{id?}','Admin\ThemeController@index')->name('ADMIN_STORE_THEME');
-        Route::post('/theme/{id?}','Admin\ThemeController@save')->name('ADMIN_SAVE_THEME');
-        Route::get('/themes','Admin\ThemeController@load')->name('ADMIN_LOAD_THEME');
-        Route::put('/theme/{id?}','Admin\ThemeController@update')->name('ADMIN_UPDATE_THEME');
-        Route::delete('/theme/{id?}','Admin\ThemeController@delete')->name('ADMIN_DELETE_THEME');
-
-        /// component tag theme
-        Route::get('/tag-theme/{id?}','Admin\TagThemeController@index')->name('ADMIN_STORE_TAG_THEME');
-        Route::post('/tag-theme/{id?}','Admin\TagThemeController@save')->name('ADMIN_SAVE_TAG_THEME');
-        Route::get('/tag-themes','Admin\TagThemeController@load')->name('ADMIN_LOAD_TAG_THEME');
-        Route::delete('/tag-theme/{id?}','Admin\TagThemeController@delete')->name('ADMIN_DELETE_TAG_THEME');
-
         /// component post
         Route::get('/post/{id?}','Admin\PostController@index')->name('ADMIN_STORE_POST');
         Route::post('/post/{id?}','Admin\PostController@save')->name('ADMIN_SAVE_POST');
@@ -42,11 +29,11 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/tags','Admin\TagController@load')->name('ADMIN_LOAD_TAG');
         Route::delete('/tag/{id?}','Admin\TagController@delete')->name('ADMIN_DELETE_TAG');
 
-        /// component topic
-        Route::get('/topic/{id?}','Admin\TopicController@index')->name('ADMIN_STORE_TOPIC');
-        Route::post('/topic/{id?}','Admin\TopicController@save')->name('ADMIN_SAVE_TOPIC');
-        Route::get('/topics','Admin\TopicController@load')->name('ADMIN_LOAD_TOPIC');
-        Route::delete('/topic/{id?}','Admin\TopicController@delete')->name('ADMIN_DELETE_TOPIC');
+        /// component branch
+        Route::get('/branch/{id?}','Admin\BranchController@index')->name('ADMIN_STORE_BRANCH');
+        Route::post('/branch/{id?}','Admin\BranchController@save')->name('ADMIN_SAVE_BRANCH');
+        Route::get('/branchs','Admin\BranchController@load')->name('ADMIN_LOAD_BRANCH');
+        Route::delete('/branch/{id?}','Admin\BranchController@delete')->name('ADMIN_DELETE_BRANCH');
 
         /// component tag theme
         Route::get('/tag-theme/{id?}','Admin\TagThemeController@index')->name('ADMIN_STORE_TAG_THEME');

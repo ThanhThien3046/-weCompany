@@ -9,6 +9,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\ADMIN_VALIDATE_SAVE_POST;
 use App\Helpers\Catalogue;
+use App\Http\Requests\ADMIN_VALIDATE_SAVE_BRANCH;
+use App\Models\Branch;
 use App\Models\Post;
 use App\Models\PostTagActive;
 use App\Models\Topic;
@@ -31,29 +33,23 @@ class PostController extends Controller
         if( !$id ){
             /// thêm mới
             $post    = new Post();
-            $tags_id = 0;
         }else{
             //// edit 
             $post    = (new Post())->find($id);
-            $tags_id = (new PostTagActive())->where('post_id', $id)->pluck('tag_id');
             if( !$post ){
                 //// redirect 404
                 return abort(404);
             }
         }
-        
-        return view('admin.post.save', compact([ 'tags_id', 'post' ]));
+        $branchs = (new Branch())->all();
+        return view('admin.post.save', compact([ 'branchs', 'post' ]));
     }
 
 
     public function save(ADMIN_VALIDATE_SAVE_POST $request, $id = 0){
 
         ///setting data insert table post
-        $postInput = $request->only(
-            'topic_id', 'rating_show', 'rating_id', 'rate_value', 'title', 'slug', 
-            'excerpt', 'content', 'background', 'thumbnail', 'public', 
-            'site_name', 'howto', 'showto', 'image', 'description', 
-            'type', 'stylesheet', 'javascript');
+        $postInput = $request->only( 'branch_id', 'title', 'excerpt', 'content', 'image', 'public', 'description', 'type');
 
         $postInput['user_id'] = Auth::user()->id;
         $postInput['content'] = SupportString::createEmoji($postInput['content']);
@@ -77,65 +73,38 @@ class PostController extends Controller
             $postInput['description'] = html_entity_decode(trim($description));
         }
 
-        /// if howto-json null => render new 
-        if(!trim($postInput['howto'])){
-
-            $postInput['ldjson'] = [
-                'showto' => $postInput['showto'],
-                'howto' => SupportJson::createJsonHowTo(
-                    Route('POST_VIEW', ['slug' => $postInput['slug']]),
-                    $postInput['title'],
-                    $postInput['description'],
-                    $postInput['content'],
-                    $postInput['image']
-                )
-            ];
-        }else{
-
-            $postInput['ldjson'] = [
-                'showto' => $postInput['showto'],
-                'howto'  => json_decode($postInput['howto'])
-            ];
-        }
-        unset($postInput['howto']);
-        unset($postInput['showto']);
-
-        /// create style
-        $postInput['stylesheet'] = SupportString::minimizeCSSsimple($postInput['stylesheet']);
-        /// create javascript
-        $postInput['javascript'] = SupportString::minimizeJavascriptSimple($postInput['javascript']);
         /// set id save post 
         $postInput['id'] = $id;
         
         try{
-            if( !$id && $this->checkSlugExist( $postInput['slug'] )){
-                
-                throw new Exception('thêm mới nhưng slug đã tồn tại');
-            }
             /// create instance Post Model 
-            $post          = new PostEloquentRepository();
-            $postTagActive = new PostTagActiveEloquentRepository();
-
-            $post->save($postInput);
-
-            $postId = $post->getModelInstance()->id;
-            /// save tag of post 
-            $postTagActive->removeByPostId($postId);
-
-            $tagsInput      = $request->tag_id;
-            if( $tagsInput ){
-                $tagsDataInsert = array_map( 
-                    function( $tag ) use ( $postId ){ 
-                        return  ['post_id' => $postId, 'tag_id' => $tag ]; 
-                    }, $tagsInput
-                );
-                $postTagActive->insert($tagsDataInsert);
+            $post          = new Post();
+            // $postTagActive = new PostTagActive();
+            if( $id ){
+                $post = (new Post())->find($id);
+                $post->update($postInput);
+            }else{
+                $post = new Post();
+                $post = $post->create($postInput);
             }
+            /// save tag of post 
+            // $postTagActive->removeByPostId($postId);
+
+            // $tagsInput      = $request->tag_id;
+            // if( $tagsInput ){
+            //     $tagsDataInsert = array_map( 
+            //         function( $tag ) use ( $postId ){ 
+            //             return  ['post_id' => $postId, 'tag_id' => $tag ]; 
+            //         }, $tagsInput
+            //     );
+            //     $postTagActive->insert($tagsDataInsert);
+            // }
 
             $request->session()->flash(Config::get('constant.SAVE_SUCCESS'), true);
-            return redirect()->route('ADMIN_STORE_POST',  ['id' => $postId]);
+            return redirect()->route('ADMIN_STORE_POST',  ['id' => $post->id]);
 
         }catch (\Exception $e){
+            
             return redirect()->back()
             ->with(Config::get('constant.SAVE_ERROR'), 'đã có lỗi: '.$e->getMessage())
             ->withInput($request->all());
@@ -148,10 +117,10 @@ class PostController extends Controller
      * @return View
      */
     public function load(Request $request){
-        $limit      = Config::get('constant.LIMIT');
-        $user_id    = Auth::user()->id;
-        $postModel  = new Post();
-        $topicModel = new Topic();
+        $limit       = Config::get('constant.LIMIT');
+        $user_id     = Auth::user()->id;
+        $postModel   = new Post();
+        $branchModel = new Branch();
 
 
         $user_id    = Auth::user()->id;
@@ -160,24 +129,25 @@ class PostController extends Controller
             'orderby' => [ 'field' => 'id', 'type' => 'DESC' ]
         ];
 
-        $topics     = $topicModel->getTopicByCondition([])->get();
+        $branchs     = $branchModel->all();
 
-        $query      = $request->all('topic', 'post');
+        $query      = $request->all('branch', 'post');
 
         
+        $postFilter = $postModel->orderBy('id', 'DESC');
 
-        if($query['topic']){
+        if($query['branch']){
             
-            $condition['topic'] = $query['topic'];
+            $postFilter->where('branch_id', $query['branch']);
         }
 
         if($query['post']){
 
-            $condition['post'] = SupportString::createSlug($query['post']);
+            $postFilter->where('title', 'like', '%' . $query['post'] . '%');
         }
 
-        $posts = $postModel->getPostByCondition($condition)->paginate( $limit )->appends(request()->query());
-        return view('admin.post.load', compact(['posts', 'query', 'topics']));
+        $posts = $postFilter->paginate( $limit )->appends(request()->query());
+        return view('admin.post.load', compact(['posts', 'query', 'branchs']));
     }
 
     /**
@@ -199,7 +169,7 @@ class PostController extends Controller
      */
     public function delete($id = 0){
 
-        (new PostEloquentRepository())->find($id)->delete();
+        (new Post())->find($id)->delete();
 
         $status = 200;
         $response = array( 'status' => $status, 'message' => 'success' );
@@ -217,7 +187,7 @@ class PostController extends Controller
         $message = 'success';
         $query   = $request->all([ 'sort' ]);
         try {
-            $post = (new PostEloquentRepository())->find($id);
+            $post = (new Post())->find($id);
             /// set value
             $post->sort = (int)$query['sort'];
             //// save data

@@ -14,26 +14,14 @@ class Post extends Model
     protected $fillable = [
         'id', 
         'user_id', 
-        'topic_id', 
-        'rating_show',
-        'rating_id', 
-        'rate_value', 
+        'branch_id', 
         'title', 
-        'slug', 
         'excerpt', 
         'content', 
-        'background', 
-        'thumbnail', 
-        'public', 
-        'site_name', 
-        'ldjson', 
-        'showto', 
-        'howto',
+        'public',
         'image', 
         'description', 
-        'type', 
-        'stylesheet', 
-        'javascript'
+        'type',
     ];
 
     protected $casts = [
@@ -42,10 +30,12 @@ class Post extends Model
 
     public function getType(){
 
-        if( $this->type && $this->type == Config::get('constant.TYPE-POST.POST') ){
-            return 'POST';
+        if( $this->type && $this->type == Config::get('constant.TYPE-POST.DEFAULT') ){
+            return 'bình thường';
+        }else if( $this->type && $this->type == Config::get('constant.TYPE-POST.RIGHT') ){
+            return 'bên phải';
         }
-        return 'PAGE';
+        return 'bên trái';
     }
 
     public function getTitle( $limit = 10, $ellipsis = '...' ){

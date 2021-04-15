@@ -45,17 +45,17 @@
     <div class="row block-content ">
         <div class="col-12 bg-white search">
             <form class="form-inline" action="" method="GET">
-                <label for="topic">chủ đề:</label>
-                <select name="topic">
-                    <option value="0">chọn topic</option>
-                    @foreach ($topics as $topic)
-                    <option value="{{$topic->id}}" {{ $query['topic'] == $topic->id ? "selected": null }}>
-                        {{$topic->title}}
+                <label for="branch">chủ đề:</label>
+                <select name="branch">
+                    <option value="0">chọn branch</option>
+                    @foreach ($branchs as $branch)
+                    <option value="{{$branch->id}}" {{ $query['branch'] == $branch->id ? "selected": null }}>
+                        {{$branch->title}}
                     </option>
                     @endforeach
                 </select>
                 <label for="post">bài viết:</label>
-                <input type="text" id="post" placeholder="nhập slug của post" name="post"  value="{{ $query['post'] }}" />
+                <input type="text" id="post" placeholder="nhập title của post" name="post"  value="{{ $query['post'] }}" />
                 <button type="submit">Tìm Kiếm</button>
             </form>
         </div>

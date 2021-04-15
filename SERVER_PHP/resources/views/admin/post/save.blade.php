@@ -109,48 +109,48 @@
             <div class="row block-content">
                 <div class="col-12 bg-color-white shadows-1 px-3 py-3">
                     <section class="pb-4">
-                        <h2 class="title text-center">chọn type category</h2>
+                        <h2 class="title text-center">chọn type hiện thị</h2>
                         <select name="type" class="js__single-select">
-                            <option @if(old('type', $post->type) == Config::get('constant.TYPE-POST.POST')) {{ 'selected' }} @endif
-                            value="{{ Config::get('constant.TYPE-POST.POST') }}">post</option>
-                            <option @if(old('type', $post->type) == Config::get('constant.TYPE-POST.PAGE')) {{ 'selected' }} @endif
-                            value="{{ Config::get('constant.TYPE-POST.PAGE') }}">page</option>
+                            <option @if(old('type', $post->type) == Config::get('constant.TYPE-POST.DEFAULT')) {{ 'selected' }} @endif
+                            value="{{ Config::get('constant.TYPE-POST.DEFAULT') }}">bài viết kiểu mặc định</option>
+                            <option @if(old('type', $post->type) == Config::get('constant.TYPE-POST.RIGHT')) {{ 'selected' }} @endif
+                            value="{{ Config::get('constant.TYPE-POST.RIGHT') }}">bài viết bên phải</option>
+                            <option @if(old('type', $post->type) == Config::get('constant.TYPE-POST.LEFT')) {{ 'selected' }} @endif
+                                value="{{ Config::get('constant.TYPE-POST.LEFT') }}">bài viết bên phải</option>
                         </select>
                     </section>
                 </div>
             </div>
             <div class="row block-content">
                 <div class="col-12 bg-color-white shadows-1 px-3 py-3">
-                    <section class="pb-4 wrapper__selectImageWithCKFinder">
-                        <h2 class="title text-center">thiết lập background</h2>
-                        <div class="text-center">
-                            <button type="button" onclick="selectImageWithCKFinder(this)"
-                                class="btn btn-select-thumb">
-                                Select background
-                            </button>
-                        </div>
-                        <div class="group-control-img-ckfinder">
-                            <input name="background" class="img__outputCKFinder thumbnail-topic mb-2" 
-                                onblur="showImage__InputCKFinder( this.value, this )"
-                                type="text" value="{{ old('background', $post->background) }}" />
-                        </div>
+                    <section class="pb-4">
+                        <h2 class="title text-center">chọn branch</h2>
+                        @if($branchs)
+                        <select name="branch_id" class="js__single-select">
+                            <option value="">chọn branch</option>
+                            @foreach($branchs as $branch)
+                            <option @if(old('branch_id', $post->branch_id) == $branch->id) {{ 'selected' }} @endif
+                            value="{{ $branch->id }}">{{ $branch->title }}</option>
+                            @endforeach
+                        </select>
+                        @endif
                     </section>
                 </div>
             </div>
             <div class="row block-content">
                 <div class="col-12 bg-color-white shadows-1 px-3 py-3">
                     <section class="pb-4 wrapper__selectImageWithCKFinder">
-                        <h2 class="title text-center">setup thumbnail</h2>
+                        <h2 class="title text-center">thiết lập image</h2>
                         <div class="text-center">
                             <button type="button" onclick="selectImageWithCKFinder(this)"
                                 class="btn btn-select-thumb">
-                                Select Thumbnail
+                                Select image
                             </button>
                         </div>
                         <div class="group-control-img-ckfinder">
-                            <input name="thumbnail" class="img__outputCKFinder thumbnail-topic mb-2" 
+                            <input name="image" class="img__outputCKFinder thumbnail-topic mb-2" 
                                 onblur="showImage__InputCKFinder( this.value, this )"
-                                type="text" value="{{ old('thumbnail', $post->thumbnail) }}" />
+                                type="text" value="{{ old('image', $post->image) }}" />
                         </div>
                     </section>
                 </div>
