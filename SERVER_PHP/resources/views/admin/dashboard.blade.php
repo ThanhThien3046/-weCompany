@@ -1,6 +1,6 @@
 @extends('admin._layout')
 
-@section('title', 'Trang Quản Trị')
+@section('title', 'Trang Quản Trị hùng đẹp trai đã ở đay')
 @section('page_title', 'Page dashboard - list request contact')
 
 @section('javascripts')
