@@ -69,6 +69,9 @@
                                             <img src="{{ asset($branch->image) }}" alt="{{ $branch->title }}" 
                                                 width="800" height="283">
                                         </div>
+                                        <div class="wechild__news-des">
+                                            {!! $branch->content !!}
+                                        </div>
                                     </div>
                                     <div class="div_text">
                                         <p>WE グループ紹介</p>
