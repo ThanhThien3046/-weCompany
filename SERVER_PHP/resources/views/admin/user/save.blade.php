@@ -1,6 +1,6 @@
 @extends('admin._layout')
 
-@section('title', 'Thêm user')
+@section('title', 'ユーザーを追加します。')
 
 @section('javascripts')
     <script src="{{ asset('js/library/jquery.min.js') }}"></script>
@@ -12,11 +12,10 @@
 @endsection
 
 
-@section('page_title', $user->id ? 'chỉnh sửa user' : 'thêm mới user' )
+@section('page_title', $user->id ? 'ユーザーを更新します。' : '新しいユーザーを追加します' )
 
 @section('content_admin')
 <div class="page__user admin-main-content">
-
     <div class="row">
         <div class="col-12">
             @if (Session::has(Config::get('constant.SAVE_ERROR')))
@@ -25,7 +24,7 @@
             </div>
             @elseif (Session::has(Config::get('constant.SAVE_SUCCESS')))
             <div class="alert alert-success">
-                lưu user thành công
+                ユーザーを保存するが成功です。
             </div>
             @endif
             @if(!empty($errors->all()))
@@ -42,23 +41,23 @@
         <div class="col-md-8">
             <div class="row block-content">
                 <div class="col-12 bg-color-white shadows-1 px-3 py-3">
-                    <h2 class="title">tên user</h2>
+                    <h2 class="title">ユーザーの名前</h2>
                     <input name="name" type="text" value="{{ old('name', $user->name ) }}" />
                 </div>
             </div>
             <div class="row block-content">
                 <div class="col-12 bg-color-white shadows-1 px-3 py-3">
-                    <h2 class="title">email</h2>
+                    <h2 class="title">メール</h2>
                     <input name="email" type="text" value="{{ old('email', $user->email) }}" />
                 </div>
             </div>
             <div class="row block-content">
                 <div class="col-12 bg-color-white shadows-1 px-3 py-3">
-                    <h2 class="title">avatar</h2>
+                    <h2 class="title">アバター</h2>
                     <div class="position-relative wrapper__selectImageWithCKFinder type-select-ckfinder__inline">
                         <input name="avatar" class="img__outputCKFinder" type="text" value="{{ old('avatar', $user->avatar) }}" />
                         <button class="btn bg-cyan bd-cyan text-white btn-input-append" 
-                        type="button" onclick="selectImageWithCKFinder(this)">chọn ảnh</button>
+                        type="button" onclick="selectImageWithCKFinder(this)">写真を選びます</button>
                     </div>
                 </div>
             </div>
@@ -71,7 +70,7 @@
             @if(!$user->id)
             <div class="row block-content">
                 <div class="col-12 bg-color-white shadows-1 px-3 py-3">
-                    <h2 class="title">password</h2>
+                    <h2 class="title">パスワード</h2>
                     <input name="password" type="text" />
                 </div>
             </div>
@@ -84,7 +83,7 @@
                         <h2 class="title text-center">bấm lưu mới user</h2>
                         <div class="text-center">
                             <button type="submit" class="btn btn-save-data">
-                                Lưu
+                                保存
                             </button>
                         </div>
                     </section>
@@ -93,10 +92,10 @@
             <div class="row block-content">
                 <div class="col-12 bg-color-white shadows-1 px-3 py-3">
                     <section class="pb-4">
-                        <h2 class="title text-center">chọn role</h2>
+                        <h2 class="title text-center">役割を選びます</h2>
                         @if($roles)
                         <select name="role_id" class="js__single-select">
-                            <option value="">chọn roles</option>
+                            <option value="">役割を選びます</option>
                             @foreach($roles as $role)
                             <option @if(old('role_id', $user->role_id) == $role->id) {{ 'selected' }} @endif
                             value="{{ $role->id }}">{{ $role->name }}</option>

@@ -16,11 +16,10 @@
     <script type="text/javascript" src="{{ asset('js/admin/app.min.js') }}"></script>
     
 @endsection
-@section('page_title', $post->id ? 'Edit Post' : 'Insert Post')
+@section('page_title', $post->id ? 'Edit Post' : 'ポストの追加')
 
 @section('content_admin')
 <div class="page__post admin-main-content">
-
     <div class="row">
         <div class="col-12">
             @if (Session::has(Config::get('constant.SAVE_ERROR')))
@@ -47,7 +46,7 @@
             <div class="row block-content">
                 <div class="js-parent__create-slug col-12 bg-color-white shadows-1 px-3 py-3">
                     <h2 class="title">
-                        title post 
+                        ポストのタイトル 
                         <a target="_blank" id="show-url" class="link__post" href="/{{ $post->slug }}">
                             ポストを表示する
                             <i class="hero-icon hero-shield-link-variant-outline"></i>
@@ -61,19 +60,19 @@
             
             <div class="row block-content">
                 <div class="col-12 bg-color-white shadows-1 px-3 py-3">
-                    <h2 class="title">excerpt -- đoạn trích</h2>
+                    <h2 class="title">抜粋</h2>
                     <textarea  class="height-80px" name="excerpt" cols="30" rows="10">{{ old('excerpt', $post->excerpt) }}</textarea>
                 </div>
             </div>
             <div class="row block-content">
                 <div class="col-12 bg-color-white shadows-1 px-3 py-3">
-                    <h2 class="title">content</h2>
+                    <h2 class="title">コンテンツ</h2>
                     <textarea name="content" id="editor1" class="h-100">{{ old('content', $post->content) }}</textarea>
                 </div>
             </div>
             <div class="row block-content">
                 <div class="col-12 bg-color-white shadows-1 px-3 py-3">
-                    <h2 class="title">meta description ( <span class="italic text-xs normal-case">* 入力しないたら内容部分からもらいます</span> )</h2>
+                    <h2 class="title">メタの記述 ( <span class="italic text-xs normal-case">* 入力しないたら内容部分からもらいます</span> )</h2>
                     <textarea class="height-80px" name="description" cols="30" rows="10">{{ old('description', $post->description) }}</textarea>
                 </div>
             </div>
@@ -112,9 +111,9 @@
                         <h2 class="title text-center">カテゴリータイプを選んでください</h2>
                         <select name="type" class="js__single-select">
                             <option @if(old('type', $post->type) == Config::get('constant.TYPE-POST.POST')) {{ 'selected' }} @endif
-                            value="{{ Config::get('constant.TYPE-POST.POST') }}">post</option>
+                            value="{{ Config::get('constant.TYPE-POST.POST') }}">ポスト</option>
                             <option @if(old('type', $post->type) == Config::get('constant.TYPE-POST.PAGE')) {{ 'selected' }} @endif
-                            value="{{ Config::get('constant.TYPE-POST.PAGE') }}">page</option>
+                            value="{{ Config::get('constant.TYPE-POST.PAGE') }}">ページ</option>
                         </select>
                     </section>
                 </div>
@@ -140,11 +139,11 @@
             <div class="row block-content">
                 <div class="col-12 bg-color-white shadows-1 px-3 py-3">
                     <section class="pb-4 wrapper__selectImageWithCKFinder">
-                        <h2 class="title text-center">setup thumbnail</h2>
+                        <h2 class="title text-center">サムネイルをセットアップします</h2>
                         <div class="text-center">
                             <button type="button" onclick="selectImageWithCKFinder(this)"
                                 class="btn btn-select-thumb">
-                                Select Thumbnail
+                                サムネイルを選びます。
                             </button>
                         </div>
                         <div class="group-control-img-ckfinder">
