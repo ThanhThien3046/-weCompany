@@ -39,7 +39,6 @@ class Controller extends BaseController
     public function slug($slug = null ){
 
         $exist = $this->checkSlugExist( $slug );
-        
         $status = 404;
         $data = array(
             'message'   => 'chưa tồn tại slug: ' . $slug,
