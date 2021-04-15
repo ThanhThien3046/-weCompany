@@ -116,7 +116,6 @@
                             <div class="img__infor-right">
                                 <img class="" src="{{asset('images/challenge172_info01.jpg')}}" alt="">
                             </div>
-                            
                         </div>
                     </div>
                     <!--footer-->

@@ -87,7 +87,7 @@
                                 @endforeach
                             @endif
                             <div class="form-input">
-                                <label> お問い合わせ内容 </label>
+                                <label> お問い合わせ内容 <i>✵</i></label>
                                 <textarea name="message" onClick="this.setSelectionRange(0, this.value.length)">{{ old('message' ) }}</textarea>
                             </div>
                             <div class="row">
@@ -117,7 +117,7 @@
                                 <input  name="email"  value="{{ old('email' ) }}" type="text" autocapitalize="off" onClick="this.setSelectionRange(0, this.value.length)"/>
                             </div>
                             <div class="form-input">
-                                <label> 電話番号 </label>
+                                <label> 電話番号 <i>✵</i></label>
                                 <input name="mobile" value="{{ old('mobile' ) }}"  type="text" onClick="this.setSelectionRange(0, this.value.length)"/>
                             </div>
                             <div class="form-input">
