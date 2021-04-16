@@ -78,7 +78,7 @@ $config['backends'][] = array(
     'adapter'      => 'local',
     'baseUrl'      => '/upload',
 //  'root'         => '', // Can be used to explicitly set the CKFinder user files directory.
-    'chmodFiles'   => 0777,
+    'chmodFiles'   => 0644,
     'chmodFolders' => 0755,
     'filesystemEncoding' => 'UTF-8',
 );
@@ -158,7 +158,7 @@ if($user['role_id'] == 1 ){
     $dir_name = __DIR__ . "/../upload/images/_$userFolderRole/";
     if (!is_dir($dir_name)) {
         
-        mkdir($dir_name, 0777, true);
+        mkdir($dir_name, 0755, true);
     }
 
     $config['accessControl'][] = array(
