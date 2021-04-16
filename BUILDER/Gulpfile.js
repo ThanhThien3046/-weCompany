@@ -28,8 +28,7 @@ gulp.task('JS_CLIENT', () => {
       noSource: true
    }))
    // .pipe(rename({ suffix: '.min' }))
-   .pipe(gulp.dest(path.join(__dirname, '/../SERVER_PHP/public/js/client/' )))
-   .pipe(livereload())
+   .pipe(gulp.dest(path.join(__dirname, '/../SERVER_PHP/public/js/' )))
 });
 
 gulp.task('CSS_CLIENT', () => {
@@ -40,21 +39,20 @@ gulp.task('CSS_CLIENT', () => {
       .pipe(sass())
       .pipe(postcss(PLUGINS))
       // .pipe(minifyCss({ compatibility: 'ie8', keepSpecialComments : 0 }))
-      .pipe(rename({ suffix: '.min' }))
+      // .pipe(rename({ suffix: '.min' }))
       .pipe(gulp.dest(path.join(__dirname, '/../SERVER_PHP/public/css/')))
-      .pipe(livereload())
 });
 
 
 // Watch Files For Changes
 gulp.task('watch', function () {
-   livereload.listen()
+
    gulp.watch('./CLIENT/SCSS/*.scss', gulp.series('CSS_CLIENT'))
    gulp.watch('./CLIENT/SCSS/*/*.scss', gulp.series('CSS_CLIENT'))
    gulp.watch('./CLIENT/SCSS/*/*/*.scss', gulp.series('CSS_CLIENT'))
 
    gulp.watch([
       './CLIENT/JAVASCRIPT/*.js'
-   ], gulp.series('JS_CLIENT'));
+   ], gulp.series('JS_CLIENT'))
 
 })

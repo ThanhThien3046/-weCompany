@@ -151,3 +151,67 @@ $MIN_XXL: 1320px;  /// 1320px - 1400px
     @media (min-width:$canvas)  { @content; }
   }
 }
+
+
+
+//// define grid min of device
+$MAX_XSM: 425px;   /// <  425px => medium mobile
+$MAX_XS : 576px;   /// <  576px => larger mobile
+$MAX_SM : 768px;   // 576px -> 768px
+$MAX_MD : 991px;   /// 768px -> 991px
+$MAX_LG : 1199px;   /// 992px ----> 1199px
+$MAX_XL : 1320px;  /// 1200px - 1320px
+$MAX_XXL: 1400px;  /// 1320px - 1400px
+
+@mixin ScreenMax($canvas) {
+  @if $canvas == XSM {
+    @media (max-width: $MAX_XSM)  { @content; } 
+  }@else if $canvas == XS {
+    @media (max-width: $MAX_XS)  { @content; } 
+  }@else if $canvas == SM {
+    @media (max-width: $MAX_SM) { @content; } 
+  }@else if $canvas == MD {
+    @media (max-width: $MAX_MD) { @content; } 
+  }@else if $canvas == LG {
+    @media (max-width: $MAX_LG) { @content; } 
+  }@else if $canvas == XL {
+    @media (max-width: $MAX_XL) { @content; } 
+  }@else if $canvas == XXL {
+    @media (max-width: $MAX_XXL)  { @content; }
+  }@else if(is-number($canvas)){
+    @media (max-width: $canvas)  { @content; }
+  }
+}
+
+
+
+
+
+// //// define grid min of device
+// $MAX_XSM: 425px;   /// <  425px => medium mobile
+// $MAX_XS : 576px;   /// <  576px => larger mobile
+// $MAX_SM : 768px;   // 576px -> 768px
+// $MAX_MD : 991px;   /// 768px -> 991px
+// $MAX_LG : 1199px;   /// 992px ----> 1199px
+// $MAX_XL : 1320px;  /// 1200px - 1320px
+// $MAX_XXL: 1400px;  /// 1320px - 1400px
+
+// @mixin ScreenMax($canvas) {
+//   @if $canvas == XXL {
+//     @media (max-width: $MAX_XXL)  { @content; }
+//   }@else if $canvas == XL {
+//     @media (max-width: $MAX_XL) { @content; } 
+//   }@else if $canvas == LG {
+//     @media (max-width: $MAX_LG) { @content; } 
+//   }@else if $canvas == MD {
+//     @media (max-width: $MAX_MD) { @content; } 
+//   }@else if $canvas == SM {
+//     @media (max-width: $MAX_SM) { @content; } 
+//   }@else if $canvas == XS {
+//     @media (max-width: $MAX_XS)  { @content; } 
+//   }@else if $canvas == XSM {
+//     @media (max-width: $MAX_XSM)  { @content; } 
+//   }@else if(is-number($canvas)){
+//     @media (max-width: $canvas)  { @content; }
+//   }
+// }
