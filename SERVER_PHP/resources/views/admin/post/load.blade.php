@@ -80,7 +80,7 @@
                         {{ $post->getTitle(60) }}
                     </a>
                 </div>
-                <div class="col-1">{{ $post->getType()  }}</div>
+                {{-- <div class="col-1">{{ $post->getType()  }}</div> --}}
                 <div class="col-2">{{ $post->branch->title }}</div>
                 <div class="col-1">{{ $post->public == Config::get('constant.TYPE_SAVE.PUBLIC') ? 'show' : 'admin' }}</div>
                 <div class="col-1">
