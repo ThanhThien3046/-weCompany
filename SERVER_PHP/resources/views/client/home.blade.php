@@ -78,8 +78,10 @@
                             <img class="lazyload js__img-lazyload"
                                     src="{{ Config::get('app.lazyload_base64') }}"
                                     onerror="this.onerror=null;this.src='{{ asset('/images/failed.jpg') }}';"
+                                    data-src="{{ Route('IMAGE_RESIZE', [ 'size' => ( $post->type == 1 ? 'medium' : 'double' ) , 'type' => 'fit', 'imagePath' => trim($post->image, '/') ]) }}"
+                                    {{-- data-src="{{ Route('IMAGE_RESIZE', [ 'size' => 'medium' , 'type' => 'fit', 'imagePath' => trim($post->image, '/') ]) }}"
                                     data-medium="{{ Route('IMAGE_RESIZE', [ 'size' => 'medium' , 'type' => 'fit', 'imagePath' => trim($post->image, '/') ]) }}"
-                                    data-double="{{ Route('IMAGE_RESIZE', [ 'size' => 'double' , 'type' => 'fit', 'imagePath' => trim($post->image_long, '/') ]) }}"
+                                    data-double="{{ Route('IMAGE_RESIZE', [ 'size' => 'double' , 'type' => 'fit', 'imagePath' => trim($post->image_long, '/') ]) }}" --}}
                                     alt="" width="300" height="300"/>
                         </a>
                         <a class="article__link-title">

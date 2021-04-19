@@ -115,7 +115,7 @@ function listenLazyloadBlockHome(){
         var imgLazyloads = __format.getElementsByClassName('js__img-lazyload')
         
         for (var imgPos = 0; imgPos < imgLazyloads.length; imgPos++) {
-            (imgLazyloads[imgPos]).addEventListener('lazybeforeunveil', function(e){
+            (imgLazyloads[imgPos]).addEventListener('lazybeforeunveil', function(e){ lazyafterunveil
                 
                 var $imgLazyload = $(e.target)
                 
@@ -124,14 +124,15 @@ function listenLazyloadBlockHome(){
                     $imgLazyload.closest('.article__default').hasClass('article__right')
                 ){
                     // console.log($imgLazyload.attr('data-src-double'))
-                    e.target.setAttribute('src', e.target.getAttribute('data-double'))
+                    e.target.setAttribute('data-src', e.target.getAttribute('data-double'))
                 }else{
-                    e.target.setAttribute('src', e.target.getAttribute('data-medium'))
+                    e.target.setAttribute('data-src', e.target.getAttribute('data-medium'))
                 }
             })
         }
     }
 }
+
 
 function formatHeightBlockHome() {
     console.log("formatHeightBlockHome")
@@ -311,7 +312,7 @@ $(document).ready(function () {
     
 
 
-    listenLazyloadBlockHome()
+    // listenLazyloadBlockHome() 
 })
 
 // window.backToTop = e => {
