@@ -33,7 +33,7 @@
 @endsection
 @section('javascripts')
     <script type="text/javascript" src="{{ asset('js/library/jquery.min.js' . Config::get('app.version')) }}"></script>
-	<script type="text/javascript" src="{{ asset('js/home.js' . Config::get('app.version')) }}"></script>
+	<script type="text/javascript" src="{{ asset('js/home.min.js' . Config::get('app.version')) }}"></script>
 @endsection
 @section('content')
     <div class="wrapper__sidebar animated fadeIn">
@@ -69,18 +69,17 @@
             <div class="main__list" id="js__format-height-article">
                 @if(!$posts->isEmpty())
                 @foreach ($posts as $key => $post)
-                <article class="article article__default 
-                    {{ $post->type == Config::get('constant.TYPE-POST.RIGHT') ? 'article__right' : null }}
-                    {{ $post->type == Config::get('constant.TYPE-POST.LEFT') ? 'article__left' : null }}">
+                <article class="article article__default {{ SupportString::renderClassBlockPost($posts, $post->type, $key) }}">
                     <div class="article__wrapper">
                         <span class="article__challenge">
                             <i class="article__challenge-number">{{ $post->id }}</i>
                         </span>
                         <a class="article__link-img" href="{{ Route('DETAIL_PAGE') }}">
-                            <img class="lazyload"
+                            <img class="lazyload js__img-lazyload"
                                     src="{{ Config::get('app.lazyload_base64') }}"
                                     onerror="this.onerror=null;this.src='{{ asset('/images/failed.jpg') }}';"
-                                    data-src="{{ Route('IMAGE_RESIZE', [ 'size' => ( $post->type == 1 ? 'medium' : 'double' ) , 'type' => 'fit', 'imagePath' => trim($post->image, '/') ]) }}"
+                                    data-medium="{{ Route('IMAGE_RESIZE', [ 'size' => 'medium' , 'type' => 'fit', 'imagePath' => trim($post->image, '/') ]) }}"
+                                    data-double="{{ Route('IMAGE_RESIZE', [ 'size' => 'double' , 'type' => 'fit', 'imagePath' => trim($post->image_long, '/') ]) }}"
                                     alt="" width="300" height="300"/>
                         </a>
                         <a class="article__link-title">

@@ -33,7 +33,7 @@
 @endsection
 @section('javascripts')
     <script type="text/javascript" src="{{ asset('js/library/jquery.min.js' . Config::get('app.version')) }}"></script>
-	<script type="text/javascript" src="{{ asset('js/home.js' . Config::get('app.version')) }}"></script>
+	<script type="text/javascript" src="{{ asset('js/home.min.js' . Config::get('app.version')) }}"></script>
 @endsection
 @section('content')
     <div class="wrapper__sidebar animated fadeIn">

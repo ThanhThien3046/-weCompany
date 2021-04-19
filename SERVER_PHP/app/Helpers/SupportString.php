@@ -127,6 +127,53 @@ class SupportString{
 
         return  ( $val + 2 ) * 5 + 6 + $day + $month + $year;
     }
+
+
+    public static function renderClassBlockPost($blocks, $type, $position ){
+
+        if( $type != Config::get('constant.TYPE-POST.DEFAULT') ){
+            return 'article__double';
+        }
+        return null;
+        /// kiểm tra có 5 block trước nó thì mới return class là article__right
+        if( !(($position + 1) % 5)  ){
+            /// kiểm tra định dạng kiểu dài
+            if( $type != Config::get('constant.TYPE-POST.DEFAULT') ){
+                return 'article__right';
+            }
+            
+        }
+        //// 
+        $positionLeft = 1;
+        if(($position + 1) % 3 == 1){
+            if( $type != Config::get('constant.TYPE-POST.DEFAULT') ){
+                return 'article__left';
+            }
+        }
+        return null;
+    } 
+    public static function renderTypeImageBlockPost($blocks, $type, $position ){
+
+        if( $type != Config::get('constant.TYPE-POST.DEFAULT') ){
+            return 'double';
+        }
+        return 'medium';
+
+        /// kiểm tra có 5 block trước nó thì mới return class là article__right
+        if( !(($position + 1) % 5)  ){
+            /// kiểm tra định dạng kiểu dài
+            if( $type != Config::get('constant.TYPE-POST.DEFAULT') ){
+                return 'double';
+            }
+            
+        }
+        if(($position + 1) % 3 == 1){
+            if( $type != Config::get('constant.TYPE-POST.DEFAULT') ){
+                return 'double';
+            }
+        }
+        return 'medium';
+    } 
 }
 
 

@@ -1778,7 +1778,7 @@ option:focus {
 
 @media (max-width: 991px) {
   .sidebar__wrapper-toggle .link__homepage {
-    display: inline-block;
+    display: block;
     color: #000;
     float: left;
   }

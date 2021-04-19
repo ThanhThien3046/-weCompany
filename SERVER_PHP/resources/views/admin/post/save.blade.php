@@ -113,10 +113,8 @@
                         <select name="type" class="js__single-select">
                             <option @if(old('type', $post->type) == Config::get('constant.TYPE-POST.DEFAULT')) {{ 'selected' }} @endif
                             value="{{ Config::get('constant.TYPE-POST.DEFAULT') }}">bài viết kiểu mặc định</option>
-                            <option @if(old('type', $post->type) == Config::get('constant.TYPE-POST.RIGHT')) {{ 'selected' }} @endif
-                            value="{{ Config::get('constant.TYPE-POST.RIGHT') }}">bài viết bên phải</option>
-                            <option @if(old('type', $post->type) == Config::get('constant.TYPE-POST.LEFT')) {{ 'selected' }} @endif
-                                value="{{ Config::get('constant.TYPE-POST.LEFT') }}">bài viết bên phải</option>
+                            <option @if(old('type', $post->type) != Config::get('constant.TYPE-POST.DEFAULT')) {{ 'selected' }} @endif
+                            value="{{ Config::get('constant.TYPE-POST.RIGHT') }}">bài viết có thể dài</option>
                         </select>
                     </section>
                 </div>

@@ -100,11 +100,38 @@ function showSlides(){
         /// show slide
         slides[slideIndex - 1].classList.add('show')
         /// auto run loop slider
-        setTimeout(showSlides,5000);
+        setTimeout(showSlides,5000)
     }
 }
 showSlides()
 
+
+function listenLazyloadBlockHome(){
+    var __format = document.getElementById("js__format-height-article")
+    if(!__format){
+        return false
+    }
+    if(__format){
+        var imgLazyloads = __format.getElementsByClassName('js__img-lazyload')
+        
+        for (var imgPos = 0; imgPos < imgLazyloads.length; imgPos++) {
+            (imgLazyloads[imgPos]).addEventListener('lazybeforeunveil', function(e){
+                
+                var $imgLazyload = $(e.target)
+                
+                if(
+                    $imgLazyload.closest('.article__default').hasClass('article__left') || 
+                    $imgLazyload.closest('.article__default').hasClass('article__right')
+                ){
+                    // console.log($imgLazyload.attr('data-src-double'))
+                    e.target.setAttribute('src', e.target.getAttribute('data-double'))
+                }else{
+                    e.target.setAttribute('src', e.target.getAttribute('data-medium'))
+                }
+            })
+        }
+    }
+}
 
 function formatHeightBlockHome() {
     console.log("formatHeightBlockHome")
@@ -119,6 +146,87 @@ function formatHeightBlockHome() {
     }
     var first__article        = articles[0]
     var first__article_height = Math.ceil(first__article.offsetWidth)
+
+    //// reset all class add
+    for (var index = 0; index < articles.length; index++) {
+        articles[index].classList.remove('article__left')
+        articles[index].classList.remove('article__right')
+        articles[index].classList.remove('article__default-clearbold')
+
+    }
+    var leftCountDomRight = 0
+    /// format class article__double
+    for (var index = 0; index < articles.length; index++) {
+        leftCountDomRight ++ 
+        articles[index].classList.add('n-' + leftCountDomRight)
+        if( articles[index].classList.contains('article__double') ){
+            
+            /// cacl
+            if(leftCountDomRight && (leftCountDomRight + 1) % 3 == 0 && Math.floor((leftCountDomRight + 1) / 3) % 2 == 0){
+                if(articles[index -3].classList.contains('article__left')){
+                    console.log("ahihi")
+                }else{
+                    articles[index].classList.add('article__right')
+                    if( index - 2 > 0 && index - 2 < articles.length ){
+                        /// check type == 2 
+                        /// add class 
+                        articles[index -2 ].classList.add('article__default-clearbold')
+                    }
+                    leftCountDomRight ++ 
+                }
+                
+            }else
+            /// left
+            if(window.innerWidth > 768){
+                
+                /// left pc
+                if(leftCountDomRight % 3 == 1){
+                    
+                    articles[index].classList.add('article__left')
+                    leftCountDomRight ++ 
+                }
+            }else{
+                /// mobile none left
+                articles[index].classList.add('article__left')
+            }
+
+        }
+
+        
+        if(window.innerWidth > 768){
+            
+            
+
+
+            /// fix clear bold
+            if( index % 3 == 2 ){
+                /// check dom + 2 isset
+                if( index + 2 > 0 && index + 2 < articles.length ){
+                    /// check type == 2 
+                    if( articles[index + 2].classList.contains('article__right') ){
+                        /// add class 
+                        articles[index].classList.add('article__default-clearbold')
+                    }
+                }
+            }
+            if( index - 5 > 0 && index - 5 < articles.length ){
+                /// check type == 2 
+                if( articles[index - 5].classList.contains('article__left') ){
+                    /// add class 
+                    articles[index].classList.add('article__default-clearbold')
+                }
+            }
+            if( index - 1 > 0 && index - 1 < articles.length ){
+                /// check type == 2 
+                if( articles[index - 1].classList.contains('article__right') ){
+                    /// add class 
+                    articles[index].classList.add('article__default-clearbold')
+                }
+            }
+        }
+        
+    }
+
 
     for (var index = 0; index < articles.length; index++) {
         (articles[index]).style.height = first__article_height + "px"
@@ -173,8 +281,9 @@ function formatHeightBlockHome() {
 }
 formatHeightBlockHome()
 window.addEventListener('resize', function(){
-    
-    formatHeightBlockHome()
+    setTimeout(function(){
+        formatHeightBlockHome()
+    }, 100)
 });
 
 
@@ -200,6 +309,9 @@ $(document).ready(function () {
         $('html, body').animate({scrollTop:0}, '300');
     });
     
+
+
+    listenLazyloadBlockHome()
 })
 
 // window.backToTop = e => {
