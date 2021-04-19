@@ -115,7 +115,7 @@ function listenLazyloadBlockHome(){
         var imgLazyloads = __format.getElementsByClassName('js__img-lazyload')
         
         for (var imgPos = 0; imgPos < imgLazyloads.length; imgPos++) {
-            (imgLazyloads[imgPos]).addEventListener('lazybeforeunveil', function(e){ lazyafterunveil
+            (imgLazyloads[imgPos]).addEventListener('lazybeforeunveil', function(e){
                 
                 var $imgLazyload = $(e.target)
                 
@@ -124,9 +124,9 @@ function listenLazyloadBlockHome(){
                     $imgLazyload.closest('.article__default').hasClass('article__right')
                 ){
                     // console.log($imgLazyload.attr('data-src-double'))
-                    e.target.setAttribute('data-src', e.target.getAttribute('data-double'))
+                    e.target.setAttribute('src', e.target.getAttribute('data-double'))
                 }else{
-                    e.target.setAttribute('data-src', e.target.getAttribute('data-medium'))
+                    e.target.setAttribute('src', e.target.getAttribute('data-medium'))
                 }
             })
         }
@@ -279,6 +279,27 @@ function formatHeightBlockHome() {
         }
     }
 
+
+
+    for (var iLazy = 0; iLazy < articles.length; iLazy++) {
+        (articles[iLazy]).classList.remove('d-none')
+        var imgs = (articles[iLazy]).getElementsByClassName("js__img-lazyload")
+        if( imgs.length ){
+
+            var imgLazy = imgs[0]
+            if( 
+                (articles[iLazy]).classList.contains('article__right') || 
+                (articles[iLazy]).classList.contains('article__left')
+            ){
+                imgLazy.setAttribute('data-src', imgLazy.getAttribute('data-double'))
+                imgLazy.classList.add('lazyload')
+            }else{
+                imgLazy.setAttribute('data-src', imgLazy.getAttribute('data-medium'))
+                imgLazy.classList.add('lazyload')
+            }
+        }
+        (articles[iLazy]).style.height = ''
+    }
 }
 formatHeightBlockHome()
 window.addEventListener('resize', function(){
@@ -310,9 +331,6 @@ $(document).ready(function () {
         $('html, body').animate({scrollTop:0}, '300');
     });
     
-
-
-    // listenLazyloadBlockHome() 
 })
 
 // window.backToTop = e => {

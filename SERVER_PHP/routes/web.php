@@ -55,6 +55,8 @@ Route::get('/search', function () {
     return view('search');
 })->name("SEARCH_PAGE");
 
+Route::get('/post/{id?}','ClientController@postDetail')->name('POST_DETAIL_PAGE');
+
 Route::get('/detail', function () {
     return view('detail');
 })->name("DETAIL_PAGE");

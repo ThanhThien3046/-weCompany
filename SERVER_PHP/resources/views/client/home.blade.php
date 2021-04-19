@@ -69,19 +69,19 @@
             <div class="main__list" id="js__format-height-article">
                 @if(!$posts->isEmpty())
                 @foreach ($posts as $key => $post)
-                <article class="article article__default {{ SupportString::renderClassBlockPost($posts, $post->type, $key) }}">
+                <article class="article article__default d-none {{ SupportString::renderClassBlockPost($posts, $post->type, $key) }}">
                     <div class="article__wrapper">
                         <span class="article__challenge">
                             <i class="article__challenge-number">{{ $post->id }}</i>
                         </span>
-                        <a class="article__link-img" href="{{ Route('DETAIL_PAGE') }}">
-                            <img class="lazyload js__img-lazyload"
+                        <a class="article__link-img" href="{{ Route('POST_DETAIL_PAGE', [ 'id' => $post->id ]) }}">
+                            <img class="js__img-lazyload"
                                     src="{{ Config::get('app.lazyload_base64') }}"
                                     onerror="this.onerror=null;this.src='{{ asset('/images/failed.jpg') }}';"
-                                    data-src="{{ Route('IMAGE_RESIZE', [ 'size' => ( $post->type == 1 ? 'medium' : 'double' ) , 'type' => 'fit', 'imagePath' => trim($post->image, '/') ]) }}"
-                                    {{-- data-src="{{ Route('IMAGE_RESIZE', [ 'size' => 'medium' , 'type' => 'fit', 'imagePath' => trim($post->image, '/') ]) }}"
+                                    {{-- data-src="{{ Route('IMAGE_RESIZE', [ 'size' => ( $post->type == 1 ? 'medium' : 'double' ) , 'type' => 'fit', 'imagePath' => trim($post->image, '/') ]) }}" --}}
+                                    {{-- data-src="{{ Route('IMAGE_RESIZE', [ 'size' => 'medium' , 'type' => 'fit', 'imagePath' => trim($post->image, '/') ]) }}" --}}
                                     data-medium="{{ Route('IMAGE_RESIZE', [ 'size' => 'medium' , 'type' => 'fit', 'imagePath' => trim($post->image, '/') ]) }}"
-                                    data-double="{{ Route('IMAGE_RESIZE', [ 'size' => 'double' , 'type' => 'fit', 'imagePath' => trim($post->image_long, '/') ]) }}" --}}
+                                    data-double="{{ Route('IMAGE_RESIZE', [ 'size' => 'double' , 'type' => 'fit', 'imagePath' => trim($post->image_long, '/') ]) }}"
                                     alt="" width="300" height="300"/>
                         </a>
                         <a class="article__link-title">

@@ -11,6 +11,7 @@ use App\Models\Post;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 
 class ClientController extends Controller
@@ -30,6 +31,21 @@ class ClientController extends Controller
 
         $branchs = (new Branch())->all();
         return view('client.weHomes', compact(['branchs']));
+    }
+
+
+    public function postDetail(Request $request, $id = 0 ){
+
+        $post = DB::table('posts')->find($id);
+        //// có thể thằng cứt nào nó gửi cho mình 1 cái id không có thật nên sẽ ra null 
+        if( !$post ){
+            /// không có bài post trong db
+            // => gửi trang 404
+            return abort(404);
+        }
+        /// có bài viết thật
+        
+        return view('client.post-detail', compact(['post']));
     }
 
 
