@@ -69,22 +69,33 @@
                 </div>
                 <div class="main-content-imgcont">
                     <div class="head">
-                        {{-- @if(!$posts->isEmpty()) --}}
+                        @if($post)
                         <div class="number">
-                            123
-                            {{-- <i class="article__challenge-number">{{ $post->id }}</i> --}}
+                            {{-- 123 --}}
+                            <i >{{ $post->id }}</i>
                         </div>
-                        {{-- @endif --}}
-                        <div class="head-title">近代アートで対話を楽しもう！</div>
+                        @endif
+                        <div class="head-title">{{$post->title}}</div>
                     </div>
-                    <img src="{{asset('images/robot.jpg')}}" alt="sdfsdfds">
+                    <img class="lazyload"
+                        src="{{ Config::get('app.lazyload_base64') }}"
+                        onerror="this.onerror=null;this.src='{{ asset('/images/failed.jpg') }}';"
+                        data-src="{{ 
+                        Route('IMAGE_RESIZE', [ 
+                            'size' => 'post-thumnail-detail' , 
+                            'type' => 'fit', 
+                            'imagePath' => trim($post->image, '/') 
+                        ]) }}"
+                        alt="{{$post->title}}" width="800" height="500" />
+                         
                     <div class="imgmes">
                         <div class="imgmess__left">
-                            <img src="{{asset('images/challenge172_02.jpg')}}" alt="" class="imgmes_img">
+                            <img src="{{asset($post->image)}}" alt="" class="imgmes_img">
                         </div>
-                        <p class="mes">
-                            東京国立近代美術館に行って是非体験していただきたいのが「MOMATガイドスタッフによる所蔵品ガイド」。これは作品に対して何を感じたかを美術館のガイドスタッフや参加者と語り合うことで、作品に対する理解をより深めることができる鑑賞体験です。1980年代、ニューヨーク近代美術館 (MoMA)が認知心理学者とともに産み出したVTS(ヴィジュアル・シンキング・ストラテジー )という鑑賞教育の新しいメソッドを基礎として作られたもので、東京国立近代美術館の特徴になっています。彫刻や絵画のポーズを真似してみることでわかる作者が伝えたかったこと、誰かと会話することで発見できる新しい作品の見方、普段とは一味違う鑑賞、オススメです。　
-                        </p>
+                        <div class="mes">
+                            {!! $post->content !!} 
+                        </div>
+                        
                     </div>
                     <div class="imgdtl-list">
                         <div class="img__dtl-item">
@@ -94,7 +105,17 @@
                             <img src="{{asset('images/challenge172_04.jpg')}}" alt="">
                         </div>
                     </div>
-                    <img src="{{asset('images/homes_banner.jpg')}}" alt="">
+                    {{-- /// càn query trong db ra cái dòng dữ liệu của branch tương ứng với bài viết --}}
+                    {{-- /// cái $post là thể hiện của object post và sẽ có thể gọi hàm branch --}}
+
+                    @php 
+                    $objectBranch = $post->branch; /// giá trị trả ra nếu có sẽ là object tương ứng 1 row trong table branch hoặc null
+                    /// xui xui mà nó null thì nó sẽ gây lỗi 
+                    // nên bây giừo muốn lấy banner phải if else các keier con đà điểu 
+                    @endphp
+                    @if($objectBranch)
+                    <img src="{{asset($objectBranch->banner)}}" alt="">
+                    @endif
                     <div class="info">
                         <p style="font-family: 'Sawarabi Mincho', sans-serif;">Find Information</p>
                         <div class="info-txtimg">
@@ -117,7 +138,8 @@
 
                             </div>
                             <div class="img__infor-right">
-                                <img class="" src="{{asset('images/challenge172_info01.jpg')}}" alt="">
+                                {{-- <img class="" src="{{asset('images/challenge172_info01.jpg')}}" alt=""> --}}
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.9654592629067!2d139.77945421465296!3d35.677852480195114!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601889b97a48de95%3A0xfd4dbff3d72d5db7!2z5qCq5byP5Lya56S-QVNJQU5DT05TVUxUSU5H!5e0!3m2!1sja!2sjp!4v1618836266948!5m2!1sja!2sjp" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                             </div>
                         </div>
                     </div>
