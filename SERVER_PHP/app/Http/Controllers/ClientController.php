@@ -50,17 +50,17 @@ class ClientController extends Controller
 
 
     public function contact( ){
-        $th = DB::table("posts")->select(['posts.id'])->groupBy('branch_id')->get();//
-        // null = false = "0" = 0
+        // $th = DB::table("posts")->select(['posts.id'])->groupBy('branch_id')->get();//
+        // // null = false = "0" = 0
 
-        // $first = $th->company;
-        dd($th);
-        // for($i=0;$i<count($th);$i++)
-        // {
-        //     echo($th[$i]->email)."<br/>";
-        // }
+        // // $first = $th->company;
+        // dd($th);
+        // // for($i=0;$i<count($th);$i++)
+        // // {
+        // //     echo($th[$i]->email)."<br/>";
+        // // }
 
-        die();
+        // die();
         return view('client.contact');
     }
 
@@ -105,4 +105,20 @@ class ClientController extends Controller
         }
     }
     
+    public function detail(Request $request, $id = 0){
+
+        $postModel = new Post();
+        // $post = DB::table('posts')->find($id);
+        $post = $postModel->find($id);
+
+        //// có thể thằng cứt nào nó gửi cho mình 1 cái id không có thật nên sẽ ra null 
+        if( !$post ){
+            /// không có bài post trong db
+            // => gửi trang 404
+            return abort(404);
+        }
+        /// có bài viết thật
+
+        return view('detail', compact(['post']));
+    }
 }

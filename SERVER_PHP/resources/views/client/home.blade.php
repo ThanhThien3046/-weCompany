@@ -75,7 +75,7 @@
                         <span class="article__challenge">
                             <i class="article__challenge-number">{{ $post->id }}</i>
                         </span>
-                        <a class="article__link-img" href="{{ Route('POST_DETAIL_PAGE', [ 'id' => $post->id ]) }}">
+                        <a class="article__link-img" href="{{ Route('DETAIL_PAGE', [ 'id' => $post->id ]) }}">
                             <img class="js__img-lazyload"
                                     src="{{ Config::get('app.lazyload_base64') }}"
                                     onerror="this.onerror=null;this.src='{{ asset('/images/failed.jpg') }}';"

@@ -26,7 +26,7 @@ class ADMIN_VALIDATE_SAVE_BRANCH extends FormRequest
         return [
             'title'       => 'required|max:150',
             'excerpt'     => 'required|max:255',
-            'content'     => 'max:0',
+            'content'     => 'required',
             'image'       => 'required|max:255',
             'banner'      => 'required|max:255',
             'description' => 'max:160',

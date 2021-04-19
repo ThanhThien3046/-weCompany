@@ -90,7 +90,9 @@ class Post extends Model
      * là mối quan hệ dạng nhiều tới 1 ví dụ : 
      */
     public function branch(){
-
+        /// cái thể hiện của object post sẽ có thể gọi hàm này
+        /// khi gọi hàm này thì nó tạo ra 1 câu sql tụa tụa như sau (giả sử object trên có id = 4)
+        /// select * from posts join branchs on (posts.branch_id = branchs.id) where posts.id = 4
         return $this->belongsTo( Branch::class, 'branch_id');
     }
 

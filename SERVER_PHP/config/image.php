@@ -27,6 +27,7 @@ return [
         'largest'         => [600, 600],
         'background-page' => [ 700, 145 ],
         'content'         => [ 400, 240],
+        'post-thumnail-detail' => [800,500]
     ]
 
 

@@ -87,7 +87,7 @@ class BranchController extends Controller
     public function load(){
         $limit       = 10;
         $branchModel = new Branch();
-        $branchs     = DB::table('branchs')->paginate( $limit );
+        $branchs     = $branchModel->paginate( $limit );
         return view('admin.branch.load', compact(['branchs']));
     }
 
