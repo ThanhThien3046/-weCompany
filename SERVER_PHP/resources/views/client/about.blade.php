@@ -123,7 +123,7 @@
             
         </div>
     </div>
-    <div class="divbtntotop"><a class="btntotop">TOPへ戻る</a></div>
+    <div class="divbtntotop" id="js__back-to-top"><a class="btntotop">TOPへ戻る</a></div>
 </div>
 @include('partial.footer')
 

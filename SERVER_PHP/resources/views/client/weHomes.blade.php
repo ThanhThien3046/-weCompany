@@ -109,7 +109,7 @@
                             @endforeach
 
                             <footer class="fpic">
-                                <a href="/" class="ftimage">サイトTOP</a>
+                                <a href="/" class="ftimage" id="js__back-to-top">サイトTOP</a>
                             </footer>
                         </div>
 

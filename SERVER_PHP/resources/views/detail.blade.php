@@ -69,9 +69,12 @@
                 </div>
                 <div class="main-content-imgcont">
                     <div class="head">
+                        {{-- @if(!$posts->isEmpty()) --}}
                         <div class="number">
                             123
+                            {{-- <i class="article__challenge-number">{{ $post->id }}</i> --}}
                         </div>
+                        {{-- @endif --}}
                         <div class="head-title">近代アートで対話を楽しもう！</div>
                     </div>
                     <img src="{{asset('images/robot.jpg')}}" alt="sdfsdfds">

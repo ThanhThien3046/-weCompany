@@ -23,6 +23,12 @@ Route::group(['prefix' => 'admin'], function () {
         // Route::put('/post/{id?}','Admin\PostController@update')->name('ADMIN_UPDATE_POST');
         Route::delete('/post/{id?}','Admin\PostController@delete')->name('ADMIN_DELETE_POST');
 
+
+        ///component detail
+        
+
+
+
         /// component tag
         Route::get('/tag/{id?}','Admin\TagController@index')->name('ADMIN_STORE_TAG');
         Route::post('/tag/{id?}','Admin\TagController@save')->name('ADMIN_SAVE_TAG');

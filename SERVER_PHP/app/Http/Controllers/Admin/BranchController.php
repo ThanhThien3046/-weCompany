@@ -7,6 +7,7 @@ use App\Helpers\Catalogue;
 use App\Http\Requests\ADMIN_VALIDATE_SAVE_BRANCH;
 use App\Models\Branch;
 use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\DB;
 
 class BranchController extends Controller
 {
@@ -86,7 +87,7 @@ class BranchController extends Controller
     public function load(){
         $limit       = 10;
         $branchModel = new Branch();
-        $branchs     = $branchModel->paginate( $limit );
+        $branchs     = DB::table('branchs')->paginate( $limit );
         return view('admin.branch.load', compact(['branchs']));
     }
 

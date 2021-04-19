@@ -38,25 +38,25 @@
     </script>
 @endsection
 
-@section('page_title', 'danh sách bài đăng')
+@section('page_title', 'ポストのリスト')
 
 @section('content_admin')
 <div class="page__post-load admin-main-content">
     <div class="row block-content ">
         <div class="col-12 bg-white search">
             <form class="form-inline" action="" method="GET">
-                <label for="branch">chủ đề:</label>
+                <label for="branch">話題:</label>
                 <select name="branch">
-                    <option value="0">chọn branch</option>
+                    <option value="0">支店を選んでください</option>
                     @foreach ($branchs as $branch)
                     <option value="{{$branch->id}}" {{ $query['branch'] == $branch->id ? "selected": null }}>
                         {{$branch->title}}
                     </option>
                     @endforeach
                 </select>
-                <label for="post">bài viết:</label>
-                <input type="text" id="post" placeholder="nhập title của post" name="post"  value="{{ $query['post'] }}" />
-                <button type="submit">Tìm Kiếm</button>
+                <label for="post">ポスト:</label>
+                <input type="text" id="post" placeholder="ポストのタイトルを入力してください" name="post"  value="{{ $query['post'] }}" />
+                <button type="submit">探します</button>
             </form>
         </div>
         <div class="col-12 bg-white shadows-1 px-3 py-3 table-list">
