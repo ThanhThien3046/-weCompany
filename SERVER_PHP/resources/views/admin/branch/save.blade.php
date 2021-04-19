@@ -9,7 +9,7 @@
     <script src="{{ asset('js/library/wanakana.min.js') }}"></script>
     <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
     <script src="{{ asset('ckfinder/ckfinder.js') }}"></script>
-    <script src="{{ asset('js/admin/validate.branch.min.js') }}"></script>
+    {{-- <script src="{{ asset('js/admin/validate.branch.min.js') }}"></script> --}}
     <script src="{{ asset('js/admin/app.min.js') }}"></script>
     
 @endsection

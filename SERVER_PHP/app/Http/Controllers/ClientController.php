@@ -50,7 +50,17 @@ class ClientController extends Controller
 
 
     public function contact( ){
-        
+        $th = DB::table("posts")->select(['posts.id'])->groupBy('branch_id')->get();//
+        // null = false = "0" = 0
+
+        // $first = $th->company;
+        dd($th);
+        // for($i=0;$i<count($th);$i++)
+        // {
+        //     echo($th[$i]->email)."<br/>";
+        // }
+
+        die();
         return view('client.contact');
     }
 

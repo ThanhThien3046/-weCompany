@@ -29,7 +29,7 @@
             </div>
             @elseif (Session::has(Config::get('constant.SAVE_SUCCESS')))
             <div class="alert alert-success">
-                lưu bài viết thành công
+                ポストを保存されました。
             </div>
             @endif
             @if(!empty($errors->all()))
@@ -47,7 +47,7 @@
             <div class="row block-content">
                 <div class="js-parent__create-slug col-12 bg-color-white shadows-1 px-3 py-3">
                     <h2 class="title">
-                        title post 
+                        ポストのタイトル 
                         <a target="_blank" id="show-url" class="link__post" href="/{{ $post->slug }}">
                             ポストを表示する
                             <i class="hero-icon hero-shield-link-variant-outline"></i>
@@ -61,7 +61,7 @@
             
             <div class="row block-content">
                 <div class="col-12 bg-color-white shadows-1 px-3 py-3">
-                    <h2 class="title">excerpt -- đoạn trích</h2>
+                    <h2 class="title">excerpt </h2>
                     <textarea  class="height-80px" name="excerpt" cols="30" rows="10">{{ old('excerpt', $post->excerpt) }}</textarea>
                 </div>
             </div>
@@ -122,10 +122,10 @@
             <div class="row block-content">
                 <div class="col-12 bg-color-white shadows-1 px-3 py-3">
                     <section class="pb-4">
-                        <h2 class="title text-center">chọn branch</h2>
+                        <h2 class="title text-center">支店を選んでください</h2>
                         @if($branchs)
                         <select name="branch_id" class="js__single-select">
-                            <option value="">chọn branch</option>
+                            <option value="">支店を選んでください</option>
                             @foreach($branchs as $branch)
                             <option @if(old('branch_id', $post->branch_id) == $branch->id) {{ 'selected' }} @endif
                             value="{{ $branch->id }}">{{ $branch->title }}</option>
@@ -138,11 +138,11 @@
             <div class="row block-content">
                 <div class="col-12 bg-color-white shadows-1 px-3 py-3">
                     <section class="pb-4 wrapper__selectImageWithCKFinder">
-                        <h2 class="title text-center">thiết lập image</h2>
+                        <h2 class="title text-center">イメージを設定してください。</h2>
                         <div class="text-center">
                             <button type="button" onclick="selectImageWithCKFinder(this)"
                                 class="btn btn-select-thumb">
-                                Select image
+                                イメージを選んでください。
                             </button>
                         </div>
                         <div class="group-control-img-ckfinder">
@@ -156,11 +156,11 @@
             <div class="row block-content">
                 <div class="col-12 bg-color-white shadows-1 px-3 py-3">
                     <section class="pb-4 wrapper__selectImageWithCKFinder">
-                        <h2 class="title text-center">thiết lập image dài hơn</h2>
+                        <h2 class="title text-center">もう高いイメージを設定してください。</h2>
                         <div class="text-center">
                             <button type="button" onclick="selectImageWithCKFinder(this)"
                                 class="btn btn-select-thumb">
-                                Select image
+                                イメージを選んでください。
                             </button>
                         </div>
                         <div class="group-control-img-ckfinder">

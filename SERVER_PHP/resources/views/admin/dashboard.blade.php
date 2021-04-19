@@ -38,7 +38,7 @@
                 <div class="col-2 text-center single-line-truncation">{{ $contact->mobile }}</div>
                 <div class="col-2 text-center single-line-truncation">{{ $contact->job_name }}</div>
                 <div class="col-1 text-center single-line-truncation">
-                    <a href="{{ Route('ADMIN_CONTACT_DETAIL', [ 'id' => $contact->id ]) }}">
+                    <a href="{{ Route('ADMIN_POST_LOGIN', [ 'id' => $contact->id ]) }}">
                         @if($contact->read != Config::get('constant.CONTACT_ADMIN_READ'))
                             see more
                         @else

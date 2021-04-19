@@ -52,9 +52,9 @@
         <div class="col-12 bg-white shadows-1 px-3 py-3 table-list">
             <div class="row thead-list">
                 <div class="col-1">image</div>
-                <div class="col-3">name</div>
+                <div class="col-3">title</div>
                 <div class="col-7">description</div>
-                <div class="col-1">#remove#</div>
+                <div class="col-1">remove</div>
             </div>
             @foreach( $branchs as $branch)
             <div class="row trow-list">
@@ -63,10 +63,10 @@
                 </div>
                 <div class="col-3">
                     <a href="{{ Route("ADMIN_STORE_BRANCH", ['id' =>  $branch->id]) }}">
-                        {{ $branch->getTitle(30) }}
+                        {{ $branch->title }}
                     </a>
                 </div>
-                <div class="col-7">{{ $branch->getDescriptionSeo(120) }}</div>
+                <div class="col-7">{{$branch->description}}</div>
                 <div class="col-1">
                     <button type="button"
                     onclick="deleteComponent('{{ $branch->id }}', this)"

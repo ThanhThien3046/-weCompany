@@ -18,7 +18,7 @@ class branchs extends Seeder
         
                 'title'   => 'we homes 1',
                 'banner'  => '/images/homes_banner.jpg',
-                'excerpt' => 'excerpt trong phần quản trị admin vào đó tìm mà sửa',
+                'excerpt' => '',
                 'image'   => '/images/banner_02.jpg',
                 
             ],
