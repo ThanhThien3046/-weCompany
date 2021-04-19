@@ -81,7 +81,15 @@
                     </a>
                 </div>
                 {{-- <div class="col-1">{{ $post->getType()  }}</div> --}}
-                <div class="col-2">{{ $post->branch->title }}</div>
+                @php 
+                $branch = $post->branch;
+                if(!$branch){
+                    $titleBranch = 'no choose branch';
+                }else{
+                    $titleBranch = $branch->title;
+                }
+                @endphp
+                <div class="col-2">{{ $titleBranch }}</div>
                 <div class="col-1">{{ $post->public == Config::get('constant.TYPE_SAVE.PUBLIC') ? 'show' : 'admin' }}</div>
                 <div class="col-1">
                     <button type="button"
