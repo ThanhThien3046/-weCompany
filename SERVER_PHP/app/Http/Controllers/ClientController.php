@@ -26,7 +26,23 @@ class ClientController extends Controller
         $posts = (new Post())->where('public', Config::get('constant.TYPE_SAVE.PUBLIC'))
                                 ->orderBy('id', 'DESC')
                                 ->get();
-        return view('client.home', compact(['posts']));
+        $txt = ""; 
+        // if(!$posts->isEmpty()){
+        // foreach ($posts as $key => $post){
+        //     if($post->branch_id==1) {
+        //         $txt = "background-color:red;";
+        //         return view('client.home', compact(['posts','txt']));
+        //     }
+        //     else
+        //         if($post->branch_id==2){
+        //             $txt = "background-color:red;";
+        //             return view('client.home', compact(['posts','txt']));
+        //         }
+        // //     endif;
+        // // endif;     
+        //     }   
+        // }
+        return view('client.home', compact(['posts','txt']));
     }
 
     public function branchs(){
