@@ -49,6 +49,20 @@
 <div class="page__topic admin-main-content">
 
     <div class="row block-content">
+        <div class="col-12 bg-white search">
+            <form class="form-inline" action="" method="GET">
+                <label for="branch">話題:</label>
+                <select name="branch">
+                    <option value="0">支店を選んでください</option>
+                    @foreach ($branchs as $branch)
+                    <option value="{{$branch->id}}" {{ $query['branch'] == $branch->id ? "selected": null }}>
+                        {{$branch->title}}
+                    </option>
+                    @endforeach
+                </select>
+                <button type="submit">探します</button>
+            </form>
+        </div>
         <div class="col-12 bg-white shadows-1 px-3 py-3 table-list">
             <div class="row thead-list">
                 <div class="col-1 text-center">id</div>
@@ -64,7 +78,7 @@
                         {{ $recruit->title }}
                     </a>
                 </div>
-                <div class="col-6">{{ strip_tags($recruit->content) }}</div>
+                <div class="col-6">{!! strip_tags($recruit->content) !!}</div>
                 <div class="col-1">
                     <button type="button"
                     onclick="deleteComponent('{{ $recruit->id }}', this)"

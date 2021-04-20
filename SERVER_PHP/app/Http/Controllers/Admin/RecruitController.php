@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ADMIN_VALIDATE_SAVE_RECRUIT;
+use App\Models\Branch;
 use App\Models\Recruit;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
 use recruits;
@@ -34,9 +36,10 @@ class RecruitController extends Controller
 
         ///setting data insert table topic
 
-        $recruitInput = $request->only( 'title', 'content', 'branch_id');
+        $recruitInput = $request->only( 'title', 'content', 'branch_id', 'show');
         /// set id save topic 
         $recruitInput['id'] = $id;
+        $recruitInput['show'] = $request->input('show') ? true : false;
         
         try{
             /// create instance Branch Model 
@@ -65,12 +68,19 @@ class RecruitController extends Controller
      *
      * @return View
      */
-    public function load(){
-        $limit        = 10;
+    public function load(Request $request){
+        $limit       = Config::get('constant.LIMIT');
+        $query      = $request->all('branch');
+
         $recruitModel = new Recruit();
-        $recruits     = $recruitModel->orderBy('id', 'DESC')
-                        ->paginate( $limit );
-        return view('admin.recruit.load', compact(['recruits']));
+        $recruitFilter     = $recruitModel->orderBy('id', 'DESC');
+        if($query['branch']){
+            
+            $recruitFilter = $recruitFilter->where('branch_id', $query['branch']);
+        }
+        $recruits = $recruitFilter->paginate( $limit );
+        $branchs = (new Branch())->all();
+        return view('admin.recruit.load', compact(['recruits', 'branchs', 'query']));
     }
 
     /**

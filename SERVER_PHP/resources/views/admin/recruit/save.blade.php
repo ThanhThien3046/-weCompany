@@ -56,6 +56,19 @@
                     <textarea name="content" id="editor1" class="h-100">{{ old('content', $recruit->content) }}</textarea>
                 </div>
             </div>
+            <div class="row block-content">
+                <div class="col-12 bg-color-white shadows-1 px-3 py-3">
+                    <div class="form-input cus_checkbox">
+                        <h2 class="title">is show collapse client</h2>
+                        <label class="container">はい
+                            <input type="checkbox" name="show" 
+                            @if(old('show', $recruit->show )) checked @endif
+                            value="1"/>
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="col-md-4">
             <div class="row block-content">

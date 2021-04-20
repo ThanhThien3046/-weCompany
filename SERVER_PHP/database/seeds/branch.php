@@ -16,97 +16,97 @@ class branchs extends Seeder
         $branchs = [
             [
         
-                'title'   => 'we homes 1',
+                'title'   => 'we homes',
                 'banner'  => '/images/homes_banner.jpg',
                 'excerpt' => '',
-                'image'   => '/images/banner_02.jpg',
-                
+                'image'   => '/images/wehomes.png',
+                'title_recruit' => '株式会社WE・HOMES【求人】',
             ],
         
             [
                 
-                'title'   => 'we land',
+                'title'   => 'we werentcar',
                 'banner'  => '/images/homes_banner.jpg',
                 'excerpt' => '',
-                'image'   => '/images/banner_02.jpg',
-                
+                'image'   => '/images/werentcar.png',
+                'title_recruit' => '株式会社WE・HOMES【求人】',
             ],
         
             [
                 
-                'title'   => 'we land 2',
+                'title'   => 'we wefarm',
                 'banner'  => '/images/homes_banner.jpg',
                 'excerpt' => '',
-                'image'   => '/images/banner_02.jpg',
-                
+                'image'   => '/images/wefarm.png',
+                'title_recruit' => '株式会社WE・HOMES【求人】',
             ],
         
             [
                 
-                'title'   => 'we land 3',
+                'title'   => 'we wea',
                 'banner'  => '/images/homes_banner.jpg',
                 'excerpt' => '',
-                'image'   => '/images/banner_02.jpg',
-                
-            ],
-        
-        
-            [
-                
-                'title'   => 'we land 4',
-                'banner'  => '/images/homes_banner.jpg',
-                'excerpt' => '',
-                'image'   => '/images/banner_02.jpg',
-                
+                'image'   => '/images/wea.png',
+                'title_recruit' => '株式会社WE・HOMES【求人】',
             ],
         
         
             [
                 
-                'title'   => 'we land 5',
+                'title'   => 'we weB',
                 'banner'  => '/images/homes_banner.jpg',
                 'excerpt' => '',
-                'image'   => '/images/banner_02.jpg',
-                
+                'image'   => '/images/weB.png',
+                'title_recruit' => '株式会社WE・HOMES【求人】',
             ],
         
         
             [
                 
-                'title'   => 'we homes 6',
+                'title'   => 'we weconsulting',
                 'banner'  => '/images/homes_banner.jpg',
                 'excerpt' => '',
-                'image'   => '/images/banner_02.jpg',
+                'image'   => '/images/weconsulting.png',
+                'title_recruit' => '株式会社WE・HOMES【求人】',
+            ],
+        
+            
+            [
                 
+                'title'   => 'we wejob',
+                'banner'  => '/images/homes_banner.jpg',
+                'excerpt' => '',
+                'image'   => '/images/wejob.png',
+                'title_recruit' => '株式会社WE・HOMES【求人】',
             ],
         
         
             [
                 
-                'title'   => 'we homes 6 r ',
+                'title'   => 'we weparlor',
                 'banner'  => '/images/homes_banner.jpg',
                 'excerpt' => '',
-                'image'   => '/images/banner_02.jpg',
-                
+                'image'   => '/images/weparlor.png',
+                'title_recruit' => '株式会社WE・HOMES【求人】',
             ],
         
         
             [
                 
-                'title'   => 'we homes 444 ',
+                'title'   => 'we weD',
                 'banner'  => '/images/homes_banner.jpg',
                 'excerpt' => '',
-                'image'   => '/images/banner_02.jpg',
-                
+                'image'   => '/images/weD.png',
+                'title_recruit' => '株式会社WE・HOMES【求人】',
             ],
         
         
             [
-                'title'   => 'we homes 234 ',
+                'title'   => 'we wemusic',
                 'banner'  => '/images/homes_banner.jpg',
                 'excerpt' => '',
-                'image'   => '/images/banner_02.jpg',
-                
+                'image'   => '/images/wemusic.png',
+                'title_recruit' => '株式会社WE・HOMES【求人】',
             ]
         ];
         DB::table('branchs')->insert($branchs);

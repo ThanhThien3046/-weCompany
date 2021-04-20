@@ -9,6 +9,6 @@ class Recruit extends Model
 {
     protected $table = 'recruits';
 
-    protected $fillable = ['id', 'title', 'content', 'branch_id'];
+    protected $fillable = ['id', 'title', 'content', 'branch_id', 'show'];
 
 }

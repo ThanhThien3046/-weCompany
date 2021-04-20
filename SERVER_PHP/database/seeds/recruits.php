@@ -21,11 +21,12 @@ class recruits extends Seeder
                 /// insert 
                 $recruits = [
                     [
-                        'title'   => '営業',
+                        'title'   => '営業' . rand( 1, 10),
                         'content' => '営業■事務
                         現在は募集をしておりません。
                         現在は募集をしておりません。',
                         'branch_id' => rand( 1, 10),
+                        'show'      => rand( 0, 1) ? true : false,
                         'updated_at' => Carbon::now()->subDays(720)->format('Y-m-d H:i:s'),
                         'created_at' => Carbon::now()->subDays(720)->format('Y-m-d H:i:s'),
                     ],
@@ -35,6 +36,7 @@ class recruits extends Seeder
                         現在は募集をしておりません。
                         現在は募集をしておりません。',
                         'branch_id' => rand( 1, 10),
+                        'show'      => rand( 0, 1) ? true : false,
                         'updated_at' => Carbon::now()->subDays(360)->format('Y-m-d H:i:s'),
                         'created_at' => Carbon::now()->subDays(360)->format('Y-m-d H:i:s'),
                     ],
@@ -45,6 +47,7 @@ class recruits extends Seeder
                         'content' => '営業■事務
                         現在は募集をしておりません。',
                         'branch_id' => rand( 1, 10),
+                        'show'      => rand( 0, 1) ? true : false,
                         'updated_at' => Carbon::now()->subDays(30)->format('Y-m-d H:i:s'),
                         'created_at' => Carbon::now()->subDays(30)->format('Y-m-d H:i:s'),
                     ];

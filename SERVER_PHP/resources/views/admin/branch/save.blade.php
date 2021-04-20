@@ -69,6 +69,12 @@
                     <textarea class="height-80px" name="description" cols="30" rows="10">{{ old('description', $branch->description) }}</textarea>
                 </div>
             </div>
+            <div class="row block-content">
+                <div class="col-12 bg-color-white shadows-1 px-3 py-3">
+                    <h2 class="title">title recruit page</h2>
+                    <input name="title_recruit" type="text" value="{{ old('title_recruit', $branch->title_recruit ) }}"/>
+                </div>
+            </div>
         </div>
         <div class="col-md-4">
             <div class="row block-content">

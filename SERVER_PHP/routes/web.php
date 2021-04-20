@@ -98,9 +98,7 @@ Route::get('/contact','ClientController@contact')->name('CONTACT_PAGE');
 Route::post('/contact','ClientController@mailContact')->name('MAIL_CONTACT');
 
 
-Route::get('/recruit', function () {
-    return view('recruit');
-})->name("RECRUIT");
+Route::get('/recruit','ClientController@recruit')->name('RECRUIT');
 
 include_once("routing/admin.php");
 include_once("routing/client.php");

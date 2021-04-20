@@ -21,6 +21,7 @@ class CreateRecruits extends Migration
             $table->string('title', 150)->nullable();
             $table->text('content')->nullable();
             $table->unsignedInteger('branch_id')->unsigned();
+            $table->boolean('show')->default(false);
             $table->timestamps();
         });
     }

@@ -9,6 +9,7 @@ use App\Models\Branch;
 use App\Models\Contact;
 use App\Models\Gallery;
 use App\Models\Post;
+use App\Models\Recruit;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
@@ -124,5 +125,22 @@ class ClientController extends Controller
         $galleries = (new Gallery())->where('foreign', $post->id)->where('type', Config::get('constant.TYPE-GALLERY.POST'))->get();
 
         return view('detail', compact(['post', 'galleries']));
+    }
+
+    public function recruit(Request $request, $id = 0){
+
+        // if( !$id ){
+        //     /// get first branch id
+        //     $recruit = (new Recruit())->first();
+        //     if( !$recruit ){
+        //         return abort(404);
+        //     }
+        //     $id = $recruit->id;
+        // }
+        // /// get 
+        $branchs = DB::table('branchs')->get();
+        $recruits = DB::table('recruits')->get();
+
+        return view("recruit", compact(['branchs', 'recruits']));
     }
 }

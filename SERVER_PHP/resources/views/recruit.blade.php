@@ -41,39 +41,38 @@
 		@include('partial.nav')
 	</div>
     
-
 	<main >
 		<h1 class="title">タイトル</h1>
 		<nav class="check">
 			<ul>
-			<li><img src="images/wehomes.png" width="530" height="622" alt=""/></li>
-			<li><img src="images/werentcar.png" width="530" height="622" alt=""/></li>
-			<li><img src="images/wefarm.png" width="530" height="622" alt=""/></li>
-			<li><img src="images/wea.png" width="530" height="622" alt=""/></li>
-			<li><img src="images/weB.png" width="530" height="622" alt=""/></li>
-			<li><img src="images/weconsulting.png" width="530" height="622" alt=""/></li>
-			<li><img src="images/wejob.png" width="530" height="622" alt=""/></li>
-			<li><img src="images/weparlor.png" width="530" height="622" alt=""/></li>
-			<li><img src="images/weD.png" width="530" height="622" alt=""/></li>
-			<li><img src="images/wemusic.png" width="530" height="622" alt=""/></li>
+                @if (!$branchs->isEmpty())
+                    @foreach ($branchs as $key => $branch)
+                    <li class="js__{{ $branch->id }}"><img src="{{ asset($branch->image) }}" width="530" height="622" alt=""/></li>
+                    @endforeach
+                @endif
 			</ul>
 		</nav>
 
+        @php $recruits = $recruits->toArray(); @endphp
+        @if (!$branchs->isEmpty())
+        @foreach ($branchs as $key => $branch)
         @php
-            $recruits = Config::get('recruit');
+            $branchId = $branch->id;
+            $recruitsInBranchs = array_filter($recruits, function( $item ) use ($branchId){ return $item->branch_id == $branchId; });
         @endphp
-        @foreach ($recruits as $k => $recruit)
-        <div class="js__toggle-item history {{ $recruit['class'] }}">
-			<h2 class="history__title">{{ $recruit['title'] }}</h2>
-            @foreach ($recruit['collap'] as $k => $collap)
+        <div class="js__toggle-item history" data-id="{{ $branch->id }}">
+			<h2 class="history__title">{{ $branch->title_recruit }}</h2>
+            
+            @foreach ($recruitsInBranchs as $collap)
             <div class="wrapper__collapse">
-                <a class="collapsible {{ $collap['show'] ? 'active' : '' }}">
-                    <span class="collapsible__title">{{ $collap['title'] }}</span>
-                    <span class="collapsible__des">{{ $collap['des'] }}</span>
+                
+                <a class="collapsible {{ $collap->show ? 'active' : '' }}"> 
+                    <span class="collapsible__title">H{{ Carbon::parse($collap->created_at)->format('y') }}</span>
+                    <span class="collapsible__des">{{ $collap->title }}</span>
                 </a>
                 <div class="content__collapsible">
                     <div class="content__collapsible-main">
-                        {!!  $collap['des'] . $collap['content'] !!}
+                        {!! $collap->content !!}
                     </div>
                     <a href="{{ Route('CONTACT_PAGE') }}" class="content__collapsible-envelope"><i class="far fa-envelope"></i></a>
                 </div>
@@ -81,6 +80,7 @@
             @endforeach
 		</div>
         @endforeach
+        @endif
 		
 	</main>
 
