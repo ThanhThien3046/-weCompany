@@ -103,7 +103,7 @@
                                 alt="{{$post->title}}" />
                         </div>
                         @endif
-                        <div class="mes">
+                        <div class="mes {{ $post->image_content ? null : 'w-100' }}">
                             {!! $post->content !!} 
                         </div>
                         

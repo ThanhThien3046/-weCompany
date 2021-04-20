@@ -52,7 +52,7 @@
                 <div class="js-parent__create-slug col-12 bg-color-white shadows-1 px-3 py-3">
                     <h2 class="title">
                         ポストのタイトル 
-                        <a target="_blank" id="show-url" class="link__post" href="/{{ $post->slug }}">
+                        <a target="_blank" id="show-url" class="link__post" href="{{ Route('DETAIL_PAGE', [ 'id' => $post->id ]) }}">
                             ポストを表示する
                             <i class="hero-icon hero-shield-link-variant-outline"></i>
                         </a>

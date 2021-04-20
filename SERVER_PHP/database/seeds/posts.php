@@ -13,6 +13,8 @@ class posts extends Seeder
      */
     public function run()
     {
+        $content = '茗荷谷の住宅街に突如現れる植物園。小石川植物園は約4000種類の植物を栽培する植物園です。江戸幕府が薬草を栽培するために生まれたという小石川植物園の前身である”御薬園（おやくえん）”の開園は1648年。なんと日本最古の植物園なんです。現在は、小石川後楽園の名前で親しまれており、東京大学の所有になっていますが、大人400円で一般の方でも入園が可能。あなたも約160000㎡という広大な敷地で、四季折々の植物を楽しんでみてください。るために生まれたという小石川植物園の前身である”御薬園（おやくえん）”の開園は1648年。なんと日本最古の植物園なんです。現在は、小石川後楽園の名前で親しまれており、東京大学の所有になっていますが、大人400円';
+
         $posts = [
             [
         
@@ -24,7 +26,7 @@ class posts extends Seeder
                 'user_id'     => 1,
                 'title'       => "江戸時代の教科書を見てみよう！",
                 'excerpt'     => 'excerpt 江戸時代の教科書を見てみよう！',
-                'content'     => 'content 江戸時代の教科書を見てみよう！',
+                'content'     => 'content 江戸時代の教科書を見てみよう！' . $content,
                 'description' => 'description 江戸時代の教科書を見てみよう！',
                 'type'        => 1,
                 
@@ -39,7 +41,7 @@ class posts extends Seeder
                 'user_id'     => 1,
                 'title'       => "神社にある10個のハートを見つけよう！",
                 'excerpt'     => 'excerpt 神社にある10個のハートを見つけよう！',
-                'content'     => 'content 神社にある10個のハートを見つけよう！',
+                'content'     => 'content 神社にある10個のハートを見つけよう！' . $content,
                 'description' => 'description 神社にある10個のハートを見つけよう！',
                 'type'        => 1,
                 
@@ -54,7 +56,7 @@ class posts extends Seeder
                 'user_id'     => 1,
                 'title'       => "日本茶の基礎を学んでみよう！",
                 'excerpt'     => 'excerpt 日本茶の基礎を学んでみよう！',
-                'content'     => 'content 日本茶の基礎を学んでみよう！',
+                'content'     => 'content 日本茶の基礎を学んでみよう！' . $content,
                 'description' => 'description 日本茶の基礎を学んでみよう！',
                 'type'        => 1,
                 
@@ -69,7 +71,7 @@ class posts extends Seeder
                 'user_id'     => 1,
                 'title'       => "600種類の凧からお気に入りを見つけよう！",
                 'excerpt'     => 'excerpt 600種類の凧からお気に入りを見つけよう！',
-                'content'     => 'content 600種類の凧からお気に入りを見つけよう！',
+                'content'     => 'content 600種類の凧からお気に入りを見つけよう！' . $content,
                 'description' => 'description 600種類の凧からお気に入りを見つけよう！',
                 'type'        => 1,
                 
@@ -84,7 +86,7 @@ class posts extends Seeder
                 'user_id'     => 1,
                 'title'       => "600種類の江戸時代の教科書を見てみよう！",
                 'excerpt'     => 'excerpt 600種類の江戸時代の教科書を見てみよう！',
-                'content'     => 'content 600種類の江戸時代の教科書を見てみよう！',
+                'content'     => 'content 600種類の江戸時代の教科書を見てみよう！' . $content,
                 'description' => 'description 600種類の江戸時代の教科書を見てみよう！',
                 'type'        => 2,
                 
@@ -99,7 +101,7 @@ class posts extends Seeder
                 'user_id'     => 1,
                 'title'       => "江戸時代の教科書を見てみよう！",
                 'excerpt'     => 'excerpt 江戸時代の教科書を見てみよう！',
-                'content'     => 'content 江戸時代の教科書を見てみよう！',
+                'content'     => 'content 江戸時代の教科書を見てみよう！' . $content,
                 'description' => 'description 江戸時代の教科書を見てみよう！',
                 'type'        => 1,
                 
@@ -114,7 +116,7 @@ class posts extends Seeder
                 'user_id'     => 1,
                 'title'       => "神社にある10vvvvvvvを見つけよう！",
                 'excerpt'     => 'excerpt 神社にある10vvvvvvvを見つけよう！',
-                'content'     => 'content 神社にある10vvvvvvvを見つけよう！',
+                'content'     => 'content 神社にある10vvvvvvvを見つけよう！' . $content,
                 'description' => 'description 神社にある10vvvvvvvを見つけよう！',
                 'type'        => 1,
                 
@@ -129,7 +131,7 @@ class posts extends Seeder
                 'user_id'     => 1,
                 'title'       => "日本茶の基礎を学んでみよう！",
                 'excerpt'     => 'excerpt 日本茶の基礎を学んでみよう！',
-                'content'     => 'content 日本茶の基礎を学んでみよう！',
+                'content'     => 'content 日本茶の基礎を学んでみよう！' . $content,
                 'description' => 'description 日本茶の基礎を学んでみよう！',
                 'type'        => 1,
                 
@@ -145,7 +147,7 @@ class posts extends Seeder
                 'user_id'     => 1,
                 'title'       => "日本茶の基礎を学んでみよう！",
                 'excerpt'     => 'excerpt 日本茶の基礎を学んでみよう！',
-                'content'     => 'content 日本茶の基礎を学んでみよう！',
+                'content'     => 'content 日本茶の基礎を学んでみよう！' . $content,
                 'description' => 'description 日本茶の基礎を学んでみよう！',
                 'type'        => 1,
                 
@@ -160,7 +162,7 @@ class posts extends Seeder
                 'user_id'     => 1,
                 'title'       => "日本茶の基礎を学んでみよう！",
                 'excerpt'     => 'excerpt 日本茶の基礎を学んでみよう！',
-                'content'     => 'content 日本茶の基礎を学んでみよう！',
+                'content'     => 'content 日本茶の基礎を学んでみよう！' . $content,
                 'description' => 'description 日本茶の基礎を学んでみよう！',
                 'type'        => 1,
                 
@@ -175,7 +177,7 @@ class posts extends Seeder
                 'user_id'     => 1,
                 'title'       => "日本茶の基礎を学んでみよう！",
                 'excerpt'     => 'excerpt 日本茶の基礎を学んでみよう！',
-                'content'     => 'content 日本茶の基礎を学んでみよう！',
+                'content'     => 'content 日本茶の基礎を学んでみよう！' . $content,
                 'description' => 'description 日本茶の基礎を学んでみよう！',
                 'type'        => 1,
                 
@@ -190,7 +192,7 @@ class posts extends Seeder
                 'user_id'     => 1,
                 'title'       => "f日本茶の基礎を学んでみよう！",
                 'excerpt'     => 'excerpt f日本茶の基礎を学んでみよう！',
-                'content'     => 'content f日本茶の基礎を学んでみよう！',
+                'content'     => 'content f日本茶の基礎を学んでみよう！' . $content,
                 'description' => 'description f日本茶の基礎を学んでみよう！',
                 'type'        => 3,
                 
@@ -205,7 +207,7 @@ class posts extends Seeder
                 'user_id'     => 1,
                 'title'       => "日本茶の基礎を学んでみよう！",
                 'excerpt'     => 'excerpt 日本茶の基礎を学んでみよう！',
-                'content'     => 'content 日本茶の基礎を学んでみよう！',
+                'content'     => 'content 日本茶の基礎を学んでみよう！' . $content,
                 'description' => 'description 日本茶の基礎を学んでみよう！',
                 'type'        => 1,
                 
@@ -220,7 +222,7 @@ class posts extends Seeder
                 'user_id'     => 1,
                 'title'       => "日本茶の基礎を学んでみよう！",
                 'excerpt'     => 'excerpt 日本茶の基礎を学んでみよう！',
-                'content'     => 'content 日本茶の基礎を学んでみよう！',
+                'content'     => 'content 日本茶の基礎を学んでみよう！' . $content,
                 'description' => 'description 日本茶の基礎を学んでみよう！',
                 'type'        => 1,
                 
@@ -235,7 +237,7 @@ class posts extends Seeder
                 'user_id'     => 1,
                 'title'       => "日本茶の基礎を学んでみよう！",
                 'excerpt'     => 'excerpt 日本茶の基礎を学んでみよう！',
-                'content'     => 'content 日本茶の基礎を学んでみよう！',
+                'content'     => 'content 日本茶の基礎を学んでみよう！' . $content,
                 'description' => 'description 日本茶の基礎を学んでみよう！',
                 'type'        => 1,
                 
@@ -250,7 +252,7 @@ class posts extends Seeder
                 'user_id'     => 1,
                 'title'       => "日本茶の基礎を学んでみよう！",
                 'excerpt'     => 'excerpt 日本茶の基礎を学んでみよう！',
-                'content'     => 'content 日本茶の基礎を学んでみよう！',
+                'content'     => 'content 日本茶の基礎を学んでみよう！' . $content,
                 'description' => 'description 日本茶の基礎を学んでみよう！',
                 'type'        => 1,
                 
@@ -265,7 +267,7 @@ class posts extends Seeder
                 'user_id'     => 1,
                 'title'       => "日本茶の基礎を学んでみよう！",
                 'excerpt'     => 'excerpt 日本茶の基礎を学んでみよう！',
-                'content'     => 'content 日本茶の基礎を学んでみよう！',
+                'content'     => 'content 日本茶の基礎を学んでみよう！' . $content,
                 'description' => 'description 日本茶の基礎を学んでみよう！',
                 'type'        => 1,
                 
@@ -280,7 +282,7 @@ class posts extends Seeder
                 'user_id'     => 1,
                 'title'       => "日本茶の基礎を学んでみよう！",
                 'excerpt'     => 'excerpt 日本茶の基礎を学んでみよう！',
-                'content'     => 'content 日本茶の基礎を学んでみよう！',
+                'content'     => 'content 日本茶の基礎を学んでみよう！' . $content,
                 'description' => 'description 日本茶の基礎を学んでみよう！',
                 'type'        => 1,
                 
@@ -295,7 +297,7 @@ class posts extends Seeder
                 'user_id'     => 1,
                 'title'       => "日本茶の基礎を学んでみよう！",
                 'excerpt'     => 'excerpt 日本茶の基礎を学んでみよう！',
-                'content'     => 'content 日本茶の基礎を学んでみよう！',
+                'content'     => 'content 日本茶の基礎を学んでみよう！' . $content,
                 'description' => 'description 日本茶の基礎を学んでみよう！',
                 'type'        => 1,
                 
