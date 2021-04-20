@@ -18,6 +18,7 @@ class Post extends Model
         'title', 
         'excerpt', 
         'content', 
+        'image_content',
         'public',
         'image', 
         'image_long', 

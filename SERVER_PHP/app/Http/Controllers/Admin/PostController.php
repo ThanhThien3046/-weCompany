@@ -11,6 +11,7 @@ use App\Http\Requests\ADMIN_VALIDATE_SAVE_POST;
 use App\Helpers\Catalogue;
 use App\Http\Requests\ADMIN_VALIDATE_SAVE_BRANCH;
 use App\Models\Branch;
+use App\Models\Gallery;
 use App\Models\Post;
 use App\Models\PostTagActive;
 use App\Models\Topic;
@@ -42,41 +43,50 @@ class PostController extends Controller
             }
         }
         $branchs = (new Branch())->all();
-        return view('admin.post.save', compact([ 'branchs', 'post' ]));
+        $galleries = DB::table('galleries')->where('foreign', $post->id)->where('type', Config::get('constant.TYPE-GALLERY.POST'))->get();
+        if( $galleries->isEmpty() ){
+            $galleries = [
+                new Gallery()
+            ];
+        }
+        return view('admin.post.save', compact([ 'branchs', 'post', 'galleries' ]));
     }
 
 
     public function save(ADMIN_VALIDATE_SAVE_POST $request, $id = 0){
 
         ///setting data insert table post
-        $postInput = $request->only( 'branch_id', 'title', 'excerpt', 'content', 'image', 'image_long', 'public', 'description', 'type');
+        $postInput = $request->only( 'branch_id', 'image_content' , 'title', 'excerpt', 'content', 
+        'image', 'image_long', 'public', 'description', 'type');
 
-        $postInput['user_id'] = Auth::user()->id;
-        $postInput['content'] = SupportString::createEmoji($postInput['content']);
-
-        /// create catalogue
-                   $catalogue        = Catalogue::generate($postInput['content']);
-        $postInput['content']        = $catalogue->text;
-        $postInput['text_content']   = strip_tags($postInput['content']);
-
-        $postInput['catalogue']      = $catalogue->catalogue;
-        $postInput['text_catalogue'] = $catalogue->text_catalogue;
-
-        /// if description null get of catalogue || content
-        if(!trim($postInput['description'])){
-
-            $description = $postInput['text_catalogue'];
-            if( !trim($description) ){
-
-                $description = mb_substr( $postInput['text_content'], 0, 160);
-            }
-            $postInput['description'] = html_entity_decode(trim($description));
-        }
-
-        /// set id save post 
-        $postInput['id'] = $id;
-        
         try{
+            $postInput['user_id'] = Auth::user()->id;
+            $postInput['content'] = SupportString::createEmoji($postInput['content']);
+                
+            
+            /// create catalogue
+                    $catalogue        = Catalogue::generate($postInput['content']);
+            $postInput['content']        = $catalogue->text;
+            $postInput['text_content']   = strip_tags($postInput['content']);
+
+            $postInput['catalogue']      = $catalogue->catalogue;
+            $postInput['text_catalogue'] = $catalogue->text_catalogue;
+
+            /// if description null get of catalogue || content
+            if(!trim($postInput['description'])){
+
+                $description = $postInput['text_catalogue'];
+                if( !trim($description) ){
+
+                    $description = mb_substr( $postInput['text_content'], 0, 160);
+                }
+                $postInput['description'] = html_entity_decode(trim($description));
+            }
+            
+            /// set id save post 
+            $postInput['id'] = $id;
+        
+        
             /// create instance Post Model 
             $post          = new Post();
             // $postTagActive = new PostTagActive();
@@ -87,6 +97,7 @@ class PostController extends Controller
                 $post = new Post();
                 $post = $post->create($postInput);
             }
+            
             /// save tag of post 
             // $postTagActive->removeByPostId($postId);
 
@@ -99,12 +110,30 @@ class PostController extends Controller
             //     );
             //     $postTagActive->insert($tagsDataInsert);
             // }
+            
+            /// remove gallery
+            (new Gallery())->where("foreign", $post->id)->delete();
+            /// insert 
+            $images = $request->input('gallery');
+            $images = array_filter($images, function( $item ) {  return $item; });
+
+            if( count($images) ){
+                $postId = $post->id;
+                if( $images ){
+                    $imgsDataInsert = array_map( 
+                        function( $url ) use ( $postId ){ 
+                            return  ['foreign' => $postId, 'url' => $url, 'type' => Config::get('constant.TYPE-GALLERY.POST') ]; 
+                        }, $images
+                    );
+                    $galleries = (new Gallery())->insert($imgsDataInsert);
+                }
+            }
 
             $request->session()->flash(Config::get('constant.SAVE_SUCCESS'), true);
             return redirect()->route('ADMIN_STORE_POST',  ['id' => $post->id]);
 
         }catch (\Exception $e){
-            
+            dd ($e->getMessage());
             return redirect()->back()
             ->with(Config::get('constant.SAVE_ERROR'), 'đã có lỗi: '.$e->getMessage())
             ->withInput($request->all());

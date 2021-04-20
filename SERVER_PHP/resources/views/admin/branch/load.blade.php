@@ -51,13 +51,15 @@
     <div class="row block-content">
         <div class="col-12 bg-white shadows-1 px-3 py-3 table-list">
             <div class="row thead-list">
-                <div class="col-1">image</div>
-                <div class="col-3">title</div>
-                <div class="col-7">description</div>
-                <div class="col-1">remove</div>
+                <div class="col-1 text-center">id</div>
+                <div class="col-1 text-center">image</div>
+                <div class="col-3 text-center">title</div>
+                <div class="col-6 text-center">description</div>
+                <div class="col-1 text-center">remove</div>
             </div>
             @foreach( $branchs as $branch)
             <div class="row trow-list">
+                <div class="col-1 text-center">{{ $branch->id }}</div>
                 <div class="col-1 trow_list__wrapper_image">
                     <img class="item_image" src="{{ $branch->image }}" />
                 </div>
@@ -66,7 +68,7 @@
                         {{ $branch->title }}
                     </a>
                 </div>
-                <div class="col-7">{{$branch->description}}</div>
+                <div class="col-6">{{$branch->description}}</div>
                 <div class="col-1">
                     <button type="button"
                     onclick="deleteComponent('{{ $branch->id }}', this)"

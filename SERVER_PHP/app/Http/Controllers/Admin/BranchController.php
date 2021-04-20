@@ -36,17 +36,17 @@ class BranchController extends Controller
 
         $branchInput = $request->only( 'title', 'excerpt', 'content', 'banner', 'image', 'description');
 
-        /// create catalogue
-                    $catalogue = Catalogue::generate($branchInput['content']);
-        $branchInput['content'] = $catalogue->text;
+        // /// create catalogue
+        //             $catalogue = Catalogue::generate($branchInput['content']);
+        // $branchInput['content'] = $catalogue->text;
 
-        $branchInput['catalogue']    = $catalogue->catalogue;
-                    $text_catalogue = $catalogue->text_catalogue;
+        // $branchInput['catalogue']    = $catalogue->catalogue;
+        //             $text_catalogue = $catalogue->text_catalogue;
 
         /// if description_seo null get of catalogue || content
         if(!trim($branchInput['description'])){
 
-            $description = $text_catalogue;
+            $description = '';// $text_catalogue;
             if( !trim($description) ){
 
                 $description = mb_substr( strip_tags($branchInput['content']), 0, 160);
@@ -87,7 +87,8 @@ class BranchController extends Controller
     public function load(){
         $limit       = 10;
         $branchModel = new Branch();
-        $branchs     = $branchModel->paginate( $limit );
+        $branchs     = $branchModel->orderBy('id', 'DESC')
+                        ->paginate( $limit );
         return view('admin.branch.load', compact(['branchs']));
     }
 

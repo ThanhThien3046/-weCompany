@@ -25,9 +25,6 @@ function validateForm(formJquery){
                 required : true,
                 maxlength: 255
             },
-            content : {
-                cke_required : true
-            },
             public : {
                 required : true
             },

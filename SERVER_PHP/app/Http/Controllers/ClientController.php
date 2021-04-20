@@ -7,6 +7,7 @@ use App\Mail\MailContact;
 use App\Mail\MailContactAdmin;
 use App\Models\Branch;
 use App\Models\Contact;
+use App\Models\Gallery;
 use App\Models\Post;
 use Exception;
 use Illuminate\Http\Request;
@@ -119,6 +120,9 @@ class ClientController extends Controller
         }
         /// có bài viết thật
 
-        return view('detail', compact(['post']));
+        /// lấy ảnh
+        $galleries = (new Gallery())->where('foreign', $post->id)->where('type', Config::get('constant.TYPE-GALLERY.POST'))->get();
+
+        return view('detail', compact(['post', 'galleries']));
     }
 }

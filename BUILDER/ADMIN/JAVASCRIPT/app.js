@@ -429,6 +429,10 @@ function runSelect2Multi(dom){
 function removeBlockParent(e){
 
     $( e ).closest('.js-group-option').remove()
+    if(!$(".js-group-option").length){
+        /// không có
+        $("#sortable .js__remove-final").remove()
+    }
 }
 
 function showAllImagesCkfinderOnload( imgs ){
@@ -490,6 +494,7 @@ function addMoreBlock(e){
             
         //// clone
         var domClone = $(block).clone()
+        domClone.find('.output-image-finder').remove()
         /// initial select2 remove 
         runSelect2Single($(block).find('select'))
         /// reset input data 

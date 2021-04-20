@@ -72,7 +72,7 @@
             @endforeach
             @endif
 
-            <div class="row">
+            <div class="row js__remove-final">
                 <div class="col-12 text-right">
                     <button type="button" onclick="addMoreBlock()" class="btn btn-success"> 
                         追加

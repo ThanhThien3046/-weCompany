@@ -89,21 +89,42 @@
                         alt="{{$post->title}}" width="800" height="500" />
                          
                     <div class="imgmes">
+                        @if ($post->image_content)
                         <div class="imgmess__left">
-                            <img src="{{asset($post->image)}}" alt="" class="imgmes_img">
+                            <img class="lazyload"
+                                src="{{ Config::get('app.lazyload_base64') }}"
+                                onerror="this.onerror=null;this.src='{{ asset('/images/failed.jpg') }}';"
+                                data-src="{{ 
+                                Route('IMAGE_RESIZE', [ 
+                                    'size' => 'post-thumnail-detail' , 
+                                    'type' => 'fit', 
+                                    'imagePath' => trim($post->image_content, '/') 
+                                ]) }}"
+                                alt="{{$post->title}}" />
                         </div>
+                        @endif
                         <div class="mes">
                             {!! $post->content !!} 
                         </div>
                         
                     </div>
                     <div class="imgdtl-list">
+                        @if(!$galleries->isEmpty())
+                        @foreach ($galleries as $key => $image)
                         <div class="img__dtl-item">
-                            <img src="{{asset('images/challenge172_03.jpg')}}" alt="">
+                            <img class="lazyload"
+                                src="{{ Config::get('app.lazyload_base64') }}"
+                                onerror="this.onerror=null;this.src='{{ asset('/images/failed.jpg') }}';"
+                                data-src="{{ 
+                                Route('IMAGE_RESIZE', [ 
+                                    'size' => 'post-galleries' , 
+                                    'type' => 'fit', 
+                                    'imagePath' => trim($image->url, '/') 
+                                ]) }}"
+                                alt="{{$post->title}}" />
                         </div>
-                        <div class="img__dtl-item">
-                            <img src="{{asset('images/challenge172_04.jpg')}}" alt="">
-                        </div>
+                        @endforeach
+                        @endif
                     </div>
                     {{-- /// càn query trong db ra cái dòng dữ liệu của branch tương ứng với bài viết --}}
                     {{-- /// cái $post là thể hiện của object post và sẽ có thể gọi hàm branch --}}

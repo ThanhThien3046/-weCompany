@@ -14,6 +14,10 @@
     <script type="text/javascript" src="{{ asset('ckfinder/ckfinder.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/admin/validate.post.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/admin/app.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/library/jquery-ui.min.js') }}"></script>
+    <script>
+        $( "#sortable" ).sortable();
+    </script>
     
 @endsection
 @section('page_title', $post->id ? 'Edit Post' : 'Insert Post')
@@ -59,16 +63,60 @@
                 </div>
             </div>
             
-            <div class="row block-content">
+            {{-- <div class="row block-content">
                 <div class="col-12 bg-color-white shadows-1 px-3 py-3">
                     <h2 class="title">excerpt </h2>
                     <textarea  class="height-80px" name="excerpt" cols="30" rows="10">{{ old('excerpt', $post->excerpt) }}</textarea>
                 </div>
+            </div> --}}
+
+            <div class="row block-content">
+                <div class="col-12 bg-color-white shadows-1 px-3 py-3">
+                    <h2 class="title">hình ảnh bên phải nội dung</h2>
+                    <div class="position-relative wrapper__selectImageWithCKFinder type-select-ckfinder__inline">
+                        <input name="image_content" class="img__outputCKFinder jquery__append-out" type="text" 
+                            value="{{ old('image_content', $post->image_content) }}" 
+                            onblur="showImage__InputCKFinder( this.value, this )"/>
+                        <button class="btn bg-cyan bd-cyan text-white btn-input-append" 
+                        type="button" onclick="selectImageWithCKFinder(this)">chọn ảnh</button>
+                    </div>
+                </div>
             </div>
+
             <div class="row block-content">
                 <div class="col-12 bg-color-white shadows-1 px-3 py-3">
                     <h2 class="title">content</h2>
                     <textarea name="content" id="editor1" class="h-100">{{ old('content', $post->content) }}</textarea>
+                </div>
+            </div>
+            
+            <div id="sortable">
+                
+                @foreach ($galleries as $key => $image)
+                <div class="row block-content js-group-option">
+                    <i onclick="removeBlockParent(this)" class="hero-icon hero-close"></i>
+                    <div class="col-12 bg-color-white shadows-1 px-3 py-3">
+                        <div class="row">
+                            <div class="col-12">
+                                <h2 class="title">hình ảnh SEO</h2>
+                                <div class="position-relative wrapper__selectImageWithCKFinder type-select-ckfinder__inline">
+                                    <input name="gallery[]" class="img__outputCKFinder jquery__append-out" type="text" 
+                                        value="{{ old('gallery', $image->url) }}" 
+                                        onblur="showImage__InputCKFinder( this.value, this )"/>
+                                    <button class="btn bg-cyan bd-cyan text-white btn-input-append" 
+                                    type="button" onclick="selectImageWithCKFinder(this)">chọn ảnh</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+                <div class="row js__remove-final">
+                    <div class="col-12 text-right">
+                        <button type="button" onclick="addMoreBlock()" class="btn btn-success btn-addmore"> 
+                            追加
+                        </button>
+                    </div>
                 </div>
             </div>
             <div class="row block-content">
@@ -106,19 +154,7 @@
                 </div>
             </div>
             
-            <div class="row block-content">
-                <div class="col-12 bg-color-white shadows-1 px-3 py-3">
-                    <section class="pb-4">
-                        <h2 class="title text-center">カテゴリータイプを選んでください</h2>
-                        <select name="type" class="js__single-select">
-                            <option @if(old('type', $post->type) == Config::get('constant.TYPE-POST.DEFAULT')) {{ 'selected' }} @endif
-                            value="{{ Config::get('constant.TYPE-POST.DEFAULT') }}">bài viết kiểu mặc định</option>
-                            <option @if(old('type', $post->type) != Config::get('constant.TYPE-POST.DEFAULT')) {{ 'selected' }} @endif
-                            value="{{ Config::get('constant.TYPE-POST.RIGHT') }}">bài viết có thể dài</option>
-                        </select>
-                    </section>
-                </div>
-            </div>
+            
             <div class="row block-content">
                 <div class="col-12 bg-color-white shadows-1 px-3 py-3">
                     <section class="pb-4">
@@ -135,6 +171,22 @@
                     </section>
                 </div>
             </div>
+
+
+            <div class="row block-content">
+                <div class="col-12 bg-color-white shadows-1 px-3 py-3">
+                    <section class="pb-4">
+                        <h2 class="title text-center">カテゴリータイプを選んでください</h2>
+                        <select name="type" class="js__single-select">
+                            <option @if(old('type', $post->type) == Config::get('constant.TYPE-POST.DEFAULT')) {{ 'selected' }} @endif
+                            value="{{ Config::get('constant.TYPE-POST.DEFAULT') }}">post default</option>
+                            <option @if(old('type', $post->type) != Config::get('constant.TYPE-POST.DEFAULT')) {{ 'selected' }} @endif
+                            value="{{ Config::get('constant.TYPE-POST.RIGHT') }}">post long</option>
+                        </select>
+                    </section>
+                </div>
+            </div>
+
             <div class="row block-content">
                 <div class="col-12 bg-color-white shadows-1 px-3 py-3">
                     <section class="pb-4 wrapper__selectImageWithCKFinder">

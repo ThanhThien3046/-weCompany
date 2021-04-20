@@ -22,7 +22,6 @@ function validateForm(formJquery){
                 maxlength: 150
             },
             excerpt : {
-                required : true,
                 maxlength: 255
             },
             banner : {
@@ -32,6 +31,9 @@ function validateForm(formJquery){
             image : {
                 required : true,
                 maxlength: 255
+            },
+            description : {
+                maxlength: 160
             },
         },
         messages: {
@@ -50,6 +52,9 @@ function validateForm(formJquery){
             banner : {
                 required : "cần nhập hình ảnh  để seo tốt hơn",
                 maxlength: "phần hình ảnh  không vượt quá {0} kí tự"
+            },
+            description : {
+                maxlength: "phần mô tả không vượt quá {0} kí tự"
             },
         }
     });

@@ -18,5 +18,9 @@ return [
         'DEFAULT' => 1,
         'RIGHT'   => 2,
         'LEFT'    => 3
+    ],
+    'TYPE-GALLERY' => [
+        'DEFAULT' => 1,
+        'POST' => 2,
     ]
 ];

@@ -61,13 +61,13 @@
         </div>
         <div class="col-12 bg-white shadows-1 px-3 py-3 table-list">
             <div class="row thead-list">
-                <div class="col-1">id</div>
-                <div class="col-1">image</div>
-                <div class="col-5">title</div>
-                <div class="col-1">type</div>
-                <div class="col-2">group - branch</div>
-                <div class="col-1">public</div>
-                <div class="col-1">#remove#</div>
+                <div class="col-1 text-center">id</div>
+                <div class="col-1 text-center">image</div>
+                <div class="col-5 text-center">title</div>
+                <div class="col-1 text-center">type</div>
+                <div class="col-2 text-center">group - branch</div>
+                <div class="col-1 text-center">public</div>
+                <div class="col-1 text-center">#remove#</div>
             </div>
             @foreach( $posts as $post)
             <div class="row trow-list {{ $post->public == Config::get('constant.TYPE_SAVE.ADMIN_READ') ? 'highlight' : null }}">

@@ -25,8 +25,7 @@ class ADMIN_VALIDATE_SAVE_POST extends FormRequest
     {
         return [
             'title'       => 'required|max:150',
-            'excerpt'     => 'required|max:255',
-            'content'     => 'required',
+            'excerpt'     => 'max:255',
             'public'      => 'required',
             'branch_id'   => 'required',
             'image'       => 'required|max:255',
