@@ -2601,7 +2601,8 @@ option:focus {
 }
 
 .article__challenge-number {
-  background-color: turquoise;
+  /* background-color: turquoise; */
+  /* background-color: red; */
   text-align: center;
   color: #fff;
   font-weight: bold;

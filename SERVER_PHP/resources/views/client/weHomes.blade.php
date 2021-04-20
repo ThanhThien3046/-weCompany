@@ -79,7 +79,7 @@
                                     <div class="main__list" id="js__format-height-article">
                                         @php $posts = $branch->posts()->orderBy('id', 'DESC')->take(3)->get() @endphp
 
-                                        {{-- /// khúc này tôi copy ngoài home page y chang không sửa gì --}}
+                                        
                                         @if(!$posts->isEmpty())
                                         @foreach ($posts as $key => $post)
                                         <article class="article article__default">
@@ -101,7 +101,7 @@
                                         </article>
                                         @endforeach
                                         @endif
-                                        {{-- /// end khúc này tôi copy ngoài home page y chang không sửa gì --}}
+                                       
                                     </div>
                                 </div>
                                 
