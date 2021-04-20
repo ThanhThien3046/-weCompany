@@ -73,14 +73,43 @@
                 <article class="article article__default d-none {{ SupportString::renderClassBlockPost($posts, $post->type, $key) }}">
                     <div class="article__wrapper">
                         <span class="article__challenge">
-                            {{-- ///thay doi mau cua number tuy vao tung branch --}}
-                            @if($post->branch_id==1) 
-                                $txt = "background-color:green;"
-                            @else
-                                @if($post->branch_id==2)
-                                    $txt = "background-color:red;"
-                                @endif
-                            @endif
+                            @php
+                                switch ($post->branch_id) {
+                                    case '1':
+                                        $txt = "background-color:#e53323;";
+                                        break;
+                                    case '2':
+                                        $txt = "background-color:#edad3e;";
+                                        break;
+                                    case '3':
+                                        $txt = "background-color:#fdf753;";
+                                        break;
+                                    case '4':
+                                        $txt = "background-color:#6bd647;";
+                                        break;
+                                    case '5':
+                                        $txt = "background-color:#1d9e3b;";
+                                        break;
+                                    case '6':
+                                        $txt = "background-color:#4ea1e0;";
+                                        break;
+                                    case '7':
+                                        $txt = "background-color:#3471b0;";
+                                        break;
+                                    case '8':
+                                        $txt = "background-color:#031175;";
+                                        break;
+                                    case '9':
+                                        $txt = "background-color:#911f7a;";
+                                        break;
+                                    case '10':
+                                        $txt = "background-color:#d9307f;";  
+                                        break;                                 
+                                    default:
+                                        $txt = "background-color:#000;";  
+                                        break;
+                                }
+                            @endphp
                             <i style={{$txt}} class="article__challenge-number">{{ $post->id }}</i>
                         </span>
                         <a class="article__link-img" href="{{ Route('DETAIL_PAGE', [ 'id' => $post->id ]) }}">
