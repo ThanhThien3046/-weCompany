@@ -43,7 +43,6 @@
 
     <script async='async' defer='defer' src='{{ asset('js/library/lazysizes.min.js' . Config::get('app.version')) }}'></script>
     <script>
-        const ACTION_CHECK_SLUG  = "{{ Route('ADMIN_GET_SLUG', ['slug' => '/'] ) }}";
         const GOOGLE_PLACES_API  = "{{ env('GOOGLE_PLACES_API') }}";
     </script>
 

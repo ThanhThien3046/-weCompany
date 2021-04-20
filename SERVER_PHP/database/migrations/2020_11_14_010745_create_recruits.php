@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTags extends Migration
+class CreateRecruits extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class CreateTags extends Migration
      */
     public function up()
     {
-        Schema::create('tags', function (Blueprint $table) {
+        if (Schema::hasTable('recruits')) {
+            return true;
+        }
+        Schema::create('recruits', function (Blueprint $table) {
             $table->id();
-            $table->string('title')->nullable();
-            $table->string('excerpt')->nullable();
+            $table->string('title', 150)->nullable();
             $table->text('content')->nullable();
-            $table->text('catalogue')->nullable();
-            $table->string('image', 255)->nullable();
-            $table->string('description', 160)->nullable();
+            $table->unsignedInteger('branch_id')->unsigned();
             $table->timestamps();
         });
     }
@@ -32,6 +32,6 @@ class CreateTags extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tags');
+        Schema::dropIfExists('recruits');
     }
 }

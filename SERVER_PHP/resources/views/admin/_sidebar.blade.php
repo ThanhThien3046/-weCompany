@@ -62,6 +62,25 @@
                     </li>
                 </ul>
             </li>
+            <li class="block_navigate {{ Route::is("ADMIN_STORE_RECRUIT", "ADMIN_LOAD_RECRUIT") ? 'active' : null}}" >
+                <a class="block_navigate__link">
+                    <i class="hero-icon hero-handshake"></i>
+                    <span class="nav__text">Recruit</span>
+                    <i class="hero-icon hero-chevron-sidebar"></i>
+                </a>
+                <ul class="dropdown__item">
+                    <li class="{{ Route::is("ADMIN_STORE_RECRUIT") ? 'active' : null}}">
+                        <a href="{{ Route('ADMIN_STORE_RECRUIT') }}">
+                            Save Recruit
+                        </a>
+                    </li>
+                    <li class="{{ Route::is("ADMIN_LOAD_RECRUIT") ? 'active' : null}}">
+                        <a href="{{ Route('ADMIN_LOAD_RECRUIT') }}">
+                            List Recruit
+                        </a>
+                    </li>
+                </ul>
+            </li>
             
         </ul>
         <span class="toggle_navigate" onclick="toggle_sidebar(this)">

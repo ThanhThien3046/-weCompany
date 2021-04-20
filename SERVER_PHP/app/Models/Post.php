@@ -74,20 +74,6 @@ class Post extends Model
     // }
 
     /**
-     * là mối quan hệ dạng nhiều nhiều ví dụ : 
-     * product -> activity -> style thì thứ tự sẽ là như dưới
-     */
-    public function tags(){
-
-        return $this->belongsToMany( Tag::class, 'post_tag_actives', 'post_id', 'tag_id');
-    }
-
-    public function rateAuthor(){
-
-        return $this->belongsTo( Rating::class, 'rating_id');
-    }
-
-    /**
      * là mối quan hệ dạng nhiều tới 1 ví dụ : 
      */
     public function branch(){
@@ -149,17 +135,4 @@ class Post extends Model
         return $this->where('public', Config::get('constant.TYPE_SAVE.PUBLIC'));
     }
 
-
-    public function getPostRelationPostId( $ids ){
-
-        return $this
-        ->join('post_tag_actives as pta1', 'posts.id', '=', 'pta1.post_id')
-        ->join('post_tag_actives as pta2', 'pta1.tag_id', '=', 'pta2.tag_id')
-        ->whereIn('pta2.post_id', $ids )
-        ->whereNotIn('posts.id', $ids )
-        ->groupby('posts.id')
-        ->where('posts.public', 1)
-        ->orderBy('posts.view', 'DESC')
-        ->select("posts.*");
-    }
 }

@@ -3,19 +3,14 @@
 namespace App\Http\Controllers\Admin;
 
 
-use App\Helpers\SupportJson;
 use App\Helpers\SupportString;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\ADMIN_VALIDATE_SAVE_POST;
 use App\Helpers\Catalogue;
-use App\Http\Requests\ADMIN_VALIDATE_SAVE_BRANCH;
 use App\Models\Branch;
 use App\Models\Gallery;
 use App\Models\Post;
-use App\Models\PostTagActive;
-use App\Models\Topic;
-use Exception;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
@@ -89,7 +84,7 @@ class PostController extends Controller
         
             /// create instance Post Model 
             $post          = new Post();
-            // $postTagActive = new PostTagActive();
+            
             if( $id ){
                 $post = (new Post())->find($id);
                 $post->update($postInput);
@@ -97,19 +92,6 @@ class PostController extends Controller
                 $post = new Post();
                 $post = $post->create($postInput);
             }
-            
-            /// save tag of post 
-            // $postTagActive->removeByPostId($postId);
-
-            // $tagsInput      = $request->tag_id;
-            // if( $tagsInput ){
-            //     $tagsDataInsert = array_map( 
-            //         function( $tag ) use ( $postId ){ 
-            //             return  ['post_id' => $postId, 'tag_id' => $tag ]; 
-            //         }, $tagsInput
-            //     );
-            //     $postTagActive->insert($tagsDataInsert);
-            // }
             
             /// remove gallery
             (new Gallery())->where("foreign", $post->id)->delete();
