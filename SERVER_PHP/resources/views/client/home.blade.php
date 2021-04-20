@@ -73,7 +73,15 @@
                 <article class="article article__default d-none {{ SupportString::renderClassBlockPost($posts, $post->type, $key) }}">
                     <div class="article__wrapper">
                         <span class="article__challenge">
-                            <i class="article__challenge-number">{{ $post->id }}</i>
+                            {{-- ///thay doi mau cua number tuy vao tung branch --}}
+                            @if($post->branch_id==1) 
+                                $txt = "background-color:green;"
+                            @else
+                                @if($post->branch_id==2)
+                                    $txt = "background-color:red;"
+                                @endif
+                            @endif
+                            <i style={{$txt}} class="article__challenge-number">{{ $post->id }}</i>
                         </span>
                         <a class="article__link-img" href="{{ Route('DETAIL_PAGE', [ 'id' => $post->id ]) }}">
                             <img class="js__img-lazyload"

@@ -11,7 +11,7 @@
         <a class="navigate_default {{ Route::is("ADMIN_DASHBOARD") ? 'active' : null}}" 
             href="{{ Route('ADMIN_DASHBOARD') }}">
             <i class="hero-icon hero-palette-outline"></i>
-            <span class="nav__text">dashboard</span>
+            <span class="nav__text">ダッシュボード</span>
         </a>
         
         <ul class="nav_list">
@@ -20,25 +20,25 @@
                 <a class="block_navigate__link" 
                 href="{{ Route('ADMIN_STORE_OPTION') }}">
                     <i class="hero-icon hero-segment"></i>
-                    <span class="nav__text">Option</span>
+                    <span class="nav__text">オプション</span>
                 </a>
             </li>
 
             <li class="block_navigate {{ Route::is("ADMIN_STORE_BRANCH", "ADMIN_LOAD_BRANCH") ? 'active' : null}}" >
                 <a class="block_navigate__link">
                     <i class="hero-icon hero-tag"></i>
-                    <span class="nav__text">Branch - we group</span>
+                    <span class="nav__text">支店ーウイグループ</span>
                     <i class="hero-icon hero-chevron-sidebar"></i>
                 </a>
                 <ul class="dropdown__item">
                     <li class="{{ Route::is("ADMIN_STORE_BRANCH") ? 'active' : null}}">
                         <a href="{{ Route('ADMIN_STORE_BRANCH') }}">
-                            Save we
+                            支店保存
                         </a>
                     </li>
                     <li class="{{ Route::is("ADMIN_LOAD_BRANCH") ? 'active' : null}}">
                         <a href="{{ Route('ADMIN_LOAD_BRANCH') }}">
-                            List we
+                            支店リスト
                         </a>
                     </li>
                 </ul>
@@ -46,18 +46,18 @@
             <li class="block_navigate {{ Route::is("ADMIN_STORE_POST", "ADMIN_LOAD_POST") ? 'active' : null}}" >
                 <a class="block_navigate__link">
                     <i class="hero-icon hero-file-document-edit-outline"></i>
-                    <span class="nav__text">Post</span>
+                    <span class="nav__text">ポスト</span>
                     <i class="hero-icon hero-chevron-sidebar"></i>
                 </a>
                 <ul class="dropdown__item">
                     <li class="{{ Route::is("ADMIN_STORE_POST") ? 'active' : null}}">
                         <a href="{{ Route('ADMIN_STORE_POST') }}">
-                            Save Post
+                            ポスト保存
                         </a>
                     </li>
                     <li class="{{ Route::is("ADMIN_LOAD_POST") ? 'active' : null}}">
                         <a href="{{ Route('ADMIN_LOAD_POST') }}">
-                            List Post
+                            ポストリスト
                         </a>
                     </li>
                 </ul>

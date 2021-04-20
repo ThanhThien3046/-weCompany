@@ -15,7 +15,7 @@
 @endsection
 
 
-@section('page_title', $branch->id ? 'chỉnh sửa branch' : 'thêm mới branch' )
+@section('page_title', $branch->id ? '修正支店' : '追加支店' )
 
 @section('content_admin')
 <div class="page__topic admin-main-content">
@@ -46,26 +46,26 @@
         <div class="col-md-8">
             <div class="row block-content">
                 <div class="col-12 bg-color-white shadows-1 px-3 py-3">
-                    <h2 class="title">tên we group</h2>
+                    <h2 class="title">グループ名前</h2>
                     <input name="title" type="text" value="{{ old('title', $branch->title ) }}"/>
                 </div>
             </div>
             
             <div class="row block-content">
                 <div class="col-12 bg-color-white shadows-1 px-3 py-3">
-                    <h2 class="title">excerpt -- đoạn trích</h2>
+                    <h2 class="title">抜粋</h2>
                     <textarea  class="height-80px" name="excerpt" cols="30" rows="10">{{ old('excerpt', $branch->excerpt) }}</textarea>
                 </div>
             </div>
             <div class="row block-content">
                 <div class="col-12 bg-color-white shadows-1 px-3 py-3">
-                    <h2 class="title">content</h2>
+                    <h2 class="title">コンテンツ</h2>
                     <textarea name="content" id="editor1" class="h-100">{{ old('content', $branch->content) }}</textarea>
                 </div>
             </div>
             <div class="row block-content">
                 <div class="col-12 bg-color-white shadows-1 px-3 py-3">
-                    <h2 class="title">meta description</h2>
+                    <h2 class="title">メタ記述</h2>
                     <textarea class="height-80px" name="description" cols="30" rows="10">{{ old('description', $branch->description) }}</textarea>
                 </div>
             </div>
@@ -74,10 +74,10 @@
             <div class="row block-content">
                 <div class="col-12 bg-color-white shadows-1 px-3 py-3">
                     <section class="pb-4">
-                        <h2 class="title text-center">bấm lưu mới branch</h2>
+                        <h2 class="title text-center">支店を保存します</h2>
                         <div class="text-center">
                             <button type="submit" class="btn btn-save-data">
-                                Lưu
+                                保存
                             </button>
                         </div>
                     </section>
@@ -88,11 +88,11 @@
             <div class="row block-content">
                 <div class="col-12 bg-color-white shadows-1 px-3 py-3">
                     <section class="pb-4 wrapper__selectImageWithCKFinder">
-                        <h2 class="title text-center">thiết lập banner</h2>
+                        <h2 class="title text-center">バナー設定</h2>
                         <div class="text-center">
                             <button type="button" onclick="selectImageWithCKFinder(this)"
                                 class="btn btn-select-thumb">
-                                Select banner
+                                バナー選んで
                             </button>
                         </div>
                         <div class="group-control-img-ckfinder">
@@ -108,11 +108,11 @@
             <div class="row block-content">
                 <div class="col-12 bg-color-white shadows-1 px-3 py-3">
                     <section class="pb-4 wrapper__selectImageWithCKFinder">
-                        <h2 class="title text-center">thiết lập image</h2>
+                        <h2 class="title text-center">イメージ設定</h2>
                         <div class="text-center">
                             <button type="button" onclick="selectImageWithCKFinder(this)"
                                 class="btn btn-select-thumb">
-                                Select image
+                                バナー選んで
                             </button>
                         </div>
                         <div class="group-control-img-ckfinder">
