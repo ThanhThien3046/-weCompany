@@ -35,7 +35,7 @@ function validateForm(formJquery){
         },
         messages: {
             first_name: {
-                required : "nhập first name",
+                required : "名前を入力してください",
                 maxlength: "first name nhỏ hơn 150 "
             },
             last_name: {
@@ -43,11 +43,11 @@ function validateForm(formJquery){
                 maxlength: "last_name nhỏ hơn 150 "
             },
             email: {
-                required : "nhập email bạn ơi",
-                email: "email không đúng bạn"
+                required: "メールを入力してください",
+                email   : "メールが違います"
             },
             mobile: {
-                phone_number: "phone không đúng bạn"
+                phone_number: "電話番号が違います"
             },
             fax: {
                 maxlength: "nhỏ hơn 150"
@@ -62,7 +62,7 @@ function validateForm(formJquery){
                 maxlength: "nhỏ hơn 1500"
             },
             agree: {
-                required : "bấm vô đây bạn"
+                required : "こちらに入力してください"
             }
         }
     });

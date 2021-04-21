@@ -1,6 +1,7 @@
 <?php
 
 use App\Helpers\SupportString;
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -304,6 +305,30 @@ class posts extends Seeder
             ],
         ];
         $posts = array_reverse($posts);
+        DB::table('posts')->insert($posts);
+        /// create posts 2020
+        $posts = array_map(function( $post ) { 
+            $post['branch_id'] = rand( 1, 10);
+            $post['created_at'] = Carbon::now()->subDays(360 + rand( 1, 10))->format('Y-m-d H:i:s');
+            $post['created_at'] = Carbon::now()->subDays(360 + rand( 1, 5))->format('Y-m-d H:i:s');
+            return $post;
+        }, $posts);
+        DB::table('posts')->insert($posts);
+        /// create posts 2019
+        $posts = array_map(function( $post ) { 
+            $post['branch_id'] = rand( 1, 10);
+            $post['created_at'] = Carbon::now()->subDays(720 + rand( 1, 10))->format('Y-m-d H:i:s');
+            $post['created_at'] = Carbon::now()->subDays(720 + rand( 1, 5))->format('Y-m-d H:i:s');
+            return $post;
+        }, $posts);
+        DB::table('posts')->insert($posts);
+        /// create posts 2018
+        $posts = array_map(function( $post ) { 
+            $post['branch_id'] = rand( 1, 10);
+            $post['created_at'] = Carbon::now()->subDays(1080 + rand( 1, 10))->format('Y-m-d H:i:s');
+            $post['created_at'] = Carbon::now()->subDays(1080 + rand( 1, 5))->format('Y-m-d H:i:s');
+            return $post;
+        }, $posts);
         DB::table('posts')->insert($posts);
     }
 }

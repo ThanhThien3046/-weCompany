@@ -29,6 +29,7 @@ class ADMIN_VALIDATE_SAVE_BRANCH extends FormRequest
             'image'       => 'required|max:255',
             'banner'      => 'required|max:255',
             'description' => 'max:160',
+            'color'       => 'required',
         ];
     }
 

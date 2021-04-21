@@ -73,6 +73,8 @@
                 <div class="col-12 bg-color-white shadows-1 px-3 py-3">
                     <h2 class="title">title recruit page</h2>
                     <input name="title_recruit" type="text" value="{{ old('title_recruit', $branch->title_recruit ) }}"/>
+                    <hr />
+                    <input name="color" type="color" value="{{ old('title_recruit', $branch->color ) }}">
                 </div>
             </div>
         </div>

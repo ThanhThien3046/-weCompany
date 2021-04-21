@@ -2,45 +2,6 @@
 @import "../_mixin";
 @import "../_reboot";
 
-
-.farm{
-        /* update recruit */
-    .wrapper__collapse {
-
-        .collapsible {
-            &__title{
-                background-color: $yellow ;
-            }
-        }
-
-        .content__collapsible {
-
-            &-envelope{
-                background-color: $yellow;
-            }
-        }
-    }
-}
-
-.rentcar{
-    /* update recruit */
-    .wrapper__collapse {
-
-        .collapsible {
-            &__title{
-                background-color: $orange ;
-            }
-        }
-
-        .content__collapsible {
-
-            &-envelope{
-                background-color: $orange;
-            }
-        }
-    }
-}
-
 /* update recruit */
 .wrapper__collapse {
     padding: 10px 15px;

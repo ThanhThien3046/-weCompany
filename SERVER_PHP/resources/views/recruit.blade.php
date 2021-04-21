@@ -31,7 +31,7 @@
 @endsection
 @section('javascripts')
     <script type="text/javascript" src="{{ asset('js/library/jquery.min.js' . Config::get('app.version')) }}"></script>
-    <script type="text/javascript" src="{{ asset('js/search.js' . Config::get('app.version')) }}"></script>
+    <script type="text/javascript" src="{{ asset('js/search.min.js' . Config::get('app.version')) }}"></script>
     <script type="text/javascript" src="{{ asset('js/home.min.js' . Config::get('app.version')) }}"></script>
 @endsection
 @section('content')
@@ -41,13 +41,13 @@
 		@include('partial.nav')
 	</div>
     
-	<main >
+	<main id="page__recruit">
 		<h1 class="title">タイトル</h1>
 		<nav class="check">
 			<ul>
                 @if (!$branchs->isEmpty())
                     @foreach ($branchs as $key => $branch)
-                    <li class="js__{{ $branch->id }}"><img src="{{ asset($branch->image) }}" width="530" height="622" alt=""/></li>
+                    <li data-id="{{ $branch->id }}"><img src="{{ asset($branch->image) }}" width="530" height="622" alt=""/></li>
                     @endforeach
                 @endif
 			</ul>
@@ -60,21 +60,23 @@
             $branchId = $branch->id;
             $recruitsInBranchs = array_filter($recruits, function( $item ) use ($branchId){ return $item->branch_id == $branchId; });
         @endphp
-        <div class="js__toggle-item history" data-id="{{ $branch->id }}">
+        <div class="js__toggle-item history" data-id="{{ $branch->id }}" data-collapse="{{ count($recruitsInBranchs) }}">
 			<h2 class="history__title">{{ $branch->title_recruit }}</h2>
             
             @foreach ($recruitsInBranchs as $collap)
             <div class="wrapper__collapse">
                 
                 <a class="collapsible {{ $collap->show ? 'active' : '' }}"> 
-                    <span class="collapsible__title">H{{ Carbon::parse($collap->created_at)->format('y') }}</span>
+                    <span class="collapsible__title" style="background-color: {{ $branch->color }}">
+                        H{{ Carbon::parse($collap->created_at)->format('y') }}
+                    </span>
                     <span class="collapsible__des">{{ $collap->title }}</span>
                 </a>
                 <div class="content__collapsible">
                     <div class="content__collapsible-main">
                         {!! $collap->content !!}
                     </div>
-                    <a href="{{ Route('CONTACT_PAGE') }}" class="content__collapsible-envelope"><i class="far fa-envelope"></i></a>
+                    <a  style="background-color: {{ $branch->color }}" href="{{ Route('CONTACT_PAGE') }}" class="content__collapsible-envelope"><i class="far fa-envelope"></i></a>
                 </div>
             </div>
             @endforeach

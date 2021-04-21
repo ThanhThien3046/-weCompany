@@ -23,6 +23,7 @@ class CreateBranchs extends Migration
             $table->string('banner', 255)->nullable();
             $table->string('description', 160)->nullable();
             $table->string('title_recruit', 160)->nullable();
+            $table->string('color', 255)->default('#f17067');
             $table->timestamps();
         });
     }
