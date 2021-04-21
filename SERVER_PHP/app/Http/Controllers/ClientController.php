@@ -27,21 +27,6 @@ class ClientController extends Controller
                                 ->orderBy('id', 'DESC')
                                 ->get();
         $txt = ""; 
-        // if(!$posts->isEmpty()){
-        // foreach ($posts as $key => $post){
-        //     if($post->branch_id==1) {
-        //         $txt = "background-color:red;";
-        //         return view('client.home', compact(['posts','txt']));
-        //     }
-        //     else
-        //         if($post->branch_id==2){
-        //             $txt = "background-color:red;";
-        //             return view('client.home', compact(['posts','txt']));
-        //         }
-        // //     endif;
-        // // endif;     
-        //     }   
-        // }
         return view('client.home', compact(['posts','txt']));
     }
 
