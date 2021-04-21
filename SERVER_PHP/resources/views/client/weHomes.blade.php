@@ -66,8 +66,17 @@
                                             {{ $branch->excerpt }}
                                         </div>
                                         <div class="wechild__news-detail">
-                                            <img src="{{ asset($branch->image) }}" alt="{{ $branch->title }}" 
-                                                width="800" height="283">
+                                            
+                                            <img class="lazyload"
+                                                src="{{ Config::get('app.lazyload_base64') }}"
+                                                onerror="this.onerror=null;this.src='{{ asset('/images/failed.jpg') }}';"
+                                                data-src="{{ 
+                                                Route('IMAGE_RESIZE', [ 
+                                                    'size' => 'branch-thumnail' , 
+                                                    'type' => 'fit', 
+                                                    'imagePath' => trim($branch->image, '/') 
+                                                ]) }}"
+                                                alt="{{ $branch->title }}" width="800" height="300" />
                                         </div>
                                         <div class="wechild__news-des">
                                             {!! $branch->content !!}
@@ -85,7 +94,10 @@
                                         <article class="article article__default">
                                             <div class="article__wrapper">
                                                 <span class="article__challenge">
-                                                    <i class="article__challenge-number">{{ $post->id }}</i>
+                                                <i style="background-color: {{ $branch->color }}"
+                                                    class="article__challenge-number">
+                                                        {{ $post->id }}
+                                                    </i>
                                                 </span>
                                                 <a class="article__link-img" href="{{ Route('DETAIL_PAGE') }}">
                                                     <img class="lazyload"
