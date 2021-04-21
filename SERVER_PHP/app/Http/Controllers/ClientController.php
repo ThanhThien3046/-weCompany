@@ -187,7 +187,8 @@ class ClientController extends Controller
             return abort(404);
         }
         /// câu dưới sẽ là : select * from posts where YEAR(created_at) = $year ; -- với $year được truyền vào từ ngừoi dùng
-        $posts = DB::table('posts')->whereYear('created_at', '=', $year)->get();
+        $posts = DB::table('posts')->where('branch_id', $branch_id)
+        ->whereYear('created_at', '=', $year)->get();
 
         return view('client.history', compact(['branch', 'posts', 'year']));
     }

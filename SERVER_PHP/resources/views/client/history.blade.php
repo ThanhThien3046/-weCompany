@@ -72,27 +72,35 @@
                 </h2>
             </div>
             <div class="main__list" id="js__format-height-article">
-                @php $histories = Config::get("history") @endphp
-                @foreach ($histories as $key => $history)
-
-                <article class="article article__default">
+                @if(!$posts->isEmpty())
+                @foreach ($posts as $key => $post)
+                <article class="article article__default d-none {{ SupportString::renderClassBlockPost($posts, $post->type, $key) }}">
                     <div class="article__wrapper">
                         <span class="article__challenge">
-                            <i class="article__challenge-number">{{ $history['number'] }}</i>
+                            @php
+                                $branchOfPost = DB::table('branchs')->where('id',$post->branch_id )->first();
+                                /// khi có object branch rồi thì mình chỉ cần set bạckgrond cho nó thôi
+                                $background = "background-color: " . $branchOfPost->color;
+                            @endphp
+                            <i style="{{$background}}" class="article__challenge-number">{{ $post->id }}</i>
                         </span>
-                        <a class="article__link-img" href="{{ Route('DETAIL_PAGE') }}">
-                            <img class="lazyload"
+                        <a class="article__link-img" href="{{ Route('DETAIL_PAGE', [ 'id' => $post->id ]) }}">
+                            <img class="js__img-lazyload"
                                     src="{{ Config::get('app.lazyload_base64') }}"
                                     onerror="this.onerror=null;this.src='{{ asset('/images/failed.jpg') }}';"
-                                    data-src="{{ Route('IMAGE_RESIZE', [ 'size' => ( $history['type'] == 1 ? 'medium' : 'double' ) , 'type' => 'fit', 'imagePath' => trim($history['img'], '/') ]) }}"
+                                    {{-- data-src="{{ Route('IMAGE_RESIZE', [ 'size' => ( $post->type == 1 ? 'medium' : 'double' ) , 'type' => 'fit', 'imagePath' => trim($post->image, '/') ]) }}" --}}
+                                    {{-- data-src="{{ Route('IMAGE_RESIZE', [ 'size' => 'medium' , 'type' => 'fit', 'imagePath' => trim($post->image, '/') ]) }}" --}}
+                                    data-medium="{{ Route('IMAGE_RESIZE', [ 'size' => 'medium' , 'type' => 'fit', 'imagePath' => trim($post->image, '/') ]) }}"
+                                    data-double="{{ Route('IMAGE_RESIZE', [ 'size' => 'double' , 'type' => 'fit', 'imagePath' => trim($post->image_long, '/') ]) }}"
                                     alt="" width="300" height="300"/>
                         </a>
                         <a class="article__link-title">
-                            <h3 class="title">{{ $history['title'] }}</h3>
+                            <h3 class="title">{{ $post->title }}</h3>
                         </a>
                     </div>
                 </article>
                 @endforeach
+                @endif
             </div>
             <div class="btn-totop"><a href="{{Route('SEARCH_PAGE')}}" class="ftimage">サイトTOP</a></div>
         </div>
