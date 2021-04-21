@@ -33,11 +33,9 @@ class Post extends Model
     public function getType(){
 
         if( $this->type && $this->type == Config::get('constant.TYPE-POST.DEFAULT') ){
-            return 'bình thường';
-        }else if( $this->type && $this->type == Config::get('constant.TYPE-POST.RIGHT') ){
-            return 'bên phải';
+            return 'post default';
         }
-        return 'bên trái';
+        return 'post long';
     }
 
     public function getTitle( $limit = 10, $ellipsis = '...' ){
