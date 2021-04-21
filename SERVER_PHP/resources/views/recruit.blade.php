@@ -31,7 +31,7 @@
 @endsection
 @section('javascripts')
     <script type="text/javascript" src="{{ asset('js/library/jquery.min.js' . Config::get('app.version')) }}"></script>
-    <script type="text/javascript" src="{{ asset('js/search.min.js' . Config::get('app.version')) }}"></script>
+    <script type="text/javascript" src="{{ asset('js/search.js' . Config::get('app.version')) }}"></script>
     <script type="text/javascript" src="{{ asset('js/home.min.js' . Config::get('app.version')) }}"></script>
 @endsection
 @section('content')
@@ -41,48 +41,46 @@
 		@include('partial.nav')
 	</div>
     
-	<main id="page__recruit">
+
+	<main >
 		<h1 class="title">タイトル</h1>
 		<nav class="check">
 			<ul>
-                @if (!$branchs->isEmpty())
-                    @foreach ($branchs as $key => $branch)
-                    <li data-id="{{ $branch->id }}"><img src="{{ asset($branch->image) }}" width="530" height="622" alt=""/></li>
-                    @endforeach
-                @endif
+			<li><img src="images/wehomes.png" width="530" height="622" alt=""/></li>
+			<li><img src="images/werentcar.png" width="530" height="622" alt=""/></li>
+			<li><img src="images/wefarm.png" width="530" height="622" alt=""/></li>
+			<li><img src="images/wea.png" width="530" height="622" alt=""/></li>
+			<li><img src="images/weB.png" width="530" height="622" alt=""/></li>
+			<li><img src="images/weconsulting.png" width="530" height="622" alt=""/></li>
+			<li><img src="images/wejob.png" width="530" height="622" alt=""/></li>
+			<li><img src="images/weparlor.png" width="530" height="622" alt=""/></li>
+			<li><img src="images/weD.png" width="530" height="622" alt=""/></li>
+			<li><img src="images/wemusic.png" width="530" height="622" alt=""/></li>
 			</ul>
 		</nav>
 
-        @php $recruits = $recruits->toArray(); @endphp
-        @if (!$branchs->isEmpty())
-        @foreach ($branchs as $key => $branch)
         @php
-            $branchId = $branch->id;
-            $recruitsInBranchs = array_filter($recruits, function( $item ) use ($branchId){ return $item->branch_id == $branchId; });
+            $recruits = Config::get('recruit');
         @endphp
-        <div class="js__toggle-item history" data-id="{{ $branch->id }}" data-collapse="{{ count($recruitsInBranchs) }}">
-			<h2 class="history__title">{{ $branch->title_recruit }}</h2>
-            
-            @foreach ($recruitsInBranchs as $collap)
+        @foreach ($recruits as $k => $recruit)
+        <div class="js__toggle-item history {{ $recruit['class'] }}">
+			<h2 class="history__title">{{ $recruit['title'] }}</h2>
+            @foreach ($recruit['collap'] as $k => $collap)
             <div class="wrapper__collapse">
-                
-                <a class="collapsible {{ $collap->show ? 'active' : '' }}"> 
-                    <span class="collapsible__title" style="background-color: {{ $branch->color }}">
-                        H{{ Carbon::parse($collap->created_at)->format('y') }}
-                    </span>
-                    <span class="collapsible__des">{{ $collap->title }}</span>
+                <a class="collapsible {{ $collap['show'] ? 'active' : '' }}">
+                    <span class="collapsible__title">{{ $collap['title'] }}</span>
+                    <span class="collapsible__des">{{ $collap['des'] }}</span>
                 </a>
                 <div class="content__collapsible">
                     <div class="content__collapsible-main">
-                        {!! $collap->content !!}
+                        {!!  $collap['des'] . $collap['content'] !!}
                     </div>
-                    <a  style="background-color: {{ $branch->color }}" href="{{ Route('CONTACT_PAGE') }}" class="content__collapsible-envelope"><i class="far fa-envelope"></i></a>
+                    <a href="{{ Route('CONTACT_PAGE') }}" class="content__collapsible-envelope"><i class="far fa-envelope"></i></a>
                 </div>
             </div>
             @endforeach
 		</div>
         @endforeach
-        @endif
 		
 	</main>
 

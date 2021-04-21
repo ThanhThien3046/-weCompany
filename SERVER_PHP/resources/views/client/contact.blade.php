@@ -76,7 +76,7 @@
                             </div>
                             @elseif (Session::has(Config::get('constant.SAVE_SUCCESS')))
                             <div class="alert alert-success">
-                                メッセージありがとうございます。発送しました。
+                                success!
                             </div>
                             @endif
                             @if(!empty($errors->all()))

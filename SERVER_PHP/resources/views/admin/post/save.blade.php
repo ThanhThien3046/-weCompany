@@ -20,7 +20,7 @@
     </script>
     
 @endsection
-@section('page_title', $post->id ? 'ポスト編集' : 'ポスト追加')
+@section('page_title', $post->id ? 'Edit Post' : 'Insert Post')
 
 @section('content_admin')
 <div class="page__post admin-main-content">
@@ -72,20 +72,20 @@
 
             <div class="row block-content">
                 <div class="col-12 bg-color-white shadows-1 px-3 py-3">
-                    <h2 class="title">コンテンツの右のイメージ</h2>
+                    <h2 class="title">hình ảnh bên phải nội dung</h2>
                     <div class="position-relative wrapper__selectImageWithCKFinder type-select-ckfinder__inline">
                         <input name="image_content" class="img__outputCKFinder jquery__append-out" type="text" 
                             value="{{ old('image_content', $post->image_content) }}" 
                             onblur="showImage__InputCKFinder( this.value, this )"/>
                         <button class="btn bg-cyan bd-cyan text-white btn-input-append" 
-                        type="button" onclick="selectImageWithCKFinder(this)">選んで</button>
+                        type="button" onclick="selectImageWithCKFinder(this)">chọn ảnh</button>
                     </div>
                 </div>
             </div>
 
             <div class="row block-content">
                 <div class="col-12 bg-color-white shadows-1 px-3 py-3">
-                    <h2 class="title">コンテンツ</h2>
+                    <h2 class="title">content</h2>
                     <textarea name="content" id="editor1" class="h-100">{{ old('content', $post->content) }}</textarea>
                 </div>
             </div>
@@ -98,13 +98,13 @@
                     <div class="col-12 bg-color-white shadows-1 px-3 py-3">
                         <div class="row">
                             <div class="col-12">
-                                <h2 class="title">画像SEO</h2>
+                                <h2 class="title">hình ảnh SEO</h2>
                                 <div class="position-relative wrapper__selectImageWithCKFinder type-select-ckfinder__inline">
                                     <input name="gallery[]" class="img__outputCKFinder jquery__append-out" type="text" 
                                         value="{{ old('gallery', $image->url) }}" 
                                         onblur="showImage__InputCKFinder( this.value, this )"/>
                                     <button class="btn bg-cyan bd-cyan text-white btn-input-append" 
-                                    type="button" onclick="selectImageWithCKFinder(this)">選んで</button>
+                                    type="button" onclick="selectImageWithCKFinder(this)">chọn ảnh</button>
                                 </div>
                             </div>
                         </div>
@@ -179,9 +179,9 @@
                         <h2 class="title text-center">カテゴリータイプを選んでください</h2>
                         <select name="type" class="js__single-select">
                             <option @if(old('type', $post->type) == Config::get('constant.TYPE-POST.DEFAULT')) {{ 'selected' }} @endif
-                            value="{{ Config::get('constant.TYPE-POST.DEFAULT') }}">デフォルトポスト</option>
+                            value="{{ Config::get('constant.TYPE-POST.DEFAULT') }}">post default</option>
                             <option @if(old('type', $post->type) != Config::get('constant.TYPE-POST.DEFAULT')) {{ 'selected' }} @endif
-                            value="{{ Config::get('constant.TYPE-POST.RIGHT') }}">長いポスト</option>
+                            value="{{ Config::get('constant.TYPE-POST.RIGHT') }}">post long</option>
                         </select>
                     </section>
                 </div>

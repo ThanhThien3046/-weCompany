@@ -1,7 +1,11 @@
 <?php 
 namespace App\Helpers;
 
-use App\Models\Option;
+use App\Factory\BaseModel;
+use App\Repositories\Option\OptionEloquentRepository;
+use App\Repositories\Post\PostEloquentRepository;
+use App\Repositories\Tag\TagEloquentRepository;
+use App\Repositories\Topic\TopicEloquentRepository;
 use Illuminate\Support\Facades\Config;
 
 class SupportDB{
@@ -12,8 +16,8 @@ class SupportDB{
 
         if( !static::$OPTIONS ){
 
-            $optionModel = new Option();
-            $options     = $optionModel->all();
+            $optionModel = new OptionEloquentRepository();
+            $options     = $optionModel->getAll();
 
             $DF_OP = [];
             foreach( $options as $option ){
@@ -48,5 +52,52 @@ class SupportDB{
         
         return $key;
     }
+
+    // public static function getTopicByCondition($condition){
+
+    //     $topicModel = new TopicEloquentRepository();
+    //     return $topicModel->getTopicByCondition($condition);
+    // }
+    // public static function getTagByCondition($condition){
+        
+    //     $tagModel = new TagEloquentRepository();
+    //     return $tagModel->getTagByCondition($condition);
+    // }
+
+    // public static function getPostByCondition($condition){
+
+    //     $postModel = new PostEloquentRepository();
+    //     return $postModel->getPostByCondition($condition);
+    // }
+    // public static function getMenuFullService(){
+
+    //     $menuFull = [];
+
+    //     $condition = [
+    //         'orderby' => [ 'field' => 'view', 'type' => 'DESC' ]
+    //     ];
+    //     $topic = static::getTopicByCondition($condition)->first();
+    //     $menuFull[] = (object) [
+    //         'text' => $topic->title,
+    //         'slug' => $topic->slug,
+    //         'route' => 'TOPIC_VIEW'
+    //     ];
+    //     $tag = static::getTagByCondition($condition)->first();
+    //     $menuFull[] = (object) [
+    //         'text' => $tag->title,
+    //         'slug' => $tag->slug,
+    //         'route' => 'TAG_VIEW'
+    //     ];
+    //     $posts = static::getPostByCondition($condition)->take(4)->get();
+    //     foreach ($posts as $post) {
+    //         $menuFull[] = (object) [
+    //             'text' => $post->title,
+    //             'slug' => $post->slug,
+    //             'route' => 'POST_VIEW'
+    //         ];
+    //     }
+        
+    //     return $menuFull;
+    // }
 
 }

@@ -63,8 +63,8 @@
             <div class="row thead-list">
                 <div class="col-1 text-center">id</div>
                 <div class="col-1 text-center">image</div>
-                <div class="col-5 ">title</div>
-                <div class="col-1 ">type</div>
+                <div class="col-5 text-center">title</div>
+                <div class="col-1 text-center">type</div>
                 <div class="col-2 text-center">group - branch</div>
                 <div class="col-1 text-center">public</div>
                 <div class="col-1 text-center">#remove#</div>
@@ -80,7 +80,7 @@
                         {{ $post->getTitle(60) }}
                     </a>
                 </div>
-                <div class="col-1">{{ $post->getType()  }}</div>
+                {{-- <div class="col-1">{{ $post->getType()  }}</div> --}}
                 @php 
                 $branch = $post->branch;
                 if(!$branch){
@@ -89,9 +89,9 @@
                     $titleBranch = $branch->title;
                 }
                 @endphp
-                <div class="col-2 text-center">{{ $titleBranch }}</div> 
-                <div class="col-1 text-center">{{ $post->public == Config::get('constant.TYPE_SAVE.PUBLIC') ? 'show' : 'admin' }}</div>
-                <div class="col-1 text-center">
+                <div class="col-2">{{ $titleBranch }}</div>
+                <div class="col-1">{{ $post->public == Config::get('constant.TYPE_SAVE.PUBLIC') ? 'show' : 'admin' }}</div>
+                <div class="col-1">
                     <button type="button"
                     onclick="deleteComponent('{{ $post->id }}', this)"
                     class="bg-transparent btn-remove-row">

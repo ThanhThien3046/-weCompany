@@ -39,7 +39,9 @@ Route::get('resize-compress/{size}/{type}/{quality}/{ext}/{imagePath}', 'ImageCo
 
 Route::get('/','ClientController@index')->name('HOME_PAGE');
 
-Route::get('/history/{branch_id}/{year}','ClientController@historyDetail')->name('HISTORY_PAGE');
+Route::get('/history', function () {
+    return view('client.history');
+})->name("HISTORY_PAGE");
 
 Route::get('/recruit', function () {
     return view('client.recruit');
@@ -49,7 +51,9 @@ Route::get('/recruit', function () {
 //     return view('homepage');
 // });
 
-Route::get('/search','ClientController@search')->name('SEARCH_PAGE');
+Route::get('/search', function () {
+    return view('search');
+})->name("SEARCH_PAGE");
 
 Route::get('/post/{id?}','ClientController@postDetail')->name('POST_DETAIL_PAGE');
 
@@ -76,9 +80,9 @@ Route::get('/about',function(){
     return view('client.about');
 })->name("ABOUT");
 
-// Route::get('/historydetail', function () {
-//     return view('historydetail');
-// })->name("HISTORYDETAIL");
+Route::get('/historydetail', function () {
+    return view('historydetail');
+})->name("HISTORYDETAIL");
 
 Route::get('/commingsoon', function () {
     return view('commingsoon');
@@ -94,7 +98,9 @@ Route::get('/contact','ClientController@contact')->name('CONTACT_PAGE');
 Route::post('/contact','ClientController@mailContact')->name('MAIL_CONTACT');
 
 
-Route::get('/recruit','ClientController@recruit')->name('RECRUIT');
+Route::get('/recruit', function () {
+    return view('recruit');
+})->name("RECRUIT");
 
 include_once("routing/admin.php");
 include_once("routing/client.php");

@@ -40,43 +40,81 @@
 		@include('partial.nav')
 	</div>
 
-	<main id="page__search">
+	<main>
 		<h1 class="title">WE グループの沿革</h1>
 		<nav class="check">
 			<ul>
-                @if (!$branchs->isEmpty())
-                    @foreach ($branchs as $key => $branch)
-                    <li data-id="{{ $branch->id }}"><img src="{{ asset($branch->image) }}" width="530" height="622" alt=""/></li>
-                    @endforeach
-                @endif
+			<li><img src="images/wehomes.png" width="530" height="622" alt=""/></li>
+			<li><img src="images/werentcar.png" width="530" height="622" alt=""/></li>
+			<li><img src="images/wefarm.png" width="530" height="622" alt=""/></li>
+			<li><img src="images/wea.png" width="530" height="622" alt=""/></li>
+			<li><img src="images/weB.png" width="530" height="622" alt=""/></li>
+			<li><img src="images/weconsulting.png" width="530" height="622" alt=""/></li>
+			<li><img src="images/wejob.png" width="530" height="622" alt=""/></li>
+			<li><img src="images/weparlor.png" width="530" height="622" alt=""/></li>
+			<li><img src="images/weD.png" width="530" height="622" alt=""/></li>
+			<li><img src="images/wemusic.png" width="530" height="622" alt=""/></li>
 			</ul>
 		</nav>
-
-        @if (!$branchs->isEmpty())
-        @foreach ($branchs as $key => $branch)
-        @php
-            $branchId = $branch->id;
-            $postsInBranchs = array_filter($posts->toArray(), function( $item ) use ($branchId){ return $item->branch_id == $branchId; });
-        @endphp
-        <div class="js__toggle-item history" data-id="{{ $branch->id }}" data-collapse="{{ count($postsInBranchs) }}">
-			<h2 class="history__title">{{ $branch->title_recruit }}</h2>
-            
-            @foreach ($postsInBranchs as $key => $postHistory)
-            <a href="{{Route('HISTORY_PAGE', [ 'branch_id' => $postHistory->branch_id, 'year' => $postHistory->year ])}}">
-				<ul class="{{ $key % 2 == 0 ? 'last_child' : null }}">
-					<li  style="background-color: {{ $branch->color }}">
-						<span>{{ $postHistory->count }}</span>
-					</li>
-					<li>{{ $postHistory->year }}</li>
+		<div class="js__toggle-item history homes">
+			<h2>株式会社WE・HOMES</h2>
+			<a href="{{Route('HISTORY_PAGE')}}">
+				<ul class="last_child">
+					<li><span>21</span></li>
+					<li>2021</li>
 					<li><i class="fas fa-arrow-right"></i></li>
 				</ul>
 			</a>
-            @endforeach
+			<a href="{{Route('HISTORY_PAGE')}}"><ul>
+				<li><span>10</span></li>
+				<li>2020</li>
+				<li><i class="fas fa-arrow-right"></i></li>
+			</ul></a>
+			<a href=""><ul class="last_child">
+				<li><span>15</span></li>
+				<li>2019</li>
+				<li><i class="fas fa-arrow-right"></i></li>
+			</ul></a>
+			<a href="{{Route('HISTORY_PAGE')}}"><ul>
+				<li><span>9</span></li>
+				<li>2018</li>
+				<li><i class="fas fa-arrow-right"></i></li>
+			</ul></a>
+			<a href="{{Route('HISTORY_PAGE')}}"><ul class="last_child">
+				<li><span>19</span></li>
+				<li>2017</li>
+				<li><i class="fas fa-arrow-right"></i></li>
+			</ul></a>
 		</div>
-        @endforeach
-        @endif
+		<div class="js__toggle-item history rentcar">
+			<h2>株式会社WE・RENTCAR</h2>
+			<a href="{{Route('HISTORY_PAGE')}}"><ul class="last_child">
+				<li><span>21</span></li>
+				<li>2021</li>
+				<li><i class="fas fa-arrow-right"></i></li>
+			</ul></a>
+			<a href="{{Route('HISTORY_PAGE')}}"><ul>
+				<li><span>10</span></li>
+				<li>2020</li>
+				<li><i class="fas fa-arrow-right"></i></li>
+			</ul></a>
+			<a href="{{Route('HISTORY_PAGE')}}"><ul class="last_child">
+				<li><span>15</span></li>
+				<li>2019</li>
+				<li><i class="fas fa-arrow-right"></i></li>
+			</ul></a>
+			<a href="{{Route('HISTORY_PAGE')}}"><ul>
+				<li><span>9</span></li>
+				<li>2018</li>
+				<li><i class="fas fa-arrow-right"></i></li>
+			</ul></a>
+			<a href="{{Route('HISTORY_PAGE')}}"><ul class="last_child">
+				<li><span>19</span></li>
+				<li>2017</li>
+				<li><i class="fas fa-arrow-right"></i></li>
+			</ul></a>
+		</div>
 	</main>
-
 
 @include('partial.footer')
 

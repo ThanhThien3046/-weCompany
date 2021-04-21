@@ -43,7 +43,7 @@
 @endsection
 
 
-@section('page_title', '支店リスト' )
+@section('page_title', 'danh sách branchs' )
 
 @section('content_admin')
 <div class="page__topic admin-main-content">

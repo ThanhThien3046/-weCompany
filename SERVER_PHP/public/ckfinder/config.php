@@ -73,11 +73,13 @@ $config['images'] = array(
 /*=================================== Backends ========================================*/
 // https://ckeditor.com/docs/ckfinder/ckfinder3-php/configuration.html#configuration_options_backends
 
+// die(__DIR__ . "/../upload/images");
+
 $config['backends'][] = array(
     'name'         => 'default',
     'adapter'      => 'local',
     'baseUrl'      => '/upload',
-//  'root'         => '', // Can be used to explicitly set the CKFinder user files directory.
+    'root'         => __DIR__ . '/../upload', // Can be used to explicitly set the CKFinder user files directory.
     'chmodFiles'   => 0644,
     'chmodFolders' => 0755,
     'filesystemEncoding' => 'UTF-8',
@@ -155,7 +157,7 @@ if($user['role_id'] == 1 ){
     //// admin role 2
     list($userFolderRole, $ext) = explode('@', $user['email']);
     //Name of our directory
-    $dir_name = __DIR__ . "/../upload/images/_$userFolderRole/";
+    $dir_name = __DIR__ . "/../public/upload/images/_$userFolderRole/";
     if (!is_dir($dir_name)) {
         
         mkdir($dir_name, 0755, true);

@@ -34,8 +34,7 @@ class BranchController extends Controller
 
         ///setting data insert table topic
 
-        $branchInput = $request->only( 'title', 'excerpt', 'content', 'banner', 'image', 
-        'description', 'title_recruit', 'color');
+        $branchInput = $request->only( 'title', 'excerpt', 'content', 'banner', 'image', 'description');
 
         // /// create catalogue
         //             $catalogue = Catalogue::generate($branchInput['content']);

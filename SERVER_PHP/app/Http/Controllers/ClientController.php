@@ -9,7 +9,6 @@ use App\Models\Branch;
 use App\Models\Contact;
 use App\Models\Gallery;
 use App\Models\Post;
-use App\Models\Recruit;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
@@ -126,70 +125,5 @@ class ClientController extends Controller
         $galleries = (new Gallery())->where('foreign', $post->id)->where('type', Config::get('constant.TYPE-GALLERY.POST'))->get();
 
         return view('detail', compact(['post', 'galleries']));
-    }
-
-    public function recruit(Request $request, $id = 0){
-
-        // if( !$id ){
-        //     /// get first branch id
-        //     $recruit = (new Recruit())->first();
-        //     if( !$recruit ){
-        //         return abort(404);
-        //     }
-        //     $id = $recruit->id;
-        // }
-        // /// get 
-        $branchs = DB::table('branchs')->get();
-        $recruits = DB::table('recruits')->get();
-
-        return view("recruit", compact(['branchs', 'recruits']));
-    }
-
-    public function search(){
-
-        $branchs = DB::table('branchs')->get();
-        //// logic là đếm tất cả bài viết theo chi nhánh trong từng chi nhánh lại đếm tất cả bài viết theo năm
-        // data trả ra kiểu na ná vầy: 
-        // [
-        //     [ 'year' => 2019, 'count' => 3, 'branch_id' => 1 ],
-        //     [ 'year' => 2020, 'count' => 8, 'branch_id' => 1 ],
-        //     [ 'year' => 2021, 'count' => 12, 'branch_id' => 1 ],
-
-        //     [ 'year' => 2018, 'count' => 1, 'branch_id' => 2 ],
-        //     [ 'year' => 2019, 'count' => 21, 'branch_id' => 2 ],
-        //     [ 'year' => 2020, 'count' => 12, 'branch_id' => 2 ],
-        //     [ 'year' => 2021, 'count' => 13, 'branch_id' => 2 ],
-
-        //     .... 
-
-        // ]
-
-        // để ra được data như vậy thì câu sql: 
-        // select YEAR(created_at) year, count(id),  branch_id from posts group by branch_id, year
-        $posts = DB::table('posts')
-        ->select([
-            DB::raw('count(id) as count'), 
-            DB::raw('YEAR(created_at) year'),
-            DB::raw('branch_id'),
-        ])
-        ->groupby('branch_id','year')
-        ->orderBy('branch_id')
-        ->get();
-
-        return view("search", compact(['branchs', 'posts']));
-    }
-
-    public function historyDetail(Request $request, $branch_id, $year){
-        
-        $branch = DB::table("branchs")->find($branch_id);
-        if( !$branch ){
-
-            return abort(404);
-        }
-        /// câu dưới sẽ là : select * from posts where YEAR(created_at) = $year ; -- với $year được truyền vào từ ngừoi dùng
-        $posts = DB::table('posts')->where('branch_id', $branch_id)
-        ->whereYear('created_at', '=', $year)->get();
-
-        return view('client.history', compact(['branch', 'posts', 'year']));
     }
 }
