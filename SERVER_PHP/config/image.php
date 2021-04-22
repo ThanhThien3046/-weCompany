@@ -29,7 +29,7 @@ return [
         'content'         => [ 400, 240],
         'post-thumnail-detail' => [800,500],
         'post-galleries' => [ 250, 150 ],
-        'branch-thumnail' => [ 400, 200 ]
+        'branch-thumnail' => [ 800, 270 ]
     ]
 
 

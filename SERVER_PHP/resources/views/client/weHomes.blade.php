@@ -65,19 +65,21 @@
                                         <div class="wechild__news-des">
                                             {{ $branch->excerpt }}
                                         </div>
+                                        @if($branch->background)
                                         <div class="wechild__news-detail">
                                             
                                             <img class="lazyload"
                                                 src="{{ Config::get('app.lazyload_base64') }}"
-                                                onerror="this.onerror=null;this.src='{{ asset('/images/failed.jpg') }}';"
+                                                onerror="this.onerror=null;this.src='{{ asset(Config::get('app.image_error')) }}';"
                                                 data-src="{{ 
                                                 Route('IMAGE_RESIZE', [ 
                                                     'size' => 'branch-thumnail' , 
                                                     'type' => 'fit', 
-                                                    'imagePath' => trim($branch->image, '/') 
+                                                    'imagePath' => trim($branch->background, '/') 
                                                 ]) }}"
                                                 alt="{{ $branch->title }}" width="800" height="300" />
                                         </div>
+                                        @endif
                                         <div class="wechild__news-des">
                                             {!! $branch->content !!}
                                         </div>
@@ -102,7 +104,7 @@
                                                 <a class="article__link-img" href="{{ Route('DETAIL_PAGE') }}">
                                                     <img class="lazyload"
                                                             src="{{ Config::get('app.lazyload_base64') }}"
-                                                            onerror="this.onerror=null;this.src='{{ asset('/images/failed.jpg') }}';"
+                                                            onerror="this.onerror=null;this.src='{{ asset(Config::get('app.image_error')) }}';"
                                                             data-src="{{ Route('IMAGE_RESIZE', [ 'size' => 'medium' , 'type' => 'fit', 'imagePath' => trim($post->image, '/') ]) }}"
                                                             alt="" width="300" height="300"/>
                                                 </a>

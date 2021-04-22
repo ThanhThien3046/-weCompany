@@ -77,9 +77,10 @@
                         @endif
                         <div class="head-title">{{$post->title}}</div>
                     </div>
+                    @if ($post->image)
                     <img class="lazyload"
                         src="{{ Config::get('app.lazyload_base64') }}"
-                        onerror="this.onerror=null;this.src='{{ asset('/images/failed.jpg') }}';"
+                        onerror="this.onerror=null;this.src='{{ asset(Config::get('app.image_error')) }}';"
                         data-src="{{ 
                         Route('IMAGE_RESIZE', [ 
                             'size' => 'post-thumnail-detail' , 
@@ -87,13 +88,14 @@
                             'imagePath' => trim($post->image, '/') 
                         ]) }}"
                         alt="{{$post->title}}" width="800" height="500" />
+                    @endif
                          
                     <div class="imgmes">
                         @if ($post->image_content)
                         <div class="imgmess__left">
                             <img class="lazyload"
                                 src="{{ Config::get('app.lazyload_base64') }}"
-                                onerror="this.onerror=null;this.src='{{ asset('/images/failed.jpg') }}';"
+                                onerror="this.onerror=null;this.src='{{ asset(Config::get('app.image_error')) }}';"
                                 data-src="{{ 
                                 Route('IMAGE_RESIZE', [ 
                                     'size' => 'post-thumnail-detail' , 
@@ -112,9 +114,10 @@
                         @if(!$galleries->isEmpty())
                         @foreach ($galleries as $key => $image)
                         <div class="img__dtl-item">
+                            @if ($image->url)
                             <img class="lazyload"
                                 src="{{ Config::get('app.lazyload_base64') }}"
-                                onerror="this.onerror=null;this.src='{{ asset('/images/failed.jpg') }}';"
+                                onerror="this.onerror=null;this.src='{{ asset(Config::get('app.image_error')) }}';"
                                 data-src="{{ 
                                 Route('IMAGE_RESIZE', [ 
                                     'size' => 'post-galleries' , 
@@ -122,6 +125,7 @@
                                     'imagePath' => trim($image->url, '/') 
                                 ]) }}"
                                 alt="{{$post->title}}" />
+                            @endif
                         </div>
                         @endforeach
                         @endif

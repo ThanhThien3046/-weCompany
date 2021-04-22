@@ -14,6 +14,7 @@ return [
     'logo'            => env('APP_LOGO', '/logo.png'),
     'image'           => env('APP_IMAGE', '/image.png'),
     'lazyload_base64' => env('APP_LAZYLOAD_BASE64', 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=='),
+    'image_error'     => env('APP_IMG_ERROR', '/images/failed.jpg'),
     ##################################################################
     ##################################################################
     ##################################################################

@@ -59,6 +59,19 @@
             </div>
             <div class="row block-content">
                 <div class="col-12 bg-color-white shadows-1 px-3 py-3">
+                    <h2 class="title">コンテンツの右のイメージ ( image auto resize 800 x 300 in client)</h2>
+                    <div class="position-relative wrapper__selectImageWithCKFinder type-select-ckfinder__inline">
+                        <input name="background" class="img__outputCKFinder jquery__append-out" type="text" 
+                            value="{{ old('background', $branch->background) }}" 
+                            onblur="showImage__InputCKFinder( this.value, this )"/>
+                        <button class="btn bg-cyan bd-cyan text-white btn-input-append" 
+                        type="button" onclick="selectImageWithCKFinder(this)">選んで</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row block-content">
+                <div class="col-12 bg-color-white shadows-1 px-3 py-3">
                     <h2 class="title">コンテンツ</h2>
                     <textarea name="content" id="editor1" class="h-100">{{ old('content', $branch->content) }}</textarea>
                 </div>

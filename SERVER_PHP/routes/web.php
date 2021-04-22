@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('resizes/{size}/{type}/{imagePath}', 'ImageController@resize')
+Route::get('resizes/{size}/{type}/{imagePath?}', 'ImageController@resize')
 ->where('imagePath', '(.*)')
 ->name('IMAGE_RESIZE');
 

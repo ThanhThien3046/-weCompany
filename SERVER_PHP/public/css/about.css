@@ -1834,7 +1834,8 @@ option:focus {
   opacity: 0.6;
 }
 
-.sidebar__nav-link:hover .cls-1 {
+.sidebar__nav-link:hover .cls-1,
+.sidebar__nav-link:hover .cls-3 {
   fill: red;
 }
 
