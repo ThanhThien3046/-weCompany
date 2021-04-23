@@ -1,6 +1,6 @@
 @extends('admin._layout')
 
-@section('title', 'Thêm bài viết')
+@section('title', 'ポスト追加')
 
 @section('javascripts')
     <script src="{{ asset('js/library/jquery.min.js') }}"></script>

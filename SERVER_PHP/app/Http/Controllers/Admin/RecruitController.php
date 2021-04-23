@@ -54,14 +54,14 @@ class RecruitController extends Controller
     }
 
 
-    public function save(ADMIN_VALIDATE_SAVE_POST $request, $id = 0){
+    public function save(Request $request, $id = 0){
 
         ///setting data insert table recruit
         
-        // $recruitInput = $request->only( 'branch_id', 'title','content');
+        $recruitInput = $request->only( 'branch_id', 'title','content');
         $add = DB::insert('insert into recruit (title, content, branch_id) 
-         values (?,?,?)','title','content',2);
-        dd($add);
+        values (?,?,?)',[$recruitInput['title'], $recruitInput['content'],$recruitInput['branch_id']]);
+
         return redirect()->route('ADMIN_SAVE_RECRUIT',  ['recruit_id' => (new Recruit())->recruit_id]);
     }
         // try{

@@ -1,6 +1,6 @@
 @extends('admin._layout')
 
-@section('title', 'Thêm bài viết')
+@section('title', 'ポスト追加')
 
 @section('stylesheets')
 <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css'>
@@ -36,13 +36,13 @@
                 ポストを保存されました。
             </div>
             @endif
-            {{-- @if(!empty($errors->all()))
+            @if(!empty($errors->all()))
                 @foreach ($errors->all() as $error)
                 <div class="alert alert-warning">
                     {{ $error }}
                 </div>
                 @endforeach
-            @endif --}}
+            @endif
         </div>
     </div>
     <form class="row js-validate-form" action="{{ Route('ADMIN_SAVE_RECRUIT', ['id' => $recruit->recruit_id]) }}" method="POST">
