@@ -13,6 +13,18 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+// Route::get("/recruit", function(){
+
+//     ///setting data insert table recruit
+//     // $recruitInput = $request->only( 'branch_id', 'title','content');
+//     $add = DB::insert('insert into recruit (title, content, branch_id) 
+//     values (?,?,?)',['title', 'content',1]);
+//     dd( $add );
+// });
+
+
+
 Route::get('resizes/{size}/{type}/{imagePath}', 'ImageController@resize')
 ->where('imagePath', '(.*)')
 ->name('IMAGE_RESIZE');

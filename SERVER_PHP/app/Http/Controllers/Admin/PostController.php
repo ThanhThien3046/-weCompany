@@ -65,7 +65,7 @@ class PostController extends Controller
                 
             
             /// create catalogue
-                    $catalogue        = Catalogue::generate($postInput['content']);
+            $catalogue        = Catalogue::generate($postInput['content']);
             $postInput['content']        = $catalogue->text;
             $postInput['text_content']   = strip_tags($postInput['content']);
 

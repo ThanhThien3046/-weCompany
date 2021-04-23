@@ -45,7 +45,7 @@
             @endif --}}
         </div>
     </div>
-    <form class="row js-validate-form" action="{{ Route('ADMIN_SAVE_POST', ['id' => $recruit->recruit_id]) }}" method="POST">
+    <form class="row js-validate-form" action="{{ Route('ADMIN_SAVE_RECRUIT', ['id' => $recruit->recruit_id]) }}" method="POST">
         {!! csrf_field() !!}
         <div class="col-md-8">
             <div class="row block-content">
