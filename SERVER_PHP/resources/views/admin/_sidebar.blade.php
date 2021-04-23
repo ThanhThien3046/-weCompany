@@ -62,6 +62,27 @@
                     </li>
                 </ul>
             </li>
+
+            {{-- ///recruit --}}
+            <li class="block_navigate {{ Route::is("ADMIN_STORE_RECRUIT", "ADMIN_LOAD_RECRUIT") ? 'active' : null}}" >
+                <a class="block_navigate__link">
+                    <i class="hero-icon hero-file-document-edit-outline"></i>
+                    <span class="nav__text">募集</span>
+                    <i class="hero-icon hero-chevron-sidebar"></i>
+                </a>
+                <ul class="dropdown__item">
+                    <li class="{{ Route::is("ADMIN_STORE_RECRUIT") ? 'active' : null}}">
+                        <a href="{{ Route('ADMIN_STORE_RECRUIT') }}">
+                            募集保存
+                        </a>
+                    </li>
+                    <li class="{{ Route::is("ADMIN_LOAD_RECRUIT") ? 'active' : null}}">
+                        <a href="{{ Route('ADMIN_LOAD_RECRUIT') }}">
+                            募集リスト
+                        </a>
+                    </li>
+                </ul>
+            </li>
             
         </ul>
         <span class="toggle_navigate" onclick="toggle_sidebar(this)">

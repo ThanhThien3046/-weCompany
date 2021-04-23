@@ -24,8 +24,11 @@ Route::group(['prefix' => 'admin'], function () {
         Route::delete('/post/{id?}','Admin\PostController@delete')->name('ADMIN_DELETE_POST');
 
 
-        ///component detail
-        
+        ///component recruit
+        Route::get('/recruit/{id?}','Admin\RecruitController@index')->name('ADMIN_STORE_RECRUIT');
+        Route::post('/recruit/{id?}','Admin\RecruitController@save')->name('ADMIN_SAVE_RECRUIT');
+        Route::get('/recruits','Admin\RecruitController@load')->name('ADMIN_LOAD_RECRUIT');
+        Route::delete('/recruit/{id?}','Admin\RecruitController@delete')->name('ADMIN_DELETE_RECRUIT');
 
 
 
