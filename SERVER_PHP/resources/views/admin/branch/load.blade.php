@@ -9,7 +9,7 @@
         var ADMIN_DELETE_BRANCH = "{{ Route('ADMIN_DELETE_BRANCH', ['id' => null ])}}";
         function deleteComponent( id, element ){
 
-            var result = confirm("Có chắc muốn xóa không?")
+            var result = confirm("削除しますか。")
             if(typeof ADMIN_DELETE_BRANCH == 'undefined'){
                 
                 showErrorSystem("ADMIN_DELETE_BRANCH")
@@ -30,11 +30,11 @@
                         if(response.status == 200){
                             $( element ).closest('.row').remove();
                         }else{
-                            alert("xoá thất bại nha")
+                            alert("削除できませんでした。")
                         }
                     },
                     error: function(){
-                        alert("xoá thất bại nha")
+                        alert("削除できませんでした。")
                     },
                 });
             }

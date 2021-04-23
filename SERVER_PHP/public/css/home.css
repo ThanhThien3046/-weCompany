@@ -2353,6 +2353,7 @@ option:focus {
 
 .footer {
   text-align: center;
+  margin-left: 300px;
 }
 
 .wrapper__page {

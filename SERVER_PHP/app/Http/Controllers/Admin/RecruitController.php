@@ -154,35 +154,35 @@ class RecruitController extends Controller
     public function load(Request $request){
         $limit       = Config::get('constant.LIMIT');
         $user_id     = Auth::user()->id;
-        $postModel   = new Post();
+        $recruitModel   = new Recruit();
         $branchModel = new Branch();
 
 
-        $user_id    = Auth::user()->id;
+        // $user_id    = Auth::user()->id;
 
         $condition = [
-            'orderby' => [ 'field' => 'id', 'type' => 'DESC' ]
+            'orderby' => [ 'field' => 'recruit_id']
         ];
-
-        $branchs     = $branchModel->all();
-
-        $query      = $request->all('branch', 'post');
-
         
-        $postFilter = $postModel->orderBy('id', 'DESC');
+        $branchs     = $branchModel->all();
+        
+        $query      = $request->all('branch', 'recruit');
+        
+        
+        $recruitFilter = $recruitModel->orderBy('recruit_id');
 
         if($query['branch']){
             
-            $postFilter->where('branch_id', $query['branch']);
+            $recruitFilter->where('branch_id', $query['branch']);
         }
 
-        if($query['post']){
+        if($query['recruit']){
 
-            $postFilter->where('title', 'like', '%' . $query['post'] . '%');
+            $recruitFilter->where('title', 'like', '%' . $query['recruit'] . '%');
         }
-
-        $posts = $postFilter->paginate( $limit )->appends(request()->query());
-        return view('admin.post.load', compact(['posts', 'query', 'branchs']));
+        // dd($query);
+        $recruits = $recruitFilter->paginate( $limit )->appends(request()->query());
+        return view('admin.recruit.load', compact(['branchs', 'query','recruits']));
     }
 
     /**

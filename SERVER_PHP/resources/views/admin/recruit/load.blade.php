@@ -7,13 +7,13 @@
     <script src="{{ asset('js/admin/app.min.js') }}"></script>
     <script src="{{ asset('js/library/select2.min.js') }}"></script>
     <script>
-        var ADMIN_DELETE_POST = "{{ Route('ADMIN_DELETE_POST', ['id' => null ])}}";
+        var ADMIN_DELETE_RECRUIT = "{{ Route('ADMIN_DELETE_RECRUIT', ['id' => null ])}}";
         function deleteComponent( id, element ){
 
-            var result = confirm("Có chắc muốn xóa không?")
-            if(typeof ADMIN_DELETE_POST == 'undefined'){
+            var result = confirm("削除しますか")
+            if(typeof ADMIN_DELETE_RECRUIT == 'undefined'){
                 
-                showErrorSystem("ADMIN_DELETE_POST")
+                showErrorSystem("ADMIN_DELETE_RECRUIT")
             }
             if (result) {
                 /// delete
@@ -24,7 +24,7 @@
                 });
                 $.ajax({
                     type: "DELETE",
-                    url: ADMIN_DELETE_POST + '/' +id , 
+                    url: ADMIN_DELETE_RECRUIT + '/' +id , 
                     data : {},
                     dataType:"JSON",
                     success: function(response){
@@ -55,55 +55,58 @@
                     @endforeach
                 </select>
                 <label for="post">ポスト:</label>
-                <input type="text" id="post" placeholder="ポストのタイトルを入力してください" name="post"  value="{{ $query['post'] }}" />
+                <input type="text" id="post" placeholder="ポストのタイトルを入力してください" name="post"  value="{{ $query['recruit'] }}" />
                 <button type="submit">探します</button>
             </form>
         </div>
         <div class="col-12 bg-white shadows-1 px-3 py-3 table-list">
             <div class="row thead-list">
-                <div class="col-1 text-center">id</div>
-                <div class="col-1 text-center">image</div>
-                <div class="col-5 text-center">title</div>
-                <div class="col-1 text-center">type</div>
-                <div class="col-2 text-center">group - branch</div>
+                <div class="col-0 text-center">id</div>
+                {{-- <div class="col-1 text-center">recruit_num</div> --}}
+                <div class="col-4 text-center">title</div>
+                <div class="col-2 text-center">content</div>
+                <div class="col-3 text-center">group - branch</div>
                 {{-- <div class="col-1 text-center">public</div> --}}
-                <div class="col-1 text-center">remove</div>
+                <div class="col-2 text-center">remove</div>
             </div>
-            @foreach( $posts as $post)
-            <div class="row trow-list {{ $post->public == Config::get('constant.TYPE_SAVE.ADMIN_READ') ? 'highlight' : null }}">
-                <div class="col-1">{{ $post->id }}</div>
+            @foreach( $recruits as $recruit)
+            <div class="row trow-list {{ $recruit->public == Config::get('constant.TYPE_SAVE.ADMIN_READ') ? 'highlight' : null }}">
+                <div class="col-1">{{ $recruit->recruit_id }}</div>
                 <div class="col-1 trow_list__wrapper_image">
-                    <img class="item_image" src="{{ asset($post->image) }}" />
+                    {{-- <div class="col-1">{{ $recruit->content }}</div> --}}
+                    {{-- <img class="item_image" src="{{ asset($recruit->content) }}" /> --}}
                 </div>
-                <div class="col-5">
-                    <a href="{{ Route("ADMIN_STORE_POST", ['id' =>  $post->id]) }}">
-                        {{ $post->getTitle(60) }}
+                <div class="col-3">
+                    <a href="{{ Route("ADMIN_STORE_RECRUIT", ['id' =>  $recruit->id]) }}">
+                        {{ $recruit->getTitle(60) }}
                     </a>
                 </div>
                 {{-- <div class="col-1">{{ $post->getType()  }}</div> --}}
                 @php 
-                $branch = $post->branch;
+                $branch = $recruit->branch;
                 if(!$branch){
                     $titleBranch = 'no choose branch';
                 }else{
                     $titleBranch = $branch->title;
                 }
                 @endphp
-                <div class="col-2">{{ $titleBranch }}</div>
-                <div class="col-1">{{ $post->public == Config::get('constant.TYPE_SAVE.PUBLIC') ? 'show' : 'admin' }}</div>
+                {{-- <div class="col-2">{{ $titleBranch }}</div> --}}
+                <div class="col-2">{{ $recruit->content }}</div>
+                {{-- <div class="col-1">{{ $recruit->public == Config::get('constant.TYPE_SAVE.PUBLIC') ? 'show' : 'admin' }}</div> --}}
+                <div class="col-3">{{ $titleBranch }}</div>
                 <div class="col-1">
                     <button type="button"
-                    onclick="deleteComponent('{{ $post->id }}', this)"
+                    onclick="deleteComponent('{{ $recruit->recruit_id }}', this)"
                     class="bg-transparent btn-remove-row">
-                        <i class="hero-icon hero-delete-variant"></i>
+                        <i class="fas fa-trash"></i>
                     </button>
                 </div>
             </div>
             @endforeach
 
-            <div class="pagi">
-                {{ $posts->onEachSide(3)->links() }}
-            </div>
+            {{-- <div class="pagi">
+                {{ $recruit->onEachSide(3)->links() }}
+            </div> --}}
 
         </div>
     </div>
