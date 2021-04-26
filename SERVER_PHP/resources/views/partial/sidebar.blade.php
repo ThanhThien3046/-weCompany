@@ -39,7 +39,7 @@
         <li class="sidebar__nav-item">
             <a class="sidebar__nav-link about" href="{{ Route('ABOUT') }}">
                 @include('svg.about')
-                <span>WEとは đ</span>
+                <span>WEとは</span>
             </a>
         </li>
         <li class="sidebar__nav-item">

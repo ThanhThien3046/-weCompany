@@ -74,50 +74,10 @@
                     <div class="article__wrapper">
                         <span class="article__challenge">
                             @php
-                                //// đây là 1 đoạn fix cứng, điều này dẫn đến khi admin xoá chi nhánh rồi add mới lại 1 cái khác 
-                                // => thì id bị thay đổi 
-                                // => code chỗ này sẽ toang ngay => mình sẽ query trong db cái collum color trong bảng branch
-                                /// nếu lầy thì query DB ngày chỗ này như vầy
-                                /// select * from `branchs` where `id` = 7 limit 1
-                                $branchOfPost = DB::table('branchs')->where('id',$post->branch_id )->first();
-                                /// khi có object branch rồi thì mình chỉ cần set bạckgrond cho nó thôi
-                                $background = "background-color: " . $branchOfPost->color;
 
-                                // switch ($post->branch_id) {
-                                //     case '1':
-                                //         $txt = "background-color:#e53323;";
-                                //         break;
-                                //     case '2':
-                                //         $txt = "background-color:#edad3e;";
-                                //         break;
-                                //     case '3':
-                                //         $txt = "background-color:#fdf753;";
-                                //         break;
-                                //     case '4':
-                                //         $txt = "background-color:#6bd647;";
-                                //         break;
-                                //     case '5':
-                                //         $txt = "background-color:#1d9e3b;";
-                                //         break;
-                                //     case '6':
-                                //         $txt = "background-color:#4ea1e0;";
-                                //         break;
-                                //     case '7':
-                                //         $txt = "background-color:#3471b0;";
-                                //         break;
-                                //     case '8':
-                                //         $txt = "background-color:#031175;";
-                                //         break;
-                                //     case '9':
-                                //         $txt = "background-color:#911f7a;";
-                                //         break;
-                                //     case '10':
-                                //         $txt = "background-color:#d9307f;";  
-                                //         break;                                 
-                                //     default:
-                                //         $txt = "background-color:#000;";  
-                                //         break;
-                                // }
+                                $branchOfPost = DB::table('branchs')->where('id',$post->branch_id )->first();
+                                
+                                $background = "background-color: " . $branchOfPost->color;
                             @endphp
                             <i style="{{$background}}" class="article__challenge-number">{{ $post->id }}</i>
                         </span>
