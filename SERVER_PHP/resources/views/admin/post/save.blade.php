@@ -121,7 +121,7 @@
             </div>
             <div class="row block-content">
                 <div class="col-12 bg-color-white shadows-1 px-3 py-3">
-                    <h2 class="title">meta description ( <span class="italic text-xs normal-case">* 入力しないたら内容部分からもらいます</span> )</h2>
+                    <h2 class="title">メタ記述 ( <span class="italic text-xs normal-case">* 入力しないたら内容部分からもらいます</span> )</h2>
                     <textarea class="height-80px" name="description" cols="30" rows="10">{{ old('description', $post->description) }}</textarea>
                 </div>
             </div>

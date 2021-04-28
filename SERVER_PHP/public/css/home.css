@@ -1930,53 +1930,7 @@ option:focus {
   }
 }
 
-@media (max-width: 991px) {
-  .sidebar {
-    height: unset;
-    overflow-x: hidden;
-    overflow-y: auto;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: unset;
-    width: 100%;
-    z-index: 1500;
-    display: block;
-    box-sizing: border-box;
-    width: 100%;
-    background-color: transparent;
-    height: 50px;
-    border-bottom: 1px solid transparent;
-    transition: all 0.15s cubic-bezier(0.39, 0.575, 0.565, 1) 0s;
-    border-top-color: transparent;
-    border-right-color: transparent;
-    border-left-color: transparent;
-  }
 
-  .sidebar.open {
-    border-bottom: 1px solid #ccc;
-    background-color: #fff;
-  }
-
-  .sidebar__bottom-metro {
-    position: fixed;
-    bottom: unset;
-    top: 10px;
-    right: 15px;
-    width: 54px;
-  }
-
-  .sidebar__wrapper-toggle {
-    padding: 5px;
-    width: 100%;
-    height: 100%;
-  }
-
-  .sidebar__nav {
-    display: none;
-  }
-}
 
 .nav {
   background-color: #fff;
@@ -2174,6 +2128,7 @@ option:focus {
   margin: 0;
   padding: 0;
 }
+
 
 .nav__metros-item {
   font-size: 45px;
@@ -2503,6 +2458,12 @@ option:focus {
   .article .article__link-title .title {
     font-size: 12px;
   }
+
+  .nav__metros-item {
+    font-size: 20px;
+    display: inline-block;
+    padding: 0 30px;
+  } 
 }
 
 .article:hover .article__link-title {
@@ -2626,6 +2587,7 @@ option:focus {
 
 .btn-totop {
   margin: 0 auto;
+  padding-top: 250px;
 }
 
 .ftimage {
@@ -2640,5 +2602,66 @@ option:focus {
   text-align: center;
   width: 300px;
   margin: 0 auto;
+  margin-bottom: 20px;
 }
 
+
+
+@media (max-width: 991px) {
+  .sidebar {
+    height: unset;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: unset;
+    width: 100%;
+    z-index: 1500;
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    background-color: transparent;
+    height: 50px;
+    border-bottom: 1px solid transparent;
+    transition: all 0.15s cubic-bezier(0.39, 0.575, 0.565, 1) 0s;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-left-color: transparent;
+  }
+
+  .sidebar.open {
+    border-bottom: 1px solid #ccc;
+    background-color: #fff;
+  }
+
+  .sidebar__bottom-metro {
+    position: fixed;
+    bottom: unset;
+    top: -25px;
+    right: 15px;
+    width: 54px;
+  }
+
+  .sidebar__wrapper-toggle {
+    padding: 5px;
+    width: 100%;
+    height: 100%;
+  }
+
+  .sidebar__nav {
+    display: none;
+  }
+
+  .homeslider__intro {
+    position: absolute;
+    bottom: 90%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-family: "RocknRoll One", sans-serif;
+    z-index: 11111111;
+    color: #f8f9fa;
+  }
+}

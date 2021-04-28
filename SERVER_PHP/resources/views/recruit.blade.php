@@ -42,7 +42,7 @@
 	</div>
     
 	<main id="page__recruit">
-		<h1 class="title">タイトル</h1>
+		<h1 class="title">WE グループの求人</h1>
 		<nav class="check">
 			<ul>
                 @if (!$branchs->isEmpty())
@@ -104,7 +104,8 @@
             <a href="#" class="social-footer-item roundbtn-youtube">
                 <i class="fab fa-youtube"></i>
             </a>
-            <a href="" class="social-footer-item social-footer-btn">このページもシャアする</a>
+            {{-- class="social-footer-item social-footer-btn" --}}
+            <a href="" >このページもシャアする</a>
         </div>
         <a class="btntotop" id="js__back-to-top">TOPへ戻る</a>
         <div class="fttext">

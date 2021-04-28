@@ -37,6 +37,8 @@
     <script type="text/javascript" src="{{ asset('js/library/jquery.min.js' . Config::get('app.version')) }}"></script>
     <script type="text/javascript" src="{{ asset('js/home.min.js' . Config::get('app.version')) }}"></script>
     <script type="text/javascript" src="{{ asset('js/search.js' . Config::get('app.version')) }}"></script>
+    {{-- <div id="fb-root"></div> --}}
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v10.0" nonce="KUCj7roA"></script>
 @endsection
 @section('content')
 
@@ -49,12 +51,12 @@
         <div class="main">
             <div class="main-content">
                 <div class="social">
-                    <a href="{{ Route('HOME_PAGE') }}" target="_blank" class="social__fb">
-                        <i class="fab fa-facebook-square"></i>
-                        <span class="share-text">Share</span>
-                    </a>
-
-                    <a href="{{ Route('HOME_PAGE') }}" target="_blank" class="social__wt">
+                    
+                    <div class="fb-share-button" data-href="https://wecompany.co.jp/detail/{{$post->id}}" data-layout="button" data-size="small">
+                        <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwecompany.co.jp%2Fdetail%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a>
+                    </div>
+                
+                    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fparse.com" rel="noopener" target="_blank" class="social__wt">
                         <i class="fab fa-twitter-square"></i>
                         <span class="share-text">ツイート</span>
                     </a>
@@ -70,8 +72,15 @@
                 <div class="main-content-imgcont">
                     <div class="head">
                         @if($post)
-                        <div class="number">
+                        @php
+
+                            $branchOfPost = DB::table('branchs')->where('id',$post->branch_id )->first();
+                            
+                            $background = "background-color: " . $branchOfPost->color;
+                        @endphp
+                        <div style="{{$background}}" class="number">
                             {{-- 123 --}}
+
                             <i >{{ $post->id }}</i>
                         </div>
                         @endif
@@ -145,17 +154,18 @@
                         <p style="font-family: 'Sawarabi Mincho', sans-serif;">Find Information</p>
                         <div class="info-txtimg">
                             <div class="info-text">
-                                <h4>東京国立近代美術館（MOMAT)</h4>
+                                {{-- <h4>東京国立近代美術館（MOMAT)</h4> --}}
                                 <p>
-                                    ［住所］千代田区北の丸公園 3-1 <br>
-                                    ［電話番号］03-5777-8600（ハローダイヤル）
-                                    ［開館時間］10:00〜17:00（金・土曜 10:00〜20:00）
-                                    10月29日までの金・土曜は21：00まで　※入館は閉館 30分前まで
-                                    ［ MOMATガイドスタッフによる所蔵品ガイド］毎日（休館日を除く）14:00〜15:00
-                                    ［休館日］月曜（祝日の場合は開館）、展示替期間、年末年始
-                                    ［最寄駅からのアクセス］東西線 竹橋駅 b1出口から徒歩 3分
+                                    ［住所］東京都中央区新川1−5−19<br>
+                                    ［電話番号］050ー5578ー9696 <br>
+                                    ［時間］10:00～19:00<br>
+                                    ［休館日］年末年始　<br>
+                                     ※独自の企業カレンダー<br>
+                                    ［最寄駅からのアクセス］東京メトロ<br>
+                                     ■茅場町駅<br>
+                                     └A3出口：徒歩５分徒歩5分
                                 </p>
-                                <a href="#">http://www.momat.go.jp/am</a><br>
+                                <a href="#">https://wecompany.co.jp/</a><br>
                                 <a href="{{ Route('HOME_PAGE') }}" target="_blank" class="btn_map">
                                     <span>サイトへ</span>
                                 </a>
@@ -186,7 +196,19 @@
                             <a href="#" class="social-footer-item roundbtn-youtube">
                                 <i class="fab fa-youtube"></i>
                             </a>
-                            <a href="" class="social-footer-item social-footer-btn">このページもシャアする</a>
+                            {{-- class="social-footer-item social-footer-btn" --}}
+
+                            {{-- <a href="" > --}}
+                                
+
+                            <span href="" class="sharee">
+                                <hr size="3px" width="150px" color="red" class="shareetop">
+                                このページもシャアする
+                                <hr size="3px" width="150px" color="red" class="shareebottom">
+                            </span>
+                                
+                                
+                            {{-- </a> --}}
                         </div>
                         <a class="btntotop" id="js__back-to-top">TOPへ戻る</a>
                         <div class="fttext">

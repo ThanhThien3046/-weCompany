@@ -30,11 +30,11 @@
                         if(response.status == 200){
                             $( element ).closest('.row').remove();
                         }else{
-                            alert("xoá thất bại nha")
+                            alert("削除できません。")
                         }
                     },
                     error: function(){
-                        alert("xoá thất bại nha")
+                        alert("削除できません。")
                     },
                 });
             }
@@ -43,7 +43,7 @@
 @endsection
 
 
-@section('page_title', 'danh sách recruit' )
+@section('page_title', '募集情報リスト' )
 
 @section('content_admin')
 <div class="page__topic admin-main-content">

@@ -20,13 +20,13 @@
                 <a href="http://wecompany.co.jp/search">WE沿革</a>
             </li>
             <li class="nav__links-item">
-                <a href="http://wecompany.co.jp/">WE求人</a>
+                <a href="https://wecompany.co.jp/recruit">WE求人</a>
             </li>
             <li class="nav__links-item">
                 <a href="http://wecompany.co.jp/about">WE・COMPANYとは</a>
             </li>
             <li class="nav__links-item">
-                <a href="http://wecompany.co.jp/">問い合わせ</a>
+                <a href="https://wecompany.co.jp/contact">問い合わせ</a>
             </li>
         </ul>
 

@@ -88,7 +88,7 @@
                                         <p>WE グループ紹介</p>
                                     </div>
                                     <div class="main__list" id="js__format-height-article">
-                                        @php $posts = $branch->posts()->orderBy('id', 'DESC')->take(3)->get() @endphp
+                                        @php $posts = $branch->posts()->orderBy('id', 'DESC')->take(1000)->get() @endphp
 
                                         
                                         @if(!$posts->isEmpty())

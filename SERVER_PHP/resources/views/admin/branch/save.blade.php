@@ -28,7 +28,7 @@
             </div>
             @elseif (Session::has(Config::get('constant.SAVE_SUCCESS')))
             <div class="alert alert-success">
-                lưu branch thành công
+                支店保存した。
             </div>
             @endif
             @if(!empty($errors->all()))
@@ -59,7 +59,7 @@
             </div>
             <div class="row block-content">
                 <div class="col-12 bg-color-white shadows-1 px-3 py-3">
-                    <h2 class="title">コンテンツの右のイメージ ( image auto resize 800 x 300 in client)</h2>
+                    <h2 class="title">コンテンツの右のイメージ</h2>
                     <div class="position-relative wrapper__selectImageWithCKFinder type-select-ckfinder__inline">
                         <input name="background" class="img__outputCKFinder jquery__append-out" type="text" 
                             value="{{ old('background', $branch->background) }}" 
@@ -84,7 +84,7 @@
             </div>
             <div class="row block-content">
                 <div class="col-12 bg-color-white shadows-1 px-3 py-3">
-                    <h2 class="title">title recruit page</h2>
+                    <h2 class="title">募集ページのタイトル</h2>
                     <input name="title_recruit" type="text" value="{{ old('title_recruit', $branch->title_recruit ) }}"/>
                     <hr />
                     <input name="color" type="color" value="{{ old('title_recruit', $branch->color ) }}">

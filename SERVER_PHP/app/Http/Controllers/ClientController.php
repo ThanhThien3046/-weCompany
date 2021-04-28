@@ -93,7 +93,7 @@ class ClientController extends Controller
             if (Mail::failures()) {
                 throw new Exception('send mail not working');
             }
-            Mail::to(trim(env('MAIL_TO_ADMIN', 'thanhthien3046@gmail.com')))->send(new MailContactAdmin($input));
+            Mail::to(trim(env('MAIL_TO_ADMIN', 'admin@wecompany.co.jp')))->send(new MailContactAdmin($input));
             if (Mail::failures()) {
                 throw new Exception('send mail admin not working');
             }

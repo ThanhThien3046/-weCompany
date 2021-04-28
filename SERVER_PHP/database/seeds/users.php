@@ -16,7 +16,7 @@ class users extends Seeder
         DB::table('users')->insert(
             [
                 'name'       => 'Admin',
-                'email'      => 'thanhthien3046@gmail.com',
+                'email'      => 'admin@wecompany.co.jp',
                 'avatar'     => '/images/avatar.jpg',
                 'password'   => bcrypt('wecompany'),
                 'role_id'    => 1,
