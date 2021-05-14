@@ -174,6 +174,7 @@ class ClientController extends Controller
         ])
         ->groupby('branch_id','year')
         ->orderBy('branch_id')
+        ->orderByDesc("year")
         ->get();
 
         return view("search", compact(['branchs', 'posts']));

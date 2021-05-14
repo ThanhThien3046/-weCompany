@@ -1728,7 +1728,7 @@ option:focus {
   outline: none;
   font-size: 15px;
   background-color: #ced4da;
-  color: #142149;
+  color: #fff;
 }
 
 .wrapper__collapse .collapsible__title {

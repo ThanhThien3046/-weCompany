@@ -71,10 +71,10 @@
             </div>
 
             <div class="row block-content">
-                <div class="col-12 bg-color-white shadows-1 px-3 py-3">
+                {{-- <div class="col-12 bg-color-white shadows-1 px-3 py-3">
                     <h2 class="title">コンテンツ</h2>
                     <textarea name="content" id="editor1" class="h-100">{{ old('content', $branch->content) }}</textarea>
-                </div>
+                </div> --}}
             </div>
             <div class="row block-content">
                 <div class="col-12 bg-color-white shadows-1 px-3 py-3">

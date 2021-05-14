@@ -2176,7 +2176,7 @@ option:focus {
 }
 
 .nav__metros-item {
-  font-size: 45px;
+  font-size: 20px;
   display: inline-block;
   padding: 0 30px;
 }
@@ -2426,4 +2426,11 @@ option:focus {
     padding-left: 0;
   }
 }
+
+@media (min-width: 375px){
+  .metrores{
+    width:25px; margin:0px 20px -10px 18px
+  }
+}
+
 

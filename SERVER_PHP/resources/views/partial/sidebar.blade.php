@@ -4,8 +4,8 @@
             <li class="sidebar__toggle-item item"></li>
             <li class="sidebar__toggle-item item"></li>
             <li class="sidebar__toggle-item item"></li>
-            <li class="sidebar__toggle-item item"></li>
-            <li class="sidebar__toggle-item item"></li>
+            {{-- <li class="sidebar__toggle-item item"></li>
+            <li class="sidebar__toggle-item item"></li> --}}
         </ul>
         <a href="{{ Route("HOME_PAGE") }}" class="link__homepage">
             {{ Config::get('app.name') }}
@@ -39,26 +39,26 @@
         <li class="sidebar__nav-item">
             <a class="sidebar__nav-link about" href="{{ Route('ABOUT') }}">
                 @include('svg.about')
-                <span>WEとは đ</span>
+                <span>WEとは</span>
             </a>
         </li>
         <li class="sidebar__nav-item">
-            <a class="sidebar__nav-link icon__facebook" href="{{ Route('HOME_PAGE') }}">
+            <a class="sidebar__nav-link icon__facebook" href="https://www.facebook.com/WeCompany-101388528801770">
                 <i class="fab fa-facebook-f"></i>
             </a>
         </li>
         <li class="sidebar__nav-item">
-            <a class="sidebar__nav-link icon__twitter" href="{{ Route('HOME_PAGE') }}">
+            <a class="sidebar__nav-link icon__twitter" href="https://twitter.com/_WE_COMPANY">
                 <i class="fab fa-twitter"></i>
             </a>
         </li>
         <li class="sidebar__nav-item">
-            <a class="sidebar__nav-link icon__instagram" href="{{ Route('HOME_PAGE') }}">
+            <a class="sidebar__nav-link icon__instagram" href="https://www.instagram.com/_we_company/">
                 <i class="fab fa-instagram"></i>
             </a>
         </li>
         <li class="sidebar__nav-item">
-            <a class="sidebar__nav-link icon__youtube" href="{{ Route('HOME_PAGE') }}">
+            <a class="sidebar__nav-link icon__youtube" href="https://www.youtube.com/channel/UC7EMHAnUXRbIyVTkJ4eYsRw">
                 <i class="fab fa-youtube"></i>
             </a>
         </li>

@@ -62,13 +62,16 @@
 			<h2 class="history__title">{{ $branch->title_recruit }}</h2>
             
             @foreach ($postsInBranchs as $key => $postHistory)
-            <a href="{{Route('HISTORY_PAGE', [ 'branch_id' => $postHistory->branch_id, 'year' => $postHistory->year ])}}">
-				<ul class="{{ $key % 2 == 0 ? 'last_child' : null }}">
-					<li  style="background-color: {{ $branch->color }}">
-						<span>{{ $postHistory->count }}</span>
-					</li>
-					<li>{{ $postHistory->year }}</li>
-					<li><i class="fas fa-arrow-right"></i></li>
+            <a href="{{Route('HISTORY_PAGE', [ 'branch_id' => $postHistory->branch_id, 'year' => $postHistory->year ])}}" class="enkaku">
+				<ul>
+                    
+                        <li  style="background-color: {{ $branch->color }}">
+                            <span>{{ $postHistory->count }}</span>
+                        </li>
+                        <li>{{ $postHistory->year }}</li>
+                        
+                        <li><i class="fas fa-arrow-right"></i></li>
+                    
 				</ul>
 			</a>
             @endforeach

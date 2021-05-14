@@ -21,10 +21,6 @@
 @section('preload')
     {{-- preload  --}}
     <link rel="preload" as="style" href="{{ asset('css/styles.css' . Config::get('app.version'))}}">
-    {{-- <link rel="preload" as="font" type="font/woff2" crossorigin href="/font/font-awe/webfonts/fa-solid-900.woff2"/>
-    <link rel="preload" as="font" type="font/woff2" crossorigin href="/font/font-awe/webfonts/fa-light-300.woff2"/>
-    <link rel="preload" as="font" type="font/woff2" crossorigin href="/font/font-awe/webfonts/fa-duotone-900.woff2"/>
-    <link rel="preload" as="font" type="font/woff2" crossorigin href="/font/IconFont/webfont.woff2?v=1.4.57"/> --}}
 @endsection
 @section('stylesheets')
     <link rel="stylesheet" href="{{ asset('css/styles.css' . Config::get('app.version'))}}">
@@ -351,42 +347,10 @@
 
 					<p id="P_307">
 						<span id="SPAN_308"><span id="SPAN_309">
-							<!--<svg id="svg_310" viewBox="0 0 420 236">
-								<title id="title_311">
-									We Company!
-								</title>
-								<desc id="desc_312">
-									メトロでひびきあう、ひとりひとりの東京。
-								</desc>
-								<path id="path_313">
-								</path>
-								<path id="path_314">
-								</path>
-								<path id="path_315">
-								</path>
-								<path id="path_316">
-								</path>
-								<path id="path_317">
-								</path>
-								<path id="path_318">
-								</path>
-								<path id="path_319">
-								</path>
-								<path id="path_320">
-								</path>
-								<path id="path_321">
-								</path>
-								<path id="path_322">
-								</path>
-							</svg>-->
 							<span>We Company</span>
 						</span></span>
 
 					</p>
-					<!--<div id="DIV_323">
-						<div id="DIV_324">
-						</div>
-					</div>-->
 				</div>
 				<p id="P_325">
 					<span id="SPAN_326"><span id="SPAN_327"></span></span>

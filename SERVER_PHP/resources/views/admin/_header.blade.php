@@ -9,7 +9,7 @@
         <div class="header__nav">
             <ul class="header__nav__navigate">
                 <li class="header__nav__navigate__link {{ Route::is("ADMIN_DASHBOARD") ? 'active' : null}}">
-                    <a href="{{ Route('ADMIN_LOGOUT') }}">dashboard</a>
+                    <a href="{{ Route('ADMIN_LOGOUT') }}">ダッシュボード</a>
                 </li>
             </ul>
         </div>

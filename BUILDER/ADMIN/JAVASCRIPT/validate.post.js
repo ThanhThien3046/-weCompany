@@ -45,8 +45,8 @@ function validateForm(formJquery){
         },
         messages: {
             title: {
-                required : "bắt buộc phải nhập title",
-                maxlength: "title có độ dài lớn nhất là {0}"
+                required : "タイトルを入力する必要があります",
+                maxlength: "タイトルの最大長は{0}です"
             },
             excerpt : {
                 required : "bắt buộc nhập đoạn trích(excerpt)",

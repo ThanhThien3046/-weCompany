@@ -19,8 +19,6 @@
     }
 }
 
-
-
 .homeslider{
     overflow: hidden;
     position: fixed;
@@ -195,7 +193,8 @@
         left: 0px;
         padding: 8px 16px;
         width: 100%;
-        background: rgba(255, 255, 255, 0.2);
+        // background: rgba(255, 255, 255, 0.2);
+        background: rgba(0, 0, 0, 0.5);
         color: rgb(255, 255, 255);
         transition: all 0.2s ease-in-out;
         z-index: 2;

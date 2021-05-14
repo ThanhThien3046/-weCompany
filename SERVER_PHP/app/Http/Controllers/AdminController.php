@@ -43,7 +43,7 @@ class AdminController extends Controller
         );
         /// luôn ghi nhớ password trong session
         if (Auth::attempt( $dataLogin, false )) {
-            /// kiểm tra thành công thì chuyển qua  trang ADMIN_DASHBOARD
+            /// kiểm tra thành công thì chuyển qua trang ADMIN_DASHBOARD
             $request->session()->flash(Config::get('constant.LOGIN_ADMIN_SUCCESS'), true);
             return redirect()->route("ADMIN_DASHBOARD");
         }
@@ -54,4 +54,13 @@ class AdminController extends Controller
         $_SESSION['user'] = null;
         return redirect()->route('ADMIN_LOGIN');
     }
+
+    // public function delete($id = 0){
+
+    //     (new Contact())->find($id)->delete();
+
+    //     $status = 200;
+    //     $response = array( 'status' => $status, 'message' => 'success' );
+    //     return response()->json( $response );
+    // }
 }

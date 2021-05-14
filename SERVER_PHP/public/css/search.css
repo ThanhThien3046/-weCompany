@@ -55,14 +55,15 @@ main nav ul li img{
 	padding: 18px;
 	overflow: hidden;
 	box-sizing: border-box;
+	/* background-color: hsla(0,0%,93%,1.00); */
 }
 .history a{
 	color: black;
 	text-decoration: none;
 }
-.history ul.last_child{
+/* .history ul.last_child{
 	background: hsla(0,0%,93%,1.00);
-}
+} */
 .history ul li:nth-child(1){
 	width: 40px;
 	height: 40px;
@@ -92,15 +93,6 @@ main nav ul li img{
 .history ul:hover{
 	opacity: 0.7;
 }
-
-
-
-
-
-
-
-
-
 
 .footer.mt-40{
 	margin-top: 40px;
@@ -274,4 +266,28 @@ main nav ul li img{
 
 .content{
 	display: flex;
+}
+
+.history ul:nth-child(2)
+{
+	background-color: #fff;
+}
+
+/* .history a{
+	color: black;
+	display:block;
+	max-width: 1000px;
+	text-decoration: none;
+	margin:auto;
+} */
+
+.enkaku{
+	color: black;
+	display:block;
+	max-width: 1000px;
+	text-decoration: none;
+	margin:auto;
+}
+.history a:nth-child(2n){
+	background: hsla(0,0%,93%,1.00);
 }

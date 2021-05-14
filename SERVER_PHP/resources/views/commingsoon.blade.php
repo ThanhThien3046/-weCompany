@@ -45,17 +45,23 @@
     @include('partial.nav')
 </div>
 <div class="comingsoon">
-    <h1>COMING</h1>
-    <h1>SOON</h1>
-    <h2><span class="a"></span>現在、このサイトは準備中です。<span class="b"></span></h2>
-    <h2>ただいま制作しておりますので、今しばらくお待ちください。</h2>
+    <h1>COMING SOON</h1>
+    <span class="a">
+        現在、このサイトは準備中です。
+        ただいま制作しておりますので、今しばらくお待ちください。
+    </span>
     <button type="button" onclick="history()">前に戻ります！</button>
 </div>
-  <script type="text/javascript">
+  {{-- <script type="text/javascript">
   function history(){
-      history.back();
+    window.history.back();
   }
+</script> --}}
+
+<script type="text/javascript">
+    var x = document.getElementsByTagName('button');
+        x[0].onclick = function(){
+        window.history.back();
+        }
 </script>
-
-
 @endsection

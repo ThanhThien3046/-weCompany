@@ -1754,15 +1754,6 @@ option:focus {
   padding-bottom: 15px;
 }
 
-@media (max-width: 768px) {
-  .main-content .content .header_content--title {
-    font-size: 16px;
-  }
-
-  .main-content .content .header_content--title-des {
-    font-size: 12px;
-  }
-}
 
 .main-content .content .wechild__wrapper {
   position: relative;
@@ -1810,6 +1801,43 @@ option:focus {
 .div_text {
   margin: 0 auto;
   padding-left: 350px;
+  /* padding-left: 50%; */
   color: #8ed0f9;
 }
+
+
+
+/* @media (max-width: 375px){
+  .div_text {
+    margin: 0 auto;
+    padding-left: 35%;
+    color: #8ed0f9;
+  }
+} */
+
+@media (max-width: 768px) {
+  .main-content .content .header_content--title {
+    font-size: 16px;
+  }
+
+  .main-content .content .header_content--title-des {
+    font-size: 12px;
+  }
+
+  .div_text {
+    margin: 0 auto;
+    padding-left: 35%;
+    color: #8ed0f9;
+  }
+
+}
+
+@media (min-width: 768px){
+  .div_text {
+    margin: 0 auto;
+    padding-left: 35%;
+    color: #8ed0f9;
+  }
+}
+
 

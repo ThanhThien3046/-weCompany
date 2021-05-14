@@ -16,13 +16,13 @@
         
         <ul class="nav_list">
             
-            <li class="block_navigate {{ Route::is("ADMIN_STORE_OPTION") ? 'active' : null}}">
+            {{-- <li class="block_navigate {{ Route::is("ADMIN_STORE_OPTION") ? 'active' : null}}">
                 <a class="block_navigate__link" 
                 href="{{ Route('ADMIN_STORE_OPTION') }}">
                     <i class="hero-icon hero-segment"></i>
                     <span class="nav__text">オプション</span>
                 </a>
-            </li>
+            </li> --}}
 
             <li class="block_navigate {{ Route::is("ADMIN_STORE_BRANCH", "ADMIN_LOAD_BRANCH") ? 'active' : null}}" >
                 <a class="block_navigate__link">
@@ -46,18 +46,18 @@
             <li class="block_navigate {{ Route::is("ADMIN_STORE_POST", "ADMIN_LOAD_POST") ? 'active' : null}}" >
                 <a class="block_navigate__link">
                     <i class="hero-icon hero-file-document-edit-outline"></i>
-                    <span class="nav__text">ポスト</span>
+                    <span class="nav__text">投稿</span>
                     <i class="hero-icon hero-chevron-sidebar"></i>
                 </a>
                 <ul class="dropdown__item">
                     <li class="{{ Route::is("ADMIN_STORE_POST") ? 'active' : null}}">
                         <a href="{{ Route('ADMIN_STORE_POST') }}">
-                            ポスト保存
+                            新規追加
                         </a>
                     </li>
                     <li class="{{ Route::is("ADMIN_LOAD_POST") ? 'active' : null}}">
                         <a href="{{ Route('ADMIN_LOAD_POST') }}">
-                            ポストリスト
+                            投稿一覧
                         </a>
                     </li>
                 </ul>
@@ -65,18 +65,18 @@
             <li class="block_navigate {{ Route::is("ADMIN_STORE_RECRUIT", "ADMIN_LOAD_RECRUIT") ? 'active' : null}}" >
                 <a class="block_navigate__link">
                     <i class="hero-icon hero-handshake"></i>
-                    <span class="nav__text">Recruit</span>
+                    <span class="nav__text">募集</span>
                     <i class="hero-icon hero-chevron-sidebar"></i>
                 </a>
                 <ul class="dropdown__item">
                     <li class="{{ Route::is("ADMIN_STORE_RECRUIT") ? 'active' : null}}">
                         <a href="{{ Route('ADMIN_STORE_RECRUIT') }}">
-                            Save Recruit
+                            新規追加
                         </a>
                     </li>
                     <li class="{{ Route::is("ADMIN_LOAD_RECRUIT") ? 'active' : null}}">
                         <a href="{{ Route('ADMIN_LOAD_RECRUIT') }}">
-                            List Recruit
+                            募集情報一覧
                         </a>
                     </li>
                 </ul>

@@ -11,6 +11,8 @@ Route::group(['prefix' => 'admin'], function () {
     Route::group(['prefix' => '/', 'middleware' => 'ADMIN_LOGGED'], function () {
         Route::get('/','AdminController@index')->name('ADMIN_DASHBOARD');
 
+        // Route::get('/{id?}','AdminController@delete')->name('ADMIN_DASHBOARD_DELETE');
+
         Route::get('/contact-detail/{id?}','Admin\ContactController@index')->name('ADMIN_CONTACT_DETAIL');
         
         Route::get('/option','Admin\OptionController@index')->name('ADMIN_STORE_OPTION');
@@ -44,6 +46,7 @@ Route::group(['prefix' => 'admin'], function () {
         ///run sitemap
         Route::get('/sitemap','Api\IndexController@index')->name('ADMIN_GET_SITEMAP');
         Route::get('/render-sitemap','Api\IndexController@save')->name('ADMIN_STORE_SITEMAP');
+
     });
 });
 
