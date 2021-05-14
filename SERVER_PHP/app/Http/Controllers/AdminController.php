@@ -55,12 +55,12 @@ class AdminController extends Controller
         return redirect()->route('ADMIN_LOGIN');
     }
 
-    // public function delete($id = 0){
+    public function delete($id = 0){
 
-    //     (new Contact())->find($id)->delete();
+        (new Contact())->find($id)->delete();
 
-    //     $status = 200;
-    //     $response = array( 'status' => $status, 'message' => 'success' );
-    //     return response()->json( $response );
-    // }
+        $status = 200;
+        $response = array( 'status' => $status, 'message' => 'success' );
+        return response()->json( $response );
+    }
 }

@@ -7,12 +7,12 @@
     <script src="{{ asset('js/library/jquery.min.js') }}"></script>
     <script src="{{ asset('js/admin/app.min.js') }}"></script>
     <script>
-        var ADMIN_DASHBOARD_DELETE = "{{ Route('ADMIN_DASHBOARD', ['id' => null ])}}";
+        var ADMIN_DASHBOARD_DELETE = "{{ Route('ADMIN_DASHBOARD_DELETE', ['id'])}}";
         function deleteComponent( id, element ){
             
-            // var result = confirm("Có chắc muốn xóa không?")
+            var result = confirm("Có chắc muốn xóa không?")
             if(typeof ADMIN_DASHBOARD_DELETE == 'undefined'){
-                showErrorSystem("ADMIN_DASHBOARD")
+                showErrorSystem("ADMIN_DASHBOARD_DELETE")
             }
             if (result) {
                 /// delete
@@ -23,7 +23,7 @@
                 });
                 $.ajax({
                     type: "DELETE",
-                    url: ADMIN_DASHBOARD + '/' +id , 
+                    url: ADMIN_DASHBOARD_DELETE + '/' +id , 
                     data : {},
                     dataType:"JSON",
                     success: function(response){
