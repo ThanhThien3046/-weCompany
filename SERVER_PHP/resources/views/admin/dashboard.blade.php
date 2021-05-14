@@ -7,12 +7,12 @@
     <script src="{{ asset('js/library/jquery.min.js') }}"></script>
     <script src="{{ asset('js/admin/app.min.js') }}"></script>
     <script>
-        var ADMIN_DASHBOARD_DELETE = "{{ Route('ADMIN_DASHBOARD_DELETE', ['id'])}}";
+        var ADMIN_DELETE_CONTACT = "{{ Route('ADMIN_DELETE_CONTACT', ['id' => null ])}}";
         function deleteComponent( id, element ){
             
             var result = confirm("Có chắc muốn xóa không?")
-            if(typeof ADMIN_DASHBOARD_DELETE == 'undefined'){
-                showErrorSystem("ADMIN_DASHBOARD_DELETE")
+            if(typeof ADMIN_DELETE_CONTACT == 'undefined'){
+                showErrorSystem("ADMIN_DELETE_CONTACT")
             }
             if (result) {
                 /// delete
@@ -23,7 +23,7 @@
                 });
                 $.ajax({
                     type: "DELETE",
-                    url: ADMIN_DASHBOARD_DELETE + '/' +id , 
+                    url: ADMIN_DELETE_CONTACT + '/' +id , 
                     data : {},
                     dataType:"JSON",
                     success: function(response){
@@ -68,7 +68,7 @@
                 <div class="col-2 text-center single-line-truncation">{{ $contact->mobile }}</div>
                 <div class="col-1 text-center single-line-truncation">{{ $contact->job_name }}</div>
                 <div class="col-1 text-center single-line-truncation">
-                    <a href="{{ Route('ADMIN_POST_LOGIN', [ 'id' => $contact->id ]) }}">
+                    <a href="{{ Route('ADMIN_CONTACT_DETAIL', [ 'id' => $contact->id ]) }}">
                         @if($contact->read != Config::get('constant.CONTACT_ADMIN_READ'))
                             see more
                         @else
