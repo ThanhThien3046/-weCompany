@@ -1,9 +1,3 @@
-
-
-
-
-
-
 <footer class="footer">
     <div class="copyright">
         <a class="copyright__link" href="{{ env('SITE_FB') }}" target="_blank">{{ env('APP_NAME_SIGN') }}</a>

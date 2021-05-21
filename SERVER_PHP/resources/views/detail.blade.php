@@ -118,12 +118,12 @@
                             <img class="lazyload"
                                 src="{{ Config::get('app.lazyload_base64') }}"
                                 onerror="this.onerror=null;this.src='{{ asset(Config::get('app.image_error')) }}';"
-                                data-src="{{ 
+                                {{-- data-src="{{ 
                                 Route('IMAGE_RESIZE', [ 
                                     'size' => 'post-galleries' , 
                                     'type' => 'fit', 
                                     'imagePath' => trim($image->url, '/') 
-                                ]) }}"
+                                ]) }}" --}}
                                 alt="{{$post->title}}" />
                             @endif
                         </div>

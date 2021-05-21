@@ -148,24 +148,7 @@ class ClientController extends Controller
     public function search(){
 
         $branchs = DB::table('branchs')->get();
-        //// logic là đếm tất cả bài viết theo chi nhánh trong từng chi nhánh lại đếm tất cả bài viết theo năm
-        // data trả ra kiểu na ná vầy: 
-        // [
-        //     [ 'year' => 2019, 'count' => 3, 'branch_id' => 1 ],
-        //     [ 'year' => 2020, 'count' => 8, 'branch_id' => 1 ],
-        //     [ 'year' => 2021, 'count' => 12, 'branch_id' => 1 ],
-
-        //     [ 'year' => 2018, 'count' => 1, 'branch_id' => 2 ],
-        //     [ 'year' => 2019, 'count' => 21, 'branch_id' => 2 ],
-        //     [ 'year' => 2020, 'count' => 12, 'branch_id' => 2 ],
-        //     [ 'year' => 2021, 'count' => 13, 'branch_id' => 2 ],
-
-        //     .... 
-
-        // ]
-
-        // để ra được data như vậy thì câu sql: 
-        // select YEAR(created_at) year, count(id),  branch_id from posts group by branch_id, year
+       
         $posts = DB::table('posts')
         ->select([
             DB::raw('count(id) as count'), 
@@ -176,8 +159,9 @@ class ClientController extends Controller
         ->orderBy('branch_id')
         ->orderByDesc("year")
         ->get();
-
-        return view("search", compact(['branchs', 'posts']));
+        
+        $company = DB::table('companies')->get();
+        return view("search", compact(['branchs', 'posts','company']));
     }
 
     public function historyDetail(Request $request, $branch_id, $year){

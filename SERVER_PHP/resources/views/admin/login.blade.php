@@ -54,10 +54,15 @@
                 @if($errors->any())
                 <div class="alert alert-danger">
                     check error:
+                    @if($errors->has('password'))
+                        <p>{{ $errors->first('password') }}</p>
+                    @endif
                     @if($errors->has('g-recaptcha-response'))
                         <p>{{ $errors->first('g-recaptcha-response') }}</p>
+                    @endif      
+                    @if($errors->has('email'))
+                        <p>{{ $errors->first('email') }}</p>
                     @endif
-                    
                 </div> 
                 @endif
                 <h1 class="title"> Welcome Admin </h1>

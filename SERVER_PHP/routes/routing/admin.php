@@ -11,7 +11,6 @@ Route::group(['prefix' => 'admin'], function () {
     Route::group(['prefix' => '/', 'middleware' => 'ADMIN_LOGGED'], function () {
         Route::get('/','AdminController@index')->name('ADMIN_DASHBOARD');
 
-        // Route::get('/{id?}','AdminController@delete')->name('ADMIN_DASHBOARD_DELETE');
         Route::delete('/contact/{id?}','AdminController@delete')->name('ADMIN_DELETE_CONTACT');
 
         Route::get('/contact-detail/{id?}','Admin\ContactController@index')->name('ADMIN_CONTACT_DETAIL');

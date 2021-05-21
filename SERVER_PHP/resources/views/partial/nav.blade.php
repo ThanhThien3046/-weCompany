@@ -42,22 +42,22 @@
                 <dd class="nav__metros">
                     <ul class="nav__metros-wrapper">
                         <li class="nav__metros-item fb">
-                            <a href="{{env('SOCIAL_FB')}}" rel="noopener">
+                            <a href="{{env('SOCIAL_FB')}}" rel="noopener" target="_blank">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
                         </li>
                         <li class="nav__metros-item twitter">
-                            <a href="{{ env('SOCIAL_TWITTER') }}" rel="noopener">
+                            <a href="{{ env('SOCIAL_TWITTER') }}" rel="noopener" target="_blank">
                                 <i class="fab fa-twitter"></i>
                             </a>
                         </li>
                         <li class="nav__metros-item instagram">
-                            <a href="{{ env('SOCIAL_INSTA') }}" rel="noopener">
+                            <a href="{{ env('SOCIAL_INSTA') }}" rel="noopener" target="_blank">
                                 <i class="fab fa-instagram"></i>
                             </a>
                         </li>
                         <li class="nav__metros-item youtube">
-                            <a href="{{ env('SOCIAL_YOUTUBE') }}" rel="noopener">
+                            <a href="{{ env('SOCIAL_YOUTUBE') }}" rel="noopener" target="_blank">
                                 <i class="fab fa-youtube"></i>
                             </a>
                         </li>

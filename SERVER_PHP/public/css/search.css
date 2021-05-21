@@ -291,3 +291,38 @@ main nav ul li img{
 .history a:nth-child(2n){
 	background: hsla(0,0%,93%,1.00);
 }
+
+.history-info
+{
+	box-sizing: border-box;
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1000px;
+	justify-content: space-between;
+	line-height: 2em;
+	
+}
+
+.history-info-left
+{
+	padding-left: 10px;
+	padding-right: 0;
+	width: 45%;
+}
+
+.history-info > hr{
+    background-color: #757574;
+}
+
+.history-info-right
+{
+	width: 45%;
+	padding-right: 10px;
+}
+
+.history-info  b{
+	font-size: 20px;
+}
+

@@ -10,7 +10,7 @@
         var ADMIN_DELETE_CONTACT = "{{ Route('ADMIN_DELETE_CONTACT', ['id' => null ])}}";
         function deleteComponent( id, element ){
             
-            var result = confirm("Có chắc muốn xóa không?")
+            var result = confirm("削除してもよろしいですか")
             if(typeof ADMIN_DELETE_CONTACT == 'undefined'){
                 showErrorSystem("ADMIN_DELETE_CONTACT")
             }
@@ -43,21 +43,21 @@
     <div class="row block-content ">
         <div class="col-12 bg-white search">
             <form class="form-inline" action="" method="GET">
-                <label for="email">email:</label>
-                <input type="text" id="email" placeholder="email" name="email"  value="{{ $query['email'] }}" />
-                <button type="submit">Search by condition</button>
+                <label for="email">メール:</label>
+                <input type="text" id="email" placeholder="メール" name="email"  value="{{ $query['email'] }}" />
+                <button type="submit">条件で検索</button>
             </form>
         </div>
         <div class="col-12 bg-white shadows-1 px-3 py-3 table-list">
             <div class="row thead-list">
                 <div class="col-1 text-center">id</div>
-                <div class="col-2 text-center">name</div>
-                <div class="col-3 text-center">email</div>
-                <div class="col-1 text-center">message</div>
-                <div class="col-2 text-center">mobile</div>
-                <div class="col-1 text-center">job name</div>
-                <div class="col-1 text-center">admin read</div>
-                <div class="col-1 text-center">delete</div>
+                <div class="col-2 text-center">名前</div>
+                <div class="col-3 text-center">メール</div>
+                <div class="col-1 text-center">メッセージ</div>
+                <div class="col-2 text-center">電話</div>
+                <div class="col-1 text-center">仕事名前</div>
+                <div class="col-1 text-center">アドミン読む</div>
+                <div class="col-1 text-center">削除</div>
             </div>
             @foreach( $contacts as $contact)
             <div class="row trow-list {{ $contact->read != Config::get('constant.CONTACT_ADMIN_READ') ? 'highlight' : null }}">

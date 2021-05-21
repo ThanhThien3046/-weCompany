@@ -43,22 +43,22 @@
             </a>
         </li>
         <li class="sidebar__nav-item">
-            <a class="sidebar__nav-link icon__facebook" href="https://www.facebook.com/WeCompany-101388528801770">
+            <a class="sidebar__nav-link icon__facebook" href="https://www.facebook.com/WeCompany-101388528801770" target="_blank">
                 <i class="fab fa-facebook-f"></i>
             </a>
         </li>
         <li class="sidebar__nav-item">
-            <a class="sidebar__nav-link icon__twitter" href="https://twitter.com/_WE_COMPANY">
+            <a class="sidebar__nav-link icon__twitter" href="https://twitter.com/_WE_COMPANY" target="_blank">
                 <i class="fab fa-twitter"></i>
             </a>
         </li>
         <li class="sidebar__nav-item">
-            <a class="sidebar__nav-link icon__instagram" href="https://www.instagram.com/_we_company/">
+            <a class="sidebar__nav-link icon__instagram" href="https://www.instagram.com/_we_company/" target="_blank">
                 <i class="fab fa-instagram"></i>
             </a>
         </li>
         <li class="sidebar__nav-item">
-            <a class="sidebar__nav-link icon__youtube" href="https://www.youtube.com/channel/UC7EMHAnUXRbIyVTkJ4eYsRw">
+            <a class="sidebar__nav-link icon__youtube" href="https://www.youtube.com/channel/UC7EMHAnUXRbIyVTkJ4eYsRw" target="_blank">
                 <i class="fab fa-youtube"></i>
             </a>
         </li>

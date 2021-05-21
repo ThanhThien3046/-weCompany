@@ -1,6 +1,6 @@
 @extends('admin._layout')
 
-@section('title', 'Thêm bài viết')
+@section('title', '新規追加')
 
 @section('javascripts')
     <script src="{{ asset('js/library/jquery.min.js') }}"></script>
@@ -9,7 +9,7 @@
         var ADMIN_DELETE_BRANCH = "{{ Route('ADMIN_DELETE_BRANCH', ['id' => null ])}}";
         function deleteComponent( id, element ){
 
-            var result = confirm("Có chắc muốn xóa không?")
+            var result = confirm("削除してもよろしいですか")
             if(typeof ADMIN_DELETE_BRANCH == 'undefined'){
                 
                 showErrorSystem("ADMIN_DELETE_BRANCH")
