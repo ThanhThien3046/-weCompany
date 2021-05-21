@@ -17,6 +17,7 @@ class ADMIN_LOGGED
     public function handle($request, Closure $next)
     {
         if(Auth::check()){
+            
             if (session_id() == '') {
                 @session_start();
             }

@@ -78,7 +78,7 @@
                                                 ]) }}"
                                                 alt="{{ $branch->title }}" width="800" height="300" />
                                         </div>
-                                        <div class="wechild__news-des">
+                                        <div class="wechild__news-des fix-content-css">
                                             {!! $branch->content !!}
                                         </div>
                                     </div>

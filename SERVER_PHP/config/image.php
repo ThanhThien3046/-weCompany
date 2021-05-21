@@ -28,7 +28,8 @@ return [
         'background-page' => [ 700, 145 ],
         'content'         => [ 400, 240],
         'post-thumnail-detail' => [800,500],
-        'post-galleries' => [ 250, 150 ],
+        // 'post-galleries' => [ 250, 150 ],
+        'post-galleries' => [ 500, 300 ],
         'branch-thumnail' => [ 400, 200 ]
     ]
 
