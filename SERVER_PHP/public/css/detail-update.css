@@ -1,0 +1,23 @@
+.imgdtl-list{
+    display: flex!important;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgdtl-list > .img__dtl-item{
+    width: 33.333%;
+    /* flex: 1; */
+    float: none;
+    max-height: 200px;
+    overflow: hidden;
+    align-items: center;
+    height: 100%;
+}
+
+.imgdtl-list > .img__dtl-item img{
+    width: 100%;
+    
+    object-fit: contain;
+    
+}

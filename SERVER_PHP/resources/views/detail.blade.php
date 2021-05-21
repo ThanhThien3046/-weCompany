@@ -32,6 +32,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ asset('css/detail-update.css' . Config::get('app.version'))}}">
 @endsection
 @section('javascripts')
     <script type="text/javascript" src="{{ asset('js/library/jquery.min.js' . Config::get('app.version')) }}"></script>
@@ -113,12 +115,7 @@
                             <img class="lazyload"
                                 src="{{ Config::get('app.lazyload_base64') }}"
                                 onerror="this.onerror=null;this.src='{{ asset(Config::get('app.image_error')) }}';"
-                                {{-- data-src="{{ 
-                                Route('IMAGE_RESIZE', [ 
-                                    'size' => 'post-galleries' , 
-                                    'type' => 'fit', 
-                                    'imagePath' => trim($image->url, '/') 
-                                ]) }}" --}}
+                                data-src="{{ $image->url }}"
                                 alt="{{$post->title}}" />
                             @endif
                         </div>
