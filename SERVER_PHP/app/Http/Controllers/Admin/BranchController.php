@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Helpers\Catalogue;
 use App\Http\Requests\ADMIN_VALIDATE_SAVE_BRANCH;
 use App\Models\Branch;
+use App\Models\History;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
 
@@ -25,8 +26,15 @@ class BranchController extends Controller
             //// edit 
             $branch    = (new Branch())->find($id);
         }
-        
-        return view('admin.branch.save', compact([ 'branch' ]));
+
+        $histories = DB::table('histories')->where('branch_id', $branch->id)->get();
+        if( $histories->isEmpty() ){
+            $histories = [
+                new History()
+            ];
+        }
+    
+        return view('admin.branch.save', compact([ 'branch', 'histories' ]));
     }
 
 
@@ -35,7 +43,7 @@ class BranchController extends Controller
         ///setting data insert table topic
 
         $branchInput = $request->only( 'title', 'excerpt', 'content', 'banner', 'image', 'background',
-        'description', 'title_recruit', 'color');
+        'description', 'title_recruit', 'color', 'company_name', 'address', 'phone', 'fax', 'time');
 
         // /// create catalogue
         //             $catalogue = Catalogue::generate($branchInput['content']);
@@ -45,15 +53,15 @@ class BranchController extends Controller
         //             $text_catalogue = $catalogue->text_catalogue;
 
         /// if description_seo null get of catalogue || content
-        if(!trim($branchInput['description'])){
+        // if(!trim($branchInput['description'])){
 
-            $description = '';// $text_catalogue;
-            if( !trim($description) ){
+        //     $description = '';// $text_catalogue;
+        //     if( !trim($description) ){
 
-                $description = mb_substr( strip_tags($branchInput['content']), 0, 160);
-            }
-            $branchInput['description'] = html_entity_decode(trim($description));
-        }
+        //         $description = mb_substr( strip_tags($branchInput['content']), 0, 160);
+        //     }
+        //     $branchInput['description'] = html_entity_decode(trim($description));
+        // }
 
         /// set id save topic 
         $branchInput['id'] = $id;
@@ -68,6 +76,24 @@ class BranchController extends Controller
             }else{
                 $branch = new Branch();
                 $branch = $branch->create($branchInput);
+            }
+
+            /// remove gallery
+            (new History())->where("branch_id", $branch->id)->delete();
+            /// insert 
+            $histories = $request->input('history');
+            $histories = array_filter($histories, function( $item ) {  return $item; });
+
+            if( count($histories) ){
+                $branchId = $branch->id;
+                if( $histories ){
+                    $historiesDataInsert = array_map( 
+                        function( $history ) use ( $branchId ){ 
+                            return  ['content' => $history, 'branch_id' => $branchId ]; 
+                        }, $histories
+                    );
+                    $histories = (new History())->insert($historiesDataInsert);
+                }
             }
 
             $request->session()->flash(Config::get('constant.SAVE_SUCCESS'), true);

@@ -8,6 +8,7 @@ use App\Mail\MailContactAdmin;
 use App\Models\Branch;
 use App\Models\Contact;
 use App\Models\Gallery;
+use App\Models\History;
 use App\Models\Post;
 use App\Models\Recruit;
 use Exception;
@@ -160,8 +161,12 @@ class ClientController extends Controller
         ->orderByDesc("year")
         ->get();
         
-        $company = DB::table('companies')->get();
-        return view("search", compact(['branchs', 'posts','company']));
+        $infoCompanies = DB::table('companies')->get();
+
+        $historyModel = new History();
+        $histories = $historyModel->all();
+
+        return view("search", compact(['branchs', 'posts','infoCompanies', 'histories']));
     }
 
     public function historyDetail(Request $request, $branch_id, $year){
@@ -173,7 +178,7 @@ class ClientController extends Controller
         }
         /// câu dưới sẽ là : select * from posts where YEAR(created_at) = $year ; -- với $year được truyền vào từ ngừoi dùng
         $posts = DB::table('posts')->where('branch_id', $branch_id)
-        ->whereYear('created_at', '=', $year)->get();
+        ->whereYear('created_at', '=', $year)->where('branch_id', $branch_id)->get();
 
         return view('client.history', compact(['branch', 'posts', 'year']));
     }

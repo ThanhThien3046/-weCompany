@@ -53,6 +53,62 @@
             
             <div class="row block-content">
                 <div class="col-12 bg-color-white shadows-1 px-3 py-3">
+                    <h2 class="title">会社名前</h2>
+                    <input name="company_name" type="text" value="{{ old('company_name', $branch->company_name ) }}"/>
+                </div>
+            </div>
+
+            <div class="row block-content">
+                <div class="col-12 bg-color-white shadows-1 px-3 py-3">
+                    <h2 class="title">重症</h2>
+                    <input name="address" type="text" value="{{ old('address', $branch->address ) }}"/>
+                </div>
+            </div>
+
+            <div class="row block-content">
+                <div class="col-12 bg-color-white shadows-1 px-3 py-3">
+                    <h2 class="title">電話</h2>
+                    <input name="phone" type="text" value="{{ old('phone', $branch->phone ) }}"/>
+                </div>
+            </div>
+
+            <div class="row block-content">
+                <div class="col-12 bg-color-white shadows-1 px-3 py-3">
+                    <h2 class="title">ファクス</h2>
+                    <input name="fax" type="text" value="{{ old('fax', $branch->fax ) }}"/>
+                </div>
+            </div>
+
+            <div class="row block-content">
+                <div class="col-12 bg-color-white shadows-1 px-3 py-3">
+                    <h2 class="title">営業時間</h2>
+                    <input name="time" type="text" value="{{ old('timme', $branch->time ) }}"/>
+                </div>
+            </div>
+
+            {{-- phần lịch sử --}}
+            <div id="sortable">
+                
+                @foreach ($histories as $key => $history)
+                <div class="row block-content js-group-option">
+                    <i onclick="removeBlockParent(this)" class="hero-icon hero-close"></i>
+                    <div class="col-12 bg-color-white shadows-1 px-3 py-3">
+                        <input name="history[]" type="text" value="{{ old('history', $history->content ) }}"/>
+                    </div>
+                </div>
+                @endforeach
+                <div class="row js__remove-final">
+                    <div class="col-12 text-right">
+                        <button type="button" onclick="addMoreBlock()" class="btn btn-success btn-addmore"> 
+                            thêm lịch sử
+                        </button>
+                    </div>
+                </div>
+            </div>
+            {{-- kết thúc phần lịch sử --}}
+
+            <div class="row block-content">
+                <div class="col-12 bg-color-white shadows-1 px-3 py-3">
                     <h2 class="title">抜粋</h2>
                     <textarea  class="height-80px" name="excerpt" cols="30" rows="10">{{ old('excerpt', $branch->excerpt) }}</textarea>
                 </div>
