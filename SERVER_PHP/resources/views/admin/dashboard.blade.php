@@ -1,6 +1,6 @@
 @extends('admin._layout')
 
-@section('title', 'WeCompany Admin')
+@section('title', 'WeCompany アドミン')
 @section('page_title', 'Page dashboard - list request contact')
 
 @section('javascripts')

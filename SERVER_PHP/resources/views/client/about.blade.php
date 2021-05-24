@@ -51,29 +51,29 @@
         </div>
         <div id="js__homeslider" class="homeslider__wrapper lazyload">
             <!--slide contents-->
-            <div class="homeslider__item" 
-            style="background-image: url('{{ asset('images/bg2.jpg') }}');"
-            data-src-mobile="{{ asset('images/sptop01_2004_02.jpeg') }}"></div>
-            <div class="homeslider__item" 
-            style="background-image: url('{{ asset('images/bg3.jpg') }}');"
-            data-src-mobile="{{ asset('images/sptop02_2004_02.jpeg') }}"></div>
-            <div class="homeslider__item" 
-            style="background-image: url('{{ asset('images/bg4.jpg') }}');"
-            data-src-mobile="{{ asset('images/sptop01_2004_02.jpeg') }}"></div>
-            <div class="homeslider__item homeslider__item-video">
-                <video autoplay muted loop="true">
-                    <source src="video.webm" type="video/webm" /> 
-                    <source src="{{ asset('/video/video-homepage.mp4') }}" type="video/mp4" />
-                </video>
-            </div>
-        </div>
+           <div class="homeslider__item" 
+                style="background-image: url('{{ asset('images/bg2.jpg') }}');"
+                data-src-mobile="{{ asset('images/sptop01_2004_02.jpeg') }}"></div>
+                <div class="homeslider__item" 
+                style="background-image: url('{{ asset('images/bg3.jpg') }}');"
+                data-src-mobile="{{ asset('images/sptop02_2004_02.jpeg') }}"></div>
+                <div class="homeslider__item" 
+                style="background-image: url('{{ asset('images/bg4.jpg') }}');"
+                data-src-mobile="{{ asset('images/sptop01_2004_02.jpeg') }}"></div>
+                <div class="homeslider__item homeslider__item-video">
+                    <video autoplay muted loop="true">
+                        <source src="video.webm" type="video/webm" /> 
+                        <source src="{{ asset('/video/video-homepage.mp4') }}" type="video/mp4" />
+                    </video>
+                </div>         
+	  </div>
     </div>
     <div class="content__main homepage">
         <div class="wrapper__about-page">
             <h1>WE・COMPANY<span>とは？</span></h1>
             <p>
                 ７つのバリュー<b>【Crew Ship】</b>を定めています。<br>
-                組織/プロタクトの変化に合わせて価値観を定めることで <br>
+                会社組織/プロタクトの変化に合わせて価値観を定めることで <br>
                 さらなる成長基盤を築きたい。<br>
                 そんな強い想いを込めて、創りました。 <br>          
             </p>
@@ -85,7 +85,7 @@
                 自分たちの給料は自分で稼ぐスタイル <br>
             </p>
             <p>
-                <span>２：Be Honest 【全てに素直であれ</span><br>
+                <span>２：Be Honest 【全てに素直であれ】</span><br>
                 人に対して、数字に対して、自分に対して、嘘をつかず素直に向き合っているか。<br>
                 良い出来事は思い切り喜び、問題には素直に向き合って解決を目指す。<br>
                 厳しい真実から目を逸らさない。私たちは、「素直」な人たちとともに働きたい。<br>

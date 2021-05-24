@@ -85,7 +85,7 @@
                                         </div>
                                     </div>
                                     <div class="div_text">
-                                        <p>WE グループ紹介</p>
+                                        <p>関連記事リンク</p>
                                     </div>
                                     <div class="main__list" id="js__format-height-article">
                                         @php $posts = $branch->posts()->orderBy('id', 'DESC')->take(3)->get() @endphp
@@ -101,7 +101,8 @@
                                                         {{ $post->id }}
                                                     </i>
                                                 </span>
-                                                <a class="article__link-img" href="{{ Route('DETAIL_PAGE') }}">
+						    
+						    <a class="article__link-img" href="{{ Route('DETAIL_PAGE', [ 'id' => $post->id ]) }}">
                                                     <img class="lazyload"
                                                             src="{{ Config::get('app.lazyload_base64') }}"
                                                             onerror="this.onerror=null;this.src='{{ asset(Config::get('app.image_error')) }}';"

@@ -1832,12 +1832,12 @@ option:focus {
 
 }
 
-@media (min-width: 768px){
+@/*media (min-width: 768px){
   .div_text {
     margin: 0 auto;
     padding-left: 35%;
     color: #8ed0f9;
-  }
+  }*/
 }
 
 

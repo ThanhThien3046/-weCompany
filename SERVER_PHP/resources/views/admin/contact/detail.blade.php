@@ -1,6 +1,6 @@
 @extends('admin._layout')
 
-@section('title', 'Thêm bài viết')
+@section('title', '新規追加')
 
 @section('page_title', '投稿一覧')
 

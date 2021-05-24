@@ -40,10 +40,10 @@
 	<div id="DIV_41">
 		<header id="HEADER_42">
 			<h1 id="H1_43">
-				Find my Tokyo.
+				We Company
 			</h1>
 			<h2 id="H2_44">
-				メトロでひびきあう、ひとりひとりの東京。
+				あなたもチャレンジ。
 			</h2>
 		</header>
 		<div id="DIV_45">

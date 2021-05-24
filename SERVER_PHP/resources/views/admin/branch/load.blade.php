@@ -30,11 +30,11 @@
                         if(response.status == 200){
                             $( element ).closest('.row').remove();
                         }else{
-                            alert("xoá thất bại nha")
+                            alert("解除失敗しました。")
                         }
                     },
                     error: function(){
-                        alert("xoá thất bại nha")
+                        alert("解除失敗しました。")
                     },
                 });
             }
@@ -52,10 +52,10 @@
         <div class="col-12 bg-white shadows-1 px-3 py-3 table-list">
             <div class="row thead-list">
                 <div class="col-1 text-center">id</div>
-                <div class="col-1 text-center">image</div>
-                <div class="col-3 text-center">title</div>
-                <div class="col-6 text-center">description</div>
-                <div class="col-1 text-center">remove</div>
+                <div class="col-1 text-center">ロゴ</div>
+                <div class="col-3 text-center">カテゴリー</div>
+                <div class="col-6 text-center">説明</div>
+                <div class="col-1 text-center">削除</div>
             </div>
             @foreach( $branchs as $branch)
             <div class="row trow-list">

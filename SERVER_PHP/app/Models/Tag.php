@@ -5,20 +5,14 @@ namespace App\Models;
 use App\Helpers\SupportString;
 use Illuminate\Database\Eloquent\Model;
 
-class Branch extends Model
+class Tag extends Model
 {
-    protected $table = 'branchs';
+    protected $table = 'tags';
 
-    protected $fillable = ['id', 'title', 'excerpt', 'content', 'banner', 'image', 'background', 'description', 'title_recruit', 'color'];
+    protected $fillable = ['id', 'title', 'slug', 'excerpt', 
+    'content', 'background', 'thumbnail', 'site_name',
+    'image', 'description'];
 
-    /**
-     * là mối quan hệ dạng 1 nhiều ví dụ : 
-     * product -> activity -> style thì thứ tự sẽ là như dưới
-     */
-    public function posts(){
-
-        return $this->hasMany( Post::class, 'branch_id');
-    }
 
     public function getTitle( $limit = 10, $ellipsis = '...' ){
 
@@ -34,5 +28,16 @@ class Branch extends Model
             return SupportString::limitText( $this->description, $limit, $ellipsis );
         }
         return null;
+    }
+
+
+    
+    /**
+     * là mối quan hệ dạng nhiều nhiều ví dụ : 
+     * product -> activity -> style thì thứ tự sẽ là như dưới
+     */
+    public function posts(){
+
+        return $this->belongsToMany( Post::class, 'post_tag_actives', 'tag_id', 'post_id');
     }
 }

@@ -49,20 +49,20 @@
             <div id="js__homeslider" class="homeslider__wrapper lazyload">
                 <!--slide contents-->
                 <div class="homeslider__item" 
-                style="background-image: url('{{ asset('images/pcside01_2004_02.jpg') }}');"
+                style="background-image: url('{{ asset('images/bg2.jpg') }}');"
                 data-src-mobile="{{ asset('images/sptop01_2004_02.jpeg') }}"></div>
                 <div class="homeslider__item" 
-                style="background-image: url('{{ asset('images/pcside02_2001.jpg') }}');"
+                style="background-image: url('{{ asset('images/bg3.jpg') }}');"
                 data-src-mobile="{{ asset('images/sptop02_2004_02.jpeg') }}"></div>
                 <div class="homeslider__item" 
-                style="background-image: url('{{ asset('images/pcside04_2001.jpg') }}');"
+                style="background-image: url('{{ asset('images/bg4.jpg') }}');"
                 data-src-mobile="{{ asset('images/sptop01_2004_02.jpeg') }}"></div>
                 <div class="homeslider__item homeslider__item-video">
                     <video autoplay muted loop="true">
-                        {{-- <source src="video.webm" type="video/webm" /> --}}
+                        <source src="video.webm" type="video/webm" /> 
                         <source src="{{ asset('/video/video-homepage.mp4') }}" type="video/mp4" />
                     </video>
-                </div>
+                </div> 
             </div>
         </div>
         <div class="content__main homepage">
@@ -102,10 +102,13 @@
                 @endforeach
                 @endif
             </div>
-            <div class="btn-totop"><a href="{{Route('SEARCH_PAGE')}}" class="ftimage">サイトTOP</a></div>
+            <div class="btn-totop">
+                <a href="{{Route('SEARCH_PAGE')}}" class="ftimage">サイトTOP</a>
+                <div class="fttext">@include('partial.footer')</div>
+            </div>
         </div>
         
     </div>
-    <div class="fttext">@include('partial.footer')</div>
+    
     
 @endsection
