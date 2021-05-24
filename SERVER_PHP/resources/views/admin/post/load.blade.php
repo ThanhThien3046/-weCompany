@@ -45,16 +45,16 @@
     <div class="row block-content ">
         <div class="col-12 bg-white search">
             <form class="form-inline" action="" method="GET">
-                <label for="branch">話題:</label>
+                <label for="branch">カテゴリー:</label>
                 <select name="branch">
-                    <option value="0">支店を選んでください</option>
+                    <option value="0">カテゴリーを選んでください</option>
                     @foreach ($branchs as $branch)
                     <option value="{{$branch->id}}" {{ $query['branch'] == $branch->id ? "selected": null }}>
                         {{$branch->title}}
                     </option>
                     @endforeach
                 </select>
-                <label for="post">ポスト:</label>
+                <label for="post">投稿:</label>
                 <input type="text" id="post" placeholder="ポストのタイトルを入力してください" name="post"  value="{{ $query['post'] }}" />
                 <button type="submit">探します</button>
             </form>
@@ -62,12 +62,12 @@
         <div class="col-12 bg-white shadows-1 px-3 py-3 table-list">
             <div class="row thead-list">
                 <div class="col-1 text-center">id</div>
-                <div class="col-1 text-center">image</div>
-                <div class="col-5 ">title</div>
-                <div class="col-1 ">type</div>
-                <div class="col-2 text-center">group - branch</div>
-                <div class="col-1 text-center">public</div>
-                <div class="col-1 text-center">#remove#</div>
+                <div class="col-1 text-center">イメージ</div>
+                <div class="col-5 ">タイトル</div>
+                <div class="col-1 ">タイプ</div>
+                <div class="col-2 text-center">投稿グループ</div>
+                <div class="col-1 text-center">公開状態</div>
+                <div class="col-1 text-center">削除</div>
             </div>
             @foreach( $posts as $post)
             <div class="row trow-list {{ $post->public == Config::get('constant.TYPE_SAVE.ADMIN_READ') ? 'highlight' : null }}">

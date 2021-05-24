@@ -16,7 +16,7 @@
         
         <ul class="nav_list">
             
-            {{-- <li class="block_navigate {{ Route::is("ADMIN_STORE_OPTION") ? 'active' : null}}">
+            {{--<li class="block_navigate {{ Route::is("ADMIN_STORE_OPTION") ? 'active' : null}}">
                 <a class="block_navigate__link" 
                 href="{{ Route('ADMIN_STORE_OPTION') }}">
                     <i class="hero-icon hero-segment"></i>
@@ -27,18 +27,18 @@
             <li class="block_navigate {{ Route::is("ADMIN_STORE_BRANCH", "ADMIN_LOAD_BRANCH") ? 'active' : null}}" >
                 <a class="block_navigate__link">
                     <i class="hero-icon hero-tag"></i>
-                    <span class="nav__text">支店ーウイグループ</span>
+                    <span class="nav__text">WEカテゴリー</span>
                     <i class="hero-icon hero-chevron-sidebar"></i>
                 </a>
                 <ul class="dropdown__item">
                     <li class="{{ Route::is("ADMIN_STORE_BRANCH") ? 'active' : null}}">
                         <a href="{{ Route('ADMIN_STORE_BRANCH') }}">
-                            支店保存
+                            新規カテゴリーを追加
                         </a>
                     </li>
                     <li class="{{ Route::is("ADMIN_LOAD_BRANCH") ? 'active' : null}}">
                         <a href="{{ Route('ADMIN_LOAD_BRANCH') }}">
-                            支店リスト
+                            カテゴリ一覧
                         </a>
                     </li>
                 </ul>
@@ -52,8 +52,8 @@
                 <ul class="dropdown__item">
                     <li class="{{ Route::is("ADMIN_STORE_POST") ? 'active' : null}}">
                         <a href="{{ Route('ADMIN_STORE_POST') }}">
-                            新規追加
-                        </a>
+                            新規追加                        
+			</a>
                     </li>
                     <li class="{{ Route::is("ADMIN_LOAD_POST") ? 'active' : null}}">
                         <a href="{{ Route('ADMIN_LOAD_POST') }}">

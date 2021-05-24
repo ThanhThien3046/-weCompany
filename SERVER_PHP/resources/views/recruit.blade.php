@@ -109,7 +109,7 @@
         <a class="btntotop" id="js__back-to-top">TOPへ戻る</a>
         <div class="fttext">
             <p>あなたもチャレンジ </p>
-            <p class="find">Find my WE・COMPANY</p>
+            <p class="find">WE・COMPANY</p>
             <p>十人十色の人生と出会い</p>
         </div>    
     </footer>

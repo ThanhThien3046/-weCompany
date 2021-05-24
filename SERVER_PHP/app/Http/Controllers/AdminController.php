@@ -18,9 +18,13 @@ class AdminController extends Controller
     public function index(Request $request){
         $limit      = Config::get('constant.LIMIT');
         $query      = $request->all('email');
+        /// query 
+        /// thông thường không dùng framework thì ta sẽ dùng 1 câu sql tựa tựa như này: 
+        /// select * from contacts where id > 0 LIMIT 0,9 order by id DESC; --  page 1
+        /// select * from contacts where id > 0 LIMIT 10,19 order by id DESC; --  page 2
 
         $contacts = Contact::orderBy('id', 'desc')
-        ->paginate( $limit )->appends(request()->query()); 
+        ->paginate( $limit )->appends(request()->query()); /// có 10 dòng trong cái biến khỉ này
         return view('admin.dashboard', compact(['contacts', 'query']));
     }
     
@@ -32,6 +36,7 @@ class AdminController extends Controller
         return view('admin.login');
     }
     public function postLogin(ADMIN_VALIDATE_LOGIN $request){
+
         $dataLogin = array(
             'email'    => strtolower($request->input('email')),
             'password' => $request->input('password')
@@ -42,16 +47,6 @@ class AdminController extends Controller
             $request->session()->flash(Config::get('constant.LOGIN_ADMIN_SUCCESS'), true);
             return redirect()->route("ADMIN_DASHBOARD");
         }
-   
-            // if($errors->has('password'))
-            //     {{ $errors->first('password') }}
-
-            // if($errors->has('g-recaptcha-response'))
-            //     <p>{{ $errors->first('g-recaptcha-response') }}</p>
-    
-            // if($errors->has('email'))
-            //     <p>{{ $errors->first('email') }}</p>
-
         return redirect()->back()->with(Config::get('constant.LOGIN_ERROR'), 'ログイン失敗!!! ');
     }
     public function logout(){
