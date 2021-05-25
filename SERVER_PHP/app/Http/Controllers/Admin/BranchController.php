@@ -45,15 +45,15 @@ class BranchController extends Controller
         //             $text_catalogue = $catalogue->text_catalogue;
 
         /// if description_seo null get of catalogue || content
-        ///if(!trim($branchInput['description'])){
+        // if(!trim($branchInput['description'])){
 
-       ///     $description = '';// $text_catalogue;
-       //     if( !trim($description) ){
+        //     $description = '';// $text_catalogue;
+        //     if( !trim($description) ){
 
-      //          $description = mb_substr( strip_tags($branchInput['content']), 0, 160);
-      //     }
-      //     $branchInput['description'] = html_entity_decode(trim($description));
-      // }
+        //         $description = mb_substr( strip_tags($branchInput['content']), 0, 160);
+        //     }
+        //     $branchInput['description'] = html_entity_decode(trim($description));
+        // }
 
         /// set id save topic 
         $branchInput['id'] = $id;
