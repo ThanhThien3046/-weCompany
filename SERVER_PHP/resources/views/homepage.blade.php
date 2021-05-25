@@ -21,6 +21,10 @@
 @section('preload')
     {{-- preload  --}}
     <link rel="preload" as="style" href="{{ asset('css/styles.css' . Config::get('app.version'))}}">
+    {{-- <link rel="preload" as="font" type="font/woff2" crossorigin href="/font/font-awe/webfonts/fa-solid-900.woff2"/>
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="/font/font-awe/webfonts/fa-light-300.woff2"/>
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="/font/font-awe/webfonts/fa-duotone-900.woff2"/>
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="/font/IconFont/webfont.woff2?v=1.4.57"/> --}}
 @endsection
 @section('stylesheets')
     <link rel="stylesheet" href="{{ asset('css/styles.css' . Config::get('app.version'))}}">
@@ -337,7 +341,7 @@
 						</div>
 						<div class="slider__item slider__item-video" style="height: 100%">
 							<video autoplay muted loop="true">
-								{{-- <source src="video.webm" type="video/webm" /> --}}
+								
 								<source src="{{ asset('/video/video-homepage.mp4') }}" type="video/mp4" />
 							</video>
 						</div>

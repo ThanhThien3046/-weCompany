@@ -55,7 +55,7 @@
                 data-src-mobile="{{ asset('images/bg4.jpg') }}"></div>
                 <div class="homeslider__item homeslider__item-video">
                     <video autoplay muted loop="true">
-                        <source src="video.webm" type="video/webm" /> 
+                        
                         <source src="{{ asset('/video/video-homepage.mp4') }}" type="video/mp4" />
                     </video>
                 </div>             

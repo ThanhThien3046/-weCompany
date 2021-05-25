@@ -25,7 +25,7 @@ class ADMIN_VALIDATE_SAVE_RECRUIT extends FormRequest
     {
         return [
             'title'       => 'required|max:150',
-            'content'     => 'required|max:255',
+            'content'     => 'required',
         ];
     }
 

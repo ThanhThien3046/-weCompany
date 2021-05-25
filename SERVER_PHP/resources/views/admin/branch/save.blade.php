@@ -1,6 +1,6 @@
 @extends('admin._layout')
 
-@section('title', 'Thêm topic')
+@section('title', '新規カテゴリーを追加')
 
 @section('javascripts')
     <script src="{{ asset('js/library/jquery.min.js') }}"></script>
@@ -15,7 +15,7 @@
 @endsection
 
 
-@section('page_title', $branch->id ? '修正支店' : '追加支店' )
+@section('page_title', $branch->id ? '修正支店' : '新規カテゴリーを追加' )
 
 @section('content_admin')
 <div class="page__topic admin-main-content">
@@ -28,7 +28,7 @@
             </div>
             @elseif (Session::has(Config::get('constant.SAVE_SUCCESS')))
             <div class="alert alert-success">
-                lưu branch thành công
+                新規カテゴリーを保存した。
             </div>
             @endif
             @if(!empty($errors->all()))
@@ -51,7 +51,7 @@
                 </div>
             </div>
             
-            <div class="row block-content">
+            {{--<div class="row block-content">
                 <div class="col-12 bg-color-white shadows-1 px-3 py-3">
                     <h2 class="title">会社名前</h2>
                     <input name="company_name" type="text" value="{{ old('company_name', $branch->company_name ) }}"/>
@@ -113,10 +113,10 @@
                     <h2 class="title">抜粋</h2>
                     <textarea  class="height-80px" name="excerpt" cols="30" rows="10">{{ old('excerpt', $branch->excerpt) }}</textarea>
                 </div>
-            </div>
-            <div class="row block-content">
+            </div>--}}
+            {{--<div class="row block-content">
                 <div class="col-12 bg-color-white shadows-1 px-3 py-3">
-                    <h2 class="title">コンテンツの右のイメージ ( image auto resize 800 x 300 in client)</h2>
+                    <h2 class="title">コンテンツの右のイメージ</h2>
                     <div class="position-relative wrapper__selectImageWithCKFinder type-select-ckfinder__inline">
                         <input name="background" class="img__outputCKFinder jquery__append-out" type="text" 
                             value="{{ old('background', $branch->background) }}" 
@@ -125,25 +125,26 @@
                         type="button" onclick="selectImageWithCKFinder(this)">選んで</button>
                     </div>
                 </div>
-            </div>
+            </div>--}}
 
-            <div class="row block-content">
-                {{-- <div class="col-12 bg-color-white shadows-1 px-3 py-3">
+            {{--<div class="row block-content">
+                <div class="col-12 bg-color-white shadows-1 px-3 py-3">
                     <h2 class="title">コンテンツ</h2>
                     <textarea name="content" id="editor1" class="h-100">{{ old('content', $branch->content) }}</textarea>
-                </div> --}}
-            </div>
-            <div class="row block-content">
+                </div>
+            </div>--}}
+            {{--<div class="row block-content">
                 <div class="col-12 bg-color-white shadows-1 px-3 py-3">
                     <h2 class="title">メタ記述</h2>
                     <textarea class="height-80px" name="description" cols="30" rows="10">{{ old('description', $branch->description) }}</textarea>
                 </div>
-            </div>
+            </div>--}}
             <div class="row block-content">
                 <div class="col-12 bg-color-white shadows-1 px-3 py-3">
-                    <h2 class="title">title recruit page</h2>
+                    {{--<h2 class="title">募集ページのタイトル</h2>
                     <input name="title_recruit" type="text" value="{{ old('title_recruit', $branch->title_recruit ) }}"/>
-                    <hr />
+                    <hr />--}}
+		    <h2 class="title">カテゴリーの色を選びます</h2>
                     <input name="color" type="color" value="{{ old('title_recruit', $branch->color ) }}">
                 </div>
             </div>
@@ -186,11 +187,11 @@
             <div class="row block-content">
                 <div class="col-12 bg-color-white shadows-1 px-3 py-3">
                     <section class="pb-4 wrapper__selectImageWithCKFinder">
-                        <h2 class="title text-center">イメージ設定</h2>
+                        <h2 class="title text-center">ロゴ設定</h2>
                         <div class="text-center">
                             <button type="button" onclick="selectImageWithCKFinder(this)"
                                 class="btn btn-select-thumb">
-                                バナー選んで
+                                ロゴ選んで
                             </button>
                         </div>
                         <div class="group-control-img-ckfinder">
