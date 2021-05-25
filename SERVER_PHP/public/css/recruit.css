@@ -1791,3 +1791,25 @@ option:focus {
   vertical-align: middle;
 }
 
+
+.sharee{
+  position: relative;
+  font-size: 11px;
+  display: inline-block;
+}
+
+.shareetop{
+  background-color: #3a6ebd;
+  position: absolute;
+  top:-20px;
+  right: 0;
+  transform: rotate(-7deg);
+}
+
+.shareebottom{
+  right: 0;
+  position: absolute;
+  background-color: #3a6ebd;
+  transform: rotate(7deg);
+  top:40px;
+}

@@ -1975,7 +1975,7 @@ option:focus {
   .sidebar__bottom-metro {
     position: fixed;
     bottom: unset;
-    top: -30px;
+    top: -20px;
     right: 15px;
     width: 54px;
   }

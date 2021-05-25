@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Helpers\Catalogue;
 use App\Http\Requests\ADMIN_VALIDATE_SAVE_BRANCH;
 use App\Models\Branch;
+use App\Models\Histories;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
 
@@ -20,13 +21,21 @@ class BranchController extends Controller
         
         if( !$id ){
             /// thêm mới
+            
             $branch    = new Branch();
         }else{
             //// edit 
             $branch    = (new Branch())->find($id);
         }
         
-        return view('admin.branch.save', compact([ 'branch' ]));
+        $branchs = (new Branch())->all();
+        $histories = DB::table('histories')->where('branch_id', $branch->id)->get();
+        if( $histories->isEmpty() ){
+            $histories = [
+                new Histories()
+            ];
+        }
+        return view('admin.branch.save', compact([ 'branch','histories' ]));
     }
 
 
@@ -35,7 +44,7 @@ class BranchController extends Controller
         ///setting data insert table topic
 
         $branchInput = $request->only( 'title', 'excerpt', 'content', 'banner', 'image', 'background',
-        'description', 'title_recruit', 'color');
+        'description', 'title_recruit', 'color','company_name','address','phone','fax','time');
 
         // /// create catalogue
         //             $catalogue = Catalogue::generate($branchInput['content']);
@@ -45,15 +54,15 @@ class BranchController extends Controller
         //             $text_catalogue = $catalogue->text_catalogue;
 
         /// if description_seo null get of catalogue || content
-        if(!trim($branchInput['description'])){
+        // if(!trim($branchInput['description'])){
 
-            $description = '';// $text_catalogue;
-            if( !trim($description) ){
+        //     $description = '';// $text_catalogue;
+        //     if( !trim($description) ){
 
-                $description = mb_substr( strip_tags($branchInput['content']), 0, 160);
-            }
-            $branchInput['description'] = html_entity_decode(trim($description));
-        }
+        //         $description = mb_substr( strip_tags($branchInput['content']), 0, 160);
+        //     }
+        //     $branchInput['description'] = html_entity_decode(trim($description));
+        // }
 
         /// set id save topic 
         $branchInput['id'] = $id;

@@ -98,7 +98,7 @@
 
 
 
-			<h2 class="history__title">{{ $branch->title_recruit }}</h2>
+			<h2 class="history__title">{{ $branch->company_name }}【沿革】</h2>
             
             @foreach ($postsInBranchs as $key => $postHistory)
             <a href="{{Route('HISTORY_PAGE', [ 'branch_id' => $postHistory->branch_id, 'year' => $postHistory->year ])}}" class="enkaku">

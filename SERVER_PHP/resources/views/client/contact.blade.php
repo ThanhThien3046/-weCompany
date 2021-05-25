@@ -45,21 +45,21 @@
             <div id="js__homeslider" class="homeslider__wrapper lazyload">
                 <!--slide contents-->
                 <div class="homeslider__item" 
-                style="background-image: url('{{ asset('images/pcside01_2004_02.jpg') }}');"
-                data-src-mobile="{{ asset('images/sptop01_2004_02.jpeg') }}"></div>
+                style="background-image: url('{{ asset('images/bg2.jpg') }}');"
+                data-src-mobile="{{ asset('images/bg2.jpg') }}"></div>
                 <div class="homeslider__item" 
-                style="background-image: url('{{ asset('images/pcside02_2001.jpg') }}');"
-                data-src-mobile="{{ asset('images/sptop02_2004_02.jpeg') }}"></div>
+                style="background-image: url('{{ asset('images/bg3.jpg') }}');"
+                data-src-mobile="{{ asset('images/bg3.jpg') }}"></div>
                 <div class="homeslider__item" 
-                style="background-image: url('{{ asset('images/pcside04_2001.jpg') }}');"
-                data-src-mobile="{{ asset('images/sptop01_2004_02.jpeg') }}"></div>
+                style="background-image: url('{{ asset('images/bg4.jpg') }}');"
+                data-src-mobile="{{ asset('images/bg4.jpg') }}"></div>
                 <div class="homeslider__item homeslider__item-video">
                     <video autoplay muted loop="true">
-                        {{-- <source src="video.webm" type="video/webm" /> --}}
+                        <source src="video.webm" type="video/webm" /> 
                         <source src="{{ asset('/video/video-homepage.mp4') }}" type="video/mp4" />
                     </video>
-                </div>
-            </div>
+                </div>             
+	　　</div>
         </div>
         <div class="content__main homepage">
             <div class="container form-contact">

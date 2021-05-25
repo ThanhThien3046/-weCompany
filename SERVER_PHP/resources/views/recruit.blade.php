@@ -104,12 +104,17 @@
             <a href="#" class="social-footer-item roundbtn-youtube">
                 <i class="fab fa-youtube"></i>
             </a>
-            <a href="" class="social-footer-item social-footer-btn">このページもシャアする</a>
+            <span href="" class="sharee">
+                <hr size="3px" width="150px" class="shareetop">
+                このページもシャアする
+                <hr size="3px" width="150px" class="shareebottom">
+            </span>
+            {{-- <a href="" class="social-footer-item social-footer-btn">このページもシャアする</a> --}}
         </div>
         <a class="btntotop" id="js__back-to-top">TOPへ戻る</a>
         <div class="fttext">
             <p>あなたもチャレンジ </p>
-            <p class="find">Find my WE・COMPANY</p>
+            <p class="find">WE・COMPANY</p>
             <p>十人十色の人生と出会い</p>
         </div>    
     </footer>

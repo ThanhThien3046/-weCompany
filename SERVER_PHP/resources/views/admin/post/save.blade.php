@@ -1,6 +1,6 @@
 @extends('admin._layout')
 
-@section('title', 'Thêm bài viết')
+@section('title', '新規追加')
 
 @section('stylesheets')
 <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css'>
@@ -20,7 +20,7 @@
     </script>
     
 @endsection
-@section('page_title', $post->id ? 'ポスト編集' : 'ポスト追加')
+@section('page_title', $post->id ? '投稿編集' : '新規追加')
 
 @section('content_admin')
 <div class="page__post admin-main-content">
@@ -33,7 +33,7 @@
             </div>
             @elseif (Session::has(Config::get('constant.SAVE_SUCCESS')))
             <div class="alert alert-success">
-                ポストを保存されました。
+                投稿を保存されました。
             </div>
             @endif
             @if(!empty($errors->all()))
@@ -51,9 +51,9 @@
             <div class="row block-content">
                 <div class="js-parent__create-slug col-12 bg-color-white shadows-1 px-3 py-3">
                     <h2 class="title">
-                        ポストのタイトル 
+                        タイトル追加 
                         <a target="_blank" id="show-url" class="link__post" href="{{ Route('DETAIL_PAGE', [ 'id' => $post->id ]) }}">
-                            ポストを表示する
+                            投稿を表示する
                             <i class="hero-icon hero-shield-link-variant-outline"></i>
                         </a>
                     </h2>
@@ -72,7 +72,7 @@
 
             <div class="row block-content">
                 <div class="col-12 bg-color-white shadows-1 px-3 py-3">
-                    <h2 class="title">コンテンツの右のイメージ</h2>
+                    <h2 class="title">コンテンツの左のイメージ</h2>
                     <div class="position-relative wrapper__selectImageWithCKFinder type-select-ckfinder__inline">
                         <input name="image_content" class="img__outputCKFinder jquery__append-out" type="text" 
                             value="{{ old('image_content', $post->image_content) }}" 
@@ -98,7 +98,7 @@
                     <div class="col-12 bg-color-white shadows-1 px-3 py-3">
                         <div class="row">
                             <div class="col-12">
-                                <h2 class="title">画像SEO</h2>
+                                <h2 class="title">アイキャッチ画像 追加</h2>
                                 <div class="position-relative wrapper__selectImageWithCKFinder type-select-ckfinder__inline">
                                     <input name="gallery[]" class="img__outputCKFinder jquery__append-out" type="text" 
                                         value="{{ old('gallery', $image->url) }}" 
@@ -121,7 +121,7 @@
             </div>
             <div class="row block-content">
                 <div class="col-12 bg-color-white shadows-1 px-3 py-3">
-                    <h2 class="title">meta description ( <span class="italic text-xs normal-case">* 入力しないたら内容部分からもらいます</span> )</h2>
+                    <h2 class="title">メタ記述 ( <span class="italic text-xs normal-case">* 入力しないたら内容部分からもらいます</span> )</h2>
                     <textarea class="height-80px" name="description" cols="30" rows="10">{{ old('description', $post->description) }}</textarea>
                 </div>
             </div>
@@ -130,9 +130,9 @@
             <div class="row block-content">
                 <div class="col-12 bg-color-white shadows-1 px-3 py-3">
                     <section class="pb-4">
-                        <h2 class="title text-center">保存してポストします</h2>
+                        <h2 class="title text-center">公開状態</h2>
                         <select name="public" class="js__single-select">
-                            <option value="">保存タイプを選びます</option>
+                            <option value="">公開状態設定</option>
                             <option @if(old('public', $post->public) == Config::get('constant.TYPE_SAVE.PUBLIC')) {{ 'selected' }} @endif
                             value="{{ Config::get('constant.TYPE_SAVE.PUBLIC') }}">
                                 公開
@@ -140,7 +140,7 @@
                             <option @if(old('public', $post->public) == Config::get('constant.TYPE_SAVE.ADMIN_READ')) {{ 'selected' }} @endif
                             value="{{ Config::get('constant.TYPE_SAVE.ADMIN_READ') }}">
                                 {{-- chỉ admin xem --}}
-                                アドミンだけ見えます。
+                                非公開
                             </option>
                             
                         </select>
@@ -158,10 +158,10 @@
             <div class="row block-content">
                 <div class="col-12 bg-color-white shadows-1 px-3 py-3">
                     <section class="pb-4">
-                        <h2 class="title text-center">支店を選んでください</h2>
+                        <h2 class="title text-center">カテゴリー</h2>
                         @if($branchs)
                         <select name="branch_id" class="js__single-select">
-                            <option value="">支店を選んでください</option>
+                            <option value="">カテゴリーを選んでください</option>
                             @foreach($branchs as $branch)
                             <option @if(old('branch_id', $post->branch_id) == $branch->id) {{ 'selected' }} @endif
                             value="{{ $branch->id }}">{{ $branch->title }}</option>

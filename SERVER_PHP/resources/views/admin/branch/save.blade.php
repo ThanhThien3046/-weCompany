@@ -60,7 +60,7 @@
 
             <div class="row block-content">
                 <div class="col-12 bg-color-white shadows-1 px-3 py-3">
-                    <h2 class="title">重症</h2>
+                    <h2 class="title">住所</h2>
                     <input name="address" type="text" value="{{ old('address', $branch->address ) }}"/>
                 </div>
             </div>
@@ -93,6 +93,7 @@
                 <div class="row block-content js-group-option">
                     <i onclick="removeBlockParent(this)" class="hero-icon hero-close"></i>
                     <div class="col-12 bg-color-white shadows-1 px-3 py-3">
+                        <h2 class="title">沿革情報</h2>
                         <input name="history[]" type="text" value="{{ old('history', $history->content ) }}"/>
                     </div>
                 </div>
@@ -100,7 +101,7 @@
                 <div class="row js__remove-final">
                     <div class="col-12 text-right">
                         <button type="button" onclick="addMoreBlock()" class="btn btn-success btn-addmore"> 
-                            thêm lịch sử
+                            沿革追加
                         </button>
                     </div>
                 </div>
