@@ -89,7 +89,7 @@
                                     {{-- data-src="{{ Route('IMAGE_RESIZE', [ 'size' => 'medium' , 'type' => 'fit', 'imagePath' => trim($post->image, '/') ]) }}" --}}
                                     data-medium="{{ Route('IMAGE_RESIZE', [ 'size' => 'medium' , 'type' => 'fit', 'imagePath' => trim($post->image, '/') ]) }}"
                                     data-double="{{ Route('IMAGE_RESIZE', [ 'size' => 'double' , 'type' => 'fit', 'imagePath' => trim($post->image_long, '/') ]) }}"
-                                    alt="" width="300" height="300"/>
+                                    alt="" width="400" height="400"/>
                         </a>
                         <a class="article__link-title">
                             <h3 class="title">{{ $post->title }}</h3>

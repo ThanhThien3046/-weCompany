@@ -25,6 +25,11 @@ class CreateBranchs extends Migration
             $table->string('description', 160)->nullable();
             $table->string('title_recruit', 160)->nullable();
             $table->string('color', 255)->default('#f17067');
+            $table->string('company_name',255)->nullable();
+            $table->string('address',255)->nullable();
+            $table->string('phone',255)->nullable();
+            $table->string('fax',255)->nullable();
+            $table->string('time',255)->nullable();
             $table->timestamps();
         });
     }

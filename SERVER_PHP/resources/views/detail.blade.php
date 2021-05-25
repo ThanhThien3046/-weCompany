@@ -118,12 +118,12 @@
                             <img class="lazyload"
                                 src="{{ Config::get('app.lazyload_base64') }}"
                                 onerror="this.onerror=null;this.src='{{ asset(Config::get('app.image_error')) }}';"
-                                {{-- data-src="{{ 
+                                data-src="{{ 
                                 Route('IMAGE_RESIZE', [ 
                                     'size' => 'post-galleries' , 
                                     'type' => 'fit', 
                                     'imagePath' => trim($image->url, '/') 
-                                ]) }}" --}}
+                                ]) }}"
                                 alt="{{$post->title}}" />
                             @endif
                         </div>
@@ -135,8 +135,7 @@
 
                     @php 
                     $objectBranch = $post->branch; /// giá trị trả ra nếu có sẽ là object tương ứng 1 row trong table branch hoặc null
-                    /// xui xui mà nó null thì nó sẽ gây lỗi 
-                    // nên bây giừo muốn lấy banner phải if else các keier con đà điểu 
+                    
                     @endphp
                     @if($objectBranch)
                     <img src="{{asset($objectBranch->banner)}}" alt="">
@@ -147,15 +146,17 @@
                             <div class="info-text">
                                 <h4>東京国立近代美術館（MOMAT)</h4>
                                 <p>
-                                    ［住所］千代田区北の丸公園 3-1 <br>
-                                    ［電話番号］03-5777-8600（ハローダイヤル）
-                                    ［開館時間］10:00〜17:00（金・土曜 10:00〜20:00）
-                                    10月29日までの金・土曜は21：00まで　※入館は閉館 30分前まで
-                                    ［ MOMATガイドスタッフによる所蔵品ガイド］毎日（休館日を除く）14:00〜15:00
-                                    ［休館日］月曜（祝日の場合は開館）、展示替期間、年末年始
-                                    ［最寄駅からのアクセス］東西線 竹橋駅 b1出口から徒歩 3分
+                                    
+                                    ［住所］{{$objectBranch->address}}　<br>
+                                    ［電話］{{$objectBranch->phone}} <br>
+                                    ［時間］{{$objectBranch->time}} <br>
+                                    ［休日］年末年始　<br>
+                                    　※独自の企業カレンダー <br>
+                                    ［最寄駅からのアクセス］東京メトロ <br>
+                                      　茅場町駅 <br>
+                                      　A3出口：徒歩５分 <br>
                                 </p>
-                                <a href="#">http://www.momat.go.jp/am</a><br>
+                                <a href="#">https://wecompany.co.jp/</a><br>
                                 <a href="{{ Route('HOME_PAGE') }}" target="_blank" class="btn_map">
                                     <span>サイトへ</span>
                                 </a>

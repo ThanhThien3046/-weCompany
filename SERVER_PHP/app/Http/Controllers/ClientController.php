@@ -40,7 +40,9 @@ class ClientController extends Controller
     public function postDetail(Request $request, $id = 0 ){
 
         $post = DB::table('posts')->find($id);
-        //// có thể thằng cứt nào nó gửi cho mình 1 cái id không có thật nên sẽ ra null 
+
+        
+
         if( !$post ){
             /// không có bài post trong db
             // => gửi trang 404
@@ -114,7 +116,8 @@ class ClientController extends Controller
         // $post = DB::table('posts')->find($id);
         $post = $postModel->find($id);
 
-        //// có thể thằng cứt nào nó gửi cho mình 1 cái id không có thật nên sẽ ra null 
+        // $branch = DB::table('branchs')->where('id',$post->branch_id)->get(); 
+      
         if( !$post ){
             /// không có bài post trong db
             // => gửi trang 404
@@ -161,7 +164,8 @@ class ClientController extends Controller
         ->get();
         
         $company = DB::table('companies')->get();
-        return view("search", compact(['branchs', 'posts','company']));
+        $histories = DB::table('histories')->get();
+        return view("search", compact(['branchs', 'posts','company','histories']));
     }
 
     public function historyDetail(Request $request, $branch_id, $year){
