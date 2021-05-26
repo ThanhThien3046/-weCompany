@@ -105,13 +105,6 @@ class BranchController extends Controller
                 // endfor
             }
 
-           
-
-        
-
-
-            // End Insert
-       
             $request->session()->flash(Config::get('constant.SAVE_SUCCESS'), true);
             return redirect()->route('ADMIN_STORE_BRANCH',  ['id' => $branch->id ]);
 
