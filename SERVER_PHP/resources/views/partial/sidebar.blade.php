@@ -58,7 +58,7 @@
             </a>
         </li>
         <li class="sidebar__nav-item">
-            <a class="sidebar__nav-link icon__youtube" href="https://www.youtube.com/channel/UC7EMHAnUXRbIyVTkJ4eYsRw" target="_blank">
+            <a class="sidebar__nav-link icon__youtube" href="{{ env('SOCIAL_YOUTUBE') }}" target="_blank">
                 <i class="fab fa-youtube"></i>
             </a>
         </li>

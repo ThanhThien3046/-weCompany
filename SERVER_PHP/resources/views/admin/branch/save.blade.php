@@ -28,7 +28,7 @@
             </div>
             @elseif (Session::has(Config::get('constant.SAVE_SUCCESS')))
             <div class="alert alert-success">
-                新規カテゴリーを保存した。
+                保存した。
             </div>
             @endif
             @if(!empty($errors->all()))
@@ -82,7 +82,7 @@
             <div class="row block-content">
                 <div class="col-12 bg-color-white shadows-1 px-3 py-3">
                     <h2 class="title">営業時間</h2>
-                    <input name="time" type="text" value="{{ old('timme', $branch->time ) }}"/>
+                    <input name="time" type="text" value="{{ old('time', $branch->time ) }}"/>
                 </div>
             </div>
 
@@ -95,6 +95,7 @@
                     <div class="col-12 bg-color-white shadows-1 px-3 py-3">
                         <h2 class="title">沿革情報</h2>
                         <input name="history[]" type="text" value="{{ old('history', $history->content ) }}"/>
+
                     </div>
                 </div>
                 @endforeach

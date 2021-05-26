@@ -7,6 +7,7 @@ use App\Helpers\Catalogue;
 use App\Http\Requests\ADMIN_VALIDATE_SAVE_BRANCH;
 use App\Models\Branch;
 use App\Models\Histories;
+use Aws\History;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
 
@@ -23,29 +24,33 @@ class BranchController extends Controller
             /// thêm mới
             
             $branch    = new Branch();
+            $histories = new Histories();
         }else{
             //// edit 
             $branch    = (new Branch())->find($id);
         }
-        
+
         $branchs = (new Branch())->all();
         $histories = DB::table('histories')->where('branch_id', $branch->id)->get();
+        
         if( $histories->isEmpty() ){
             $histories = [
                 new Histories()
             ];
         }
+        
         return view('admin.branch.save', compact([ 'branch','histories' ]));
     }
 
 
     public function save(ADMIN_VALIDATE_SAVE_BRANCH $request, $id = 0){
 
-        ///setting data insert table topic
+        ///setting data insert table branch, histories
 
         $branchInput = $request->only( 'title', 'excerpt', 'content', 'banner', 'image', 'background',
         'description', 'title_recruit', 'color','company_name','address','phone','fax','time');
-
+ 
+        // dd($history);
         // /// create catalogue
         //             $catalogue = Catalogue::generate($branchInput['content']);
         // $branchInput['content'] = $catalogue->text;
@@ -79,6 +84,34 @@ class BranchController extends Controller
                 $branch = $branch->create($branchInput);
             }
 
+            // Insert
+
+            $historyInput = $request->input('history');
+            // $historyInput = array_filter($historyInput, function( $item ) {  return $item; });
+            // dd(count($historyInput));
+
+            if( count($historyInput) ){
+                // for($x = 0; $x < count($historyInput); $x++)
+                    $branchId = $branch->id;
+                    if( $historyInput ){
+                        $DataInsert = array_map( 
+                            function( $url ) use ( $branchId,$historyInput){ 
+                                return  ['content'=>$historyInput[0],'branch_id' => $branchId ]; 
+                            }, $historyInput
+                        );
+                        $histories = (new Histories())->insert($DataInsert);
+                        // dd($histories);
+                    }
+                // endfor
+            }
+
+           
+
+        
+
+
+            // End Insert
+       
             $request->session()->flash(Config::get('constant.SAVE_SUCCESS'), true);
             return redirect()->route('ADMIN_STORE_BRANCH',  ['id' => $branch->id ]);
 

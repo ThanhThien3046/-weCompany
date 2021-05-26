@@ -42,7 +42,7 @@
 	</div>
     
 	<main id="page__recruit">
-		<h1 class="title">タイトル</h1>
+		<h1 class="title">WE グループの求人</h1>
 		<nav class="check">
 			<ul>
                 @if (!$branchs->isEmpty())
@@ -76,8 +76,9 @@
                     <div class="content__collapsible-main">
                         {!! $collap->content !!}
                     </div>
-                    <a  style="background-color: {{ $branch->color }}" href="{{ Route('CONTACT_PAGE') }}" class="content__collapsible-envelope"><i class="far fa-envelope"></i></a>
+                    {{-- <a  style="background-color: {{ $branch->color }}" href="{{ Route('CONTACT_PAGE') }}" class="content__collapsible-envelope"><i class="far fa-envelope"></i></a> --}}
                 </div>
+                <a  style="background-color: {{ $branch->color }}" href="{{ Route('CONTACT_PAGE') }}" class="content__collapsible-envelope"><span>応募画面へ進む</span></a>
             </div>
             @endforeach
 		</div>

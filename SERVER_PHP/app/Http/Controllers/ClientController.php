@@ -163,9 +163,10 @@ class ClientController extends Controller
         ->orderByDesc("year")
         ->get();
         
-        $company = DB::table('companies')->get();
+        // $company = DB::table('companies')->get();
         $histories = DB::table('histories')->get();
-        return view("search", compact(['branchs', 'posts','company','histories']));
+        // return view("search", compact(['branchs', 'posts','company','histories']));
+        return view("search", compact(['branchs', 'posts','histories']));
     }
 
     public function historyDetail(Request $request, $branch_id, $year){
