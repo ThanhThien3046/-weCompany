@@ -105,8 +105,6 @@ class BranchController extends Controller
                 // endfor
             }
 
-           
-
         
 
 
