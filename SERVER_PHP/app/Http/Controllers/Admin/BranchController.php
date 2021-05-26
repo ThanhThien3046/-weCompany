@@ -84,9 +84,6 @@ class BranchController extends Controller
                 $branch = $branch->create($branchInput);
             }
 
-
-            
-
             // Insert
 
             $historyInput = $request->input('history');
