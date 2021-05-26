@@ -1782,14 +1782,23 @@ option:focus {
 
 .wrapper__collapse .content__collapsible-envelope {
   background-color: #f17067;
-  padding: 15px;
-  min-width: 50px;
+  padding: 10px;
+  min-width: 200px;
+  /* width: 100%; */
   text-align: center;
   color: #fff;
   font-size: 18px;
-  display: inline-block;
-  vertical-align: middle;
+  display: table;
+  /* vertical-align: middle; */
+  margin: 10px auto;
+  border-radius: 10px;
 }
+
+.content__collapsible-main, .content__collapsible-envelope
+{
+  background: hsla(0,0%,93%,1.00);
+}
+
 
 
 .sharee{

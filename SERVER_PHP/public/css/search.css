@@ -288,9 +288,14 @@ main nav ul li img{
 	text-decoration: none;
 	margin:auto;
 }
-.history a:nth-child(2n){
+/* .history a:nth-child(2n){
+	background: #fff;
+} */
+
+.history > a:nth-child(2n+1){
 	background: hsla(0,0%,93%,1.00);
 }
+
 
 .history-info
 {
