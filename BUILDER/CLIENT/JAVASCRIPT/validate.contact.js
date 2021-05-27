@@ -35,11 +35,11 @@ function validateForm(formJquery){
         },
         messages: {
             first_name: {
-                required : "名前を入力してください",
+                required : "姓を入力してください",
                 maxlength: "first name nhỏ hơn 150 "
             },
             last_name: {
-                required : "nhập last_name",
+                required : "名を入力してください",
                 maxlength: "last_name nhỏ hơn 150 "
             },
             email: {

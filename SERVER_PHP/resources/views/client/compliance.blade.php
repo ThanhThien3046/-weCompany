@@ -27,7 +27,7 @@
 @section('stylesheets')
     <link rel="stylesheet" href="{{ asset('css/animate.min.css' . Config::get('app.version'))}}">
     <link rel="stylesheet" href="{{ asset('css/home.css' . Config::get('app.version'))}}">
-    <link rel="stylesheet" href="{{ asset('css/about.css' . Config::get('app.version'))}}">
+    <link rel="stylesheet" href="{{ asset('css/policy.css' . Config::get('app.version'))}}">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -70,60 +70,25 @@
     </div>
     <div class="content__main homepage">
         <div class="wrapper__about-page">
-            <h1>WE・COMPANY<span>とは？</span></h1>
-            <p>
-                ７つのバリュー<b>【Crew Ship】</b>を定めています。<br>
-                組織/プロタクトの変化に合わせて価値観を定めることで <br>
-                さらなる成長基盤を築きたい。<br>
-                そんな強い想いを込めて、創りました。 <br>          
-            </p>
-            <p>
-                <span>１：Owner Ship　【高い当事者意識】</span><br>
-                一人ひとりが高い当事者意識を持ち続けてこそ、自走性と成長生の高い組織になる。<br>
-                自らオーナーとなればやりがいは増え、適切な課題解決策を捻り出し、多くの機会を生み出せる。<br>
-                受動的な人は成果を出すことができない。<br>
-                自分たちの給料は自分で稼ぐスタイル <br>
-            </p>
-            <p>
-                <span>２：Be Honest 【全てに素直であれ】</span><br>
-                人に対して、数字に対して、自分に対して、嘘をつかず素直に向き合っているか。<br>
-                良い出来事は思い切り喜び、問題には素直に向き合って解決を目指す。<br>
-                厳しい真実から目を逸らさない。私たちは、「素直」な人たちとともに働きたい。<br>
-            </p>
-            <p>
-                <span>３：One Team 【一つのチーム】</span><br>
-                個人よりも、チームとして成果をあげることが大切である。<br>
-                互いの正義はぶつかりあうが、チームで成長を出し、カスタマーバリューのためにアクションすれば、<br>
-                会社は必ず成長し、働く仲間（Crew）全員がしあわせになれると信じている。<br>
-            </p>
-            <p>
-                <span>４：Suitable For Life　【人生適当】</span><br>
-                様々な情報を飛び交う世界で正確に的確に的を狙ってマネージメントできる力を発揮できる様にしたい。<br>
-                手を抜かず、あらゆる時代で合ったパファーマンスが出せる人になる。<br>
-            </p>
-            <p>
-                <span>５：Rocket Speed 【最高速のアウトプット】</span><br>
-                スピーディーな意識決定と行動こそが成長への最短経路であり、カスタマーバリューを最大化できる。<br>
-                圧倒的な速度でプロジェクトを進めれば、結果への到達速度も上がる。<br>
-                １つの100点よりも、５つの80点を作り出せる人でありたい。<br>
-            </p>
-            <p>
-                <span>６：Nothing　Is impossible　【その気になれば出来ないことはない】</span>
-                <br>
-                私たちに不可能なことはない。諦めない精神・向上心を持って日々新しい挑戦をする。<br>
-                同じ人間ができている。人間の可能性は無限大。誰かが立ち上がれば新しい発見はすぐそこにある。<br>
-            </p>
-            <p>
-                <span>７：Treasure Chest　【最高の宝物】</span>
-                <br>
-                私たちクルーは一人ひとりの能力・スキルは違いはあるが、<br>
-                どの組織・プロダクトより評価の高い人材として見られる様に <br>
-                ただの箱ではなく。最高の宝箱（人材）を目指している。<br>
-            </p>
+            <h2>コンプライアンス基本方針</h2>
+            <span>COMPLIANCE</span>
             
+            <p>当社の役職員は、業務遂行にあたり、法令等を尊重し、ビジネスマナーを守り、社会規範に
+            沿った責任ある行動をとります。<br>
+            【遵守事項】<br>
+            • 人権を尊重し、差別、ハラスメントを行いません。<br>
+            • 取引遂行に当たっては、法令等を遵守し、公正を旨とします。<br>
+            • 会社の情報を適切に管理するとともに、社外から得た情報や第三者の知的財産等の権利についても適切に取り扱います。<br>
+            • 会社の利益に反する行為は行いません。<br>
+            • 反社会的勢力には毅然として対応し、利益供与は一切行いません。<br>
+            制定年月日　平成30年2月26日 <br>
+            最終改訂年月日 令和2年8月1日 <br>
+            株式会社WECOMPANY <br>
+            代表取締役　長谷川　美佳</p>
         </div>
     </div>
     <div class="divbtntotop" id="js__back-to-top"><a class="btntotop">TOPへ戻る</a></div>
+    
 </div>
 @include('partial.footer')
 

@@ -28,6 +28,15 @@
             <li class="nav__links-item">
                 <a href="https://wecompany.co.jp/contact">お問い合わせ</a>
             </li>
+            <li class="nav__links-item">
+                <a href="{{Route('MYNUMBER')}}">マイナンバー基本方針</a>
+            </li>
+            <li class="nav__links-item">
+                <a href="{{Route('POLICY')}}">プライバシーポリシー</a>
+            </li>
+            <li class="nav__links-item">
+                <a href="{{Route('COMPLIANCE')}}">コンプライアンス基本方針</a>
+            </li>
         </ul>
 
         <dl class="nav__search">

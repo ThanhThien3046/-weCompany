@@ -199,7 +199,7 @@
 
                             <span href="" class="sharee">
                                 <hr size="3px" width="150px" color="red" class="shareetop">
-                                このページもシャアする
+                                このページもシェアする
                                 <hr size="3px" width="150px" color="red" class="shareebottom">
                             </span>
                                 
