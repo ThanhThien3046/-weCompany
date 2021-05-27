@@ -111,7 +111,7 @@ class BranchController extends Controller
         }catch (\Exception $e){
             return redirect()->back()
             ->with(Config::get('constant.SAVE_ERROR'), 'đã có lỗi: '.$e->getMessage())
-            ->withInput($request->all());
+            ->withInput($request->all()); 
         }
     }
 
