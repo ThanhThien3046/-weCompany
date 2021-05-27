@@ -84,27 +84,28 @@ class BranchController extends Controller
                 $branch = $branch->create($branchInput);
             }
 
+             /// remove gallery
+             (new Histories())->where("branch_id", $branch->id)->delete();
             // Insert
 
             $historyInput = $request->input('history');
-            // $historyInput = array_filter($historyInput, function( $item ) {  return $item; });
+            $historyInput = array_filter($historyInput, function( $item ) {  return $item; });
             // dd(count($historyInput));
 
             if( count($historyInput) ){
-                // for($x = 0; $x < count($historyInput); $x++)
-                    $branchId = $branch->id;
-                    if( $historyInput ){
-                        $DataInsert = array_map( 
-                            function( $url ) use ( $branchId,$historyInput){ 
-                                return  ['content'=>$historyInput[0],'branch_id' => $branchId ]; 
-                            }, $historyInput
-                        );
-                        $histories = (new Histories())->insert($DataInsert);
-                        // dd($histories);
-                    }
-                // endfor
+                $branchId = $branch->id;
+                if( $historyInput){
+                    $DataInsert = array_map( 
+                        function( $historyInput ) use ($branchId){ 
+                            return  ['content'=>$historyInput,'branch_id' => $branchId ]; 
+                        }, $historyInput
+                    );
+                    $histories = (new Histories())->insert($DataInsert);
+                }
             }
 
+            // End Insert
+       
             $request->session()->flash(Config::get('constant.SAVE_SUCCESS'), true);
             return redirect()->route('ADMIN_STORE_BRANCH',  ['id' => $branch->id ]);
 

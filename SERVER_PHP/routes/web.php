@@ -49,7 +49,7 @@ Route::get('/recruit', function () {
 //     return view('homepage');
 // });
 
-Route::get('/search','ClientController@search')->name('SEARCH_PAGE');
+Route::get('/history','ClientController@search')->name('SEARCH_PAGE');
 
 Route::get('/post/{id?}','ClientController@postDetail')->name('POST_DETAIL_PAGE');
 
@@ -95,6 +95,14 @@ Route::post('/contact','ClientController@mailContact')->name('MAIL_CONTACT');
 
 
 Route::get('/recruit','ClientController@recruit')->name('RECRUIT');
+
+Route::get('/policy','ClientController@policyload')->name('POLICY');
+
+Route::get('/security','ClientController@clientinfo')->name('CLIENT_INFO');
+
+Route::get('/mynumber','ClientController@mynumber')->name('MYNUMBER');
+
+Route::get('/compliance','ClientController@compliance')->name('COMPLIANCE');
 
 include_once("routing/admin.php");
 include_once("routing/client.php");

@@ -55,7 +55,7 @@
                 data-src-mobile="{{ asset('images/bg4.jpg') }}"></div>
                 <div class="homeslider__item homeslider__item-video">
                     <video autoplay muted loop="true">
-                        
+                        {{-- <source src="video.webm" type="video/webm" />  --}}
                         <source src="{{ asset('/video/video-homepage.mp4') }}" type="video/mp4" />
                     </video>
                 </div>             
@@ -88,7 +88,7 @@
                             @endif
                             <div class="form-input">
                                 <label> お問い合わせ内容 <i>✵</i></label>
-                                <textarea name="message" onClick="this.setSelectionRange(0, this.value.length)">{{ old('message' ) }}</textarea>
+                                <textarea rows="7" maxlength="500" name="message" onClick="this.setSelectionRange(0, this.value.length)">{{ old('message' ) }}</textarea>
                             </div>
                             <div class="row">
                                 <div class="col-12 col-md-6">
@@ -124,7 +124,7 @@
                                 <label> FAX番号 </label>
                                 <input name="fax" value="{{ old('fax' ) }}"  type="text" onClick="this.setSelectionRange(0, this.value.length)"/>
                             </div>
-                            <p>個人情報の取り扱いに同意しますか？</p>
+                            <a href="{{Route('CLIENT_INFO')}}" style="color: #000" target="_blank">個人情報の取り扱いに同意しますか？</a>
 
                             <div class="form-input cus_checkbox">
                                 <label class="container">はい

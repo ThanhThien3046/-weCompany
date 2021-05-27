@@ -182,4 +182,24 @@ class ClientController extends Controller
 
         return view('client.history', compact(['branch', 'posts', 'year']));
     }
+
+    public function policyload()
+    {
+        return view('client.policy');
+    }
+
+    public function clientinfo()
+    {
+        return view('client.clientinfo');
+    }
+
+    public function mynumber()
+    {
+        return view('client.mynumber');
+    }
+
+    public function compliance()
+    {
+        return view('client.compliance');
+    }
 }
