@@ -48,7 +48,7 @@ class BranchController extends Controller
         ///setting data insert table branch, histories
 
         $branchInput = $request->only( 'title', 'excerpt', 'content', 'banner', 'image', 'background',
-        'description', 'title_recruit', 'color','company_name','address','phone','fax','time');
+        'description', 'title_recruit', 'color','company_name','address','phone','fax','time','fund','employnum');
  
         // dd($history);
         // /// create catalogue

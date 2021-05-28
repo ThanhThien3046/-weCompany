@@ -81,6 +81,20 @@
 
             <div class="row block-content">
                 <div class="col-12 bg-color-white shadows-1 px-3 py-3">
+                    <h2 class="title">資本金</h2>
+                    <input name="fund" type="text" value="{{ old('time', $branch->fund ) }}"/>
+                </div>
+            </div>
+
+            <div class="row block-content">
+                <div class="col-12 bg-color-white shadows-1 px-3 py-3">
+                    <h2 class="title">従業員数</h2>
+                    <input name="employnum" type="text" value="{{ old('time', $branch->employnum ) }}"/>
+                </div>
+            </div>
+
+            <div class="row block-content">
+                <div class="col-12 bg-color-white shadows-1 px-3 py-3">
                     <h2 class="title">営業時間</h2>
                     <input name="time" type="text" value="{{ old('time', $branch->time ) }}"/>
                 </div>

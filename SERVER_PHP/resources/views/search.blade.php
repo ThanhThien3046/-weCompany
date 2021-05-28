@@ -75,10 +75,27 @@
             @endforeach --}}
                     <div class="history-info-left">
                         <b>{{$branch->company_name}}</b><br>
+                        郵便番号: 〒906-0505 <br>
                         住所：{{$branch->address}}<br>
                         TEL：{{$branch->phone}}<br>
                         FAX：{{$branch->fax}}<br>
-                        営業時間：{{$branch->time}}
+                        営業時間：{{$branch->time}} <br>
+                        URL: {{$branch->weburl}} <br>
+                        MAIL: {{$branch->mailurl}} <br>
+                        代表取締役: {{$branch->ceo}}　<br>
+                        設立: {{$branch->estabtime}}<br>
+                        資本金: {{$branch->fund}}<br>
+                        従業員数: {{$branch->employnum}} <br>
+                        事業内容:<br>
+                        {{$branch->jobcontent}}<br>
+
+                        {{-- 
+                        ■Group全体の運用サポート<br>
+                        ■Group全体の運用サポート<br>
+                        ■Group全体の運用サポート<br>
+                        ・経営コンサルティング<br>
+                        ・経営コンサルティング<br>
+                        ■Group全体の運用サポート<br> --}}
                     </div>
                     <hr>
                     <div class="history-info-right">
@@ -98,7 +115,7 @@
 
 
 
-			<h2 class="history__title">{{ $branch->company_name }}【沿革】</h2>
+			<h2 class="history__title">{{ $branch->company_name }}のニュース</h2>
             
             @foreach ($postsInBranchs as $key => $postHistory)
             <a href="{{Route('HISTORY_PAGE', [ 'branch_id' => $postHistory->branch_id, 'year' => $postHistory->year ])}}" class="enkaku">
