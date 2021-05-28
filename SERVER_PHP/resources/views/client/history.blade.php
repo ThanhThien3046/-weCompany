@@ -68,7 +68,7 @@
         <div class="content__main homepage">
             <div class="history__title">
                 <h2 class="history__title-bg">
-                    {{ $branch->title }} {{ $year }}年沿革
+                    {{ $branch->title }} {{ $year }}のニュース
                 </h2>
             </div>
             <div class="main__list" id="js__format-height-article">
