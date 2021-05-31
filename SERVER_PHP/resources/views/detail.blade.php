@@ -32,8 +32,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="{{ asset('css/lightgallery.css' . Config::get('app.version')) }}" />
 @endsection
 @section('javascripts')
+    <script type="text/javascript" src="{{ asset('js/lightgallery.min.js' . Config::get('app.version')) }}"></script>
+    <script type="text/javascript">
+        lightGallery(document.getElementById('lightgallery')); 
+    </script>
     <script type="text/javascript" src="{{ asset('js/library/jquery.min.js' . Config::get('app.version')) }}"></script>
     <script type="text/javascript" src="{{ asset('js/home.min.js' . Config::get('app.version')) }}"></script>
     <script type="text/javascript" src="{{ asset('js/search.js' . Config::get('app.version')) }}"></script>
@@ -119,27 +124,27 @@
                         </div>
                         
                     </div>
-                    <div class="imgdtl-list">
+                    <div  id="lightgallery" class="imgdtl-list">
                         @if(!$galleries->isEmpty())
                         @foreach ($galleries as $key => $image)
-                        <div class="img__dtl-item">
-                            @if ($image->url)
-                            <img class="lazyload"
-                                src="{{ Config::get('app.lazyload_base64') }}"
-                                onerror="this.onerror=null;this.src='{{ asset(Config::get('app.image_error')) }}';"
-                                data-src="{{ 
-                                Route('IMAGE_RESIZE', [ 
-                                    'size' => 'post-galleries' , 
-                                    'type' => 'fit', 
-                                    'imagePath' => trim($image->url, '/') 
-                                ]) }}"
-                                alt="{{$post->title}}" />
-                            @endif
-                        </div>
+                        @if ($image->url)
+                        <a class="img__dtl-item" href="{{ asset($image->url) }}">
+                            <img 
+                            src="{{ Route('IMAGE_RESIZE', [ 
+                                'size' => 'post-galleries' , 
+                                'type' => 'fit', 
+                                'imagePath' => trim($image->url, '/') 
+                            ]) }}"
+                            onerror="this.onerror=null;this.src='{{ asset(Config::get('app.image_error')) }}';"
+                            data-src="{{ asset($image->url) }}"
+                            alt="{{$post->title}}" />
+                        </a>
+                        
+                        @endif
                         @endforeach
                         @endif
                     </div>
- 
+
                     @php 
                     $objectBranch = $post->branch;                   
 		       @endphp
