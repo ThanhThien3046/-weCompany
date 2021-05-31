@@ -51,70 +51,86 @@
                 @endif
 			</ul>
 		</nav>
-
         @if (!$branchs->isEmpty())
         @foreach ($branchs as $key => $branch)
         @php
             $branchId = $branch->id;
             $postsInBranchs = array_filter($posts->toArray(), function( $item ) use ($branchId){ return $item->branch_id == $branchId; });
-            
+            $infodetailInBranchs = array_filter($weinfo_detail->toArray(), function( $item ) use ($branchId){ return $item->branch_id == $branchId; }); 
+
         @endphp
         
         <div class="js__toggle-item history" data-id="{{ $branch->id }}" data-collapse="{{ count($postsInBranchs) }}">
             <div class="history-info">
-            {{-- @foreach ($infoCompanies as $company_info)
-                @if ($company_info->branch_id == $branch->id)
                     <div class="history-info-left">
-                        <b>{{$company_info->company_name}}</b><br>
-                        住所：{{$company_info->address}}<br>
-                        TEL：{{$company_info->phone}}<br>
-                        FAX：{{$company_info->Fax}}<br>
-                        営業時間：{{$company_info->time}}
-                    </div>
-                @endif
-            @endforeach --}}
-                    <div class="history-info-left">
-                        <b>{{$branch->company_name}}</b><br>
-                        郵便番号: 〒906-0505 <br>
-                        住所：{{$branch->address}}<br>
-                        TEL：{{$branch->phone}}<br>
-                        FAX：{{$branch->fax}}<br>
-                        営業時間：{{$branch->time}} <br>
-                        URL: {{$branch->weburl}} <br>
-                        MAIL: {{$branch->mailurl}} <br>
-                        代表取締役: {{$branch->ceo}}　<br>
-                        設立: {{$branch->estabtime}}<br>
-                        資本金: {{$branch->fund}}<br>
-                        従業員数: {{$branch->employnum}} <br>
-                        事業内容:<br>
-                        {{$branch->jobcontent}}<br>
-
-                        {{-- 
-                        ■Group全体の運用サポート<br>
-                        ■Group全体の運用サポート<br>
-                        ■Group全体の運用サポート<br>
-                        ・経営コンサルティング<br>
-                        ・経営コンサルティング<br>
-                        ■Group全体の運用サポート<br> --}}
+                        <b class="companyname">{{$branch->company_name}}</b><br>
+                        
+                        <table>
+                            <tr>
+                                <td class="historyleftinfo">郵便番号:</td>
+                                <td>{{$branch->postoffnum}}</td>
+                            </tr>
+                            <tr>
+                                <td>住所:</td>
+                                <td>{{$branch->address}}</td>
+                            </tr>
+                            <tr>
+                                <td>TEL：</td>
+                                <td>{{$branch->phone}}</td>
+                            </tr>
+                            <tr>
+                                <td>FAX：</td>
+                                <td>{{$branch->fax}}</td>
+                            </tr>
+                            <tr>
+                                <td>営業時間</td>
+                                <td>{{$branch->time}}</td>
+                            </tr>
+                            <tr>
+                                <td>URL:</td>
+                                <td>{{$branch->weburl}}</td>
+                            </tr>
+                            <tr>
+                                <td>MAIL:</td>
+                                <td>{{$branch->mailurl}}</td>
+                            </tr>
+                            <tr>
+                                <td>代表取締役:</td>
+                                <td>{{$branch->ceo}}</td>
+                            </tr>
+                            <tr>
+                                <td>設立:</td>
+                                <td>{{$branch->estabtime}}</td>
+                            </tr>
+                            <tr>
+                                <td>資本金:</td>
+                                <td>{{$branch->fund}}</td>
+                            </tr>
+                            <tr>
+                                <td>従業員数:</td>
+                                <td>{{$branch->employnum}}</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="{{$weinfo_detail->count()}}">事業内容:</td>
+                                @foreach ($weinfo_detail as $infodetail)
+                                @if ($infodetail->branch_id == $branch->id)
+                                <td>{{$infodetail->job_content}}</td>
+                            </tr>
+                                @endif
+                                @endforeach
+                        </table>
                     </div>
                     <hr>
                     <div class="history-info-right">
-                        <b>沿革</b><br>			
-                        {{-- 2021年　2月	{{$company_info->history_content}} <br> --}}
+                        <b class="enkaku_b">沿革</b><br>			
                         @foreach ($histories as $history)
                         @if ($history->branch_id == $branch->id)
                         {{$history->content}}<br>
                         @endif
                         @endforeach
-                
                     </div>
-
             </div>
             
-
-
-
-
 			<h2 class="history__title">{{ $branch->company_name }}のニュース</h2>
             
             @foreach ($postsInBranchs as $key => $postHistory)

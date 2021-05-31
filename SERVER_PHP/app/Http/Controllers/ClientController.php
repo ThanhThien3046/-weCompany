@@ -165,8 +165,11 @@ class ClientController extends Controller
         
         // $company = DB::table('companies')->get();
         $histories = DB::table('histories')->get();
+
+        //company job detail
+        $weinfo_detail = DB::table('wejobinfo')->get();
         // return view("search", compact(['branchs', 'posts','company','histories']));
-        return view("search", compact(['branchs', 'posts','histories']));
+        return view("search", compact(['branchs', 'posts','histories','weinfo_detail']));
     }
 
     public function historyDetail(Request $request, $branch_id, $year){

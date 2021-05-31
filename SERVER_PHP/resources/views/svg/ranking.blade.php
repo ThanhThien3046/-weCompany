@@ -3,7 +3,7 @@
 <svg version="1.1" id="レイヤー_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
 	 y="0px" viewBox="0 0 134.91 134" style="enable-background:new 0 0 134.91 134;" xml:space="preserve">
 <circle class="cls-1" cx="85.34" cy="79.62" r="15.16"/>
-<circle class="cls-2" style="fill:none;stroke:#55A8CD;stroke-width:7;stroke-miterlimit:10;" cx="67.33" cy="67" r="62.59"/>
+<circle class="cls-3" style="fill:none;stroke:#55A8CD;stroke-width:7;stroke-miterlimit:10;" cx="67.33" cy="67" r="62.59"/>
 <ellipse class="cls-3"  cx="51.98" cy="44.69" rx="2.66" ry="4.26"/>
 <ellipse class="cls-3"  cx="81.77" cy="44.69" rx="2.66" ry="4.26"/>
 <ellipse class="cls-3"  cx="67.33" cy="44.69" rx="2.66" ry="4.26"/>

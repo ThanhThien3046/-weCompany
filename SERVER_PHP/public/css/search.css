@@ -327,10 +327,18 @@ font-weight: bold;
 	padding-right: 10px;
 }
 
-.history-info  b{
+.history-info  .history-info-left .companyname{
 	font-size: 20px;
 }
 
+.history-info  .history-info-right .enkaku_b{
+	font-size: 20px;
+}
+
+.history__title
+{
+	font-weight: bold;
+}
 
 @media Screen and (max-width:415px){
 	.history-info-left{width:100%;}
