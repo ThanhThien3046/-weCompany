@@ -177,19 +177,19 @@
                     <!--footer-->
                     <footer class="footer">
                         <div class="social-footer">
-                            <a href="#" class="social-footer-item roundbtn-fb">
+                            <a href="{{env('SOCIAL_FB')}}" class="social-footer-item roundbtn-fb">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
                             
-                            <a href="#" class="social-footer-item roundbtn-tw">
+                            <a href="{{ env('SOCIAL_TWITTER') }}" class="social-footer-item roundbtn-tw">
                                 <i class="fab fa-twitter"></i>
                             </a>
 
-                            <a href="#" class="social-footer-item roundbtn-insta">
+                            <a href="{{ env('SOCIAL_INSTA') }}" class="social-footer-item roundbtn-insta">
                                 <i class="fab fa-instagram"></i>
                             </a>
 
-                            <a href="#" class="social-footer-item roundbtn-youtube">
+                            <a href="{{ env('SOCIAL_YOUTUBE') }}" class="social-footer-item roundbtn-youtube">
                                 <i class="fab fa-youtube"></i>
                             </a>
                             {{-- class="social-footer-item social-footer-btn" --}}
