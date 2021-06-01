@@ -152,15 +152,15 @@
                             <div class="info-text">
                                 {{-- <h4>東京国立近代美術館（MOMAT)</h4> --}}
                                 <p>
-				［住所］{{$objectBranch->address}} <br>
-				［電話番号］{{$objectBranch->phone}} <br>
-				［時間］{{$objectBranch->time}} <br>
-				［休館日］年末年始　<br>
-  				 ※独自の企業カレンダー <br>
-				［最寄駅からのアクセス］東京メトロ <br>
-  				 ■茅場町駅 <br>
- 				 └A3出口：徒歩５分                                
-				</p>
+                                ［住所］{{$objectBranch->address}} <br>
+                                ［電話番号］{{$objectBranch->phone}} <br>
+                                ［時間］{{$objectBranch->time}} <br>
+                                ［休館日］年末年始　<br>
+                                ※独自の企業カレンダー <br>
+                                ［最寄駅からのアクセス］東京メトロ <br>
+                                ■茅場町駅 <br>
+                                └A3出口：徒歩５分                                
+                                </p>
                                 <a href="https://wecompany.co.jp/">https://wecompany.co.jp/</a><br>
                                 <a href="{{ Route('HOME_PAGE') }}" target="_blank" class="btn_map">
                                     <span>サイトへ</span>
