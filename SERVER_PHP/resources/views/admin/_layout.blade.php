@@ -19,7 +19,8 @@
     <meta property="og:description" content="@yield('description')" />
     <meta name="description" content="@yield('description')">
 
-    <link rel="icon" type="image/png" href="{{ asset('favicon.ico' . Config::get('app.version')) }}">
+    {{-- <link rel="icon" type="image/png" href="{{ asset('favicon.ico' . Config::get('app.version')) }}"> --}}
+    <link rel="icon" type="image/png" sizes="196x196" href="https://wecompany.co.jp/favicon/favicon-196x196.png?v=0.0.15">
     <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('/favicon/apple-icon-57x57.png' . Config::get('app.version')) }}">
     <link rel="apple-touch-icon" sizes="60x60" href="{{ asset('/favicon/apple-icon-60x60.png' . Config::get('app.version')) }}">
     <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('/favicon/apple-icon-72x72.png' . Config::get('app.version')) }}">
@@ -33,6 +34,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('/favicon/favicon-32x32.png' . Config::get('app.version')) }}">
     <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('/favicon/favicon-96x96.png' . Config::get('app.version')) }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('/favicon/favicon-16x16.png' . Config::get('app.version')) }}">
+    <link rel="icon" type="image/png" sizes="196x196" href="{{ asset('/favicon/favicon-196x196.png' . Config::get('app.version')) }}">
     <link rel="manifest" href="{{ asset('/favicon/manifest.json' . Config::get('app.version')) }}">
     <meta name="msapplication-TileColor" content="#62854F">
     <meta name="msapplication-TileImage" content="{{ asset('/favicon/ms-icon-144x144.png' . Config::get('app.version')) }}">

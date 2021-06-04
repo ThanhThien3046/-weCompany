@@ -17,7 +17,7 @@
                 <a href="http://wecompany.co.jp/weHomes">WE GROUP</a>
             </li>
             <li class="nav__links-item">
-                <a href="http://wecompany.co.jp/search">WE沿革</a>
+                <a href="http://wecompany.co.jp/history">WE沿革</a>
             </li>
             <li class="nav__links-item">
                 <a href="https://wecompany.co.jp/recruit">WE求人</a>
