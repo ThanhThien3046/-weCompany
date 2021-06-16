@@ -53,7 +53,9 @@
             <!--slide contents-->
             <div class="homeslider__item" 
             style="background-image: url('{{ asset('images/bg2.jpg') }}');"
-            data-src-mobile="{{ asset('images/sptop01_2004_02.jpeg') }}"></div>
+            data-src-mobile="{{ asset('images/sptop01_2004_02.jpeg') }}">
+            <div class="shadow"></div>
+            </div>
             <div class="homeslider__item" 
             style="background-image: url('{{ asset('images/bg3.jpg') }}');"
             data-src-mobile="{{ asset('images/sptop02_2004_02.jpeg') }}"></div>

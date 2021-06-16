@@ -20,6 +20,7 @@
 
     <link rel="alternate" type="application/rss+xml" title="{{ Config::get("app.alternate_name") }}" href="" />
 
+    
     <link rel="icon" type="image/png" sizes="196x196" href="{{ asset('favicon.ico' . Config::get('app.version')) }}">
     <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('/favicon/apple-icon-57x57.png' . Config::get('app.version')) }}">
     <link rel="apple-touch-icon" sizes="60x60" href="{{ asset('/favicon/apple-icon-60x60.png' . Config::get('app.version')) }}">

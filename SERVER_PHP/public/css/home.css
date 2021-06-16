@@ -2449,6 +2449,7 @@ option:focus {
           animation-fill-mode: both;
 }
 
+
 .homeslider__item.show {
   opacity: 1;
   -webkit-animation-name: fadeIn;
@@ -2517,12 +2518,19 @@ option:focus {
   .article {
     width: 50%;
   }
+
 }
 
 @media (max-width: 425px) {
   /* .article {
     width: 100%;
   } */
+  .shadow{
+    background-color: #000;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+  }
   .article__challenge-number{
     text-align: center;
     color: #fff;
