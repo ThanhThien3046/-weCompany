@@ -170,7 +170,8 @@
                             </div>
                             <div class="img__infor-right">
                                 {{-- <img class="" src="{{asset('images/challenge172_info01.jpg')}}" alt=""> --}}
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.9654592629067!2d139.77945421465296!3d35.677852480195114!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601889b97a48de95%3A0xfd4dbff3d72d5db7!2z5qCq5byP5Lya56S-QVNJQU5DT05TVUxUSU5H!5e0!3m2!1sja!2sjp!4v1618836266948!5m2!1sja!2sjp" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                                {{-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.9654592629067!2d139.77945421465296!3d35.677852480195114!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601889b97a48de95%3A0xfd4dbff3d72d5db7!2z5qCq5byP5Lya56S-QVNJQU5DT05TVUxUSU5H!5e0!3m2!1sja!2sjp!4v1618836266948!5m2!1sja!2sjp" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe> --}}
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d25927.71148367232!2d139.781713!3d35.67789!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018895c978b8eab%3A0x829c0e233d39d274!2z5pel5pys44CB44CSMTA0LTAwMzMg5p2x5Lqs6YO95Lit5aSu5Yy65paw5bed77yR5LiB55uu77yV4oiS77yR77yZ!5e0!3m2!1sja!2sus!4v1623735052855!5m2!1sja!2sus" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                             </div>
                         </div>
                     </div>
