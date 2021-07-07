@@ -77,6 +77,14 @@ time {
   display: block;
 }
 
+@media (max-width: 414px){
+  span {
+    margin: 0px;
+    padding: 0px;
+    font-size: 15px;
+    }
+}
+
 h6,
 h5,
 h4,
@@ -1733,15 +1741,16 @@ option:focus {
 
 .wrapper__collapse .collapsible__title {
   background-color: #f17067;
-  padding: 18px;
+  /* padding: 18px; */
   text-align: center;
+  width: 18px;
 }
 
 .wrapper__collapse .collapsible__des {
   flex-grow: 999;
   padding: 18px;
   text-align: center;
-  background-color: #6c757d;
+  background-color: #5c6065;
 }
 
 .wrapper__collapse .collapsible:hover {
@@ -1823,3 +1832,4 @@ option:focus {
   transform: rotate(7deg);
   top:40px;
 }
+

@@ -68,7 +68,7 @@
                 
                 <a class="collapsible {{ $collap->show ? 'active' : '' }}"> 
                     <span class="collapsible__title" style="background-color: {{ $branch->color }}">
-                        H{{ Carbon::parse($collap->created_at)->format('y') }}
+                        {{-- H{{ Carbon::parse($collap->created_at)->format('y') }} --}}
                     </span>
                     <span class="collapsible__des">{{ $collap->title }}</span>
                 </a>

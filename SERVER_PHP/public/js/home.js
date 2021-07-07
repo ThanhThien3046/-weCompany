@@ -94,8 +94,9 @@
 /***/ (function(module, exports) {
 
 // window.$ = window.jQuery = require('jquery')
+
 var toggleNav = function toggleNav() {
-  var btnToggle = document.getElementById("js__open-nav");
+var btnToggle = document.getElementById("js__open-nav");
 
   if (!btnToggle) {
     return;
@@ -155,7 +156,37 @@ var listenBtnCloseNav = function listenBtnCloseNav() {
 };
 /*slideshow processing */
 
+/*fadein  */
+$(function(){
+    $(window).scroll(function (){
+      $('.fadein').each(function(){
+          var targetElement = $(this).offset().top;
+          var scroll = $(window).scrollTop();
+          var windowHeight = $(window).height();
+          if(scroll >= 100){
+          if (scroll > targetElement - windowHeight + 40){
+              $(this).css('opacity','1');
+              $(this).css('transform','translateX(0)');
+          }
+        }
+      });
+  });	
+$(window).scroll(function (){
+      $('.fadeinzoom').each(function(){
+          var targetElement = $(this).offset().top;
+          var scroll = $(window).scrollTop();
+          var windowHeight = $(window).height();
+          if (scroll > targetElement - windowHeight + 40){
+              $(this).css('opacity','1');
+              $(this).css('transform','translateX(0)');
+          }
+      });
+  });	
+  
+ 
 
+});
+/*end fadein */
 var slideIndex = 0;
 
 function showSlides() {
@@ -164,11 +195,15 @@ function showSlides() {
   if (!wrapper__slider) {
     return false;
   } /// check if dom mobile remove video
-
+  
+  if (window.innerWidth < 991) {
+    window.onresize = () => { window.location.reload()}
+  }
 
   if (window.innerWidth < 991) {
     var lstslide = wrapper__slider.getElementsByClassName("homeslider__item"); /// is mobile
 
+    
     for (var pos = 0; pos < lstslide.length; pos++) {
       if (lstslide[pos].classList.contains("homeslider__item-video")) {
         /// remove

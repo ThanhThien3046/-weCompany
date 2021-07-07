@@ -312,16 +312,14 @@ window.addEventListener('resize', function(){
 console.log("client home")
 listenToggleNav()
 listenBtnCloseNav()
-
 $(document).ready(function () {
-
+    
     //// load slider
     var sliderwrapper = document.getElementById("js__homeslider")
     
     if(sliderwrapper && window.innerWidth < 991){
         var slideitems = sliderwrapper.getElementsByClassName("homeslider__item")
         for (var pos = 0; pos < slideitems.length; pos++) {
-            
             var src = slideitems[pos].getAttribute('data-src-mobile')
             slideitems[pos].style.backgroundImage = "url('" + src + "')"
         }

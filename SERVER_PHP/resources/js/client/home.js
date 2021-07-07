@@ -68,19 +68,19 @@ function showSlides(){
         return false
     }
     /// check if dom mobile remove video
-    if(window.innerWidth < 991){
+    // if(window.innerWidth < 991){
 
-        var lstslide = wrapper__slider.getElementsByClassName("homeslider__item")
-        /// is mobile
-        for(var pos = 0; pos < lstslide.length; pos++){
+    //     var lstslide = wrapper__slider.getElementsByClassName("homeslider__item")
+    //     /// is mobile
+    //     for(var pos = 0; pos < lstslide.length; pos++){
 
-            if(lstslide[pos].classList.contains("homeslider__item-video")){
-                /// remove
+    //         // if(lstslide[pos].classList.contains("homeslider__item-video")){
+    //         //     /// remove
                 
-                lstslide[pos].remove()
-            }
-        }
-    }
+    //         //     lstslide[pos].remove()
+    //         // }
+    //     }
+    // }
     
     var slides = wrapper__slider.getElementsByClassName("homeslider__item")
     /// slide exist then run 
@@ -98,9 +98,9 @@ function showSlides(){
             slideIndex = 1
         }
         /// show slide
-        slides[slideIndex - 1].classList.add('show')
+        slides[slideIndex].classList.add('show')
         /// auto run loop slider
-        setTimeout(showSlides,5000);
+        setTimeout(showSlides,10000);
     }
 }
 showSlides()
@@ -206,3 +206,28 @@ $(document).ready(function () {
     
 // }
 
+
+$(function(){
+    $(window).scroll(function (){
+        $('.fadein').each(function(){
+            var targetElement = $(this).offset().top;
+            var scroll = $(window).scrollTop();
+            var windowHeight = $(window).height();
+            if (scroll > targetElement - windowHeight + 40){
+                $(this).css('opacity','1');
+                $(this).css('transform','translateX(0)');
+            }
+        });
+    });	
+    $(window).scroll(function (){
+        $('.fadeinzoom').each(function(){
+            var targetElement = $(this).offset().top;
+            var scroll = $(window).scrollTop();
+            var windowHeight = $(window).height();
+            if (scroll > targetElement - windowHeight + 40){
+                $(this).css('opacity','1');
+                $(this).css('transform','translateX(0)');
+            }
+        });
+    });	
+});

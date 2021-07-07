@@ -2,6 +2,7 @@
 main{
 	overflow: hidden;
 	box-sizing: border-box;
+	margin-bottom: 50px;					 
 }
 main .title{
 	font-family: Lato, "Open Sans", "Helvetica Neue", Helvetica, Arial, Verdana, Roboto, 游ゴシック, "Yu Gothic", 游ゴシック体, YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Meiryo UI", メイリオ, Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
@@ -16,7 +17,7 @@ main nav ul{
 	padding: 10px;
 }
 main nav ul li{
-	width: 17%;
+	width: 16%;
 	cursor: pointer;
 	margin-bottom: 10px;
 }
@@ -314,8 +315,13 @@ font-weight: bold;
 {
 	padding-left: 10px;
 	padding-right: 0;
-	width: 45%;
+    width: 100%;
+    max-width: 400px;					 						 
 }
+
+.historyleftinfo{
+	width:100px;
+} 
 
 .history-info > hr{
     background-color: #757574;
@@ -323,11 +329,13 @@ font-weight: bold;
 
 .history-info-right
 {
-	width: 45%;
 	padding-right: 10px;
+	line-height: 37px;
+    width: 100%;
+    max-width: 400px;				  
 }
 
-.history-info  .history-info-left .companyname{
+.history-info  b{
 	font-size: 20px;
 }
 
@@ -339,17 +347,61 @@ font-weight: bold;
 {
 	font-weight: bold;
 }
+@media Screen and (min-width:768px){
+	main nav ul {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		padding: 10px 0px;
+	}
 
-@media Screen and (max-width:415px){
-	.history-info-left{width:100%;}
-	.history-info-right{width:100%;}
-	.history-info{margin: 20px;}
-	.history-info  b{
-		font-size: 15px;
+	main nav ul li {
+		width: 9%;
+		cursor: pointer;
+		margin-bottom: 10px;
+		padding: 0px 3px;
+	}
+
+	.check ul li img:hover{
+		transition: all 0.3s ease-in-out;
+		transform: scale(1.16);
 	}
 }
 
+/* @media Screen and (max-width:500px){ */
+@media Screen and (max-width:767px){
+	.history h2{
+		font-size: 19px;
+	}
+	.history-info hr{
+		display: none;
+	}
+	.history-info-left{width:100%; margin: 0 auto;}
+	.history-info-right{width:100%;margin: 0 auto; padding-left: 10px;}
+	.history-info  b{
+		font-size: 15px;
+	}
 
+	main nav ul {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		padding: 10px 0px;
+	}
+
+	main nav ul li {
+		width: 16%;
+		cursor: pointer;
+		margin-bottom: 10px;
+		padding: 0px 3px;
+	}
+
+}
+
+@media Screen and (max-width:320px){
+	.history-info-left{width:100%;max-width: 160px;}
+	.history-info-right{width:100%;max-width: 160px;}
+}
 
 /* read more css */
 .animated {

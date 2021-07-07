@@ -46,28 +46,33 @@
 <div class="wrapper__content">
     <div class="homeslider">
         <div class="homeslider__intro">
-            <h1>We Company</h1>
-            <p>あなたもチャレンジ</p>
+            {{-- <h1>We Company</h1>
+            <p>あなたもチャレンジ</p> --}}
         </div>
         <div id="js__homeslider" class="homeslider__wrapper lazyload">
             <!--slide contents-->
             <div class="homeslider__item" 
             style="background-image: url('{{ asset('images/bg2.jpg') }}');"
-            data-src-mobile="{{ asset('images/sptop01_2004_02.jpeg') }}">
-            <div class="shadow"></div>
+            data-src-mobile="{{ asset('images/bana1.jpg') }}">
+	    <div class="shadow"></div>
             </div>
             <div class="homeslider__item" 
             style="background-image: url('{{ asset('images/bg3.jpg') }}');"
-            data-src-mobile="{{ asset('images/sptop02_2004_02.jpeg') }}"></div>
+            data-src-mobile="{{ asset('images/bana2.jpg') }}">
+		    <div class="shadow"></div>
+			</div>				   
             <div class="homeslider__item" 
             style="background-image: url('{{ asset('images/bg4.jpg') }}');"
-            data-src-mobile="{{ asset('images/sptop01_2004_02.jpeg') }}"></div>
-            <div class="homeslider__item homeslider__item-video">
-                <video autoplay muted loop="true">
-                    {{-- <source src="video.webm" type="video/webm" />  --}}
+            data-src-mobile="{{ asset('images/bana3.jpg') }}"></div>
+			<div class="shadow"></div>
+			</div>							   
+		   
+            {{-- <div class="homeslider__item homeslider__item-video">
+                <video autoplay muted loop="true" class="resize-video" >
+                    <source src="video.webm" type="video/webm" /> 
                     <source src="{{ asset('/video/video-homepage.mp4') }}" type="video/mp4" />
                 </video>
-            </div>     
+            </div>      --}}
 	  </div>
     </div>
     <div class="content__main homepage">
@@ -75,7 +80,7 @@
             <h1>WE・COMPANY<span>とは？</span></h1>
             <p>
                 ７つのバリュー<b>【Crew Ship】</b>を定めています。<br>
-                会社組織/プロタクトの変化に合わせて価値観を定めることで <br>
+                組織/プロタクトの変化に合わせて価値観を定めることで <br>
                 さらなる成長基盤を築きたい。<br>
                 そんな強い想いを込めて、創りました。 <br>          
             </p>

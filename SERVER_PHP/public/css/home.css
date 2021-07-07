@@ -1886,6 +1886,17 @@ option:focus {
   padding-top: 0;
 }
 
+.fadein {
+  opacity: 0;
+  transform: translate(0, 150px);
+  transition : all 1500ms;
+}
+.fadein.scrollin{
+  opacity: 1;
+  transform: translate(0,0);
+}
+
+
 @-webkit-keyframes beerDV {
   0% {
     transform: scale(1);
@@ -2169,6 +2180,7 @@ option:focus {
   margin: 0;
   padding: 0;
   margin-top: 20px;
+  margin-left: 10%;
 }
 
 .nav__metro-title {
@@ -2267,6 +2279,10 @@ option:focus {
   .nav__history {
     margin-top: 30px;
     width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .nav__links:after,
@@ -2390,6 +2406,11 @@ option:focus {
 
 
 @media (max-width: 991px) {
+  .resize-video{
+    object-fit:cover;
+    height: 100%; 
+    width: 100%;
+  }
   .homeslider__intro {
     position: absolute;
     bottom: 93%;
@@ -2434,6 +2455,12 @@ option:focus {
   height: 100%;
 }
 
+.resize-video{
+  object-fit:cover;
+  height: 100%; 
+  width: 100%;
+}
+
 .homeslider__item {
   position: absolute;
   top: 0px;
@@ -2456,10 +2483,10 @@ option:focus {
   animation-name: fadeIn;
 }
 
-.homeslider__item.show:nth-child(1) {
+/* .homeslider__item.show:nth-child(1) {
   -webkit-animation: 8s linear 0s infinite normal none running giXJVD;
           animation: 8s linear 0s infinite normal none running giXJVD;
-}
+} */
 
 .content__main {
   padding-top: 0px;
@@ -2583,10 +2610,10 @@ option:focus {
   }
 }
 
-.article:hover .article__link-title {
-  background-color: transparent;
-  padding: 16px;
-  transition: all 0.5s ease-in-out;
+.article:hover .article__link-title{
+  /* background-color: transparent; */
+  padding: 10px;
+  /* transition: all 0.5s ease-in-out; */
   z-index: 1111;
 }
 
@@ -2601,6 +2628,7 @@ option:focus {
   bottom: 0;
   background: #1baad1;
   z-index: 1;
+  padding: 0px;
 }
 
 .article:hover .article__link-img img {
@@ -2658,13 +2686,14 @@ option:focus {
   box-sizing: border-box;
   bottom: 0px;
   left: 0px;
-  padding: 8px 8px;
+  padding: 12px 8px;
   width: 100%;
   /* background: rgba(255, 255, 255,0.2); */
   background: rgba(0, 0, 0, 0.2);
   color: white;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.3s ease-in-out;
   z-index: 2;
+  height: 25%;
 }
 
 .article__link-title .title {

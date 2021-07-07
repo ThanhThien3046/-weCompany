@@ -40,9 +40,6 @@ class ClientController extends Controller
     public function postDetail(Request $request, $id = 0 ){
 
         $post = DB::table('posts')->find($id);
-
-        
-
         if( !$post ){
             /// không có bài post trong db
             // => gửi trang 404

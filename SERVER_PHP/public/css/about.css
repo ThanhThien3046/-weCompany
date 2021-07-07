@@ -242,6 +242,7 @@ body {
   display: none;
 }
 
+
 @media (min-width: 576px) {
   .mobile {
     display: unset;
@@ -1770,10 +1771,10 @@ option:focus {
 .sidebar__wrapper-toggle .link__homepage {
   display: none;
   height: 100%;
-  padding: 5px 10px 20px;
+  padding: 0px 10px 20px;
   text-transform: capitalize;
-  font-family: "Train One", cursive;
-  font-size: 18px;
+  font-family: 'Akaya Kanadaka', cursive;
+  font-size: 25px;
 }
 
 @media (max-width: 991px) {
@@ -1962,7 +1963,6 @@ option:focus {
   .sidebar__bottom-metro {
     position: fixed;
     bottom: unset;
-    top: 10px;
     right: 15px;
     width: 54px;
   }
@@ -2252,6 +2252,10 @@ option:focus {
   .nav__history {
     margin-top: 30px;
     width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .nav__links:after,
@@ -2426,11 +2430,23 @@ option:focus {
     padding-left: 0;
   }
 }
-
-@media (min-width: 375px){
-  .metrores{
-    width:25px; margin:0px 20px -10px 18px
+@media (max-width: 414px) {
+  .sidebar__bottom-metro {
+    position: fixed;
+    bottom: unset;
+    right: 15px;
+    width: 54px;
   }
-}
+
+  .sidebar__wrapper-toggle .link__homepage {
+    display: none;
+    height: 100%;
+    padding: 5px 5px 20px;
+    text-transform: capitalize;
+    font-family: 'Akaya Kanadaka', cursive;
+    font-size: 20px;
+  }
+ }
+
 
 
