@@ -15,15 +15,19 @@ $(function(){
         var n = $('main ul li').index(this);
         $('main .js__toggle-item').hide();
         $('main .js__toggle-item:eq('+ n +')').fadeToggle(900);
-        if($('main .js__toggle-item:eq('+ n +')').get(0)){
-            console.log ("có")
-        }else{
-            //// không có data
-            /// ra trang 404
+        // if($('main .js__toggle-item:eq('+ n +')').get(0)){
             
+        // }else{
+        //     //// không có data
+        //     /// ra trang 404
+        //     // console.log ("khong co")
+        //     window.location.href = PAGE_404
+            
+        // }
+
+        if(n !== 0 && n !== 1 && n !== 2){
             window.location.href = PAGE_404
         }
-
 
         /// collapse
         var collapses = document.getElementsByClassName("collapsible");
@@ -70,9 +74,6 @@ $(function(){
             console.log("click rồi", $(lstCol[ilstCol]))
         }
     }
-
-
-
 })
 
 // read more 

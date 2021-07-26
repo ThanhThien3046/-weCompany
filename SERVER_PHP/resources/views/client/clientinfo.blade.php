@@ -36,6 +36,7 @@
 @section('javascripts')
     <script type="text/javascript" src="{{ asset('js/library/jquery.min.js' . Config::get('app.version')) }}"></script>
 	<script type="text/javascript" src="{{ asset('js/home.min.js' . Config::get('app.version')) }}"></script>
+	<script type="text/javascript" src="{{ asset('js/home.js' . Config::get('app.version')) }}"></script>
 @endsection
 @section('content')
 
@@ -46,26 +47,44 @@
 <div class="wrapper__content">
     <div class="homeslider">
         <div class="homeslider__intro">
-            <h1>We Company</h1>
-            <p>あなたもチャレンジ</p>
+           {{-- <h1>We Company</h1>
+            <p>あなたもチャレンジ</p>--}}
         </div>
         <div id="js__homeslider" class="homeslider__wrapper lazyload">
             <!--slide contents-->
-            <div class="homeslider__item" 
-            style="background-image: url('{{ asset('images/bg2.jpg') }}');"
-            data-src-mobile="{{ asset('images/sptop01_2004_02.jpeg') }}"></div>
-            <div class="homeslider__item" 
-            style="background-image: url('{{ asset('images/bg3.jpg') }}');"
-            data-src-mobile="{{ asset('images/sptop02_2004_02.jpeg') }}"></div>
-            <div class="homeslider__item" 
-            style="background-image: url('{{ asset('images/bg4.jpg') }}');"
-            data-src-mobile="{{ asset('images/sptop01_2004_02.jpeg') }}"></div>
-            <div class="homeslider__item homeslider__item-video">
-                <video autoplay muted loop="true">
-                    {{-- <source src="video.webm" type="video/webm" />  --}}
-                    <source src="{{ asset('/video/video-homepage.mp4') }}" type="video/mp4" />
-                </video>
+            <div class="homeslider__item slide1">
             </div>
+
+            <div class="homeslider__item slide2">
+            </div>
+
+            <div class="homeslider__item slide3" >
+            </div>
+
+            <div class="homeslider__item slide4" >
+            </div>
+
+            {{-- <div class="homeslider__item slide5" >
+            </div> --}}
+
+            <div class="homeslider__item slide6" >
+            </div>
+
+            {{-- <div class="homeslider__item slide7" >
+            </div> --}}
+
+            {{-- <div class="homeslider__item slide8" >
+            </div> --}}
+
+            <div class="homeslider__item slide9" >
+            </div>
+
+            {{-- <div class="homeslider__item slide10" >
+            </div> --}}
+
+            <div class="homeslider__item slide11" >
+            </div>
+
         </div>
     </div>
     <div class="content__main homepage">

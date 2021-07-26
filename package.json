@@ -1,0 +1,19 @@
+{
+  "name": "wecompany",
+  "version": "1.0.0",
+  "description": "sử dụng composer clone mới 1 dự án laravel.\r Cài composer cho mac thì đây: https://ebudezain.com/huong-dan-cai-composer-tren-macosx\r Cài cho windows thì vào trang chủ download về rồi cài thôi. ease game\r lệnh clone laravel như sau: \r You are missing a parameter in the command. It should be in this order:\r `\r composer create-project [PACKAGE] [DESTINATION PATH] [--FLAGS]\r `\r cụ thể anh tạo project tên :  \r DESTINATION PATH mặc định thì SERVER_PHP\r [PACKAGE] là cái tên framework : laravel/laravel\r --FLAGS thì anh điền 7.3 nghĩa là download cái version laravel 7.3",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThanhThien3046/-weCompany.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ThanhThien3046/-weCompany/issues"
+  },
+  "homepage": "https://github.com/ThanhThien3046/-weCompany#readme"
+}

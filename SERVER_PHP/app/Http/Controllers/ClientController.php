@@ -10,11 +10,13 @@ use App\Models\Contact;
 use App\Models\Gallery;
 use App\Models\Post;
 use App\Models\Recruit;
+use branchs;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
+use SebastianBergmann\Environment\Console;
 
 class ClientController extends Controller
 {
@@ -148,7 +150,6 @@ class ClientController extends Controller
     public function search(){
 
         $branchs = DB::table('branchs')->get();
-       
         $posts = DB::table('posts')
         ->select([
             DB::raw('count(id) as count'), 
@@ -173,10 +174,9 @@ class ClientController extends Controller
         
         $branch = DB::table("branchs")->find($branch_id);
         if( !$branch ){
-
             return abort(404);
         }
-        /// câu dưới sẽ là : select * from posts where YEAR(created_at) = $year ; -- với $year được truyền vào từ ngừoi dùng
+        
         $posts = DB::table('posts')->where('branch_id', $branch_id)
         ->whereYear('created_at', '=', $year)->get();
 

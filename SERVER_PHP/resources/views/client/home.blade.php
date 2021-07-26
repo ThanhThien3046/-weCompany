@@ -34,7 +34,7 @@
 @section('javascripts')
     <script type="text/javascript" src="{{ asset('js/library/jquery.min.js' . Config::get('app.version')) }}"></script>
 	<script type="text/javascript" src="{{ asset('js/home.min.js' . Config::get('app.version')) }}"></script>
-    <script type="text/javascript" src="{{ asset('js/home.js' . Config::get('app.version')) }}"></script>
+	<script type="text/javascript" src="{{ asset('js/home.js' . Config::get('app.version')) }}"></script>	
 @endsection
 @section('content')
     <div class="wrapper__sidebar animated fadeIn">
@@ -45,40 +45,72 @@
         <div class="homeslider">
             <div class="homeslider__intro">
                 {{-- <h1>We Company</h1>
-                <p>あなたもチャレンジ</p> --}}
+                <p>縺ゅ↑縺溘ｂ繝√Ε繝ｬ繝ｳ繧ｸ</p> --}}
             </div>
             
             <div id="js__homeslider" class="homeslider__wrapper lazyload">
                 <!--slide contents-->
-                <div class="homeslider__item" 
-                style="background-image: url('{{ asset('images/bg1.jpg') }}');background-blend-mode: darken;"
+             	<div class="homeslider__item slide1" 
                 data-src-mobile="{{ asset('images/bana1.jpg') }}">
-		        <div class="shadow"></div>
 		        </div>
 
-                <div class="homeslider__item" 
-                style="background-image: url('{{ asset('images/bg2.jpg') }}');background-blend-mode: darken;"
+                <div class="homeslider__item slide2" 
                 data-src-mobile="{{ asset('images/bana2.jpg') }}">
-		        <div class="shadow"></div>
 		        </div>
 
-                <div class="homeslider__item" 
-                style="background-image: url('{{ asset('images/bg3.jpg') }}');background-blend-mode: darken;"
+                <div class="homeslider__item slide3" 
                 data-src-mobile="{{ asset('images/bana3.jpg') }}">
-		        <div class="shadow"></div>
 		        </div>
-            </div>					  
-        </div>
 
+                <div class="homeslider__item slide4" 
+                data-src-mobile="{{ asset('images/bana1.jpg') }}">
+		        </div>
+
+                {{--<div class="homeslider__item slide5" 
+                data-src-mobile="{{ asset('images/bana2.jpg') }}">
+		        </div>--}}
+
+                <div class="homeslider__item slide6" 
+                data-src-mobile="{{ asset('images/bana3.jpg') }}">
+		        </div>
+
+             	{{--<div class="homeslider__item slide7" 
+                data-src-mobile="{{ asset('images/bana1.jpg') }}">
+		        </div>--}
+
+
+             	{{--<div class="homeslider__item slide8" 
+                data-src-mobile="{{ asset('images/bana2.jpg') }}">
+		        </div>--}}
+
+
+             	<div class="homeslider__item slide9" 
+                data-src-mobile="{{ asset('images/bana3.jpg') }}">
+		        </div>
+
+
+             	{{--<div class="homeslider__item slide10" 
+                data-src-mobile="{{ asset('images/bana1.jpg') }}">
+		        </div>--}}
+
+
+             	<div class="homeslider__item slide11" 
+                data-src-mobile="{{ asset('images/bana2.jpg') }}">
+		        </div>
+
+            </div>
+        </div>
         <div class="content__main homepage">
             <div class="main__list" id="js__format-height-article">
                 @if(!$posts->isEmpty())
                 @foreach ($posts as $key => $post)
                 <article class="article article__default d-none {{ SupportString::renderClassBlockPost($posts, $post->type, $key) }}">
-                    <div class="article__wrapper fadein">
+                    <div class="article__wrapper">
                         <span class="article__challenge">
                             @php
+ 
                                 $branchOfPost = DB::table('branchs')->where('id',$post->branch_id )->first();
+                
                                 $background = "background-color: " . $branchOfPost->color;
                             @endphp
                             <i style="{{$background}}" class="article__challenge-number">{{ $post->id }}</i>
@@ -103,6 +135,4 @@
             </div>
         </div>
     </div>
-
- 
 @endsection

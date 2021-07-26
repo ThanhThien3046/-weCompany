@@ -195,14 +195,13 @@ function showSlides() {
   if (!wrapper__slider) {
     return false;
   } /// check if dom mobile remove video
-  
-  if (window.innerWidth < 991) {
-    window.onresize = () => { window.location.reload()}
-  }
+
+  //if (window.innerWidth == 991) {
+  // window.onresize = () => { window.location.reload()}
+  //}
 
   if (window.innerWidth < 991) {
     var lstslide = wrapper__slider.getElementsByClassName("homeslider__item"); /// is mobile
-
     
     for (var pos = 0; pos < lstslide.length; pos++) {
       if (lstslide[pos].classList.contains("homeslider__item-video")) {
