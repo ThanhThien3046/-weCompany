@@ -8,7 +8,7 @@
     <meta name="robots" content="index, follow" />
     <title> @yield('title') </title>
     <meta name="description" content="@yield('description')">
-
+    
     @yield('meta-seo')
 
     <script async='async' defer='defer' src='{{ asset('js/library/lazysizes.min.js' . Config::get('app.version')) }}'></script>

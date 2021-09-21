@@ -2756,6 +2756,11 @@ option:focus {
   width: 300px;
   margin: 0 auto;
 }
+
+.ftimage:hover{
+  background: #86c6d8;
+  color: white;
+}
 @media (max-width: 425px){
 	.metrores{
 	  width:45px; 

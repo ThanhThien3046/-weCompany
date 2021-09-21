@@ -27,3 +27,4 @@ SERVER_PHP/public/sitemap/*
 SERVER_PHP/public/resizes/*
 SERVER_PHP/public/compress/*
 /logs/*
+/vendor/

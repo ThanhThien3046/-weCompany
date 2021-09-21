@@ -70,7 +70,7 @@ Route::get('/styles',function(){
     return view('styles');
 })->name("STYLES");
 
-Route::get('/weHomes','ClientController@branchs')->name('WEHOMES_PAGE');
+Route::get('/weGroup','ClientController@branchs')->name('WEHOMES_PAGE');
 
 Route::get('/about',function(){
     return view('client.about');

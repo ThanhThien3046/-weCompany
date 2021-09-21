@@ -423,7 +423,7 @@
 .shareetop{
   background-color: #3a6ebd;
   position: absolute;
-  top:-20px;
+  /*top:-20px;*/
   right: 0;
   /* padding-left:25%; */
   /* flex-wrap: wrap; */

@@ -125,8 +125,7 @@
                 <a href="{{Route('SEARCH_PAGE')}}" class="ftimage">サイトTOP</a>
                 <div class="fttext">@include('partial.footer')</div>
             </div>
-        </div>
-        
+        </div>        
     </div>
     
     

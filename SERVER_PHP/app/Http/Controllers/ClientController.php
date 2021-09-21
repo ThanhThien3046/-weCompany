@@ -33,9 +33,9 @@ class ClientController extends Controller
     }
 
     public function branchs(){
-
+        $posts = DB::table('posts');
         $branchs = (new Branch())->all();
-        return view('client.weHomes', compact(['branchs']));
+        return view('client.weHomes', compact(['branchs','posts']));
     }
 
 

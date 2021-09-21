@@ -123,8 +123,8 @@
                         @if(!$galleries->isEmpty())
                         @foreach ($galleries as $key => $image)
                         <div class="img__dtl-item">
-                            @if ($image->url)
-                            <img class="lazyload"
+                            @if ($image->url)    
+                            {{-- <img class="lazyload"
                                 src="{{ Config::get('app.lazyload_base64') }}"
                                 onerror="this.onerror=null;this.src='{{ asset(Config::get('app.image_error')) }}';"
                                 data-src="{{ 
@@ -133,7 +133,7 @@
                                     'type' => 'fit', 
                                     'imagePath' => trim($image->url, '/') 
                                 ]) }}"
-                                alt="{{$post->title}}" />
+                                alt="{{$post->title}}" /> --}}
                             @endif
                         </div>
                         @endforeach
@@ -153,15 +153,22 @@
                                 {{-- <h4>東京国立近代美術館（MOMAT)</h4> --}}
                                 <p>
                                 ［住所］{{$objectBranch->address}} <br>
-                                ［電話番号］{{$objectBranch->phone}} <br>
+                                ［電話］{{$objectBranch->phone}} <br>
                                 ［時間］{{$objectBranch->time}} <br>
-                                ［休館日］年末年始　<br>
-                                ※独自の企業カレンダー <br>
-                                ［最寄駅からのアクセス］東京メトロ <br>
-                                ■茅場町駅 <br>
-                                └A3出口：徒歩５分                                
+                                ［休日］年末年始　<br>
+                                @if($objectBranch->id!==3 && $objectBranch->id!==8)
+                                    ※独自の企業カレンダー <br>
+                                    ［最寄駅からのアクセス］東京メトロ <br>
+                                    ■茅場町駅 <br>
+                                    └A3出口：徒歩５分 
+                                @else
+                                    {{-- ※独自の企業カレンダー <br>
+                                    ［最寄駅からのアクセス］東京メトロ <br>
+                                    ■茅場町駅 <br>
+                                    └A3出口：徒歩５分  --}}
+                                @endif
                                 </p>
-                                <a href="https://wecompany.co.jp/">https://wecompany.co.jp/</a><br>
+                                <a href="https://wecompany.co.jp/">{{$objectBranch->weburl}}</a><br>
                                 <a href="{{ Route('HOME_PAGE') }}" target="_blank" class="btn_map">
                                     <span>サイトへ</span>
                                 </a>
@@ -171,7 +178,11 @@
                             <div class="img__infor-right">
                                 {{-- <img class="" src="{{asset('images/challenge172_info01.jpg')}}" alt=""> --}}
                                 {{-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.9654592629067!2d139.77945421465296!3d35.677852480195114!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601889b97a48de95%3A0xfd4dbff3d72d5db7!2z5qCq5byP5Lya56S-QVNJQU5DT05TVUxUSU5H!5e0!3m2!1sja!2sjp!4v1618836266948!5m2!1sja!2sjp" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe> --}}
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d25927.71148367232!2d139.781713!3d35.67789!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018895c978b8eab%3A0x829c0e233d39d274!2z5pel5pys44CB44CSMTA0LTAwMzMg5p2x5Lqs6YO95Lit5aSu5Yy65paw5bed77yR5LiB55uu77yV4oiS77yR77yZ!5e0!3m2!1sja!2sus!4v1623735052855!5m2!1sja!2sus" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                                @if($objectBranch->id!==3)
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d25927.71148367232!2d139.781713!3d35.67789!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018895c978b8eab%3A0x829c0e233d39d274!2z5pel5pys44CB44CSMTA0LTAwMzMg5p2x5Lqs6YO95Lit5aSu5Yy65paw5bed77yR5LiB55uu77yV4oiS77yR77yZ!5e0!3m2!1sja!2sus!4v1623735052855!5m2!1sja!2sus" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                                @else
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3621.1655916898826!2d125.1689036697952!3d24.82401010556621!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34f5ab82257d8b83%3A0xb531b3f92625f192!2z5pel5pys44CB44CSOTA2LTA1MDUg5rKW57iE55yM5a6u5Y-k5bO25biC5LyK6Imv6YOo5Zu95Luy77yW77yR77yV!5e0!3m2!1sja!2sus!4v1631063606262!5m2!1sja!2sus" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                                @endif    
                             </div>
                         </div>
                     </div>

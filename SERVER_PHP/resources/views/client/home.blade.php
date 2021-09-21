@@ -47,7 +47,6 @@
                 {{-- <h1>We Company</h1>
                 <p>縺ゅ↑縺溘ｂ繝√Ε繝ｬ繝ｳ繧ｸ</p> --}}
             </div>
-            
             <div id="js__homeslider" class="homeslider__wrapper lazyload">
                 <!--slide contents-->
              	<div class="homeslider__item slide1" 

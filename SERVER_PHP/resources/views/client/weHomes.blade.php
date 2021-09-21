@@ -84,13 +84,18 @@
                                             {!! $branch->content !!}
                                         </div>
                                     </div>
+                                    @php
+                                        public function toArray()
+                                        {
+                                            return array_values($this->entries);
+                                        }
+                                        $postHistory = array_filter($posts->toArray(), function( $item ) use ($branchId){ return $item->branch_id == $branchId; });
+                                    @endphp
                                     <div class="div_text">
-                                        <p>関連記事リンク</p>
+                                        <a href="{{Route('HISTORY_PAGE', [ 'branch_id' => $postHistory->branch_id, 'year' => $postHistory->year ])}}" class="enkaku">関連記事リンク</a>
                                     </div>
                                     <div class="main__list" id="js__format-height-article">
                                         @php $posts = $branch->posts()->orderBy('id', 'DESC')->take(3)->get() @endphp
-
-                                        
                                         @if(!$posts->isEmpty())
                                         @foreach ($posts as $key => $post)
                                         <article class="article article__default">
@@ -102,7 +107,7 @@
                                                     </i>
                                                 </span>
 						    
-						    <a class="article__link-img" href="{{ Route('DETAIL_PAGE', [ 'id' => $post->id ]) }}">
+						                        <a class="article__link-img" href="{{ Route('DETAIL_PAGE', [ 'id' => $post->id ]) }}">
                                                     <img class="lazyload"
                                                             src="{{ Config::get('app.lazyload_base64') }}"
                                                             onerror="this.onerror=null;this.src='{{ asset(Config::get('app.image_error')) }}';"
