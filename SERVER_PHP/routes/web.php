@@ -39,7 +39,7 @@ Route::get('resize-compress/{size}/{type}/{quality}/{ext}/{imagePath}', 'ImageCo
 
 Route::get('/','ClientController@index')->name('HOME_PAGE');
 
-Route::get('/history/{branch_id}/{year}','ClientController@historyDetail')->name('HISTORY_PAGE');
+Route::get('/history/{branch_id}/{year?}','ClientController@historyDetail')->name('HISTORY_PAGE');
 
 Route::get('/recruit', function () {
     return view('client.recruit');

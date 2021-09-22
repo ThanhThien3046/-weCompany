@@ -33,8 +33,9 @@ class ClientController extends Controller
     }
 
     public function branchs(){
-        $posts = DB::table('posts');
+        $posts = DB::table('posts')->get();
         $branchs = (new Branch())->all();
+        
         return view('client.weHomes', compact(['branchs','posts']));
     }
 
@@ -170,15 +171,20 @@ class ClientController extends Controller
         return view("search", compact(['branchs', 'posts','histories','weinfo_detail']));
     }
 
-    public function historyDetail(Request $request, $branch_id, $year){
+    public function historyDetail(Request $request, $branch_id, $year = null ){
         
         $branch = DB::table("branchs")->find($branch_id);
         if( !$branch ){
             return abort(404);
         }
-        
-        $posts = DB::table('posts')->where('branch_id', $branch_id)
-        ->whereYear('created_at', '=', $year)->get();
+
+
+        $posts = DB::table('posts')->where('branch_id', $branch_id);
+        if( $year ){
+            
+            $posts->whereYear('created_at', '=', $year);
+        }
+        $posts = $posts->get();
 
         return view('client.history', compact(['branch', 'posts', 'year']));
     }
