@@ -65,7 +65,7 @@
                                 <i class="fab fa-instagram"></i>
                             </a>
                         </li>
-                        <li class="nav__metros-item ">
+                        <li class="nav__metros-item">
                             <a href="{{ env('SOCIAL_YOUTUBE') }}" rel="noopener" target="_blank">
                                 <i class="fab fa-youtube youtube"></i>
                             </a>
